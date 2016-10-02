@@ -15,7 +15,7 @@ public class Shop extends Location {
 //        this.merchandise = FileManageUtil.merchandiseList(ResourceUtil.getResource(ResourceType.MERCHANDISE, shopName.toLowerCase().replace(" ", "")));
     }
 
-    protected void setMerchandise(List<? extends Merchandise> merchandise) {
+    protected void setMerchandise(List<Merchandise> merchandise) {
         this.merchandise = (List<Merchandise>) merchandise;
     }
 

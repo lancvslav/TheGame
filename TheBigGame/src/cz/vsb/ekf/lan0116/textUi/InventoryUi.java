@@ -4,7 +4,6 @@ import cz.vsb.ekf.lan0116.events.DropEvent;
 import cz.vsb.ekf.lan0116.events.EquipEvent;
 import cz.vsb.ekf.lan0116.events.EventType;
 import cz.vsb.ekf.lan0116.world.items.Item;
-import cz.vsb.ekf.lan0116.world.items.Weapon;
 
 class InventoryUi extends AbstractUi {
 
@@ -48,15 +47,10 @@ class InventoryUi extends AbstractUi {
             case 1:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
-                try {
-                    this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
-                            (Weapon) this.getContext().getHero().getInventory().getItem(choiceTemp)));
-                    System.out.println("You are wielding " +
-                            this.get(this.getContext().getHero().getWeapon().getName()));
-                } catch (ClassCastException ex) {
-                    System.out.println("You can't wield that.");
-                    this.show();
-                }
+                this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
+                        this.getContext().getHero().getInventory().getItem(choiceTemp)));
+                System.out.println("You are wielding " +
+                        this.get(this.getContext().getHero().getWeapon().getName()));
                 break;
             case 2:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));

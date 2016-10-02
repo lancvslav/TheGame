@@ -3,6 +3,7 @@ package cz.vsb.ekf.lan0116.world.creature.hero;
 import cz.vsb.ekf.lan0116.world.Location;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.items.Weapon;
+import cz.vsb.ekf.lan0116.world.items.WeaponType;
 
 import java.util.Objects;
 
@@ -16,7 +17,7 @@ public class Hero extends Creature {
 
     public Hero(String name, HeroClass heroClass) {
         super(name, heroClass.getHealth(), heroClass.getDamage(), heroClass.getDefense());
-        this.weapon = new Weapon("item.weapon.flower", 0, 1);
+        this.weapon = new Weapon("item.weapon.flower", 0, 1, WeaponType.UNISEX);
         this.inventory = new Inventory(this.getWeapon());
         this.coins = 1000;
         this.clazz = heroClass;
