@@ -29,10 +29,12 @@ class TournamentUi extends AbstractLocationUi {
                 break;
             }
             currentEnemy = tournament.getEnemyList().get(enemyId);
-            System.out.printf("\nNext enemy: %s%n", this.get(currentEnemy.getName()));
-            switch (this.choice("Flee", "Proceed")) {
+            System.out.printf("\n%s%s%n", this.get("textUi.TournamentUi.next"), this.get(currentEnemy.getName()));
+            switch (this.choice(
+                    this.get("texUi.TournamentUi.flee"),
+                    this.get("texUi.TournamentUi.proceed"))) {
                 case 0:
-                    System.out.println("\nYou coward!");
+                    System.out.printf("\n%s%n", this.get("texUi.TournamentUi.coward"));
                     this.travel();
                     return;
             }
@@ -44,29 +46,8 @@ class TournamentUi extends AbstractLocationUi {
             this.getContext().getEventHandler().handleEvent(new Event(EventType.RESPAWN));
             return;
         }
-        System.out.println("You won.");
+        System.out.println(this.get("texUi.TournamentUi.won"));
         arenaUi = new ArenaUi(this.getContext());
         arenaUi.show();
-
-
-//        while (hero.isAlive()) {
-//            for (int enemyId = 0; enemyId < tournament.getEnemyList().size(); enemyId++) {
-//                if (!hero.isAlive()) {
-//                    break;
-//                }
-//                currentEnemy = tournament.getEnemyList().get(enemyId);
-//                System.out.printf("\nNext enemy: %s%n", this.get(currentEnemy.getName()));
-//                switch (this.choice("Flee", "Proceed")) {
-//                    case 0:
-//                        System.out.println("\nYou coward!");
-//                        this.travel();
-//                        return;
-//                }
-//                System.out.println();
-//                fightUi = new FightUi(this.getContext(), hero, currentEnemy, tournament);
-//                fightUi.show();
-//            }
-//        }
-//        this.getContext().getEventHandler().handleEvent(new Event(EventType.RESPAWN));
     }
 }
