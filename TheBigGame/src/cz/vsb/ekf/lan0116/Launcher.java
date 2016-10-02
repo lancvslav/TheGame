@@ -15,9 +15,9 @@ import java.util.Scanner;
 public class Launcher {
 
     public static void main(String[] args) {
-        //Creation of hero BRUTALLY HARDCODED!!!
         World world = World.example();
-        Localization localization = new Localization(ResourceUtil.getResource(ResourceType.LOCALIZATION, "localization"));
+        Localization localization = new Localization
+                (ResourceUtil.getResource(ResourceType.LOCALIZATION, "localization"));
         Scanner scanner = new Scanner(System.in, "UTF-8");
         Hero hero = HeroCreationUi.creationOfHero(scanner, localization);
         EventHandler eventHandler = new EventHandler(hero, world);

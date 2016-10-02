@@ -20,7 +20,7 @@ public class ListManageUtil {
             String[] split = line.split(";");
             String name = split[0];
             int cost = Integer.parseInt(split[1]);
-            list.add(new Merchandise(name, cost));
+            list.add(new Merchandise(name, null, cost));
         }
         return list;
     }
@@ -43,8 +43,8 @@ public class ListManageUtil {
 //        return list;
 //    }
 
-    public static List<Weapon> weaponsList(List<String> weaponListString) {
-        List<Weapon> list = new ArrayList<>();
+    public static List<Merchandise> weaponsList(List<String> weaponListString) {
+        List<Merchandise> list = new ArrayList<>();
         for (String line : weaponListString) {
             String[] split = line.split(";");
             String name = split[0];

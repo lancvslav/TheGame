@@ -1,17 +1,17 @@
 package cz.vsb.ekf.lan0116.events;
 
-import cz.vsb.ekf.lan0116.world.items.Weapon;
+import cz.vsb.ekf.lan0116.world.items.Item;
 
 public class EquipEvent extends Event {
 
-    private final Weapon weaponToEquip;
+    private final Item weaponToEquip;
 
-    public EquipEvent(EventType type, Weapon weaponToEquip) {
+    public EquipEvent(EventType type, Item weaponToEquip) {
         super(EventType.EQUIP);
         this.weaponToEquip = weaponToEquip;
     }
 
-    public Weapon getWeaponToEquip() {
+    public Item getItemToEquip() {
         return weaponToEquip;
     }
 }

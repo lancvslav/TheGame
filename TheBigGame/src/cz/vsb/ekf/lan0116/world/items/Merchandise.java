@@ -3,19 +3,15 @@ package cz.vsb.ekf.lan0116.world.items;
 public class Merchandise extends Item {
 
     private final int cost;
-    private MerchType merchType;
 
-    public Merchandise(String nameOfMerch, int cost) {
-        super(nameOfMerch);
+
+    public Merchandise(String name, ItemType itemType, int cost) {
+        super(name, itemType);
         this.cost = cost;
     }
 
     public int getCost() {
         return cost;
-    }
-
-    public MerchType getMerchType() {
-        return merchType;
     }
 
     @Override

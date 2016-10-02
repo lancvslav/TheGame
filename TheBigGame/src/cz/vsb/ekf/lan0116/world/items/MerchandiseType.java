@@ -1,5 +1,5 @@
 package cz.vsb.ekf.lan0116.world.items;
 
-public enum MerchType {
+public enum MerchandiseType {
     WEAPON,;
 }

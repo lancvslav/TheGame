@@ -2,17 +2,20 @@ package cz.vsb.ekf.lan0116.world.items;
 
 public class Item {
 
-    private String name;
+    private final String name;
+    private final ItemType itemType;
 
-    public Item(String name) {
+    public Item(String name, ItemType itemType) {
         this.name = name;
+        this.itemType = itemType;
     }
 
     public String getName() {
         return name;
     }
 
-    protected void setName(String name) {
-        this.name = name;
+    public ItemType getItemType() {
+        return itemType;
     }
+
 }

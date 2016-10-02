@@ -14,7 +14,7 @@ public class Context {
     private final World world;
     private final Scanner scanner;
     private final Localization localization;
-    private LocationUi travelUi;
+
 
     public Context(EventHandler eventHandler, Hero hero, World world, Scanner scanner, Localization localization) {
         this.eventHandler = eventHandler;
@@ -22,7 +22,7 @@ public class Context {
         this.world = world;
         this.scanner = scanner;
         this.localization = localization;
-        this.travelUi = new LocationUi(this);
+
     }
 
     public EventHandler getEventHandler() {
@@ -44,9 +44,4 @@ public class Context {
     public Localization getLocalization() {
         return localization;
     }
-
-    public LocationUi getTravelUi() {
-        return travelUi;
-    }
-
 }

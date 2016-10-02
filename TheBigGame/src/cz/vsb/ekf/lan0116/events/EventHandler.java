@@ -2,9 +2,8 @@ package cz.vsb.ekf.lan0116.events;
 
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.creature.hero.HeroClass;
-
-import java.util.Set;
+import cz.vsb.ekf.lan0116.world.items.Item;
+import cz.vsb.ekf.lan0116.world.items.Weapon;
 
 public class EventHandler {
 
@@ -21,18 +20,12 @@ public class EventHandler {
             case DROP:
                 DropEvent dropEvent = (DropEvent) event;
                 if (!(hero.getInventory().getInventory().contains(dropEvent.getItemToDrop()))) {
-                    return new Response(false);
+                    return new Response(null);
                 }
                 hero.getInventory().dropItem(dropEvent.getItemToDrop());
                 return Response.SUCCESS;
             case EQUIP:
-                EquipEvent equipEvent = (EquipEvent) event;
-                final Set<HeroClass> availableFor = equipEvent.getWeaponToEquip().getType().getAvailableFor();
-//                if (!hero.getClazz().equals(availableFor)) {
-//                    return new Response(false);
-//                }
-                hero.setWeapon(equipEvent.getWeaponToEquip());
-                return Response.SUCCESS;
+                return this.handleEquipEvent((EquipEvent) event);
             case INFLICT_DAMAGE:
                 InflictDamageEvent inflictDamageEvent = (InflictDamageEvent) event;
                 float currentHp = inflictDamageEvent.getCreature().getCurrentHp();
@@ -51,7 +44,7 @@ public class EventHandler {
             case TRADE:
                 TradeEvent tradeEvent = (TradeEvent) event;
                 if (hero.getCoins() < tradeEvent.getMerchandise().getCost()) {
-                    return new Response(false);
+                    return new Response(null);
                 }
                 hero.setCoins(hero.getCoins() - tradeEvent.getMerchandise().getCost());
                 hero.getInventory().addItem(tradeEvent.getMerchandise());
@@ -59,7 +52,7 @@ public class EventHandler {
             case TRAVEL:
                 TravelEvent travelEvent = (TravelEvent) event;
                 if (!(hero.getPosition().getGateways().contains(travelEvent.getGateway()))) {
-                    return new Response(false);
+                    return new Response(null);
                 }
                 hero.setPosition(travelEvent.getGateway().getTarget());
                 return Response.SUCCESS;
@@ -67,4 +60,21 @@ public class EventHandler {
                 throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");
         }
     }
+
+    private Response handleEquipEvent(EquipEvent equipEvent) {
+        Item itemToEquip = equipEvent.getItemToEquip();
+        switch (itemToEquip.getItemType().getSuperType()) {
+            case WEAPON:
+                Weapon weapon = (Weapon) itemToEquip;
+                if (weapon.getType().getAvailableFor().contains(hero.getClazz())) {
+                    hero.setWeapon(weapon);
+                    return Response.SUCCESS;
+                } else {
+                    return new Response(null);
+                }
+            default:
+                return new Response(null);
+        }
+    }
+
 }
