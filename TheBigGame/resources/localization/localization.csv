@@ -119,6 +119,11 @@ textUi.InventoryUi.don't_own;You do not own this item.
 textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.
 textUi.InventoryUi.choice0.inspect;Inspect item
 textUi.InventoryUi.choice1.equip;Equip
+textUi.TournamentUi.next;Next enemy:
+texUi.TournamentUi.flee;Flee
+texUi.TournamentUi.proceed;Proceed
+texUi.TournamentUi.coward;You coward!
+texUi.TournamentUi.won;You won.
 textUi.InventoryUi.choice2.drop;Drop item
 textUi.InventoryUi.choice3.close;Close inventory
 textUi.InventoryUi.which_one;Which one?
