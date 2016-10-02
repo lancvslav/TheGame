@@ -1,0 +1,12 @@
+.
+..
+...
+Mmmmm...
+Mmmmmmm...
+textUi.HeroCreationUi.new_game.expecting
+textUi.HeroCreatinUi.new_game.perhaps
+textUi.HeroCreatinUi.new_game.another
+textUi.HeroCreatinUi.new_game.fragile
+textUi.HeroCreatinUi.new_game.devour
+textUi.HeroCreatinUi.new_game.prove
+textUi.HeroCreatinUi.new_game.first

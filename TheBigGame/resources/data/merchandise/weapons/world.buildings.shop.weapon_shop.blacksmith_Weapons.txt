@@ -1,0 +1,17 @@
+item.merchandise.weapon.melee.dagger;10;2;melee
+item.merchandise.weapon.melee.dirk;15;3;melee
+item.merchandise.weapon.melee.club;15;3;melee
+item.merchandise.weapon.melee.spiked_club;20;4;melee
+item.merchandise.weapon.melee.mace;25;5;melee
+item.merchandise.weapon.melee.morning_star;30;6;melee
+item.merchandise.weapon.melee.flail;35;7;melee
+item.merchandise.weapon.melee.short_sword;30;6;melee
+item.merchandise.weapon.melee.scimitar;30;6;melee
+item.merchandise.weapon.melee.sword;35;7;melee
+item.merchandise.weapon.melee.long_sword;40;8;melee
+item.merchandise.weapon.melee.flamberge;45;9;melee
+item.merchandise.weapon.melee.bastard_sword;50;10;melee
+item.merchandise.weapon.melee.claymore;55;11;melee
+item.merchandise.weapon.melee.katana;60;12;melee
+item.merchandise.weapon.melee.greatsword;70;14;melee
+item.merchandise.weapon.melee.zweihander;80;16;melee

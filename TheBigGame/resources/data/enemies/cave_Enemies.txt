@@ -1,0 +1,6 @@
+enemies.cave.dark_mole;1;1;0;HIT
+enemies.cave.lost_miner;7;1;2;CRUSHING_BLOW
+enemies.cave.blind_wanderer;4;4;1;POISON_MIST
+enemies.cave.dark_dwarf;10;5;5;BLEED
+enemies.cave.shadow_mist;14;5;0;SILENCE
+enemies.cave.shadowlurker;12;4;0;FEAR

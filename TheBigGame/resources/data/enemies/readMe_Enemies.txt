@@ -1,0 +1,1 @@
+name;maxHp;att;def,SPECIAL_ATTACK

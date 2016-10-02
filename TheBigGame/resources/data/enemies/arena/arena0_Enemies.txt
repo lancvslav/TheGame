@@ -1,0 +1,7 @@
+enemies.arena0.enemy0.little_child;1;1;0;SCREAM
+enemies.arena0.enemy1.street_toad;2;1;1;HIT
+enemies.arena0.enemy2.bastard;3;3;4;HIT
+enemies.arena0.enemy3.enraged_man;6;7;5;HIT
+enemies.arena0.enemy4.old_mercenary;10;11;10;HIT
+enemies.arena0.enemy5.infantryman;14;13;14;HIT
+enemies.arena0.enemy6.trained_bruiser;17;18;15;HIT

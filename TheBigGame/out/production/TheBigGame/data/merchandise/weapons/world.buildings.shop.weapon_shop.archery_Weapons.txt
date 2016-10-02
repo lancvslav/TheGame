@@ -1,0 +1,12 @@
+item.merchandise.weapon.ranged.short_bow;10;4;ranged
+item.merchandise.weapon.ranged.bow;15;6;ranged
+item.merchandise.weapon.ranged.long_bow;20;8;ranged
+item.merchandise.weapon.ranged.composite_bow;25;10;ranged
+item.merchandise.weapon.ranged.light_crossbow;30;12;ranged
+item.merchandise.weapon.ranged.combat_bow;35;14;ranged
+item.merchandise.weapon.ranged.heavy_crossbow;40;16;ranged
+item.merchandise.weapon.ranged.war_bow;45;18;ranged
+item.merchandise.weapon.ranged.repeating_crossbow;50;20;ranged
+hitem.merchandise.weapon.ranged.hunters_bow;55;22;ranged
+item.merchandise.weapon.ranged.shadow_bow;60;24;ranged
+item.merchandise.weapon.ranged.greatbow;75;30;ranged

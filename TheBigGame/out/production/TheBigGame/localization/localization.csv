@@ -1,0 +1,169 @@
+enemies.abandoned_town.bandit;bandit
+enemies.abandoned_town.dog;dog
+enemies.abandoned_town.peasant;peasant
+enemies.abandoned_town.thiev;thiev
+enemies.arena0.enemy0.little_child;little child
+enemies.arena0.enemy1.street_toad;street toad
+enemies.arena0.enemy2.bastard;bastard
+enemies.arena0.enemy3.enraged_man;enraged man
+enemies.arena0.enemy4.old_mercenary;old mercenary
+enemies.arena1.enemy0.sheep;sheep
+enemies.arena1.enemy1.cat;cat
+enemies.arena1.enemy2.turtle;turtle
+enemies.arena1.enemy3.dog;dog
+enemies.arena1.enemy4.snake;snake
+enemies.arena1.enemy5.wolf;wolf
+enemies.arena1.enemy6.bear;bear
+enemies.arena1.enemy7.lion;lion
+enemies.arena1.enemy8.tiger;tiger
+enemies.arena1.enemy9.mastodon;mastodon
+enemies.arena0.enemy5.infantryman;infantry man
+enemies.arena0.enemy6.trained_bruiser;trained bruiser
+enemies.cave.blind_wanderer;blind wanderer
+enemies.cave.dark_dwarf;dark dwarf
+enemies.cave.dark_mole;dark mole
+enemies.cave.lost_miner;lost miner
+enemies.cave.shadow_mist;shadow mist
+enemies.cave.shadowlurker;shadowlurker
+enemies.forest.bear;bear
+enemies.forest.dark_elf;dark elf
+enemies.forest.chopped_tree;chopped tree
+enemies.forest.lumberjack;lumberjack
+enemies.forest.wolf;wolf
+enemies.graveyard.gargoyle;gargoyle
+enemies.graveyard.ghoul;ghoul
+enemies.graveyard.skeleton_archer;skeleton archer
+enemies.graveyard.skeleton_warrior;skeleton warrior
+enemies.graveyard.vampire;vampire
+enemies.graveyard.zombie;zombie
+enemies.mountains.dwarf;dwarf
+enemies.mountains.eagle;eagle
+enemies.mountains.chamois;chamois
+enemies.mountains.stone_warrior;stone warrior
+enemies.swamp.basilisk;basilisk
+enemies.swamp.giant_frog;giant frog
+enemies.swamp.great_mosquito;great mosquito
+enemies.swamp.hydra;hydra
+hero.class.ranger;ranger
+hero.class.sorcerer;sorcerer
+hero.class.warrior;warrior
+item.merchandise.weapon.melee.bastard_sword;bastard sword
+item.merchandise.weapon.melee.claymore;claymore
+item.merchandise.weapon.melee.club;club
+item.merchandise.weapon.melee.dagger;dagger
+item.merchandise.weapon.melee.dirk;dirk
+item.merchandise.weapon.melee.flail;flail
+item.merchandise.weapon.melee.flamberge;flamberge
+item.merchandise.weapon.melee.greatsword;greatsword
+item.merchandise.weapon.melee.katana;katana
+item.merchandise.weapon.melee.long_sword;long sword
+item.merchandise.weapon.melee.mace;mace
+item.merchandise.weapon.melee.morning_star;morning star
+item.merchandise.weapon.melee.scimitar;scimitar
+item.merchandise.weapon.melee.short_sword;short sword
+item.merchandise.weapon.melee.spiked_club;spiked club
+item.merchandise.weapon.melee.sword;sword
+item.merchandise.weapon.melee.zweihander;zweihander
+item.merchandise.weapon.ranged.bow;bow
+item.merchandise.weapon.ranged.combat_bow;combat bow
+item.merchandise.weapon.ranged.composite_bow;composite bow
+item.merchandise.weapon.ranged.greatbow;greatbow
+item.merchandise.weapon.ranged.heavy_crossbow;heavy crossbow
+item.merchandise.weapon.ranged.hunters_bow;hunters bow
+item.merchandise.weapon.ranged.light_crossbow;light crossbow
+item.merchandise.weapon.ranged.long_bow;long bow
+item.merchandise.weapon.ranged.repeating_crossbow;repeating crossbow
+item.merchandise.weapon.ranged.shadow_bow;shadow bow
+item.merchandise.weapon.ranged.short_bow;short bow
+item.merchandise.weapon.ranged.war_bow;war bow
+item.merchandise.weapon.wand.demons_staff;demons staff
+item.merchandise.weapon.wand.enhanced_wand;enhanced wand
+item.merchandise.weapon.wand.magic_talisman;magic talisman
+item.merchandise.weapon.wand.staff;staff
+item.merchandise.weapon.wand.staff_of_darkness;staff of darkness
+item.merchandise.weapon.wand.staff_of_destruction;staff of destruction
+item.merchandise.weapon.wand.staff_of_power;staff of power
+item.merchandise.weapon.wand.staff_of_wisdom;staff of wisdom
+item.merchandise.weapon.wand.sun_staff;sun staff
+item.merchandise.weapon.wand.talisman_of_knowledge;talisman of knowledge
+item.merchandise.weapon.wand.talisman_of_lightning;talisman of lightning
+item.merchandise.weapon.wand.wand;wand
+item.weapon.flower;flower
+textUi.AbstractLocationUi.where;Where would you like to go?
+textUi.AbstractLocationUi.you_hit;You hit the wall, you fool. This way is not the way. You are bleeding now.
+textUi.AbstractUi.fled;"""That fool couldn't bear wilderness of this world, therefore he fled"
+textUi.AbstractUi.flee;flee foolishly
+textUi.ArenaUi.back;Back off
+textUi.ArenaUi.sign_up;Sign up for tournament
+textUi.ArenaUi.welcome;Welcome to the Arena
+textUi.current_location0;You are standing at
+textUi.current_location1;Here you are, at
+textUi.current_location2;You are at
+textUi.HeroCreatinUi.new_game.another;... or just another mere pawn, whom his desperate fate brought here.
+textUi.HeroCreatinUi.new_game.devour;Lest this edge of the world devour thee. As it devoured many others.
+textUi.HeroCreatinUi.new_game.first;But first...
+textUi.HeroCreatinUi.new_game.fragile;I see. Now thou are frail and fragile. 
+textUi.HeroCreatinUi.new_game.perhaps;Perhaps... Art thou The chosen one?
+textUi.HeroCreatinUi.new_game.prove;Now go, prove thou art not just pawn, but The one who art we long awaiting.
+textUi.HeroCreationUi.kind_of_man;What kind of man thou art?
+textUi.HeroCreationUi.name0;What is thy noble name, sir?
+textUi.HeroCreationUi.name1;Please, tell me how to call thee.
+textUi.HeroCreationUi.new_game.expecting;I have been expecting thee...
+textUi.HeroCreationUi.pleasure;Pleasure to meet thee,
+textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, higher damage done, but not as vital as warrior.
+textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
+textUi.HeroCreationUi.warrior;0. Brave warrior. High vitality and endurance, but lower damage. Able to wield shield.
+textUi.Inventory.really0;Do you really wan't to drop
+textUi.Inventory.really1;? You will not be able to recover it.
+textUi.InventoryUi.don't_own;You do not own this item.
+textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.
+textUi.InventoryUi.choice0.inspect;Inspect item
+textUi.InventoryUi.choice1.equip;Equip
+textUi.InventoryUi.choice2.drop;Drop item
+textUi.InventoryUi.choice3.close;Close inventory
+textUi.InventoryUi.which_one;Which one?
+textUi.loation_decision0;Would you rather
+textUi.loation_decision1;Do you want to
+textUi.loation_decision2;Well? What is the plan?
+textUi.loation_decision3;What are you going to do?
+textUi.location.just;It is just a
+textUi.menu.no;No
+textUi.menu.rest;Rest
+textUi.menu.somewhere;Go somewhere else
+textUi.menu.trouble;Look for some trouble
+textUi.menu.yes;Yes
+textUi.MerchandiseUi.decline;0 Decline offers and leave
+textUi.MerchandiseUi.purchased;purchased!
+textUi.MerchandiseUi.shop_happy0;It's a pleasure doing business with yer.
+textUi.MerchandiseUi.shop_happy1;Do come again.
+textUi.MerchandiseUi.shop_happy2;Thank you.
+textUi.MerchandiseUi.shop_happy3;Cometh soon.
+textUi.MerchandiseUi.shop_offer0;Choose what you want or get out.
+textUi.MerchandiseUi.shop_offer1;Take a look at my wares.
+textUi.MerchandiseUi.shop_offer2;You will not find better goods all arround.
+textUi.MerchandiseUi.shop_offer3;Well, what it is gonna be?
+textUi.MerchandiseUi.shop_offer4;Better merchant, you will find not.
+textUi.MerchandiseUi.shop_unhappy0;I see. Tis a pity. Well, what a man can do.
+textUi.MerchandiseUi.shop_unhappy1;Get out of my sight, you imbecile.
+textUi.MerchandiseUi.shop_unhappy2;What? Don't waste my time.
+textUi.MerchandiseUi.shop_unhappy3;People this days.
+textUi.MerchandiseUi.shop_unhappy4;Are you sure? Well, I might sell out while you are not around.
+textUi.RestHeroUi.consume;Consume
+textUi.RestHeroUi.getUp;Get up
+textUi.RestHeroUi.inventory;Inventory
+textUi.RestHeroUi.starve;It looks like you will starve to death.
+textUi.ShopUi.ask;Ask shop keeper what he has to offer
+textUi.ShopUi.doors;Doors you see lead to:
+textUi.ShopUi.leave;Leave this place
+textUi.StreetUi.paths;Paths you can take lead to:
+textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
+textUi.ArenaUi.tournament0;All folks try hard
+textUi.ArenaUi.tournament_selection;In which tournament you wish to attend?
+textUi.ArenaUi.tournament1;You are the prey now
+textUi.ArenaUi.tournament2;Tournament 3
+textUi.ArenaUi.entered_tournament;Welcome traveler. You must have a guts for sure, otherwise, you wouldn't agree to voluntarily go in such a danger. Or perhaps, you are just mad.
+world.arena.arena;arena
+world.buildings.shop.weapon_shop.archery;archery
+world.buildings.shop.weapon_shop.blacksmith;blacksmith
+world.buildings.shop.weapon_shop.wand_shop;wand shop
+world.street.main_square;main square

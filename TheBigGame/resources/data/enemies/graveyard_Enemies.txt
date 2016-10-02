@@ -1,0 +1,5 @@
+enemies.graveyard.zombie;1;1;0;POISON_MIST
+enemies.graveyard.skeleton_archer;2;3;0;SHOOT
+enemies.graveyard.ghoul;4;4;0;WEAKEN
+enemies.graveyard.vampire;5;5;0;LIFESTEAL
+enemies.graveyard.gargoyle;8;8;0;BLIND
