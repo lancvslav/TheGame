@@ -7,6 +7,8 @@ enemies.arena0.enemy1.street_toad;street toad
 enemies.arena0.enemy2.bastard;bastard
 enemies.arena0.enemy3.enraged_man;enraged man
 enemies.arena0.enemy4.old_mercenary;old mercenary
+enemies.arena0.enemy5.infantryman;infantry man
+enemies.arena0.enemy6.trained_bruiser;trained bruiser
 enemies.arena1.enemy0.sheep;sheep
 enemies.arena1.enemy1.cat;cat
 enemies.arena1.enemy2.turtle;turtle
@@ -17,8 +19,6 @@ enemies.arena1.enemy6.bear;bear
 enemies.arena1.enemy7.lion;lion
 enemies.arena1.enemy8.tiger;tiger
 enemies.arena1.enemy9.mastodon;mastodon
-enemies.arena0.enemy5.infantryman;infantry man
-enemies.arena0.enemy6.trained_bruiser;trained bruiser
 enemies.cave.blind_wanderer;blind wanderer
 enemies.cave.dark_dwarf;dark dwarf
 enemies.cave.dark_mole;dark mole
@@ -94,7 +94,12 @@ textUi.AbstractLocationUi.you_hit;You hit the wall, you fool. This way is not th
 textUi.AbstractUi.fled;That fool couldn't bear wilderness of this world, therefore he fled
 textUi.AbstractUi.flee;flee foolishly
 textUi.ArenaUi.back;Back off
+textUi.ArenaUi.entered_tournament;Welcome traveler. You must have a guts for sure, otherwise, you wouldn't agree to voluntarily go in such a danger. Or perhaps, you are just mad.
 textUi.ArenaUi.sign_up;Sign up for tournament
+textUi.ArenaUi.tournament_selection;In which tournament you wish to attend?
+textUi.ArenaUi.tournament0;All folks try hard
+textUi.ArenaUi.tournament1;You are the prey now
+textUi.ArenaUi.tournament2;Tournament 3
 textUi.ArenaUi.welcome;Welcome to the Arena
 textUi.current_location0;You are standing at
 textUi.current_location1;Here you are, at
@@ -119,11 +124,6 @@ textUi.InventoryUi.don't_own;You do not own this item.
 textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.
 textUi.InventoryUi.choice0.inspect;Inspect item
 textUi.InventoryUi.choice1.equip;Equip
-textUi.TournamentUi.next;Next enemy:
-texUi.TournamentUi.flee;Flee
-texUi.TournamentUi.proceed;Proceed
-texUi.TournamentUi.coward;You coward!
-texUi.TournamentUi.won;You won.
 textUi.InventoryUi.choice2.drop;Drop item
 textUi.InventoryUi.choice3.close;Close inventory
 textUi.InventoryUi.which_one;Which one?
@@ -162,11 +162,11 @@ textUi.ShopUi.doors;Doors you see lead to:
 textUi.ShopUi.leave;Leave this place
 textUi.StreetUi.paths;Paths you can take lead to:
 textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
-textUi.ArenaUi.tournament0;All folks try hard
-textUi.ArenaUi.tournament_selection;In which tournament you wish to attend?
-textUi.ArenaUi.tournament1;You are the prey now
-textUi.ArenaUi.tournament2;Tournament 3
-textUi.ArenaUi.entered_tournament;Welcome traveler. You must have a guts for sure, otherwise, you wouldn't agree to voluntarily go in such a danger. Or perhaps, you are just mad.
+textUi.TournamentUi.next;Next enemy:
+texUi.TournamentUi.coward;You coward!
+texUi.TournamentUi.flee;Flee
+texUi.TournamentUi.proceed;Proceed
+texUi.TournamentUi.won;You won.
 world.arena.arena;arena
 world.buildings.shop.weapon_shop.archery;archery
 world.buildings.shop.weapon_shop.blacksmith;blacksmith
