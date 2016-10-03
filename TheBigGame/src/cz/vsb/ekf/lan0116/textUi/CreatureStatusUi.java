@@ -2,18 +2,18 @@ package cz.vsb.ekf.lan0116.textUi;
 
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
-class CratureStatusUi extends AbstractHeroUi {
+class CreatureStatusUi extends AbstractHeroUi {
 
     private Creature creature;
 
-    CratureStatusUi(Context context, Creature creature) {
+    CreatureStatusUi(Context context, Creature creature) {
         super(context);
         this.creature = creature;
     }
 
     @Override
     public void show() {
-        lifeIndicator();
+        System.out.println(lifeIndicator());
     }
 
     public String lifeIndicator() {

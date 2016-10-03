@@ -24,13 +24,21 @@ public abstract class AbstractUi implements Ui {
         }
         String choice = this.getContext().getScanner().nextLine();
         if (this.getContext().getLocalization().get("textUi.AbstractUi.flee").equals(choice)) {
-            throw new RuntimeException(this.get("That fool couldn't bear wilderness of this world, therefore he fled") + "\n");
+            throw new RuntimeException(this.get("textUi.AbstractUi.fled") + "\n");
         }
 //        if (!((Integer.parseInt(choice)) < 0 && (Integer.parseInt(choice)) >= choices.length)) {
         return Integer.parseInt(choice);
 //        } else {
 //            this.choice(choices);
 //        }
+    }
+
+    void sleep(long milis) {
+        try {
+            Thread.sleep(milis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     protected String get(String keyFormat) {
