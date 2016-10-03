@@ -13,6 +13,7 @@ class FightUi extends AbstractLocationUi {
     private Enemy enemy;
     private Tournament tournament;
     private TournamentUi tournamentUi;
+    private CreatureStatusUi creatureStatusUi;
 
 
     FightUi(Context context, Creature hero, Creature enemy, Tournament tournament) {
@@ -20,14 +21,6 @@ class FightUi extends AbstractLocationUi {
         this.hero = (Hero) hero;
         this.enemy = (Enemy) enemy;
         this.tournament = tournament;
-    }
-
-    private void sleep(long milis) {
-        try {
-            Thread.sleep(milis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -51,6 +44,7 @@ class FightUi extends AbstractLocationUi {
             sleep(90);
             System.out.println("Enemy hit for " + fight.attacking(enemy, hero) +
                     " dmg. Your life essence status: " + hero.getCurrentHp());
+            new CreatureStatusUi(this.getContext(), hero).show();
             sleep(20);
         }
 

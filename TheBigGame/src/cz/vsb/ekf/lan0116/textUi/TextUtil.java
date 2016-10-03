@@ -9,40 +9,37 @@ import java.util.Random;
 
 class TextUtil {
 
+    static void sleep(long milis) {
+        try {
+            Thread.sleep(milis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
-     * This method will be demolished by "Vlasec"
+     * New game quotes
      */
     static void newGame(Localization localization) {
         List<String> newGame = ResourceUtil.getResource(ResourceType.QUOTE, "new_game");
         for (int i = 0; i < 3; i++) {
             System.out.println(localization.get(newGame.get(i)));
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            sleep(1500);
         }
         for (int i = 3; i < 5; i++) {
             System.out.println(localization.get(newGame.get(i)));
-            try {
-                Thread.sleep(2500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            sleep(2500);
         }
         for (int i = 5; i < 12; i++) {
             System.out.println(localization.get(newGame.get(i)));
-            try {
-                Thread.sleep(4000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            sleep(4000);
         }
     }
 
 
     /**
      * Printing randomly generated quote
+     *
      * @param fileName, file from which is read.
      * @return
      */

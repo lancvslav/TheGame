@@ -91,7 +91,7 @@ item.merchandise.weapon.wand.wand;wand
 item.weapon.flower;flower
 textUi.AbstractLocationUi.where;Where would you like to go?
 textUi.AbstractLocationUi.you_hit;You hit the wall, you fool. This way is not the way. You are bleeding now.
-textUi.AbstractUi.fled;"""That fool couldn't bear wilderness of this world, therefore he fled"
+textUi.AbstractUi.fled;That fool couldn't bear wilderness of this world, therefore he fled
 textUi.AbstractUi.flee;flee foolishly
 textUi.ArenaUi.back;Back off
 textUi.ArenaUi.sign_up;Sign up for tournament
