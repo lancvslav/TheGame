@@ -1,5 +1,10 @@
-package cz.vsb.ekf.lan0116.events;
+package cz.vsb.ekf.lan0116.eventsHandling;
 
+import cz.vsb.ekf.lan0116.eventsHandling.events.*;
+import cz.vsb.ekf.lan0116.eventsHandling.failures.EquipFailure;
+import cz.vsb.ekf.lan0116.eventsHandling.failures.InventoryFailure;
+import cz.vsb.ekf.lan0116.eventsHandling.failures.TradeFailure;
+import cz.vsb.ekf.lan0116.eventsHandling.failures.TravelFailure;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.items.Item;
@@ -19,8 +24,8 @@ public class EventHandler {
         switch (event.getType()) {
             case DROP:
                 DropEvent dropEvent = (DropEvent) event;
-                if (!(hero.getInventory().getInventory().contains(dropEvent.getItemToDrop()))) {
-                    return new Response(null);
+                if (!hero.getInventory().getInventoryList().contains(dropEvent.getItemToDrop())) {
+                    return new Response(InventoryFailure.NOT_IN_INVENTORY);
                 }
                 hero.getInventory().dropItem(dropEvent.getItemToDrop());
                 return Response.SUCCESS;
@@ -44,7 +49,7 @@ public class EventHandler {
             case TRADE:
                 TradeEvent tradeEvent = (TradeEvent) event;
                 if (hero.getCoins() < tradeEvent.getMerchandise().getCost()) {
-                    return new Response(null);
+                    return new Response(TradeFailure.NOT_ENOUGH_GOLD);
                 }
                 hero.setCoins(hero.getCoins() - tradeEvent.getMerchandise().getCost());
                 hero.getInventory().addItem(tradeEvent.getMerchandise());
@@ -52,7 +57,7 @@ public class EventHandler {
             case TRAVEL:
                 TravelEvent travelEvent = (TravelEvent) event;
                 if (!(hero.getPosition().getGateways().contains(travelEvent.getGateway()))) {
-                    return new Response(null);
+                    return new Response(TravelFailure.NO_GATEWAY);
                 }
                 hero.setPosition(travelEvent.getGateway().getTarget());
                 return Response.SUCCESS;
@@ -63,6 +68,9 @@ public class EventHandler {
 
     private Response handleEquipEvent(EquipEvent equipEvent) {
         Item itemToEquip = equipEvent.getItemToEquip();
+        if(!hero.getInventory().getInventoryList().contains(itemToEquip)){
+            return new Response(InventoryFailure.NOT_IN_INVENTORY);
+        }
         switch (itemToEquip.getItemType().getSuperType()) {
             case WEAPON:
                 Weapon weapon = (Weapon) itemToEquip;
@@ -70,10 +78,10 @@ public class EventHandler {
                     hero.setWeapon(weapon);
                     return Response.SUCCESS;
                 } else {
-                    return new Response(null);
+                    return new Response(EquipFailure.CLAZZ_DIFF);
                 }
             default:
-                return new Response(null);
+                return new Response(EquipFailure.NOT_A_WEAPON);
         }
     }
 

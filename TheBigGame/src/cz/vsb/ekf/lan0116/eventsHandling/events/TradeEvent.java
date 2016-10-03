@@ -1,4 +1,4 @@
-package cz.vsb.ekf.lan0116.events;
+package cz.vsb.ekf.lan0116.eventsHandling.events;
 
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
 import cz.vsb.ekf.lan0116.world.items.Merchandise;

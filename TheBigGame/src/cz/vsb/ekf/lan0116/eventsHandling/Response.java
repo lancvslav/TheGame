@@ -1,4 +1,6 @@
-package cz.vsb.ekf.lan0116.events;
+package cz.vsb.ekf.lan0116.eventsHandling;
+
+import cz.vsb.ekf.lan0116.eventsHandling.failures.FailureCause;
 
 public class Response {
 
