@@ -1,17 +1,19 @@
 package cz.vsb.ekf.lan0116.textUi;
 
 import cz.vsb.ekf.lan0116.eventsHandling.events.TradeEvent;
+import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
+import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
 import cz.vsb.ekf.lan0116.world.buildings.Shop;
 import cz.vsb.ekf.lan0116.world.items.Merchandise;
 
 import java.util.List;
 
-class MerchandiseUi extends AbstractLocationUi<Shop> {
+public class MerchandiseUi extends AbstractLocationUi<Shop> {
 
     private LocationUi locationUi;
 
-    MerchandiseUi(Context context) {
+    public MerchandiseUi(Context context) {
         super(context);
         locationUi = new LocationUi(context);
     }

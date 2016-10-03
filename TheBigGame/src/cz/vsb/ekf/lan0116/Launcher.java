@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116;
 
 import cz.vsb.ekf.lan0116.eventsHandling.EventHandler;
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.textUi.HeroCreationUi;
+import cz.vsb.ekf.lan0116.textUi.heroUi.HeroCreationUi;
 import cz.vsb.ekf.lan0116.textUi.TextEvents;
 import cz.vsb.ekf.lan0116.util.Localization;
 import cz.vsb.ekf.lan0116.util.ResourceType;

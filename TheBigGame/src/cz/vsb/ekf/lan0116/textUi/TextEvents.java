@@ -2,6 +2,7 @@ package cz.vsb.ekf.lan0116.textUi;
 
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
+import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 
 public class TextEvents {
 

@@ -7,9 +7,9 @@ import cz.vsb.ekf.lan0116.util.ResourceUtil;
 import java.util.List;
 import java.util.Random;
 
-class TextUtil {
+public class TextUtil {
 
-    static void sleep(long milis) {
+    public static void sleep(long milis) {
         try {
             Thread.sleep(milis);
         } catch (InterruptedException e) {
@@ -20,7 +20,7 @@ class TextUtil {
     /**
      * New game quotes
      */
-    static void newGame(Localization localization) {
+    public static void newGame(Localization localization) {
         List<String> newGame = ResourceUtil.getResource(ResourceType.QUOTE, "new_game");
         for (int i = 0; i < 3; i++) {
             System.out.println(localization.get(newGame.get(i)));
@@ -43,7 +43,7 @@ class TextUtil {
      * @param fileName, file from which is read.
      * @return
      */
-    static String quote(String fileName) {
+    public static String quote(String fileName) {
         Random random = new Random();
         List<String> curLocQuote = ResourceUtil.getResource(ResourceType.QUOTE, fileName);
         int randomQuote = random.nextInt(curLocQuote.size());
