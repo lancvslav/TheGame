@@ -22,7 +22,7 @@ public class Inventory {
         inventory = new ArrayList<>(Arrays.asList(items));
     }
 
-    public List<Item> getInventory() {
+    public List<Item> getInventoryList() {
         return inventory;
     }
 

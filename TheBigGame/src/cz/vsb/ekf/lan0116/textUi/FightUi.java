@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116.textUi;
 
 import cz.vsb.ekf.lan0116.combat.Fight;
 import cz.vsb.ekf.lan0116.combat.Tournament;
-import cz.vsb.ekf.lan0116.events.InflictDamageEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.InflictDamageEvent;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.wilderness.Enemy;

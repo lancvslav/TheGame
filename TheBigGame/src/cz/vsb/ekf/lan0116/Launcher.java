@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116;
 
-import cz.vsb.ekf.lan0116.events.EventHandler;
+import cz.vsb.ekf.lan0116.eventsHandling.EventHandler;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.HeroCreationUi;
 import cz.vsb.ekf.lan0116.textUi.TextEvents;

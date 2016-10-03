@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi;
 
 import cz.vsb.ekf.lan0116.combat.Tournament;
-import cz.vsb.ekf.lan0116.events.Event;
-import cz.vsb.ekf.lan0116.events.EventType;
+import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
+import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.wilderness.Enemy;
 

@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi;
 
-import cz.vsb.ekf.lan0116.events.TradeEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.TradeEvent;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
 import cz.vsb.ekf.lan0116.world.buildings.Shop;
 import cz.vsb.ekf.lan0116.world.items.Merchandise;

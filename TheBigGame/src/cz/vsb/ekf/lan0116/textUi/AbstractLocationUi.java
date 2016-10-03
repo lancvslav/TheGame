@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi;
 
-import cz.vsb.ekf.lan0116.events.TravelEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.TravelEvent;
 import cz.vsb.ekf.lan0116.world.Gateway;
 import cz.vsb.ekf.lan0116.world.Location;
 

@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi;
 
-import cz.vsb.ekf.lan0116.events.DropEvent;
-import cz.vsb.ekf.lan0116.events.EquipEvent;
-import cz.vsb.ekf.lan0116.events.EventType;
+import cz.vsb.ekf.lan0116.eventsHandling.events.DropEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.EquipEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 import cz.vsb.ekf.lan0116.world.items.Item;
 
 class InventoryUi extends AbstractUi {
@@ -16,14 +16,14 @@ class InventoryUi extends AbstractUi {
 
     @Override
     public void show() {
-        if (this.getContext().getHero().getInventory().getInventory().isEmpty()) {
+        if (this.getContext().getHero().getInventory().getInventoryList().isEmpty()) {
             System.out.printf("\n%s\n%n", this.get("textUi.InventoryUi.empty"));
             restHeroUi.show();
             return;
         }
         System.out.println();
         int lineCounter = 0;
-        for (Item item : this.getContext().getHero().getInventory().getInventory()) {
+        for (Item item : this.getContext().getHero().getInventory().getInventoryList()) {
             System.out.println((lineCounter++) + " " + this.get(item.getName()));
         }
         System.out.println();
@@ -58,14 +58,14 @@ class InventoryUi extends AbstractUi {
                 System.out.println(
                         this.get("textUi.Inventory.really0") + " " +
                                 this.get(this.getContext().getHero().
-                                        getInventory().getInventory().get(choiceTemp).getName())
+                                        getInventory().getInventoryList().get(choiceTemp).getName())
                                 + this.get("textUi.Inventory.really1"));
                 switch (this.choice(
                         this.get("textUi.menu.yes"),
                         this.get("textUi.menu.no"))) {
                     case 0:
                         this.getContext().getEventHandler().handleEvent(new DropEvent(this.getContext()
-                                .getHero().getInventory().getInventory().get(choiceTemp)));
+                                .getHero().getInventory().getInventoryList().get(choiceTemp)));
                         this.show();
                         break;
                     case 1:
