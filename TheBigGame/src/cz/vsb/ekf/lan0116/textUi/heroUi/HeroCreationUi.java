@@ -11,9 +11,10 @@ import java.util.Scanner;
 public class HeroCreationUi {
 
     /**
-     * Method basically creates a Hero, but has a form of a dialogue with user. Therefore it has text content printed on terminal
+     * Method basically creates a Hero, but has a form of a dialogue with user.
+     * Therefore it has text content printed on terminal
      *
-     * @param scanner
+     * @param scanner Scanner created in main, then loaded
      * @return Returns Hero created from users input
      */
     public static Hero creationOfHero(Scanner scanner, Localization localization) {

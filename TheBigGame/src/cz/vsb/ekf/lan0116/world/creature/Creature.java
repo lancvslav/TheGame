@@ -71,23 +71,5 @@ public abstract class Creature {
         this.vitality = vitality;
     }
 
-//    /**
-//     *
-//     * @param enemy
-//     * @return Damage done
-//     */
-//    public int attacking(Creature enemy) {
-//        int hitPower = this.getAttack();
-//        return enemy.defending(hitPower, defender);
-//    }
-//
-//    public int defending(int hitPower, Creature defender) {
-//        int damageDone = hitPower - this.getDefense();
-//        if (damageDone > 0) {
-//            return damageDone;
-//        } else {
-//            return 0;
-//        }
-//    }
 
 }

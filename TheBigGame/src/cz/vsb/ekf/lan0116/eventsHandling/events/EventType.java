@@ -1,12 +1,13 @@
 package cz.vsb.ekf.lan0116.eventsHandling.events;
 
 public enum EventType {
-    TRAVEL,
+    DROP,
+    EQUIP,
+    FIGHT_ROUND_EVENT,
+    HEAL,
+    INFLICT_DAMAGE,
     NEW_GAME,
     RESPAWN,
     TRADE,
-    DROP,
-    INFLICT_DAMAGE,
-    EQUIP,
-    HEAL,
+    TRAVEL,
 }
