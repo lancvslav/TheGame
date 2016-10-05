@@ -30,15 +30,10 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
     public void show() {
         System.out.println();
         List<Merchandise> merchandiseList = this.getLoc().getMerchandise();
-        int lineCounter = 1;
-        for (Merchandise merchandise : merchandiseList) {
-            System.out.printf("%d %s, cost: %d%n", lineCounter++,
-                    this.get(merchandise.getName()), merchandise.getCost());
-        }
-        System.out.printf("%n%s%n",this.get(TextUtil.quote("shop_offer")));
-        System.out.printf("%s%n",this.get("textUi.MerchandiseUi.decline"));
-        int choice = (Integer.parseInt(this.getContext().getScanner().nextLine()) - 1);
-        if (!(choice >= 0)) {
+        int choice = this.choice(this.listToChoices(merchandiseList));
+        System.out.printf("%n%s%n", this.get(TextUtil.quote("shop_offer")));
+        System.out.printf("%d %s%n", merchandiseList.size() + 1, this.get("textUi.MerchandiseUi.decline"));
+        if (!(choice <= (merchandiseList.size() + 1))) {
             System.out.println(this.get(TextUtil.quote("shop_unhappy")));
             this.travel();
         } else {
