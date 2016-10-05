@@ -21,8 +21,15 @@ public abstract class AbstractUi implements Ui {
      * @return Integer, number representing users choice
      */
     protected int choice(String... choices) {
+        int toNextLine = 80;
         for (int i = 0; i < choices.length; i++) {
-            System.out.println((i) + " " + choices[i]);
+            String lineChoice = (i) + " " + choices[i];
+            if (lineChoice.length() > toNextLine) {
+                System.out.printf("%n");
+                toNextLine = 80;
+            }
+            System.out.println(lineChoice);
+            toNextLine -= lineChoice.length();
         }
         String choice = this.getContext().getScanner().nextLine();
         if (this.getContext().getLocalization().get("textUi.AbstractUi.flee").equals(choice)) {
