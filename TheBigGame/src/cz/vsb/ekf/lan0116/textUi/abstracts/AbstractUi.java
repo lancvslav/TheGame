@@ -33,37 +33,66 @@ public abstract class AbstractUi implements Ui {
         return Integer.parseInt(choice);
     }
 
-    /**
-     * Prints array on line with line folding
-     *
-     * @param values Array of choices to print
-     */
+    //    /**
+//     * Prints array on line with line folding
+//     *
+//     * @param values Array of choices to print
+//     */
+//    protected void printArray(String[] values) {
+//        int toNextLine = 80;
+//        for (int index = 0; index < values.length; index++) {
+//            String value = index + " " + values[index] + "   ";
+//            if (value.length() > toNextLine) {
+//                System.out.printf("%n");
+//                toNextLine = 80;
+//            }
+//            toNextLine -= value.length();
+//            System.out.print(value);
+//        }
+//    }
     protected void printArray(String[] values) {
-        int toNextLine = 80;
+        int max = 0;
+        for (String value : values) {
+            max = ((value.length()) > max) ? value.length() : max;
+        }
+        int column;
+        if (max <= 80 && max > 40) {
+            column = 1;
+        } else if (max <= 40 && max > 27) {
+            column = 2;
+        } else if (max <= 27 && max > 20) {
+            column = 3;
+        } else {
+            column = 4;
+        }
+        int checker = 0;
         for (int index = 0; index < values.length; index++) {
-            String value = index + " " + values[index] + "   ";
-            if (value.length() > toNextLine) {
-                System.out.println("%n");
-                toNextLine = 80;
+            String value = index + " " + values[index];
+            String format = "%-" + (max + 3) + "s";
+            System.out.print("│");
+            System.out.printf(format, value);
+            checker++;
+            if (checker == column) {
+                System.out.printf("%n");
+                checker = 0;
             }
-            toNextLine -= value.length();
-            System.out.print(value);
         }
     }
 
-    /**
-     * Ugly hardcoded method, only use in specific situations. That is why it is protected
-     * Prints list of items, in which first value must have index 1
-     *
-     * @param items List of itemst to print
-     */
-    protected String[] listToChoices(List<Merchandise> items) {
-        String[] choicesArray = new String[items.size() + 1];
-        for (int i = 0; i <= items.size(); i++) {
-            choicesArray[i] = items.get(i).getName();
+
+
+        /**
+         * Convert list to Array of Strings
+         *
+         * @param items List of items to print
+         */
+        protected String[] listToChoices (List < Merchandise > items) {
+            String[] choicesArray = new String[items.size()];
+            for (int i = 0; i < items.size(); i++) {
+                choicesArray[i] = this.get(items.get(i).getName());
+            }
+            return choicesArray;
         }
-        return choicesArray;
-    }
 
     protected String get(String keyFormat) {
         return this.getContext().getLocalization().get(keyFormat);
