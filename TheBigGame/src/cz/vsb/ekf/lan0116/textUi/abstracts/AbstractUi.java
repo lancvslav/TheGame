@@ -1,6 +1,7 @@
 package cz.vsb.ekf.lan0116.textUi.abstracts;
 
 import cz.vsb.ekf.lan0116.textUi.Context;
+import cz.vsb.ekf.lan0116.world.items.Item;
 import cz.vsb.ekf.lan0116.world.items.Merchandise;
 
 import java.util.List;
@@ -55,28 +56,39 @@ public abstract class AbstractUi implements Ui {
         }
         int checker = 0;
         for (int index = 0; index < values.length; index++) {
-            String value = index + " " + values[index];
-            String format = "%-" + (max + 3) + "s";
-            System.out.print("│");
-            System.out.printf(format, value);
-            checker++;
             if (checker == column) {
                 System.out.printf("%n");
                 checker = 0;
             }
+            String value = index + " " + values[index];
+            String format = "%-" + (max + 3) + "s";
+            System.out.print("│");
+            System.out.printf(format, value);
+            System.out.print("│");
+            checker++;
+
         }
     }
 
 
     /**
-     * Convert list to Array of Strings
+     * Convert list of items to Array of Strings
      *
      * @param items List of items to print
+     * @return String[] of names
      */
-    protected String[] listToChoices(List<Merchandise> items) {
+    protected String[] itemsToArray(List<Item> items) {
         String[] choicesArray = new String[items.size()];
         for (int i = 0; i < items.size(); i++) {
             choicesArray[i] = this.get(items.get(i).getName());
+        }
+        return choicesArray;
+    }
+
+    protected String[] merchandiseToArray(List<Merchandise> merchandise) {
+        String[] choicesArray = new String[merchandise.size()];
+        for (int i = 0; i < merchandise.size(); i++) {
+            choicesArray[i] = this.get(merchandise.get(i).getName()) + " " + merchandise.get(i).getCost();
         }
         return choicesArray;
     }

@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.heroUi;
 
+import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.events.DropEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EquipEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
@@ -24,10 +25,9 @@ public class InventoryUi extends AbstractUi {
             return;
         }
         System.out.println();
-        int lineCounter = 0;
-        for (Item item : this.getContext().getHero().getInventory().getInventoryList()) {
-            System.out.println((lineCounter++) + " " + this.get(item.getName()));
-        }
+        this.printArray(itemsToArray(this.getContext().getHero().getInventory().getInventoryList()));
+        System.out.println();
+
         System.out.println();
         switch (this.choice(
                 this.get("textUi.InventoryUi.choice0.inspect"),
@@ -49,10 +49,16 @@ public class InventoryUi extends AbstractUi {
             case 1:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
-                this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
+                Response response = this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
                         this.getContext().getHero().getInventory().getItem(choiceTemp)));
-                System.out.println("You are wielding " +
-                        this.get(this.getContext().getHero().getWeapon().getName()));
+                if (response.isSuccess()) {
+                    System.out.println("You are wielding " +
+                            this.get(this.getContext().getHero().getWeapon().getName()));
+                } else {
+//                    switch (response.getFailureCause().getEventType()){
+                    System.out.println("You are not eligible to wield this weapon.");
+                }
+                this.show();
                 break;
             case 2:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));

@@ -30,7 +30,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
     public void show() {
         System.out.println();
         List<Merchandise> merchandiseList = this.getLoc().getMerchandise();
-        this.printArray(listToChoices(merchandiseList));
+        this.printArray(merchandiseToArray(merchandiseList));
         System.out.printf("%n%s%n", this.get(TextUtil.quote("shop_offer")));
         System.out.printf("%d %s%n", merchandiseList.size(), this.get("textUi.MerchandiseUi.decline"));
         int choice = Integer.parseInt(this.getContext().getScanner().nextLine());
