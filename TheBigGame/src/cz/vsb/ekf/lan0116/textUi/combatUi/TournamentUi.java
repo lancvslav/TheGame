@@ -5,8 +5,6 @@ import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
-import cz.vsb.ekf.lan0116.textUi.combatUi.ArenaUi;
-import cz.vsb.ekf.lan0116.textUi.combatUi.FightUi;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.wilderness.Enemy;
 
@@ -33,12 +31,12 @@ public class TournamentUi extends AbstractLocationUi {
                 break;
             }
             currentEnemy = tournament.getEnemyList().get(enemyId);
-            System.out.printf("\n%s%s%n", this.get("textUi.TournamentUi.next"), this.get(currentEnemy.getName()));
+            System.out.println("\n" + this.get("textUi.TournamentUi.next") + " " + this.get(currentEnemy.getName()));
             switch (this.choice(
                     this.get("texUi.TournamentUi.flee"),
                     this.get("texUi.TournamentUi.proceed"))) {
                 case 0:
-                    System.out.printf("\n%s%n", this.get("texUi.TournamentUi.coward"));
+                    System.out.println("\n" + this.get("texUi.TournamentUi.coward"));
                     this.travel();
                     return;
             }

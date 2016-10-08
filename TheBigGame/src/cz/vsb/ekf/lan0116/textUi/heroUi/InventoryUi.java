@@ -4,6 +4,7 @@ import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.events.DropEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EquipEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
+import cz.vsb.ekf.lan0116.eventsHandling.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractUi;
 import cz.vsb.ekf.lan0116.world.items.Item;
@@ -55,8 +56,15 @@ public class InventoryUi extends AbstractUi {
                     System.out.println("You are wielding " +
                             this.get(this.getContext().getHero().getWeapon().getName()));
                 } else {
-//                    switch (response.getFailureCause().getEventType()){
-                    System.out.println("You are not eligible to wield this weapon.");
+                    EquipFailure failureCause = (EquipFailure) response.getFailureCause();
+                    switch (failureCause) {
+                        case CLAZZ_DIFF:
+                            System.out.println("You are not eligible to wield this weapon.");
+                            break;
+                        case NOT_A_WEAPON:
+                            System.out.println("What you are trying to equip is not a weapon. Either you have odd " +
+                                    "sense of humor, or you just gone mad.");
+                    }
                 }
                 this.show();
                 break;

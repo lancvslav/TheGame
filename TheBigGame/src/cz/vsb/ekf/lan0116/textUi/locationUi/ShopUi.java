@@ -27,9 +27,10 @@ public class ShopUi extends AbstractLocationUi<Shop> {
     @Override
     public void show() {
         //You are at
-        System.out.printf("\n%s %s%n", this.get(TextUtil.quote("current_location")), this.get(this.getLoc().getName()));
+        System.out.println("\n" + this.get(TextUtil.quote("current_location"))
+                + " " + this.get(this.getLoc().getName()));
 
-        System.out.printf("%s%n", this.get("textUi.ShopUi.doors"));
+        System.out.println(this.get("textUi.ShopUi.doors"));
         for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
             System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
         }

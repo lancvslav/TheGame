@@ -20,7 +20,7 @@ public class ArenaUi extends AbstractLocationUi {
 
     @Override
     public void show() {
-        System.out.printf("\n%s\n%n", this.get("textUi.ArenaUi.welcome"));
+        System.out.println("\n" + this.get("textUi.ArenaUi.welcome"));
         System.out.println(this.get("textUi.ArenaUi.tournament_selection"));
         switch (this.choice(
                 this.get("textUi.ArenaUi.back"),
@@ -29,7 +29,7 @@ public class ArenaUi extends AbstractLocationUi {
                 this.travel();
                 break;
             case 1:
-                System.out.printf("\n%s%n", this.get("textUi.ArenaUi.entered_tournament"));
+                System.out.println("\n"+ this.get("textUi.ArenaUi.entered_tournament"));
                 switch (this.choice(
                         this.get("textUi.ArenaUi.tournament0"),
                         this.get("textUi.ArenaUi.tournament1")//,

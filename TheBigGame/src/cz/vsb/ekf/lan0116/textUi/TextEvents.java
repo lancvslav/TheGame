@@ -14,7 +14,7 @@ public class TextEvents {
 
     public void playGame() {
         context.getEventHandler().handleEvent(new Event(EventType.NEW_GAME));
-        System.out.printf("%s\n%n", this.context.getLocalization().get("textUi.textEvents.flee"));
+        System.out.println(this.context.getLocalization().get("textUi.textEvents.flee") + "\n\n");
         LocationUi locUi = new LocationUi(context);
         while (true) {
             locUi.show();

@@ -21,15 +21,15 @@ public class HeroCreationUi {
 
 //        TextUtil.newGame(localization);
         String nameOfHero;
-        System.out.printf("%s%n", localization.get("textUi.HeroCreationUi.name0"));
+        System.out.println(localization.get("textUi.HeroCreationUi.name0"));
         while (true) {
             nameOfHero = scanner.nextLine();
             if (!((nameOfHero == null) || (nameOfHero.equals("")))) {
                 break;
             }
-            System.out.println(localization.get("textUi.HeroCreationUi.name1")+"\n");
+            System.out.println(localization.get("textUi.HeroCreationUi.name1") + "\n");
         }
-        System.out.printf("\n%s %s\n%n", localization.get("textUi.HeroCreationUi.pleasure"), nameOfHero);
+        System.out.println("\n" + localization.get("textUi.HeroCreationUi.pleasure") + "\n" + nameOfHero);
         Hero hero = null;
         while (hero == null) {
             printClasses(localization);
@@ -38,15 +38,15 @@ public class HeroCreationUi {
             switch (tempChoiceNumber) {
                 case 0:
                     hero = new Warrior(nameOfHero);
-                    System.out.printf("\n%s\n%n", hero.toString());
+                    System.out.println("\n"+ hero.toString()+"\n");
                     break;
                 case 1:
                     hero = new Ranger(nameOfHero);
-                    System.out.printf("\n%s\n%n", hero.toString());
+                    System.out.println("\n"+ hero.toString()+"\n");;
                     break;
                 case 2:
                     hero = new Sorcerer(nameOfHero);
-                    System.out.printf("\n%s\n%n", hero.toString());
+                    System.out.println("\n"+ hero.toString()+"\n");
                     break;
             }
         }
@@ -57,7 +57,7 @@ public class HeroCreationUi {
      * Prints text variety of hero's classes to select
      */
     public static void printClasses(Localization localization) {
-        System.out.println(localization.get("textUi.HeroCreationUi.kind_of_man")+"\n");
+        System.out.println(localization.get("textUi.HeroCreationUi.kind_of_man") + "\n");
         System.out.println(localization.get("textUi.HeroCreationUi.warrior"));
         System.out.println(localization.get("textUi.HeroCreationUi.ranger"));
         System.out.println(localization.get("textUi.HeroCreationUi.sorcerer"));

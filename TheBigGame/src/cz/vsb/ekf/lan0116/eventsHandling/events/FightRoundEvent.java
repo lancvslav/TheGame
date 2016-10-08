@@ -15,6 +15,8 @@ public class FightRoundEvent extends Event {
         this.defender = defender;
         this.attackersHit = this.attackersHit();
         this.counterHit = this.counterHit();
+        this.inflict(defender, attackersHit);
+        this.inflict(attacker,counterHit);
     }
 
     public Creature getAttacker() {
@@ -54,6 +56,10 @@ public class FightRoundEvent extends Event {
         } else {
             return 0;
         }
+    }
+
+    private void inflict(Creature creature, float dmg) {
+        creature.setCurrentHp(creature.getCurrentHp() - dmg);
     }
 
 //    private void handleAttack(Creature creature){

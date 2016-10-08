@@ -25,7 +25,7 @@ public class RestHeroUi extends AbstractUi {
                 inventoryUi.show();
                 break;
             case 1:
-                System.out.printf("%s\n%n", this.get("textUi.RestHeroUi.starve"));
+                System.out.println("\n" + this.get("textUi.RestHeroUi.starve"));
                 this.show();
                 break;
             case 2:

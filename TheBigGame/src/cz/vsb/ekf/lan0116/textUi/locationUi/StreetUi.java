@@ -16,7 +16,8 @@ class StreetUi extends AbstractLocationUi<Street> {
 
     @Override
     public void show() {
-        System.out.printf("\n%s %s%n", this.get(TextUtil.quote("current_location")), this.get(this.getLoc().getName()));
+        System.out.println("\n" + this.get(TextUtil.quote("current_location"))
+                + " " + this.get(this.getLoc().getName()));
         System.out.println(this.get("textUi.StreetUi.paths"));
         for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
             System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));

@@ -157,7 +157,7 @@ textUi.RestHeroUi.consume;Consume
 textUi.RestHeroUi.getUp;Get up
 textUi.RestHeroUi.inventory;Inventory
 textUi.RestHeroUi.starve;It looks like you will starve to death.
-textUi.ShopUi.ask;Ask shop keeper what he has to offer
+textUi.ShopUi.ask;Buy
 textUi.ShopUi.doors;Doors you see lead to:
 textUi.ShopUi.leave;Leave this place
 textUi.StreetUi.paths;Paths you can take lead to:

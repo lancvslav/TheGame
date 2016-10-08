@@ -26,7 +26,7 @@ public abstract class AbstractUi implements Ui {
      */
     protected int choice(String... choices) {
         this.printArray(choices);
-        System.out.printf("%n");
+        System.out.println();
         String choice = this.getContext().getScanner().nextLine();
         if (this.getContext().getLocalization().get("textUi.AbstractUi.flee").equals(choice)) {
             throw new RuntimeException(this.get("textUi.AbstractUi.fled") + "\n");
@@ -40,33 +40,11 @@ public abstract class AbstractUi implements Ui {
      * @param values Array of choices to print
      */
     protected void printArray(String[] values) {
-        int max = 0;
-        for (String value : values) {
-            max = ((value.length()) > max) ? value.length() : max;
-        }
-        int column;
-        if (max <= 80 && max > 40) {
-            column = 1;
-        } else if (max <= 40 && max > 27) {
-            column = 2;
-        } else if (max <= 27 && max > 20) {
-            column = 3;
-        } else {
-            column = 4;
-        }
-        int checker = 0;
-        for (int index = 0; index < values.length; index++) {
-            if (checker == column) {
-                System.out.printf("%n");
-                checker = 0;
-            }
-            String value = index + " " + values[index];
-            String format = "%-" + (max + 3) + "s";
-            System.out.print("│");
-            System.out.printf(format, value);
-            System.out.print("│");
-            checker++;
-
+        int oneLine = 27;
+        for (int index = 0, column = 0; index < values.length; index++, column++) {
+            if (column % 3 == 0) System.out.println();
+            System.out.printf("%2d %-24s", index, values[index]);
+            if (!(index % 3 == 2)) System.out.print("|");
         }
     }
 

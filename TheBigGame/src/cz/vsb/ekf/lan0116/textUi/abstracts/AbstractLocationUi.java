@@ -20,7 +20,7 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
      */
     protected void travel() {
         Location loc = getContext().getHero().getPosition();
-        System.out.printf("\n%s%n", this.get("textUi.AbstractLocationUi.where"));
+        System.out.print("\n" + this.get("textUi.AbstractLocationUi.where"));
         int choice = this.choice(loc.getGateways().stream()
                 .map(Gateway::getTarget)//RETURNS Location LINKED TO CURRENT ONE
                 .map(Location::getName)//RETURNS String name OF COLLECTED Location
@@ -29,7 +29,8 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
         if (choice >= 0 && choice < loc.getGateways().size()) {//CHECKING IF USER SELECTED CHOICE FROM OFFERED ONES
             this.getContext().getEventHandler().handleEvent(new TravelEvent(loc.getGateways().get(choice)));
         } else {
-            System.out.printf("%s\n%n", this.get("textUi.AbstractLocationUi.you_hit"));
+            System.out.println("\n" + this.get("textUi.AbstractLocationUi.you_hit"));
+            this.travel();
         }
     }
 
