@@ -46,6 +46,7 @@ public class ShopUi extends AbstractLocationUi<Shop> {
             case 1:
                 restHeroUi = new RestHeroUi(getContext());
                 restHeroUi.show();
+                break;
             case 2:
                 this.travel();
                 break;

@@ -5,6 +5,7 @@ import cz.vsb.ekf.lan0116.eventsHandling.events.DropEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EquipEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.EquipFailure;
+import cz.vsb.ekf.lan0116.eventsHandling.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractUi;
 import cz.vsb.ekf.lan0116.world.items.Item;
@@ -50,13 +51,13 @@ public class InventoryUi extends AbstractUi {
             case 1:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
-                Response response = this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
+                Response responseEquip = this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
                         this.getContext().getHero().getInventory().getItem(choiceTemp)));
-                if (response.isSuccess()) {
+                if (responseEquip.isSuccess()) {
                     System.out.println("You are wielding " +
                             this.get(this.getContext().getHero().getWeapon().getName()));
                 } else {
-                    EquipFailure failureCause = (EquipFailure) response.getFailureCause();
+                    EquipFailure failureCause = (EquipFailure) responseEquip.getFailureCause();
                     switch (failureCause) {
                         case CLAZZ_DIFF:
                             System.out.println("You are not eligible to wield this weapon.");
@@ -64,6 +65,7 @@ public class InventoryUi extends AbstractUi {
                         case NOT_A_WEAPON:
                             System.out.println("What you are trying to equip is not a weapon. Either you have odd " +
                                     "sense of humor, or you just gone mad.");
+                            break;
                     }
                 }
                 this.show();
@@ -80,8 +82,19 @@ public class InventoryUi extends AbstractUi {
                         this.get("textUi.menu.yes"),
                         this.get("textUi.menu.no"))) {
                     case 0:
-                        this.getContext().getEventHandler().handleEvent(new DropEvent(this.getContext()
-                                .getHero().getInventory().getInventoryList().get(choiceTemp)));
+                        Response responseDrop = this.getContext().getEventHandler()
+                                .handleEvent(new DropEvent(this.getContext()
+                                        .getHero().getInventory().getInventoryList().get(choiceTemp)));
+                        if (responseDrop.isSuccess()) {
+                            System.out.println("What is done, can not be undone.");
+                        } else {
+                            InventoryFailure failureCause = (InventoryFailure) responseDrop.getFailureCause();
+                            switch (failureCause) {
+                                case NOT_IN_INVENTORY:
+                                    System.out.println("Cant drop what you do not own.");
+                                    break;
+                            }
+                        }
                         this.show();
                         break;
                     case 1:

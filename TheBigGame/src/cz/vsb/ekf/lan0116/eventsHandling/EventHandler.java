@@ -31,6 +31,9 @@ public class EventHandler {
                 return Response.SUCCESS;
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
+            case FIGHT_ROUND_EVENT:
+                FightRoundEvent fightRoundEvent = (FightRoundEvent) event;
+                return
             case INFLICT_DAMAGE:
                 InflictDamageEvent inflictDamageEvent = (InflictDamageEvent) event;
                 float currentHp = inflictDamageEvent.getCreature().getCurrentHp();

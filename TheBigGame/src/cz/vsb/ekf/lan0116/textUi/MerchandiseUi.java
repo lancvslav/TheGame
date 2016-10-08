@@ -41,16 +41,18 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
             this.travel();
         } else {
             Merchandise merchandiseToPurchase = ListManageUtil.getMerchandise(merchandiseList, choice);
-            Response response = this.getContext().getEventHandler().handleEvent(new TradeEvent(merchandiseToPurchase));
-            if (response.isSuccess()) {
+            Response responseTrade = this.getContext().getEventHandler()
+                    .handleEvent(new TradeEvent(merchandiseToPurchase));
+            if (responseTrade.isSuccess()) {
                 System.out.println(this.getContext().getLocalization().get(merchandiseToPurchase.getName()) + " " +
                         this.get("textUi.MerchandiseUi.purchased"));
             } else {
-                TradeFailure failureCause = (TradeFailure) response.getFailureCause();
+                TradeFailure failureCause = (TradeFailure) responseTrade.getFailureCause();
                 switch (failureCause){
                     case NOT_ENOUGH_GOLD:
                         System.out.println("Not enough gold.");
                         this.show();
+                        break;
                 }
             }
             locationUi.show();
