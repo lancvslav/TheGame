@@ -32,8 +32,7 @@ public class EventHandler {
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
             case FIGHT_ROUND_EVENT:
-                FightRoundEvent fightRoundEvent = (FightRoundEvent) event;
-                return
+
             case INFLICT_DAMAGE:
                 InflictDamageEvent inflictDamageEvent = (InflictDamageEvent) event;
                 float currentHp = inflictDamageEvent.getCreature().getCurrentHp();
@@ -71,7 +70,7 @@ public class EventHandler {
 
     private Response handleEquipEvent(EquipEvent equipEvent) {
         Item itemToEquip = equipEvent.getItemToEquip();
-        if(!hero.getInventory().getInventoryList().contains(itemToEquip)){
+        if (!hero.getInventory().getInventoryList().contains(itemToEquip)) {
             return new Response(InventoryFailure.NOT_IN_INVENTORY);
         }
         switch (itemToEquip.getItemType().getSuperType()) {
