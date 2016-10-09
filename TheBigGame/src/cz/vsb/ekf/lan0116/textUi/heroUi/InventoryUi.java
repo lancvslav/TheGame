@@ -54,17 +54,16 @@ public class InventoryUi extends AbstractUi {
                 Response responseEquip = this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
                         this.getContext().getHero().getInventory().getItem(choiceTemp)));
                 if (responseEquip.isSuccess()) {
-                    System.out.println("You are wielding " +
+                    System.out.println(this.get("textUi.InventoryUi.wielding") + " " +
                             this.get(this.getContext().getHero().getWeapon().getName()));
                 } else {
                     EquipFailure failureCause = (EquipFailure) responseEquip.getFailureCause();
                     switch (failureCause) {
                         case CLAZZ_DIFF:
-                            System.out.println("You are not eligible to wield this weapon.");
+                            System.out.println(this.get("textUi.InventoryUi.not_eligible"));
                             break;
                         case NOT_A_WEAPON:
-                            System.out.println("What you are trying to equip is not a weapon. Either you have odd " +
-                                    "sense of humor, or you just gone mad.");
+                            System.out.println(this.get("textUi.InventoryUi.not_a_weapon"));
                             break;
                     }
                 }
@@ -74,10 +73,10 @@ public class InventoryUi extends AbstractUi {
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
                 System.out.println(
-                        this.get("textUi.Inventory.really0") + " " +
+                        this.get("textUi.InventoryUi.really0") + " " +
                                 this.get(this.getContext().getHero().
                                         getInventory().getInventoryList().get(choiceTemp).getName())
-                                + this.get("textUi.Inventory.really1"));
+                                + this.get("textUi.InventoryUi.really1"));
                 switch (this.choice(
                         this.get("textUi.menu.yes"),
                         this.get("textUi.menu.no"))) {
@@ -86,12 +85,12 @@ public class InventoryUi extends AbstractUi {
                                 .handleEvent(new DropEvent(this.getContext()
                                         .getHero().getInventory().getInventoryList().get(choiceTemp)));
                         if (responseDrop.isSuccess()) {
-                            System.out.println("What is done, can not be undone.");
+                            System.out.println(this.get("textUi.InventoryUi.dropped"));
                         } else {
                             InventoryFailure failureCause = (InventoryFailure) responseDrop.getFailureCause();
                             switch (failureCause) {
                                 case NOT_IN_INVENTORY:
-                                    System.out.println("Cant drop what you do not own.");
+                                    System.out.println(this.get("textUi.InventoryUi.not_in_inventory"));
                                     break;
                             }
                         }
