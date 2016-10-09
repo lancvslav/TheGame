@@ -118,21 +118,20 @@ textUi.HeroCreationUi.pleasure;Pleasure to meet thee,
 textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, higher damage done, but not as vital as warrior.
 textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
 textUi.HeroCreationUi.warrior;0. Brave warrior. High vitality and endurance, but lower damage. Able to wield shield.
-textUi.InventoryUi.really0;Do you really wan't to drop
-textUi.InventoryUi.wielding;You are wielding
-textUi.InventoryUi.not_eligible;You are not eligible to wield this weapon.
-textUi.InventoryUi.not_a_weapon;What you are trying to equip is not a weapon. Either you have odd sense of humor, or you just gone mad.
-textUi.InventoryUi.dropped;What is done, can not be undone.
-textUi.InventoryUi.not_in_inventory;Cant drop what you do not own.
-textUi.MerchandiseUi.not_enough_gold;Not enough gold.
-textUi.InventoryUi.really1;? You will not be able to recover it.
 textUi.InventoryUi.don't_own;You do not own this item.
+textUi.InventoryUi.dropped;What is done, can not be undone.
 textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.
 textUi.InventoryUi.choice0.inspect;Inspect item
 textUi.InventoryUi.choice1.equip;Equip
 textUi.InventoryUi.choice2.drop;Drop item
 textUi.InventoryUi.choice3.close;Close inventory
+textUi.InventoryUi.not_a_weapon;What you are trying to equip is not a weapon. Either you have odd sense of humor, or you just gone mad.
+textUi.InventoryUi.not_eligible;You are not eligible to wield this weapon.
+textUi.InventoryUi.not_in_inventory;Cant drop what you do not own.
+textUi.InventoryUi.really0;Do you really wan't to drop
+textUi.InventoryUi.really1;? You will not be able to recover it.
 textUi.InventoryUi.which_one;Which one?
+textUi.InventoryUi.wielding;You are wielding
 textUi.loation_decision0;Would you rather
 textUi.loation_decision1;Do you want to
 textUi.loation_decision2;Well? What is the plan?
@@ -144,6 +143,7 @@ textUi.menu.somewhere;Go somewhere else
 textUi.menu.trouble;Look for some trouble
 textUi.menu.yes;Yes
 textUi.MerchandiseUi.decline;Decline offers and leave
+textUi.MerchandiseUi.not_enough_gold;Not enough gold.
 textUi.MerchandiseUi.purchased;purchased!
 textUi.MerchandiseUi.shop_happy0;It's a pleasure doing business with yer.
 textUi.MerchandiseUi.shop_happy1;Do come again.
