@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.eventsHandling.events;
 
-import cz.vsb.ekf.lan0116.eventsHandling.EventHandler;
+import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.EventHandlerMain;
 import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.FightFailure;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
@@ -11,16 +11,16 @@ public class FightRoundEvent extends Event {
     private final Creature defender;
     private final float attackersHit;
     private final float counterHit;
-    private final EventHandler eventHandler;
+    private final EventHandlerMain eventHandlerMain;
     private final Response responseFifhtRound;
 
-    public FightRoundEvent(EventType type, Creature attacker, Creature defender, EventHandler eventHandler) {
+    public FightRoundEvent(EventType type, Creature attacker, Creature defender, EventHandlerMain eventHandlerMain) {
         super(EventType.FIGHT_ROUND_EVENT);
         this.attacker = attacker;
         this.defender = defender;
         this.attackersHit = this.attackersHit();
         this.counterHit = this.counterHit();
-        this.eventHandler = eventHandler;
+        this.eventHandlerMain = eventHandlerMain;
         if (inflict(defender, attackersHit).isSuccess() && inflict(attacker, counterHit).isSuccess()) {
             this.responseFifhtRound = new Response();
         } else {
@@ -72,7 +72,7 @@ public class FightRoundEvent extends Event {
     }
 
     private Response inflict(Creature creature, float dmg) {
-        return this.eventHandler.handleEvent(new InflictDamageEvent(creature, dmg));
+        return this.eventHandlerMain.handleEvent(new InflictDamageEvent(creature, dmg));
     }
 
 //    private void handleAttack(Creature creature){

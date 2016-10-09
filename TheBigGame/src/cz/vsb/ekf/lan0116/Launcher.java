@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116;
 
-import cz.vsb.ekf.lan0116.eventsHandling.EventHandler;
+import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.EventHandlerMain;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.heroUi.HeroCreationUi;
 import cz.vsb.ekf.lan0116.textUi.TextEvents;
@@ -20,8 +20,8 @@ public class Launcher {
                 (ResourceUtil.getResource(ResourceType.LOCALIZATION, "localization"));
         Scanner scanner = new Scanner(System.in, "UTF-8");
         Hero hero = HeroCreationUi.creationOfHero(scanner, localization);
-        EventHandler eventHandler = new EventHandler(hero, world);
-        Context context = new Context(eventHandler, hero, world, scanner, localization);
+        EventHandlerMain eventHandlerMain = new EventHandlerMain(hero, world);
+        Context context = new Context(eventHandlerMain, hero, world, scanner, localization);
         TextEvents textEvents = new TextEvents(context);
         textEvents.playGame();
     }

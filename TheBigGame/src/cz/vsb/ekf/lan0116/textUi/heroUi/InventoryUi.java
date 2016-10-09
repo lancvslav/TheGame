@@ -51,7 +51,7 @@ public class InventoryUi extends AbstractUi {
             case 1:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
-                Response responseEquip = this.getContext().getEventHandler().handleEvent(new EquipEvent(EventType.EQUIP,
+                Response responseEquip = this.getContext().getEventHandlerMain().handleEvent(new EquipEvent(EventType.EQUIP,
                         this.getContext().getHero().getInventory().getItem(choiceTemp)));
                 if (responseEquip.isSuccess()) {
                     System.out.println("You are wielding " +
@@ -82,7 +82,7 @@ public class InventoryUi extends AbstractUi {
                         this.get("textUi.menu.yes"),
                         this.get("textUi.menu.no"))) {
                     case 0:
-                        Response responseDrop = this.getContext().getEventHandler()
+                        Response responseDrop = this.getContext().getEventHandlerMain()
                                 .handleEvent(new DropEvent(this.getContext()
                                         .getHero().getInventory().getInventoryList().get(choiceTemp)));
                         if (responseDrop.isSuccess()) {

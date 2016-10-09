@@ -1,5 +1,6 @@
-package cz.vsb.ekf.lan0116.eventsHandling;
+package cz.vsb.ekf.lan0116.eventsHandling.eventHandler;
 
+import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.events.*;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.InventoryFailure;
@@ -10,12 +11,12 @@ import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.items.Item;
 import cz.vsb.ekf.lan0116.world.items.Weapon;
 
-public class EventHandler {
+public class EventHandlerMain implements EventHandler{
 
     private final Hero hero;
     private final World world;
 
-    public EventHandler(Hero hero, World world) {
+    public EventHandlerMain(Hero hero, World world) {
         this.hero = hero;
         this.world = world;
     }

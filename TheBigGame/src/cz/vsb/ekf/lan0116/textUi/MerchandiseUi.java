@@ -41,7 +41,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
             this.travel();
         } else {
             Merchandise merchandiseToPurchase = ListManageUtil.getMerchandise(merchandiseList, choice);
-            Response responseTrade = this.getContext().getEventHandler()
+            Response responseTrade = this.getContext().getEventHandlerMain()
                     .handleEvent(new TradeEvent(merchandiseToPurchase));
             if (responseTrade.isSuccess()) {
                 System.out.println(this.getContext().getLocalization().get(merchandiseToPurchase.getName()) + " " +
