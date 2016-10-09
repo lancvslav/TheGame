@@ -118,8 +118,14 @@ textUi.HeroCreationUi.pleasure;Pleasure to meet thee,
 textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, higher damage done, but not as vital as warrior.
 textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
 textUi.HeroCreationUi.warrior;0. Brave warrior. High vitality and endurance, but lower damage. Able to wield shield.
-textUi.Inventory.really0;Do you really wan't to drop
-textUi.Inventory.really1;? You will not be able to recover it.
+textUi.InventoryUi.really0;Do you really wan't to drop
+textUi.InventoryUi.wielding;You are wielding
+textUi.InventoryUi.not_eligible;You are not eligible to wield this weapon.
+textUi.InventoryUi.not_a_weapon;What you are trying to equip is not a weapon. Either you have odd sense of humor, or you just gone mad.
+textUi.InventoryUi.dropped;What is done, can not be undone.
+textUi.InventoryUi.not_in_inventory;Cant drop what you do not own.
+textUi.MerchandiseUi.not_enough_gold;Not enough gold.
+textUi.InventoryUi.really1;? You will not be able to recover it.
 textUi.InventoryUi.don't_own;You do not own this item.
 textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.
 textUi.InventoryUi.choice0.inspect;Inspect item
