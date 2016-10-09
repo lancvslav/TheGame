@@ -3,8 +3,9 @@ package cz.vsb.ekf.lan0116.eventsHandling.eventHandler;
 import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 
-public interface EventHandler {
-
-    <R extends Response> R handleEvent(Event<R> Event);
-
+public class EventHandlerTop implements EventHandler {
+    @Override
+    public Response handleEvent(Event event) {
+        return null;
+    }
 }

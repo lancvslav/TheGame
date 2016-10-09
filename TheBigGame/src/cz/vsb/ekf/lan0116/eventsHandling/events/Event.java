@@ -1,15 +1,10 @@
 package cz.vsb.ekf.lan0116.eventsHandling.events;
 
-public class Event {
+import cz.vsb.ekf.lan0116.eventsHandling.Response;
 
-    private EventType type;
+public interface Event<R extends Response> {
 
-    public Event(EventType type) {
-        this.type = type;
-    }
+    EventType getType();
 
-    public EventType getType() {
-        return type;
-    }
-
+    Class<R> getResponseType();
 }

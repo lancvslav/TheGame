@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.FightFailure;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
-public class FightRoundEvent extends Event {
+public class FightRoundEvent implements Event {
 
     private final Creature attacker;
     private final Creature defender;
@@ -15,8 +15,7 @@ public class FightRoundEvent extends Event {
     private final Response responseFifhtRound;
 
     public FightRoundEvent(EventType type, Creature attacker, Creature defender, EventHandlerMain eventHandlerMain) {
-        super(EventType.FIGHT_ROUND_EVENT);
-        this.attacker = attacker;
+                this.attacker = attacker;
         this.defender = defender;
         this.attackersHit = this.attackersHit();
         this.counterHit = this.counterHit();
@@ -73,6 +72,16 @@ public class FightRoundEvent extends Event {
 
     private Response inflict(Creature creature, float dmg) {
         return this.eventHandlerMain.handleEvent(new InflictDamageEvent(creature, dmg));
+    }
+
+    @Override
+    public EventType getType() {
+        return EventType.FIGHT_ROUND_EVENT;
+    }
+
+    @Override
+    public Class getResponseType() {
+        return null;
     }
 
 //    private void handleAttack(Creature creature){
