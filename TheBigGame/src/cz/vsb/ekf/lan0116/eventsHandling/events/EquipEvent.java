@@ -14,4 +14,14 @@ public class EquipEvent extends Event {
     public Item getItemToEquip() {
         return weaponToEquip;
     }
+
+    @Override
+    public EventType getType() {
+        return null;
+    }
+
+    @Override
+    public Class getResponseType() {
+        return null;
+    }
 }
