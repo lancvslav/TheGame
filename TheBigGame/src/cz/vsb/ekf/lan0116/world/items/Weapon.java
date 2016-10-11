@@ -1,5 +1,7 @@
 package cz.vsb.ekf.lan0116.world.items;
 
+import cz.vsb.ekf.lan0116.world.items.type.WeaponType;
+
 public class Weapon extends Merchandise {
 
     private final int damage;

@@ -13,7 +13,7 @@ public class TextEvents {
     }
 
     public void playGame() {
-        context.getEventHandlerMain().handleEvent(new Event(EventType.NEW_GAME));
+        context.getChannelGame().handleEvent(new Event(EventType.NEW_GAME));
         System.out.println(this.context.getLocalization().get("textUi.textEvents.flee") + "\n\n");
         LocationUi locUi = new LocationUi(context);
         while (true) {

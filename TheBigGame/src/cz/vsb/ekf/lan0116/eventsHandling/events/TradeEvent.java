@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.world.items.Merchandise;
 
 import java.util.List;
 
-public class TradeEvent implements Event {
+public class TradeEvent implements EventTypeInterface {
 
     private final Merchandise merchandise;
 
@@ -22,12 +22,7 @@ public class TradeEvent implements Event {
     }
 
     @Override
-    public EventType getType() {
-        return EventType.TRADE;
-    }
-
-    @Override
-    public Class getResponseType() {
-        return null;
+    public EventSuperType getEventSuperType() {
+        return EventSuperType.HERO_EVENT;
     }
 }

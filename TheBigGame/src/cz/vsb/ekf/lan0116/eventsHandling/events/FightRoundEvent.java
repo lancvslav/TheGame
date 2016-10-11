@@ -1,25 +1,25 @@
 package cz.vsb.ekf.lan0116.eventsHandling.events;
 
-import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.EventHandlerMain;
+import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.ChannelGame;
 import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.FightFailure;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
-public class FightRoundEvent implements Event {
+public class FightRoundEvent implements EventTypeInterface {
 
     private final Creature attacker;
     private final Creature defender;
     private final float attackersHit;
     private final float counterHit;
-    private final EventHandlerMain eventHandlerMain;
+    private final ChannelGame channelGame;
     private final Response responseFifhtRound;
 
-    public FightRoundEvent(EventType type, Creature attacker, Creature defender, EventHandlerMain eventHandlerMain) {
+    public FightRoundEvent(EventType type, Creature attacker, Creature defender, ChannelGame channelGame) {
                 this.attacker = attacker;
         this.defender = defender;
         this.attackersHit = this.attackersHit();
         this.counterHit = this.counterHit();
-        this.eventHandlerMain = eventHandlerMain;
+        this.channelGame = channelGame;
         if (inflict(defender, attackersHit).isSuccess() && inflict(attacker, counterHit).isSuccess()) {
             this.responseFifhtRound = new Response();
         } else {
@@ -70,25 +70,13 @@ public class FightRoundEvent implements Event {
         }
     }
 
-    private Response inflict(Creature creature, float dmg) {
-        return this.eventHandlerMain.handleEvent(new InflictDamageEvent(creature, dmg));
-    }
-
-    @Override
-    public EventType getType() {
-        return EventType.FIGHT_ROUND_EVENT;
-    }
-
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
-
-//    private void handleAttack(Creature creature){
-//        switch (creature.getAttack()){
-//
-//        }
-//
+//    private Response inflict(Creature creature, float dmg) {
+//        return this.channelGame.handleEvent(new InflictDamageEvent(creature, dmg));
 //    }
 
+
+    @Override
+    public EventSuperType getEventSuperType() {
+        return EventSuperType.FIGHT_EVENT;
+    }
 }

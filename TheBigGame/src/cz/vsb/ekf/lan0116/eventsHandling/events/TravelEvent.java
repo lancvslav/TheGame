@@ -2,12 +2,11 @@ package cz.vsb.ekf.lan0116.eventsHandling.events;
 
 import cz.vsb.ekf.lan0116.world.Gateway;
 
-public class TravelEvent extends Event {
+public class TravelEvent implements EventTypeInterface {
 
     private final Gateway gateway;
 
     public TravelEvent(Gateway gateway) {
-        super(EventType.TRAVEL);
         this.gateway = gateway;
     }
 
@@ -15,4 +14,8 @@ public class TravelEvent extends Event {
         return gateway;
     }
 
+    @Override
+    public EventSuperType getEventSuperType() {
+        return EventSuperType.HERO_EVENT;
+    }
 }

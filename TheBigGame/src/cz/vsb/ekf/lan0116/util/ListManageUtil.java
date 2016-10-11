@@ -2,8 +2,8 @@ package cz.vsb.ekf.lan0116.util;
 
 import cz.vsb.ekf.lan0116.combat.Attacks;
 import cz.vsb.ekf.lan0116.world.items.Merchandise;
+import cz.vsb.ekf.lan0116.world.items.type.WeaponType;
 import cz.vsb.ekf.lan0116.world.items.Weapon;
-import cz.vsb.ekf.lan0116.world.items.WeaponType;
 import cz.vsb.ekf.lan0116.world.wilderness.Enemy;
 
 import java.util.ArrayList;

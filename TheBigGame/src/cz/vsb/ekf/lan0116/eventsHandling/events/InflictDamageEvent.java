@@ -2,13 +2,12 @@ package cz.vsb.ekf.lan0116.eventsHandling.events;
 
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
-public class InflictDamageEvent extends Event {
+public class InflictDamageEvent implements EventTypeInterface {
 
     public final Creature creature;
     private float damage;
 
     public InflictDamageEvent(Creature creature, float damage) {
-        super(EventType.INFLICT_DAMAGE);
         this.creature = creature;
         this.damage = damage;
     }
@@ -23,5 +22,10 @@ public class InflictDamageEvent extends Event {
 
     void setDamage(float damage) {
         this.damage = damage;
+    }
+
+    @Override
+    public EventSuperType getEventSuperType() {
+        return EventSuperType.FIGHT_EVENT;
     }
 }
