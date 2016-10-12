@@ -1,11 +1,13 @@
-package cz.vsb.ekf.lan0116.eventsHandling.events;
+package cz.vsb.ekf.lan0116.eventsHandling.events.hero;
 
+import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
+import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
 import cz.vsb.ekf.lan0116.world.items.Merchandise;
 
 import java.util.List;
 
-public class TradeEvent implements EventTypeInterface {
+public class TradeEvent implements Event {
 
     private final Merchandise merchandise;
 
@@ -22,7 +24,12 @@ public class TradeEvent implements EventTypeInterface {
     }
 
     @Override
-    public EventSuperType getEventSuperType() {
+    public EventSuperType getSuperType() {
         return EventSuperType.HERO_EVENT;
+    }
+
+    @Override
+    public Class getResponseType() {
+        return null;
     }
 }

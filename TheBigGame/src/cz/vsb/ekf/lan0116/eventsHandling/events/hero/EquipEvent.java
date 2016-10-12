@@ -1,11 +1,11 @@
 package cz.vsb.ekf.lan0116.eventsHandling.events.hero;
 
+import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
-import cz.vsb.ekf.lan0116.eventsHandling.events.EventTypeInterface;
 import cz.vsb.ekf.lan0116.world.items.Item;
 
-public class EquipEvent implements EventTypeInterface {
+public class EquipEvent implements Event {
 
     private final Item weaponToEquip;
 
@@ -17,9 +17,13 @@ public class EquipEvent implements EventTypeInterface {
         return weaponToEquip;
     }
 
+    @Override
+    public EventSuperType getSuperType() {
+        return EventSuperType.HERO_EVENT;
+    }
 
     @Override
-    public EventSuperType getEventSuperType() {
-        return EventSuperType.HERO_EVENT;
+    public Class getResponseType() {
+        return null;
     }
 }

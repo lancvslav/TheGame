@@ -4,6 +4,8 @@ import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.events.*;
 import cz.vsb.ekf.lan0116.eventsHandling.events.hero.DropEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.hero.EquipEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.hero.TradeEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.hero.TravelEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.TradeFailure;
@@ -12,8 +14,6 @@ import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.items.Item;
 import cz.vsb.ekf.lan0116.world.items.Weapon;
-
-import static cz.vsb.ekf.lan0116.eventsHandling.events.EventType.TRAVEL;
 
 public class ChannelGame implements EventHandler{
 
@@ -26,7 +26,7 @@ public class ChannelGame implements EventHandler{
     }
 
     public Response handleEvent(Event event) {
-        switch (event.getType()) {
+        switch (event.getSuperType()) {
             case DROP:
                 DropEvent dropEvent = (DropEvent) event;
                 if (!hero.getInventory().getInventoryList().contains(dropEvent.getItemToDrop())) {
@@ -69,7 +69,7 @@ public class ChannelGame implements EventHandler{
                 hero.setPosition(travelEvent.getGateway().getTarget());
                 return Response.SUCCESS;
             default:
-                throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");
+                throw new UnsupportedOperationException("Event type " + event.getSuperType() + " is not supported.");
         }
     }
 

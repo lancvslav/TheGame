@@ -2,18 +2,18 @@ package cz.vsb.ekf.lan0116.eventsHandling.events.hero;
 
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
-import cz.vsb.ekf.lan0116.world.items.Item;
+import cz.vsb.ekf.lan0116.world.Gateway;
 
-public class DropEvent implements Event {
+public class TravelEvent implements Event {
 
-    private final Item itemToDrop;
+    private final Gateway gateway;
 
-    public DropEvent(Item item) {
-        this.itemToDrop = item;
+    public TravelEvent(Gateway gateway) {
+        this.gateway = gateway;
     }
 
-    public Item getItemToDrop() {
-        return itemToDrop;
+    public Gateway getGateway() {
+        return gateway;
     }
 
     @Override

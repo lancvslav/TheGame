@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.textUi;
 
 import cz.vsb.ekf.lan0116.eventsHandling.Response;
-import cz.vsb.ekf.lan0116.eventsHandling.events.TradeEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.hero.TradeEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.TradeFailure;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
