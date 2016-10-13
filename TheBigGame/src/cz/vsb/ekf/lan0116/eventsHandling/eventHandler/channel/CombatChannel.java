@@ -1,18 +1,15 @@
-package cz.vsb.ekf.lan0116.eventsHandling.eventHandler;
+package cz.vsb.ekf.lan0116.eventsHandling.eventHandler.channel;
 
 import cz.vsb.ekf.lan0116.eventsHandling.Response;
+import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.EventHandler;
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 
-public abstract class EventHandler implements EventSubscriber {
+public class CombatChannel extends EventHandler {
 
-    private final Hero hero;
-    private final World world;
-
-    public EventHandler(Hero hero, World world) {
-        this.hero = hero;
-        this.world = world;
+    public CombatChannel(Hero hero, World world) {
+        super(hero, world);
     }
 
     @Override

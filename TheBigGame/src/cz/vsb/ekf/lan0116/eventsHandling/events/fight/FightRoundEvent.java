@@ -1,7 +1,7 @@
 //package cz.vsb.ekf.lan0116.eventsHandling.events.fight;
 //
 //import cz.vsb.ekf.lan0116.eventsHandling.Response;
-//import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.ChannelGame;
+//import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.DeprecatedHandler;
 //import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 //import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
 //import cz.vsb.ekf.lan0116.eventsHandling.events.EventTypeDeprecated;
@@ -14,10 +14,10 @@
 //    private final Creature defender;
 //    private final float attackersHit;
 //    private final float counterHit;
-//    private final ChannelGame channelGame;
+//    private final DeprecatedHandler channelGame;
 //    private final Response responseFifhtRound;
 //
-//    public FightRoundEvent(EventTypeDeprecated type, Creature attacker, Creature defender, ChannelGame channelGame) {
+//    public FightRoundEvent(EventTypeDeprecated type, Creature attacker, Creature defender, DeprecatedHandler channelGame) {
 //        this.attacker = attacker;
 //        this.defender = defender;
 //        this.attackersHit = this.attackersHit();

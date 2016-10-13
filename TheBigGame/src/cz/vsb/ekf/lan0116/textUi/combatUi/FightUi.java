@@ -31,7 +31,7 @@ public class FightUi extends AbstractLocationUi {
         while (hero.isAlive() && enemy.isAlive()) {
             Fight fight = new Fight(hero, enemy);
 
-            this.getContext().getChannelGame().
+            this.getContext().getDeprecatedHandler().
                     handleEvent(new InflictDamageEvent(enemy, fight.attacking(hero, enemy)));
             System.out.println("You hit with " +
                     this.get(hero.getWeapon().getName()) + " for: " + fight.attacking(hero, enemy));
@@ -42,7 +42,7 @@ public class FightUi extends AbstractLocationUi {
                 return;
             }
 
-            this.getContext().getChannelGame().
+            this.getContext().getDeprecatedHandler().
                     handleEvent(new InflictDamageEvent(hero, fight.attacking(enemy, hero)));
             TextUtil.sleep(90);
             System.out.println("Enemy hit for " + fight.attacking(enemy, hero) +

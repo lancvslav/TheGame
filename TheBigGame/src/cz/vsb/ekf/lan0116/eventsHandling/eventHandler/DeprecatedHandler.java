@@ -15,12 +15,17 @@ import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.items.Item;
 import cz.vsb.ekf.lan0116.world.items.Weapon;
 
-public class ChannelGame implements EventHandler{
+import static cz.vsb.ekf.lan0116.eventsHandling.events.type.CombatType.INFLICT_DAMAGE;
+import static cz.vsb.ekf.lan0116.eventsHandling.events.type.GameType.NEW_GAME;
+import static cz.vsb.ekf.lan0116.eventsHandling.events.type.GameType.RESPAWN;
+import static cz.vsb.ekf.lan0116.eventsHandling.events.type.HeroType.*;
+
+public class DeprecatedHandler implements EventSubscriber {
 
     private final Hero hero;
     private final World world;
 
-    public ChannelGame(Hero hero, World world) {
+    public DeprecatedHandler(Hero hero, World world) {
         this.hero = hero;
         this.world = world;
     }
@@ -36,8 +41,6 @@ public class ChannelGame implements EventHandler{
                 return Response.SUCCESS;
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
-            case FIGHT_ROUND_EVENT:
-
             case INFLICT_DAMAGE:
                 InflictDamageEvent inflictDamageEvent = (InflictDamageEvent) event;
                 float currentHp = inflictDamageEvent.getCreature().getCurrentHp();

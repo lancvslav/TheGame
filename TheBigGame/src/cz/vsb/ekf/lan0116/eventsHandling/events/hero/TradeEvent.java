@@ -1,7 +1,6 @@
 package cz.vsb.ekf.lan0116.eventsHandling.events.hero;
 
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
-import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 import cz.vsb.ekf.lan0116.eventsHandling.events.type.HeroType;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
@@ -28,11 +27,6 @@ public class TradeEvent implements Event {
     @Override
     public EventType getType() {
         return HeroType.TRADE;
-    }
-
-    @Override
-    public EventSuperType getSuperType() {
-        this.getType().getEventSuperType()
     }
 
     @Override

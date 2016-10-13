@@ -44,7 +44,7 @@ public class TournamentUi extends AbstractLocationUi {
             fightUi.show();
         }
         if (!hero.isAlive()) {
-            this.getContext().getChannelGame().handleEvent(new Event(EventTypeDeprecated.RESPAWN));
+            this.getContext().getDeprecatedHandler().handleEvent(new Event(EventTypeDeprecated.RESPAWN));
             return;
         }
         System.out.println(this.get("texUi.TournamentUi.won"));

@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi;
 
-import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.ChannelGame;
+import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.EventPublisher;
 import cz.vsb.ekf.lan0116.util.Localization;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
@@ -9,15 +9,15 @@ import java.util.Scanner;
 
 public class Context {
 
-    private final ChannelGame channelGame;
+    private final EventPublisher eventPublisher;
     private final Hero hero;
     private final World world;
     private final Scanner scanner;
     private final Localization localization;
 
 
-    public Context(ChannelGame channelGame, Hero hero, World world, Scanner scanner, Localization localization) {
-        this.channelGame = channelGame;
+    public Context(EventPublisher eventPublisher, Hero hero, World world, Scanner scanner, Localization localization) {
+        this.eventPublisher = eventPublisher;
         this.hero = hero;
         this.world = world;
         this.scanner = scanner;
@@ -25,8 +25,8 @@ public class Context {
 
     }
 
-    public ChannelGame getChannelGame() {
-        return channelGame;
+    public EventPublisher getEventPublisher() {
+        return eventPublisher;
     }
 
     public Hero getHero() {

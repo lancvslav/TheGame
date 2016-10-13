@@ -6,7 +6,9 @@ public interface Event<R extends Response> {
 
     EventType getType();
 
-    EventSuperType getSuperType();
+    default EventSuperType getSuperType() {
+        return getType().getEventSuperType();
+    }
 
     Class<R> getResponseType();
 }

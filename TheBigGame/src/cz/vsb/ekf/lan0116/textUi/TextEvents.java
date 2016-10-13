@@ -12,7 +12,7 @@ public class TextEvents {
     }
 
     public void playGame() {
-        context.getChannelGame().handleEvent(new Event(EventTypeDeprecated.NEW_GAME));
+        context.getDeprecatedHandler().handleEvent(new Event(EventTypeDeprecated.NEW_GAME));
         System.out.println(this.context.getLocalization().get("textUi.textEvents.flee") + "\n\n");
         LocationUi locUi = new LocationUi(context);
         while (true) {
