@@ -2,6 +2,8 @@ package cz.vsb.ekf.lan0116.eventsHandling.events.hero;
 
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
+import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
+import cz.vsb.ekf.lan0116.eventsHandling.events.type.HeroType;
 import cz.vsb.ekf.lan0116.world.Gateway;
 
 public class TravelEvent implements Event {
@@ -16,9 +18,15 @@ public class TravelEvent implements Event {
         return gateway;
     }
 
+
+    @Override
+    public EventType getType() {
+        return HeroType.TRAVEL;
+    }
+
     @Override
     public EventSuperType getSuperType() {
-        return EventSuperType.HERO_EVENT;
+        return null;
     }
 
     @Override

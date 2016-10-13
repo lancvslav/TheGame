@@ -2,7 +2,6 @@ package cz.vsb.ekf.lan0116.textUi.combatUi;
 
 import cz.vsb.ekf.lan0116.combat.Tournament;
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
-import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
@@ -45,7 +44,7 @@ public class TournamentUi extends AbstractLocationUi {
             fightUi.show();
         }
         if (!hero.isAlive()) {
-            this.getContext().getChannelGame().handleEvent(new Event(EventType.RESPAWN));
+            this.getContext().getChannelGame().handleEvent(new Event(EventTypeDeprecated.RESPAWN));
             return;
         }
         System.out.println(this.get("texUi.TournamentUi.won"));

@@ -4,7 +4,7 @@
 //import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.ChannelGame;
 //import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 //import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
-//import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
+//import cz.vsb.ekf.lan0116.eventsHandling.events.EventTypeDeprecated;
 //import cz.vsb.ekf.lan0116.eventsHandling.failures.FightFailure;
 //import cz.vsb.ekf.lan0116.world.creature.Creature;
 //
@@ -17,7 +17,7 @@
 //    private final ChannelGame channelGame;
 //    private final Response responseFifhtRound;
 //
-//    public FightRoundEvent(EventType type, Creature attacker, Creature defender, ChannelGame channelGame) {
+//    public FightRoundEvent(EventTypeDeprecated type, Creature attacker, Creature defender, ChannelGame channelGame) {
 //        this.attacker = attacker;
 //        this.defender = defender;
 //        this.attackersHit = this.attackersHit();
@@ -80,12 +80,12 @@
 //
 //    @Override
 //    public EventSuperType getEventSuperType() {
-//        return EventSuperType.FIGHT_EVENT;
+//        return EventSuperType.COMBAT;
 //    }
 //
 //    @Override
-//    public EventSuperType getSuperType() {
-//        return EventSuperType.FIGHT_EVENT;
+//    public EventSuperType getType() {
+//        return EventSuperType.COMBAT;
 //    }
 //
 //    @Override

@@ -3,7 +3,6 @@ package cz.vsb.ekf.lan0116.textUi.heroUi;
 import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.events.hero.DropEvent;
 import cz.vsb.ekf.lan0116.eventsHandling.events.hero.EquipEvent;
-import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.eventsHandling.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
@@ -51,7 +50,7 @@ public class InventoryUi extends AbstractUi {
             case 1:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
-                Response responseEquip = this.getContext().getChannelGame().handleEvent(new EquipEvent(EventType.EQUIP,
+                Response responseEquip = this.getContext().getChannelGame().handleEvent(new EquipEvent(EventTypeDeprecated.EQUIP,
                         this.getContext().getHero().getInventory().getItem(choiceTemp)));
                 if (responseEquip.isSuccess()) {
                     System.out.println("You are wielding " +

@@ -25,8 +25,8 @@ public class InflictDamageEvent implements Event {
     }
 
     @Override
-    public EventSuperType getSuperType() {
-        return EventSuperType.FIGHT_EVENT;
+    public EventSuperType getType() {
+        return EventSuperType.COMBAT;
     }
 
     @Override

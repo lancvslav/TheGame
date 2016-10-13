@@ -26,7 +26,7 @@ public class ChannelGame implements EventHandler{
     }
 
     public Response handleEvent(Event event) {
-        switch (event.getSuperType()) {
+        switch (event.getType()) {
             case DROP:
                 DropEvent dropEvent = (DropEvent) event;
                 if (!hero.getInventory().getInventoryList().contains(dropEvent.getItemToDrop())) {
@@ -69,7 +69,7 @@ public class ChannelGame implements EventHandler{
                 hero.setPosition(travelEvent.getGateway().getTarget());
                 return Response.SUCCESS;
             default:
-                throw new UnsupportedOperationException("Event type " + event.getSuperType() + " is not supported.");
+                throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");
         }
     }
 

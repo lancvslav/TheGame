@@ -1,14 +1,14 @@
 package cz.vsb.ekf.lan0116.eventsHandling.eventHandler;
 
-import cz.vsb.ekf.lan0116.eventsHandling.events.EventTypeInterface;
+import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 
 public class EventPublisher {
 
-    public void channelize(EventTypeInterface event){
+    public void channelize(EventType event){
         switch (event.getEventSuperType()){
-            case FIGHT_EVENT:break;
-            case GAME_EVENT:break;
-            case HERO_EVENT:;break;
+            case COMBAT:break;
+            case GAME:break;
+            case HERO:break;
             default:
                 throw new UnsupportedOperationException("Channel " + event.getEventSuperType() + " is not supported.");
         }
