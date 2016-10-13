@@ -13,7 +13,7 @@ public class CombatChannel extends EventHandler {
     }
 
     @Override
-    public <R extends Response> R handleEvent(Event<R> Event) {
+    public <R extends Response> R handleEvent(Event<R> event) {
         return null;
     }
 }
