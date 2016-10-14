@@ -19,7 +19,8 @@ public class LocationUi extends AbstractLocationUi<Location> {
     }
 
     /**
-     * Prints locations where user can go from current one, reading from ArrayList in class Gateway, Prints decisions, what user can in
+     * Prints locations where user can go from current one, reading from ArrayList in class Gateway,
+     * Prints decisions, what user can in
      * current location do
      */
     @Override
