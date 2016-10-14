@@ -50,8 +50,9 @@ public class InventoryUi extends AbstractUi {
             case 1:
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
-                Response responseEquip = this.getContext().getDeprecatedHandler().handleEvent(new EquipEvent(EventTypeDeprecated.EQUIP,
-                        this.getContext().getHero().getInventory().getItem(choiceTemp)));
+                Response responseEquip = this.getContext()
+                        .getEventPublisher().getResponse(
+                                new EquipEvent(this.getContext().getHero().getInventory().getItem(choiceTemp)));
                 if (responseEquip.isSuccess()) {
                     System.out.println(this.get("textUi.InventoryUi.wielding") + " " +
                             this.get(this.getContext().getHero().getWeapon().getName()));
@@ -80,8 +81,8 @@ public class InventoryUi extends AbstractUi {
                         this.get("textUi.menu.yes"),
                         this.get("textUi.menu.no"))) {
                     case 0:
-                        Response responseDrop = this.getContext().getDeprecatedHandler()
-                                .handleEvent(new DropEvent(this.getContext()
+                        Response responseDrop = this.getContext()
+                                .getEventPublisher().getResponse(new DropEvent(this.getContext()
                                         .getHero().getInventory().getInventoryList().get(choiceTemp)));
                         if (responseDrop.isSuccess()) {
                             System.out.println(this.get("textUi.InventoryUi.dropped"));
