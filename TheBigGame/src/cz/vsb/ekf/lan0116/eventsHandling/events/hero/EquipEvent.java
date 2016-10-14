@@ -22,8 +22,4 @@ public class EquipEvent implements Event {
         return HeroType.EQUIP;
     }
 
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
 }

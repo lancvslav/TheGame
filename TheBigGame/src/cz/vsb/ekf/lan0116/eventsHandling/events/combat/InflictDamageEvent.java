@@ -1,5 +1,8 @@
-package cz.vsb.ekf.lan0116.eventsHandling.events;
+package cz.vsb.ekf.lan0116.eventsHandling.events.combat;
 
+import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
+import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
+import cz.vsb.ekf.lan0116.eventsHandling.events.type.CombatType;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
 public class InflictDamageEvent implements Event {
@@ -25,12 +28,8 @@ public class InflictDamageEvent implements Event {
     }
 
     @Override
-    public EventSuperType getType() {
-        return EventSuperType.COMBAT;
+    public EventType getType() {
+        return CombatType.INFLICT_DAMAGE;
     }
 
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
 }

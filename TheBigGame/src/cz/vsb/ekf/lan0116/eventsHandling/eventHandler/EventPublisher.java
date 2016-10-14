@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.eventsHandling.eventHandler;
 
+import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.channel.CombatChannel;
 import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.channel.GameChannel;
 import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.channel.HeroChannel;
@@ -23,24 +24,20 @@ public class EventPublisher {
         this.heroChannel = new HeroChannel(hero, world);
     }
 
-    public void publishEvent(Event event) {
-
+    public Response getResponse(Event event) {
+        return channelize(event);
     }
 
-    public void channelize(Event event) {
+    private Response channelize(Event event) {
         switch (event.getSuperType()) {
             case COMBAT:
-                this.combatChannel.handleEvent(event);
-                break;
+                return this.combatChannel.handleEvent(event);
             case GAME:
-                this.gameChannel.handleEvent(event);
-                break;
+                return this.gameChannel.handleEvent(event);
             case HERO:
-                this.heroChannel.handleEvent(event);
-                break;
+                return this.heroChannel.handleEvent(event);
             default:
                 throw new UnsupportedOperationException("Channel " + event.getSuperType() + " is not supported.");
         }
-
     }
 }

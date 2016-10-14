@@ -29,8 +29,4 @@ public class TradeEvent implements Event {
         return HeroType.TRADE;
     }
 
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
 }

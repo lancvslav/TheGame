@@ -22,8 +22,4 @@ public class DropEvent implements Event {
         return HeroType.DROP;
     }
 
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
 }

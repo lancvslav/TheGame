@@ -1,11 +1,14 @@
 package cz.vsb.ekf.lan0116.eventsHandling.failures;
 
+import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
+import cz.vsb.ekf.lan0116.eventsHandling.events.type.CombatType;
+
 public enum FightFailure implements FailureCause {
     DONT_KNOW_YET,;
 
     @Override
-    public EventTypeDeprecated getEventType() {
-        return EventTypeDeprecated.FIGHT_ROUND_EVENT;
+    public EventType getEventType() {
+        return CombatType.ROUND;
     }
 }
 

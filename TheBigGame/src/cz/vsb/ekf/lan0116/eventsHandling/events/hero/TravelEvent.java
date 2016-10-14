@@ -23,8 +23,4 @@ public class TravelEvent implements Event {
         return HeroType.TRAVEL;
     }
 
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
 }

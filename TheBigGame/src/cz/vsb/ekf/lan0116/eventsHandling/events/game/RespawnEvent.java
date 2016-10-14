@@ -10,8 +10,4 @@ public class RespawnEvent implements Event {
         return GameType.RESPAWN;
     }
 
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
 }

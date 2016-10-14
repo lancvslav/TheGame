@@ -1,8 +1,6 @@
 package cz.vsb.ekf.lan0116.eventsHandling.events;
 
-import cz.vsb.ekf.lan0116.eventsHandling.Response;
-
-public interface Event<R extends Response> {
+public interface Event {
 
     EventType getType();
 
@@ -10,5 +8,4 @@ public interface Event<R extends Response> {
         return getType().getEventSuperType();
     }
 
-    Class<R> getResponseType();
 }

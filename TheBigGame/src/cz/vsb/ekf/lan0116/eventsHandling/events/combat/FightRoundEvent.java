@@ -1,10 +1,8 @@
 //package cz.vsb.ekf.lan0116.eventsHandling.events.fight;
 //
 //import cz.vsb.ekf.lan0116.eventsHandling.Response;
-//import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.DeprecatedHandler;
 //import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
 //import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
-//import cz.vsb.ekf.lan0116.eventsHandling.events.EventTypeDeprecated;
 //import cz.vsb.ekf.lan0116.eventsHandling.failures.FightFailure;
 //import cz.vsb.ekf.lan0116.world.creature.Creature;
 //
@@ -14,19 +12,18 @@
 //    private final Creature defender;
 //    private final float attackersHit;
 //    private final float counterHit;
-//    private final DeprecatedHandler channelGame;
-//    private final Response responseFifhtRound;
+//        private final Response responseFightRound;
 //
-//    public FightRoundEvent(EventTypeDeprecated type, Creature attacker, Creature defender, DeprecatedHandler channelGame) {
+//    public FightRoundEvent(Creature attacker, Creature defender) {
 //        this.attacker = attacker;
 //        this.defender = defender;
 //        this.attackersHit = this.attackersHit();
 //        this.counterHit = this.counterHit();
 //        this.channelGame = channelGame;
 //        if (inflict(defender, attackersHit).isSuccess() && inflict(attacker, counterHit).isSuccess()) {
-//            this.responseFifhtRound = new Response();
+//            this.responseFightRound = new Response();
 //        } else {
-//            this.responseFifhtRound = new Response(FightFailure.DONT_KNOW_YET);
+//            this.responseFightRound = new Response(FightFailure.DONT_KNOW_YET);
 //        }
 //
 //    }

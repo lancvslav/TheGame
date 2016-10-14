@@ -11,8 +11,4 @@ public class NewGameEvent implements Event {
         return GameType.NEW_GAME;
     }
 
-    @Override
-    public Class getResponseType() {
-        return null;
-    }
 }

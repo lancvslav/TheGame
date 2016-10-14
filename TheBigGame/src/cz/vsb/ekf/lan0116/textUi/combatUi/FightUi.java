@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116.textUi.combatUi;
 
 import cz.vsb.ekf.lan0116.combat.Fight;
 import cz.vsb.ekf.lan0116.combat.Tournament;
-import cz.vsb.ekf.lan0116.eventsHandling.events.InflictDamageEvent;
+import cz.vsb.ekf.lan0116.eventsHandling.events.combat.InflictDamageEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;

@@ -1,6 +1,5 @@
 package cz.vsb.ekf.lan0116.eventsHandling.eventHandler.channel;
 
-import cz.vsb.ekf.lan0116.eventsHandling.GameResponse;
 import cz.vsb.ekf.lan0116.eventsHandling.Response;
 import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.EventHandler;
 import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
@@ -15,12 +14,12 @@ public class GameChannel extends EventHandler {
     }
 
     @Override
-    public <R extends Response> R handleEvent(Event<R> event) {
+    public Response handleEvent(Event event) {
         GameType eventType = (GameType) event.getType();
         switch (eventType) {
             case NEW_GAME:
                 this.getHero().setPosition(this.getWorld().getStartLocation());
-                return new GameResponse();
+                return Response.SUCCESS;
             case RESPAWN:
                 this.getHero().setCurrentHp(this.getHero().getMaxHp());
                 this.getHero().setPosition(this.getWorld().getStartLocation());

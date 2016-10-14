@@ -1,6 +1,7 @@
 package cz.vsb.ekf.lan0116.textUi;
 
-import cz.vsb.ekf.lan0116.eventsHandling.events.Event;
+import cz.vsb.ekf.lan0116.eventsHandling.Response;
+import cz.vsb.ekf.lan0116.eventsHandling.events.game.NewGameEvent;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 
 public class TextEvents {
@@ -12,7 +13,11 @@ public class TextEvents {
     }
 
     public void playGame() {
-        context.getDeprecatedHandler().handleEvent(new Event(EventTypeDeprecated.NEW_GAME));
+        Response responseNewGame = context.getEventPublisher().getResponse(new NewGameEvent());
+        if (!responseNewGame.isSuccess()) {
+            System.out.println("Failed to load game.");
+            throw new ExceptionInInitializerError();
+        }
         System.out.println(this.context.getLocalization().get("textUi.textEvents.flee") + "\n\n");
         LocationUi locUi = new LocationUi(context);
         while (true) {
