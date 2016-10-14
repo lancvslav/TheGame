@@ -50,7 +50,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
                 TradeFailure failureCause = (TradeFailure) responseTrade.getFailureCause();
                 switch (failureCause) {
                     case NOT_ENOUGH_GOLD:
-                        System.out.println("Not enough gold.");
+                        System.out.println(this.get("textUi.MerchandiseUi.not_enough_gold"));
                         this.show();
                         break;
                 }
