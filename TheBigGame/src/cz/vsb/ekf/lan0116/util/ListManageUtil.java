@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.combat.Attacks;
 import cz.vsb.ekf.lan0116.world.items.Merchandise;
 import cz.vsb.ekf.lan0116.world.items.type.WeaponType;
 import cz.vsb.ekf.lan0116.world.items.Weapon;
-import cz.vsb.ekf.lan0116.world.wilderness.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.Enemy;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,7 @@
 package cz.vsb.ekf.lan0116.combat;
 
 public enum Attacks {
+INITIATIVE,
 HIT,
 SCREAM,//REDUCES ALL ENEMY'S STATS BY 1
 SHOOT,//FIRST ATTACK TWICE

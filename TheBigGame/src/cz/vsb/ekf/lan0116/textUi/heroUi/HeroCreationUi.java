@@ -54,7 +54,7 @@ public class HeroCreationUi {
     }
 
     /**
-     * Prints text variety of hero's classes to select
+     * Prints text variety of heroHandling's classes to select
      */
     public static void printClasses(Localization localization) {
         System.out.println(localization.get("textUi.HeroCreationUi.kind_of_man") + "\n");

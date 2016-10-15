@@ -30,7 +30,6 @@ public abstract class Creature {
         return (this.currentHp > 0);
     }
 
-
     public float getCurrentHp() {
         return currentHp;
     }
@@ -71,5 +70,7 @@ public abstract class Creature {
         this.vitality = vitality;
     }
 
-
+    public void inflictDamage(float damage) {
+        currentHp = currentHp - damage;
+    }
 }

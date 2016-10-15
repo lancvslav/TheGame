@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.eventsHandling.events.game.RespawnEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.wilderness.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.Enemy;
 
 public class TournamentUi extends AbstractLocationUi {
 

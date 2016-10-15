@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.wilderness.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.Enemy;
 
 public class FightUi extends AbstractLocationUi {
 
@@ -25,13 +25,13 @@ public class FightUi extends AbstractLocationUi {
 
     @Override
     public void show() {
-//        while (hero.isAlive() && enemy.isAlive()) {
-//            Fight fight = new Fight(hero, enemy);
+//        while (heroHandling.isAlive() && enemy.isAlive()) {
+//            Fight fight = new Fight(heroHandling, enemy);
 //
 //            this.getContext().getDeprecatedHandler().
-//                    handleEvent(new InflictDamageEvent(enemy, fight.attacking(hero, enemy)));
+//                    handleEvent(new InflictDamageEvent(enemy, fight.attacking(heroHandling, enemy)));
 //            System.out.println("You hit with " +
-//                    this.get(hero.getWeapon().getName()) + " for: " + fight.attacking(hero, enemy));
+//                    this.get(heroHandling.getWeapon().getName()) + " for: " + fight.attacking(heroHandling, enemy));
 //            TextUtil.sleep(90);
 //            if (!enemy.isAlive()) {
 //                System.out.println("Enemy died.");
@@ -40,15 +40,15 @@ public class FightUi extends AbstractLocationUi {
 //            }
 //
 //            this.getContext().getDeprecatedHandler().
-//                    handleEvent(new InflictDamageEvent(hero, fight.attacking(enemy, hero)));
+//                    handleEvent(new InflictDamageEvent(heroHandling, fight.attacking(enemy, heroHandling)));
 //            TextUtil.sleep(90);
-//            System.out.println("Enemy hit for " + fight.attacking(enemy, hero) +
-//                    " dmg. Your life essence status: " + hero.getCurrentHp());
-//            new CreatureStatusUi(this.getContext(), hero).show();
+//            System.out.println("Enemy hit for " + fight.attacking(enemy, heroHandling) +
+//                    " dmg. Your life essence status: " + heroHandling.getCurrentHp());
+//            new CreatureStatusUi(this.getContext(), heroHandling).show();
 //            TextUtil.sleep(20);
 //        }
 //
-//        if (!hero.isAlive()) {
+//        if (!heroHandling.isAlive()) {
 //            TextUtil.sleep(90);
 //            System.out.println("You died");
 //        }

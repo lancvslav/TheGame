@@ -60,7 +60,7 @@ public class Hero extends Creature {
     }
 
 //    /**
-//     * Heals hero for ammount of hp given in parameter
+//     * Heals heroHandling for ammount of hp given in parameter
 //     *
 //     * @param healAmount
 //     */
@@ -74,7 +74,7 @@ public class Hero extends Creature {
 //    }
 //
 //    /**
-//     * Damages hero for ammount of hp given in parameter
+//     * Damages heroHandling for ammount of hp given in parameter
 //     *
 //     * @param damage
 //     */

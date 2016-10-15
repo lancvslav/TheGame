@@ -10,18 +10,26 @@ import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 
 public class EventPublisher {
 
-    private final Hero hero;
-    private final World world;
     private final CombatChannel combatChannel;
     private final GameChannel gameChannel;
     private final HeroChannel heroChannel;
 
     public EventPublisher(Hero hero, World world) {
-        this.hero = hero;
-        this.world = world;
         this.combatChannel = new CombatChannel(hero, world);
         this.gameChannel = new GameChannel(hero, world);
         this.heroChannel = new HeroChannel(hero, world);
+    }
+
+    public CombatChannel getCombatChannel() {
+        return combatChannel;
+    }
+
+    public GameChannel getGameChannel() {
+        return gameChannel;
+    }
+
+    public HeroChannel getHeroChannel() {
+        return heroChannel;
     }
 
     public Response getResponse(Event event) {

@@ -2,6 +2,8 @@ package cz.vsb.ekf.lan0116.world.wilderness;
 
 import cz.vsb.ekf.lan0116.world.Location;
 import cz.vsb.ekf.lan0116.world.LocationType;
+import cz.vsb.ekf.lan0116.world.creature.Enemy;
+
 import java.util.List;
 
 public class Wilderness extends Location {
