@@ -24,7 +24,6 @@ public class TournamentUi extends AbstractLocationUi {
 
     @Override
     public void show() {
-
         for (int enemyId = 0; enemyId < tournament.getEnemyList().size(); enemyId++) {
             if (!hero.isAlive()) {
                 break;
