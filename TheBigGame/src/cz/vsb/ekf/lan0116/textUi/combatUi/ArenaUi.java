@@ -1,7 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
 import cz.vsb.ekf.lan0116.combat.Arena;
-import cz.vsb.ekf.lan0116.combat.Tournament;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 
@@ -35,19 +34,19 @@ public class ArenaUi extends AbstractLocationUi {
                         this.get("textUi.ArenaUi.tournament1")//,
                         /* this.get("textUi.ArenaUi.tournament2")*/)) {
                     case 0:
-                        tournamentUi = new TournamentUi(this.getContext(), new Tournament(0));
+                        tournamentUi = new TournamentUi(this.getContext(), this.getLoc().getTournaments().get(0));
                         tournamentUi.show();
                         break;
                     case 1:
-                        tournamentUi = new TournamentUi(this.getContext(), new Tournament(1));
+                        tournamentUi = new TournamentUi(this.getContext(), this.getLoc().getTournaments().get(1));
                         tournamentUi.show();
                         break;
 //                    case 2:
-//                        tournamentUi = new TournamentUi(this.getContext(), new Tournament(2));
+//                        tournamentUi = new TournamentUi(this.getContext(), this.getLoc().getTournaments().get(2));
 //                        tournamentUi.show();
 //                        break;
                     default:
-                        tournamentUi = new TournamentUi(this.getContext(), new Tournament(0));
+                        tournamentUi = new TournamentUi(this.getContext(), this.getLoc().getTournaments().get(0));
                         tournamentUi.show();
                         break;
                 }

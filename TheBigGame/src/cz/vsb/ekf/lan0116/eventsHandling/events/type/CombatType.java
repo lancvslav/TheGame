@@ -4,6 +4,7 @@ import cz.vsb.ekf.lan0116.eventsHandling.events.EventSuperType;
 import cz.vsb.ekf.lan0116.eventsHandling.events.EventType;
 
 public enum CombatType implements EventType {
+    ENGAGE,
     INFLICT_DAMAGE,
     ROUND,;
 
