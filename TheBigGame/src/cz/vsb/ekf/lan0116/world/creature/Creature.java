@@ -3,20 +3,20 @@ package cz.vsb.ekf.lan0116.world.creature;
 public abstract class Creature {
 
     private final String name;
-    private float currentHp;
-    private float maxHp;
+    private float currentLifeEssence;
+    private float maxLifeEssence;
     private float attack;
     private float defense;
     private float vitality;
 
 
-    public Creature(String name, int maxHp, int attack, int defense) {
+    public Creature(String name, int maxLifeEssence, int attack, int defense) {
         this.name = name;
-        this.maxHp = maxHp;
-        this.currentHp = getMaxHp();
+        this.maxLifeEssence = maxLifeEssence;
+        this.currentLifeEssence = getMaxLifeEssence();
         this.attack = attack;
         this.defense = defense;
-        this.vitality = this.getMaxHp() + this.getDefense();
+        this.vitality = this.getMaxLifeEssence() + this.getDefense();
     }
 
     public String getName() {
@@ -24,23 +24,23 @@ public abstract class Creature {
     }
 
     public final boolean isAlive() {
-        return (this.currentHp > 0);
+        return (this.currentLifeEssence > 0);
     }
 
-    public float getCurrentHp() {
-        return currentHp;
+    public float getCurrentLifeEssence() {
+        return currentLifeEssence;
     }
 
-    public void setCurrentHp(float currentHp) {
-        this.currentHp = currentHp;
+    public void setCurrentLifeEssence(float currentLifeEssence) {
+        this.currentLifeEssence = currentLifeEssence;
     }
 
-    public float getMaxHp() {
-        return maxHp;
+    public float getMaxLifeEssence() {
+        return maxLifeEssence;
     }
 
-    public void setMaxHp(float maxHp) {
-        this.maxHp = maxHp;
+    public void setMaxLifeEssence(float maxLifeEssence) {
+        this.maxLifeEssence = maxLifeEssence;
     }
 
     public float getAttack() {
@@ -60,7 +60,7 @@ public abstract class Creature {
     }
 
     public float getVitality() {
-        return this.currentHp + this.defense;
+        return this.currentLifeEssence + this.defense;
     }
 
     public void setVitality(float vitality) {
@@ -68,7 +68,7 @@ public abstract class Creature {
     }
 
     public void inflictDamage(float damage) {
-        currentHp = currentHp - damage;
-        if (currentHp < 0) currentHp = 0;
+        currentLifeEssence = currentLifeEssence - damage;
+        if (currentLifeEssence < 0) currentLifeEssence = 0;
     }
 }

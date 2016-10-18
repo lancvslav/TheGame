@@ -23,7 +23,7 @@ public class CreatureStatusUi extends AbstractHeroUi {
         sBuff.append("[");
 
         int total = 20;
-        double count = Math.round(((double) this.getHero().getCurrentHp() / this.getHero().getMaxHp()) * total);
+        double count = Math.round(((double) this.getHero().getCurrentLifeEssence() / this.getHero().getMaxLifeEssence()) * total);
         if ((count < 1) && (creature.isAlive())) {
             count = 1;
         }

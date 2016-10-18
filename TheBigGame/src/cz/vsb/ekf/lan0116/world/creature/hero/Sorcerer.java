@@ -25,7 +25,7 @@ public class Sorcerer extends Hero {
     @Override
     public String toString() {
         return "Wise caster, called " + this.getName() +
-                " has " + this.getCurrentHp() + " essence of life and is wielding "+ this.getWeapon().getName();
+                " has " + this.getCurrentLifeEssence() + " essence of life and is wielding "+ this.getWeapon().getName();
     }
 
 }

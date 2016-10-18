@@ -65,11 +65,11 @@ public class Hero extends Creature {
 //     * @param healAmount
 //     */
 //    public void heal(int healAmount) {
-//        int ableToHeal = this.getMaxHp() - this.getCurrentHp();
+//        int ableToHeal = this.getMaxLifeEssence() - this.getCurrentLifeEssence();
 //        if (healAmount > ableToHeal) {
-//            this.setCurrentHp(this.getMaxHp());
+//            this.setCurrentLifeEssence(this.getMaxLifeEssence());
 //        } else {
-//            this.setCurrentHp(this.getCurrentHp() + healAmount);
+//            this.setCurrentLifeEssence(this.getCurrentLifeEssence() + healAmount);
 //        }
 //    }
 //
@@ -81,9 +81,9 @@ public class Hero extends Creature {
 //    public void inflict(int damage) {
 //        int damageDone = damage - this.getDefense();
 //        if (damageDone > 0) {
-//            if (this.getCurrentHp() <= (damageDone)) {
+//            if (this.getCurrentLifeEssence() <= (damageDone)) {
 //            } else {
-//                this.setCurrentHp(this.getCurrentHp() - damageDone);
+//                this.setCurrentLifeEssence(this.getCurrentLifeEssence() - damageDone);
 //            }
 //        }
 //    }

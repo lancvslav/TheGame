@@ -1,10 +1,8 @@
 package cz.vsb.ekf.lan0116.world;
 
 public enum LocationType {
+    ARENA,
     SHOP,
-    WILDERNESS,
     STREET,
-    ARENA;
-
-
+    WILDERNESS,;
 }

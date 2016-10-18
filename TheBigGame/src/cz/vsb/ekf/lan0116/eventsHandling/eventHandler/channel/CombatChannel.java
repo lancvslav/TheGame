@@ -22,10 +22,10 @@ public class CombatChannel extends EventHandler {
                 return Response.SUCCESS;
             case ROUND:
                 InflictDamageEvent inflictDamageEvent = (InflictDamageEvent) event;
-                float currentHp = inflictDamageEvent.getCreature().getCurrentHp();
-                inflictDamageEvent.getCreature().setCurrentHp(currentHp - inflictDamageEvent.getDamage());
-                if (inflictDamageEvent.getCreature().getCurrentHp() < 0) {
-                    inflictDamageEvent.getCreature().setCurrentHp(0);
+                float currentHp = inflictDamageEvent.getCreature().getCurrentLifeEssence();
+                inflictDamageEvent.getCreature().setCurrentLifeEssence(currentHp - inflictDamageEvent.getDamage());
+                if (inflictDamageEvent.getCreature().getCurrentLifeEssence() < 0) {
+                    inflictDamageEvent.getCreature().setCurrentLifeEssence(0);
                 }
                 return Response.SUCCESS;
             default:

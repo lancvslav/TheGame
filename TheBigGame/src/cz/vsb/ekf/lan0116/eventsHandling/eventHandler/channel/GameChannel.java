@@ -21,7 +21,7 @@ public class GameChannel extends EventHandler {
                 this.getHero().setPosition(this.getWorld().getStartLocation());
                 return Response.SUCCESS;
             case RESPAWN:
-                this.getHero().setCurrentHp(this.getHero().getMaxHp());
+                this.getHero().setCurrentLifeEssence(this.getHero().getMaxLifeEssence());
                 this.getHero().setPosition(this.getWorld().getStartLocation());
                 return Response.SUCCESS;
             default:

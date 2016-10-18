@@ -8,6 +8,7 @@ import java.util.Set;
 
 public enum WeaponType implements ItemType {
     UNISEX(EnumSet.allOf(HeroClass.class)),
+
     MELEE(HeroClass.WARRIOR),
     RANGED(HeroClass.RANGER),
     WAND(HeroClass.SORCERER);

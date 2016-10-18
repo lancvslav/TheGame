@@ -43,7 +43,7 @@ public class FightUi extends AbstractLocationUi {
 //                    handleEvent(new InflictDamageEvent(heroHandling, fight.attacking(enemy, heroHandling)));
 //            TextUtil.sleep(90);
 //            System.out.println("Enemy hit for " + fight.attacking(enemy, heroHandling) +
-//                    " dmg. Your life essence status: " + heroHandling.getCurrentHp());
+//                    " dmg. Your life essence status: " + heroHandling.getCurrentLifeEssence());
 //            new CreatureStatusUi(this.getContext(), heroHandling).show();
 //            TextUtil.sleep(20);
 //        }

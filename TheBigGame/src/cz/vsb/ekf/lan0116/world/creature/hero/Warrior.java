@@ -25,7 +25,7 @@ public class Warrior extends Hero {
     @Override
     public String toString() {
         return "Brave warrior, called " + this.getName() +
-                " has " + this.getCurrentHp() + " essence of life and is wielding " + this.getWeapon().getName();
+                " has " + this.getCurrentLifeEssence() + " essence of life and is wielding " + this.getWeapon().getName();
     }
 
 }
