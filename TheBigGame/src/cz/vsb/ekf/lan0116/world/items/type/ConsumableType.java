@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.world.items.type;
 
 public enum ConsumableType implements ItemType {
-    FOOD(ItemSuperType.CONSUMABLE),
-    DRINK(ItemSuperType.CONSUMABLE),;
+    DRINK(ItemSuperType.CONSUMABLE),
+    FOOD(ItemSuperType.CONSUMABLE),;
 
     private final ItemSuperType superType;
 

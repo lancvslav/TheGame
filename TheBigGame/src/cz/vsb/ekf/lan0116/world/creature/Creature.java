@@ -3,9 +3,6 @@ package cz.vsb.ekf.lan0116.world.creature;
 public abstract class Creature {
 
     private final String name;
-    /**
-     * Life essence
-     */
     private float currentHp;
     private float maxHp;
     private float attack;
@@ -72,5 +69,6 @@ public abstract class Creature {
 
     public void inflictDamage(float damage) {
         currentHp = currentHp - damage;
+        if (currentHp < 0) currentHp = 0;
     }
 }

@@ -12,8 +12,11 @@ public class Tournament {
 
     private List<Enemy> enemyList;
 
+    /**
+     * Tournament loads from .txt enemies based of type given in parameter
+     */
     public Tournament(int tournamentType) {
-        enemyList = new ArrayList<>();
+        this.enemyList = new ArrayList<>();
         enemyList = ListManageUtil.getEnemies(ResourceUtil.getResource(ResourceType.ARENA,
                 ("arena" + String.valueOf(tournamentType))));
     }
