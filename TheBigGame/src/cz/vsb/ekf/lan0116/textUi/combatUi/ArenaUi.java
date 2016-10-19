@@ -28,11 +28,11 @@ public class ArenaUi extends AbstractLocationUi {
                 this.travel();
                 break;
             case 1:
-                System.out.println("\n"+ this.get("textUi.ArenaUi.entered_tournament"));
+                System.out.println("\n" + this.get("textUi.ArenaUi.entered_tournament"));
                 switch (this.choice(
                         this.get("textUi.ArenaUi.tournament0"),
-                        this.get("textUi.ArenaUi.tournament1")//,
-                        /* this.get("textUi.ArenaUi.tournament2")*/)) {
+                        this.get("textUi.ArenaUi.tournament1"),
+                        this.get("textUi.ArenaUi.tournament2"))) {
                     case 0:
                         tournamentUi = new TournamentUi(this.getContext(), this.getLoc().getTournaments().get(0));
                         tournamentUi.show();
