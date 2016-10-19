@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.abstracts;
 
-import cz.vsb.ekf.lan0116.eventsHandling.events.hero.TravelEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.TravelEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.world.Gateway;
 import cz.vsb.ekf.lan0116.world.Location;

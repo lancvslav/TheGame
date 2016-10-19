@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi;
 
-import cz.vsb.ekf.lan0116.eventsHandling.eventHandler.EventPublisher;
+import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
 import cz.vsb.ekf.lan0116.util.Localization;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;

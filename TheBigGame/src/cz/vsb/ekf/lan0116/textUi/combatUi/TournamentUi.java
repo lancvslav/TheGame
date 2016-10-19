@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
 import cz.vsb.ekf.lan0116.combat.Tournament;
-import cz.vsb.ekf.lan0116.eventsHandling.events.game.RespawnEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.game.RespawnEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
