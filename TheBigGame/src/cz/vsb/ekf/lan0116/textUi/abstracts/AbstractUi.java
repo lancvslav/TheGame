@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi.abstracts;
 
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.world.items.Item;
-import cz.vsb.ekf.lan0116.world.items.Merchandise;
+import cz.vsb.ekf.lan0116.world.item.Item;
+import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
 import java.util.List;
 
@@ -50,9 +50,9 @@ public abstract class AbstractUi implements Ui {
 
 
     /**
-     * Convert list of items to Array of Strings
+     * Convert list of item to Array of Strings
      *
-     * @param items List of items to print
+     * @param items List of item to print
      * @return String[] of names
      */
     protected String[] itemsToArray(List<Item> items) {
@@ -66,7 +66,7 @@ public abstract class AbstractUi implements Ui {
     protected String[] merchandiseToArray(List<Merchandise> merchandise) {
         String[] choicesArray = new String[merchandise.size()];
         for (int i = 0; i < merchandise.size(); i++) {
-            choicesArray[i] = this.get(merchandise.get(i).getName()) + " " + merchandise.get(i).getCost();
+            choicesArray[i] = this.get(merchandise.get(i).getName()) + "-" + merchandise.get(i).getCost();
         }
         return choicesArray;
     }

@@ -14,8 +14,8 @@ import cz.vsb.ekf.lan0116.eventSystem.failures.TradeFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.TravelFailure;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.items.Item;
-import cz.vsb.ekf.lan0116.world.items.Weapon;
+import cz.vsb.ekf.lan0116.world.item.Item;
+import cz.vsb.ekf.lan0116.world.item.Weapon;
 
 public class HeroChannel extends EventHandler {
 

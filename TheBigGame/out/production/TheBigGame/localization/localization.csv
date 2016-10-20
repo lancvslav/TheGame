@@ -177,9 +177,11 @@ world.arena.arena;arena
 world.buildings.shop.weapon_shop.archery;archery
 world.buildings.shop.weapon_shop.blacksmith;blacksmith
 world.buildings.shop.weapon_shop.wand_shop;wand shop
-world.buildings.tavern;tavern
+world.buildings.shop.tavern;tavern
 world.street.battle_quarter;battle quarter
 world.street.central_crossroad;central crossroad
 world.street.central_road;central road
 world.street.main_square;main square
 world.street.road_of_battle;road of battle
+item.merchandise.consumable.drink.water;water
+item.merchandise.consumable.food.bread;bread

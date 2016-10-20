@@ -1,10 +1,10 @@
 package cz.vsb.ekf.lan0116.world;
 
-import cz.vsb.ekf.lan0116.combat.Arena;
-import cz.vsb.ekf.lan0116.world.buildings.Archery;
-import cz.vsb.ekf.lan0116.world.buildings.Blacksmith;
-import cz.vsb.ekf.lan0116.world.buildings.Tavern;
-import cz.vsb.ekf.lan0116.world.buildings.WandShop;
+import cz.vsb.ekf.lan0116.world.building.Arena;
+import cz.vsb.ekf.lan0116.world.building.shop.weaponShop.Archery;
+import cz.vsb.ekf.lan0116.world.building.shop.weaponShop.Blacksmith;
+import cz.vsb.ekf.lan0116.world.building.shop.Tavern;
+import cz.vsb.ekf.lan0116.world.building.shop.weaponShop.WandShop;
 
 public class World {
 
@@ -21,7 +21,6 @@ public class World {
     private static Street centralCrossRoad;
     private static Street centralRoad;
     private static Street roadOfBattle;
-
 
     public World(Location startLocation) {
         this.startLocation = startLocation;

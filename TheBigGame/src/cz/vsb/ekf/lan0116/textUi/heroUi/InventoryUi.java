@@ -7,7 +7,7 @@ import cz.vsb.ekf.lan0116.eventSystem.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractUi;
-import cz.vsb.ekf.lan0116.world.items.Item;
+import cz.vsb.ekf.lan0116.world.item.Item;
 
 public class InventoryUi extends AbstractUi {
 

@@ -1,4 +1,4 @@
-name:cost:dmg:TYPE
+name:cost:dmg:type
 
 melee -> 1 dmg = 5 cost
 ranged -> 2 dmg = 5 cost

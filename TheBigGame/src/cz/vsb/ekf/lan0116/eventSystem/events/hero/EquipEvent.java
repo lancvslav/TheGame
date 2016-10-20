@@ -3,7 +3,7 @@ package cz.vsb.ekf.lan0116.eventSystem.events.hero;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
-import cz.vsb.ekf.lan0116.world.items.Item;
+import cz.vsb.ekf.lan0116.world.item.Item;
 
 public class EquipEvent implements Event {
 

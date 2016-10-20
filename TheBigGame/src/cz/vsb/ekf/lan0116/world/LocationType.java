@@ -4,5 +4,6 @@ public enum LocationType {
     ARENA,
     SHOP,
     STREET,
+    TAVERN,
     WILDERNESS,;
 }

@@ -1,9 +1,11 @@
 package cz.vsb.ekf.lan0116.util;
 
 import cz.vsb.ekf.lan0116.combat.Attacks;
-import cz.vsb.ekf.lan0116.world.items.Merchandise;
-import cz.vsb.ekf.lan0116.world.items.type.WeaponType;
-import cz.vsb.ekf.lan0116.world.items.Weapon;
+import cz.vsb.ekf.lan0116.world.item.Consumable;
+import cz.vsb.ekf.lan0116.world.item.Merchandise;
+import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;
+import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
+import cz.vsb.ekf.lan0116.world.item.Weapon;
 import cz.vsb.ekf.lan0116.world.creature.Enemy;
 
 import java.util.ArrayList;
@@ -25,23 +27,27 @@ public class ListManageUtil {
         return list;
     }
 
-    public static Merchandise getMerchandise(List<Merchandise> itemsListString, int index) {
-        return itemsListString.get(index);
+    public static Merchandise getMerchandise(List<Merchandise> listWithItem, int index) {
+        return listWithItem.get(index);
     }
 
-//    public static List<Merchandise> weaponsList(List<String> weaponListString) {
-//        List<Merchandise> list = new ArrayList<>();
-//        for (String line : weaponListString) {
-//            String[] split = line.split(";");
-//            String name = split[0];
-//            int cost = Integer.parseInt(split[1]);
-//            int dmg = Integer.parseInt(split[2]);
-//            String type = split[3].toUpperCase();
-//            WeaponType weaponType = WeaponType.valueOf(type);
-//            list.add(new Weapon(name, cost, dmg, weaponType));
-//        }
-//        return list;
-//    }
+    public static List<Merchandise> consumableList(List<String> consumableListString) {
+        List<Merchandise> list = new ArrayList<>();
+        for (String line : consumableListString) {
+            String[] split = line.split(";");
+            String name = split[0];
+            int cost = Integer.parseInt(split[1]);
+            int replenishValue = Integer.parseInt(split[2]);
+            String type = split[3].toUpperCase();
+            ConsumableType consumableType = ConsumableType.valueOf(type);
+            list.add(new Consumable(name, consumableType, cost, replenishValue));
+        }
+        return list;
+    }
+
+    public static Consumable getConsumable(List<Consumable> listWithConsumable, int index) {
+        return listWithConsumable.get(index);
+    }
 
     public static List<Merchandise> weaponsList(List<String> weaponListString) {
         List<Merchandise> list = new ArrayList<>();
@@ -80,6 +86,5 @@ public class ListManageUtil {
     public static Enemy getEnemy(List<Enemy> enemiesListString, int index) {
         return enemiesListString.get(index);
     }
-
 
 }

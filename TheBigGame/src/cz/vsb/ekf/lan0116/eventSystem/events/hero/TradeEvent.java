@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
-import cz.vsb.ekf.lan0116.world.items.Merchandise;
+import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
 import java.util.List;
 
