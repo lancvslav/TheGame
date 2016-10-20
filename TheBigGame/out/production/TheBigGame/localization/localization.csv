@@ -99,7 +99,7 @@ textUi.ArenaUi.sign_up;Sign up for tournament
 textUi.ArenaUi.tournament_selection;In which tournament you wish to attend?
 textUi.ArenaUi.tournament0;All folks try hard
 textUi.ArenaUi.tournament1;You are the prey now
-textUi.ArenaUi.tournament2;Tournament 3
+textUi.ArenaUi.tournament2;Prepare to get wet
 textUi.ArenaUi.welcome;Welcome to the Arena
 textUi.current_location0;You are standing at
 textUi.current_location1;Here you are, at
@@ -177,4 +177,9 @@ world.arena.arena;arena
 world.buildings.shop.weapon_shop.archery;archery
 world.buildings.shop.weapon_shop.blacksmith;blacksmith
 world.buildings.shop.weapon_shop.wand_shop;wand shop
+world.buildings.tavern;tavern
+world.street.battle_quarter;battle quarter
+world.street.central_crossroad;central crossroad
+world.street.central_road;central road
 world.street.main_square;main square
+world.street.road_of_battle;road of battle

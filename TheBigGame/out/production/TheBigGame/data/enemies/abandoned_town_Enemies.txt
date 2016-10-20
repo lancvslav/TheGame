@@ -1,4 +1,4 @@
 enemies.abandoned_town.peasant;1;1;1;HIT
 enemies.abandoned_town.dog;2;2;0;BLEED
-enemies.abandoned_town.thiev;3;3;1;BACKSTAB
+enemies.abandoned_town.thiev;3;3;1;INITIATIVE
 enemies.abandoned_town.bandit;4;2;2;CRUSHING_BLOW

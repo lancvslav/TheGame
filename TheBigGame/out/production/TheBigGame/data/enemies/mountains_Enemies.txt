@@ -1,4 +1,4 @@
-enemies.mountains.chamois;1;1;0;HIT
+enemies.mountains.chamois;1;1;0;INITIATIVE
 enemies.mountains.eagle;2;2;0;BLIND
 enemies.mountains.stone_warrior;7;5;0;CRUSHING_BLOW
 enemies.mountains.dwarf;10;7;8;CRUSHING_BLOW

@@ -1,1 +1,1 @@
-name;maxHp;att;def,SPECIAL_ATTACK
+name;maxLifeEssence;att;def,SPECIAL_ATTACK
