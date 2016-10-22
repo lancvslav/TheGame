@@ -15,6 +15,21 @@ import java.util.Scanner;
 public class Launcher {
 
     public static void main(String[] args) {
+//        new Thread(new Runnable() {
+//            public void run() {
+//                try {
+//                    Clip clip = AudioSystem.getClip();
+//                    AudioInputStream inputStream;
+//                    inputStream = AudioSystem.getAudioInputStream(
+//                            this.getClass().getResourceAsStream("/alexi.mid"));
+//                    clip.open(inputStream);
+//                    clip.start();
+//                } catch (Exception e) {
+//                    System.err.println(e.getMessage());
+//                }
+//            }
+//        }).start();
+
         World world = World.example();
         Localization localization = new Localization
                 (ResourceUtil.getResource(ResourceType.LOCALIZATION, "localization"));

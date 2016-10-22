@@ -15,7 +15,7 @@ public class Tavern extends Building {
     private List<Merchandise> foodList;
 
     public Tavern() {
-        super("world.buildings.shop.tavern", LocationType.TAVERN);
+        super("world.building.shop.tavern", LocationType.TAVERN);
         this.drinkList = ListManageUtil.consumableList(ResourceUtil.getResource(ResourceType.DRINK, this.getName()));
         this.foodList = ListManageUtil.consumableList(ResourceUtil.getResource(ResourceType.FOOD, this.getName()));
     }

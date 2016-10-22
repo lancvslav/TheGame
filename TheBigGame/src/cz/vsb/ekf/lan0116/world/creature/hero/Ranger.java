@@ -25,7 +25,7 @@ public class Ranger extends Hero {
     @Override
     public String toString() {
         return "Swift ranger, called " + this.getName() +
-                " has " + this.getCurrentLifeEssence() + " essence of life and is wielding " + this.getWeapon().getName();
+                ", has " + this.getCurrentLifeEssence() + " essence of life and is wielding " + this.getWeapon().getName();
     }
 
 }

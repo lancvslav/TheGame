@@ -45,7 +45,7 @@ public class ListManageUtil {
         return list;
     }
 
-    public static Consumable getConsumable(List<Consumable> listWithConsumable, int index) {
+    public static Merchandise getConsumable(List<Merchandise> listWithConsumable, int index) {
         return listWithConsumable.get(index);
     }
 

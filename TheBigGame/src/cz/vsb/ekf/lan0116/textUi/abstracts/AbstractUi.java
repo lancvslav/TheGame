@@ -71,6 +71,14 @@ public abstract class AbstractUi implements Ui {
         return choicesArray;
     }
 
+    protected String[] consumablesToArray(List<Merchandise> consumables){
+        String[] choicesArray = new String[consumables.size()];
+        for (int i = 0; i < consumables.size(); i++) {
+            choicesArray[i] = this.get(consumables.get(i).getName()) + ", cost: " + consumables.get(i).getCost();
+        }
+        return choicesArray;
+    }
+
     protected String get(String keyFormat) {
         return this.getContext().getLocalization().get(keyFormat);
     }

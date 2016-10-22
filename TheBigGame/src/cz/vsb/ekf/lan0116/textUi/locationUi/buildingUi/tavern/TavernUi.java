@@ -4,6 +4,7 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.building.shop.Tavern;
+import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;
 
 public class TavernUi extends AbstractLocationUi<Tavern> {
 
@@ -26,12 +27,22 @@ public class TavernUi extends AbstractLocationUi<Tavern> {
                 this.get("drink offer"),
                 this.get("food offer"),
                 this.get("order"),
-                this.get("rumor")
+                this.get("rumor"),
+                this.get("leave this place")
         )) {
-            case 0: break;
-            case 1: break;
-            case 2: break;
-            case 3: break;
+            case 0:
+                new TavernOfferUi(this.getContext(), ConsumableType.DRINK).show();
+                break;
+            case 1:
+                new TavernOfferUi(this.getContext(), ConsumableType.FOOD).show();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                this.travel();
+                break;
         }
     }
 }

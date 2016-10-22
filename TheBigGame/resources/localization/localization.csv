@@ -47,6 +47,8 @@ enemies.swamp.hydra;hydra
 hero.class.ranger;ranger
 hero.class.sorcerer;sorcerer
 hero.class.warrior;warrior
+item.merchandise.consumable.drink.water;water
+item.merchandise.consumable.food.bread;bread
 item.merchandise.weapon.melee.bastard_sword;bastard sword
 item.merchandise.weapon.melee.claymore;claymore
 item.merchandise.weapon.melee.club;club
@@ -167,6 +169,8 @@ textUi.ShopUi.ask;Buy
 textUi.ShopUi.doors;Doors you see lead to:
 textUi.ShopUi.leave;Leave this place
 textUi.StreetUi.paths;Paths you can take lead to:
+textUi.TavernUi.decline_drink;Not thirsty after all
+textUi.TavernUi.decline_food;Not hungry after all
 textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
 textUi.TournamentUi.next;Next enemy:
 texUi.TournamentUi.coward;You coward!
@@ -174,14 +178,22 @@ texUi.TournamentUi.flee;Flee
 texUi.TournamentUi.proceed;Proceed
 texUi.TournamentUi.won;You won.
 world.arena.arena;arena
-world.buildings.shop.weapon_shop.archery;archery
-world.buildings.shop.weapon_shop.blacksmith;blacksmith
-world.buildings.shop.weapon_shop.wand_shop;wand shop
-world.buildings.shop.tavern;tavern
+world.building.shop.consumable_shop.grocery;grocery
+world.building.shop.consumable_shop.swift_drink;SwiftDrink
+world.building.shop.tavern;tavern
+world.building.shop.weapon_shop.archery;archery
+world.building.shop.weapon_shop.blacksmith;blacksmith
+world.building.shop.weapon_shop.wand_shop;wand shop
 world.street.battle_quarter;battle quarter
 world.street.central_crossroad;central crossroad
 world.street.central_road;central road
+world.street.cordial_alley;cordial alley
+world.street.indecisive_crossroad;indecisive crossroad
 world.street.main_square;main square
-world.street.road_of_battle;road of battle
-item.merchandise.consumable.drink.water;water
-item.merchandise.consumable.food.bread;bread
+world.street.road_of_conflict;road of conflict
+world.street.road_of_malice;raod of malice
+world.street.tavern_backyard;tavern backyard
+textUi.InventoryUi.value;value:
+textUi.InventoryUi.replenish;replenish value:
+textUi.InventoryUi.type;type:
+textUi.InventoryUi.damage;damage

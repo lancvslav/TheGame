@@ -17,7 +17,6 @@ public class TravelEvent implements Event {
         return gateway;
     }
 
-
     @Override
     public EventType getType() {
         return HeroType.TRAVEL;

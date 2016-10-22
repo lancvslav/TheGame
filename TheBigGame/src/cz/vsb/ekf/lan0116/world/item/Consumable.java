@@ -10,4 +10,8 @@ public class Consumable extends Merchandise {
         super(name, consumableType, cost);
         this.replenishValue = replenishValue;
     }
+
+    public int getReplenishValue() {
+        return replenishValue;
+    }
 }

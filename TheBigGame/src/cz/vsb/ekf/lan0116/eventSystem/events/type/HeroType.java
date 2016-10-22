@@ -4,6 +4,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventSuperType;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 
 public enum HeroType implements EventType {
+    CONSUME,
     DROP,
     EQUIP,
     TRADE,

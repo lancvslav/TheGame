@@ -6,10 +6,10 @@ import cz.vsb.ekf.lan0116.eventSystem.events.hero.EquipEvent;
 import cz.vsb.ekf.lan0116.eventSystem.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractUi;
+import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractHeroUi;
 import cz.vsb.ekf.lan0116.world.item.Item;
 
-public class InventoryUi extends AbstractUi {
+public class InventoryUi extends AbstractHeroUi {
 
     private RestHeroUi restHeroUi;
 
@@ -40,7 +40,14 @@ public class InventoryUi extends AbstractUi {
                 int choiceTemp = Integer.parseInt(this.getContext().getScanner().nextLine());
                 try {
                     Item itemToShow = this.getContext().getHero().getInventory().getItem(choiceTemp);
-                    System.out.println((itemToShow));
+                    switch (itemToShow.getItemType().getSuperType()) {
+                        case CONSUMABLE:
+                            this.printConsumable(itemToShow);
+                            break;
+                        case WEAPON:
+                            this.printWeapon(itemToShow);
+                            break;
+                    }
                     this.show();
                 } catch (IndexOutOfBoundsException ex) {
                     System.out.println(this.get("textUi.InventoryUi.don't_own"));
