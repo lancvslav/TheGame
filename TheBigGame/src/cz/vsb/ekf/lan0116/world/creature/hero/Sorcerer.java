@@ -1,11 +1,13 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
+import cz.vsb.ekf.lan0116.util.Localization;
+
 public class Sorcerer extends Hero {
 
     private int intelligence;
 
-    public Sorcerer(String name) {
-        super(name, HeroClass.SORCERER);
+    public Sorcerer(String name, Localization localization) {
+        super(name, HeroClass.SORCERER, localization);
         this.intelligence = HeroClass.SORCERER.getDamage();
     }
 
@@ -24,8 +26,10 @@ public class Sorcerer extends Hero {
 
     @Override
     public String toString() {
-        return "Wise caster, called " + this.getName() +
-                ", has " + this.getCurrentLifeEssence() + " essence of life and is wielding "+ this.getWeapon().getName();
+        return this.getLocalization().get("toString.sorcerer.brave") + " " + this.getName() + ", "
+                + this.getLocalization().get("toString.hero.has") + " " + this.getCurrentLifeEssence()
+                + " " + this.getLocalization().get("toString.hero.essence_wields")
+                + this.getLocalization().get(this.getWeapon().getName());
     }
 
 }

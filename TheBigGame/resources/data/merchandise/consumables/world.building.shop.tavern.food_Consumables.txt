@@ -1,1 +1,6 @@
-item.merchandise.consumable.food.bread;2;1;food
+item.merchandise.consumable.food.fresh_bread_witch_cheese;2;1;food
+item.merchandise.consumable.food.chicken_ragout;3;3;food
+item.merchandise.consumable.food.grilled_chicken_with_mashed_potatoes;5;5;food
+item.merchandise.consumable.food.braised_duck_and_rice;6;7;food
+item.merchandise.consumable.food.beef_goulash;7;8;food
+item.merchandise.consumable.food.roasted_pig;15;20;food

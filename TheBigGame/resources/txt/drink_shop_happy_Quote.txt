@@ -1,0 +1,2 @@
+textUi.resources.drink_shop_happy0
+textUi.resources.drink_shop_happy1

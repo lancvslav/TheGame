@@ -1,0 +1,4 @@
+textUi.resources.weapon_shop_happy0
+textUi.resources.weapon_shop_happy1
+textUi.resources.weapon_shop_happy2
+textUi.resources.weapon_shop_happy3

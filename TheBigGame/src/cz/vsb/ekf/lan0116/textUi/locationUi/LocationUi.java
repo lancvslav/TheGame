@@ -29,7 +29,7 @@ public class LocationUi extends AbstractLocationUi<Location> {
     @Override
     public void show() {
         locType = this.getLoc().getType();
-        System.out.println("_______________________________________________");
+        System.out.println("________________________________________________________________________________");
         switch (locType) {
             case ARENA:
                 arenaUi = new ArenaUi(this.getContext());

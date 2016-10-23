@@ -1,17 +1,17 @@
 package cz.vsb.ekf.lan0116.world.building.shop;
 
-import cz.vsb.ekf.lan0116.world.Location;
 import cz.vsb.ekf.lan0116.world.LocationType;
+import cz.vsb.ekf.lan0116.world.building.Building;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Shop extends Location {
+public class Shop extends Building {
 
     private List<Merchandise> merchandise;
 
-    public Shop(String shopName) {
+    public Shop(String shopName, LocationType shopType) {
         super(shopName, LocationType.SHOP);
     }
 

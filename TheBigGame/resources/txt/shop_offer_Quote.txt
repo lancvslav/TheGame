@@ -1,5 +1,0 @@
-textUi.MerchandiseUi.shop_offer0
-textUi.MerchandiseUi.shop_offer1
-textUi.MerchandiseUi.shop_offer2
-textUi.MerchandiseUi.shop_offer3
-textUi.MerchandiseUi.shop_offer4

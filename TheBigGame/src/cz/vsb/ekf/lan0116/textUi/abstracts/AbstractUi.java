@@ -66,15 +66,18 @@ public abstract class AbstractUi implements Ui {
     protected String[] merchandiseToArray(List<Merchandise> merchandise) {
         String[] choicesArray = new String[merchandise.size()];
         for (int i = 0; i < merchandise.size(); i++) {
-            choicesArray[i] = this.get(merchandise.get(i).getName()) + "-" + merchandise.get(i).getCost();
+            choicesArray[i] = this.get(merchandise.get(i).getName()) + ", " + this.get("textUi.cost") + ": "
+                    + merchandise.get(i).getCost();
         }
         return choicesArray;
     }
 
-    protected String[] consumablesToArray(List<Merchandise> consumables){
+    protected String[] consumablesToArray(List<Merchandise> consumables) {
         String[] choicesArray = new String[consumables.size()];
         for (int i = 0; i < consumables.size(); i++) {
-            choicesArray[i] = this.get(consumables.get(i).getName()) + ", cost: " + consumables.get(i).getCost();
+            choicesArray[i] = this.get(consumables.get(i).getName()) +
+                    ", " + this.get("textUi.InventoryUi.value") + ": "
+                    + consumables.get(i).getCost();
         }
         return choicesArray;
     }

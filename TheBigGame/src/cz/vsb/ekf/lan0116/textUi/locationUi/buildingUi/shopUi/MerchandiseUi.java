@@ -35,18 +35,22 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
         System.out.println();
         List<Merchandise> merchandiseList = this.getLoc().getMerchandise();
         this.printArray(merchandiseToArray(merchandiseList));
-        System.out.println("\n" + this.get(TextUtil.quote("shop_offer")));
+        switch(this.getLoc().getType()){
+            case SHOP:
+        }
+        //QUOTE SPECIFIED FOR CURRENT SHOP TYPE
+        System.out.println("\n" + this.get(TextUtil.quote(this.getLoc().getType().toString().toLowerCase()+"_offer")));
         System.out.printf("%d %s%n", merchandiseList.size(), this.get("textUi.MerchandiseUi.decline"));
         int choice = Integer.parseInt(this.getContext().getScanner().nextLine());
         if (choice >= (merchandiseList.size())) {
-            System.out.println(this.get(TextUtil.quote("shop_unhappy")));
+            System.out.println(this.get(TextUtil.quote(this.getLoc().getType().toString().toLowerCase()+"_unhappy")));
             this.travel();
         } else {
             Merchandise merchandiseToPurchase = ListManageUtil.getMerchandise(merchandiseList, choice);
             Response responseTrade = this.getContext().
                     getEventPublisher().getResponse(new TradeEvent(merchandiseToPurchase));
             if (responseTrade.isSuccess()) {
-                System.out.println(this.get(TextUtil.quote("shop_happy")));
+                System.out.println(this.get(this.getLoc().getType().toString().toLowerCase()+"_happy"));
                 System.out.println(this.getContext().getLocalization().get(merchandiseToPurchase.getName()) + " " +
                         this.get("textUi.MerchandiseUi.purchased"));
             } else {

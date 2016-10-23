@@ -47,8 +47,28 @@ enemies.swamp.hydra;hydra
 hero.class.ranger;ranger
 hero.class.sorcerer;sorcerer
 hero.class.warrior;warrior
+item.merchandise.consumable.drink.beer;beer
+item.merchandise.consumable.drink.bottle_of_beer;bottle of beer
+item.merchandise.consumable.drink.bottle_of_cider;bottle of cider
+item.merchandise.consumable.drink.bottle_of_mead;bottle of mead
+item.merchandise.consumable.drink.bottle_of_spirits;bottle of spirits
+item.merchandise.consumable.drink.bottle_of_watter;bottle of watter
+item.merchandise.consumable.drink.bottle_of_wine;bottle of wine
+item.merchandise.consumable.drink.mead;mead
 item.merchandise.consumable.drink.water;water
+item.merchandise.consumable.drink.wine;wine
+item.merchandise.consumable.food.apple;apple
+item.merchandise.consumable.food.beef_goulash;beef goulash
+item.merchandise.consumable.food.braised_duck_and_rice;braised duck and rice
 item.merchandise.consumable.food.bread;bread
+item.merchandise.consumable.food.carrot;carrot
+item.merchandise.consumable.food.dried_meat;dried meat
+item.merchandise.consumable.food.fresh_bread_witch_cheese;fresh bread with cheese
+item.merchandise.consumable.food.grilled_chicken_with_mashed_potatoes;grilled chicken with mashed potatoes
+item.merchandise.consumable.food.cheese;cheese
+item.merchandise.consumable.food.chicken_ragout;chicken ragout
+item.merchandise.consumable.food.nuts;nuts
+item.merchandise.consumable.food.roasted_pig;roasted pig
 item.merchandise.weapon.melee.bastard_sword;bastard sword
 item.merchandise.weapon.melee.claymore;claymore
 item.merchandise.weapon.melee.club;club
@@ -103,6 +123,8 @@ textUi.ArenaUi.tournament0;All folks try hard
 textUi.ArenaUi.tournament1;You are the prey now
 textUi.ArenaUi.tournament2;Prepare to get wet
 textUi.ArenaUi.welcome;Welcome to the Arena
+textUi.consumed;consumed
+textUi.cost;cost
 textUi.current_location0;You are standing at
 textUi.current_location1;Here you are, at
 textUi.current_location2;You are at
@@ -120,6 +142,7 @@ textUi.HeroCreationUi.pleasure;Pleasure to meet thee,
 textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, higher damage done, but not as vital as warrior.
 textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
 textUi.HeroCreationUi.warrior;0. Brave warrior. High vitality and endurance, but lower damage. Able to wield shield.
+textUi.InventoryUi.damage;damage
 textUi.InventoryUi.don't_own;You do not own this item.
 textUi.InventoryUi.dropped;What is done, can not be undone.
 textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.
@@ -132,6 +155,9 @@ textUi.InventoryUi.not_eligible;You are not eligible to wield this weapon.
 textUi.InventoryUi.not_in_inventory;Cant drop what you do not own.
 textUi.InventoryUi.really0;Do you really wan't to drop
 textUi.InventoryUi.really1;? You will not be able to recover it.
+textUi.InventoryUi.replenish;replenish value
+textUi.InventoryUi.type;type
+textUi.InventoryUi.value;value
 textUi.InventoryUi.which_one;Which one?
 textUi.InventoryUi.wielding;You are wielding
 textUi.loation_decision0;Would you rather
@@ -177,6 +203,11 @@ texUi.TournamentUi.coward;You coward!
 texUi.TournamentUi.flee;Flee
 texUi.TournamentUi.proceed;Proceed
 texUi.TournamentUi.won;You won.
+toString.hero.essence_wields;essence of life and wields
+toString.hero.has;has
+toString.ranger.brave;Swift ranger, called
+toString.sorcerer.brave;Wise caster, called
+toString.warrior.brave;Brave warrior, called
 world.arena.arena;arena
 world.building.shop.consumable_shop.grocery;grocery
 world.building.shop.consumable_shop.swift_drink;SwiftDrink
@@ -193,6 +224,3 @@ world.street.main_square;main square
 world.street.road_of_conflict;road of conflict
 world.street.road_of_malice;raod of malice
 world.street.tavern_backyard;tavern backyard
-textUi.InventoryUi.value;value:
-textUi.InventoryUi.replenish;replenish value:
-textUi.InventoryUi.type;type:

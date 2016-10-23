@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
+import cz.vsb.ekf.lan0116.util.Localization;
 import cz.vsb.ekf.lan0116.world.Location;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
@@ -14,13 +15,15 @@ public class Hero extends Creature {
     private Inventory inventory;
     private int coins;
     private HeroClass clazz;
+    private Localization localization;
 
-    public Hero(String name, HeroClass heroClass) {
+    public Hero(String name, HeroClass heroClass, Localization localization) {
         super(name, heroClass.getHealth(), heroClass.getDamage(), heroClass.getDefense());
         this.weapon = new Weapon("item.weapon.flower", 0, 1, WeaponType.UNISEX);
         this.inventory = new Inventory(this.getWeapon());
         this.coins = 1000;
         this.clazz = heroClass;
+        this.localization = localization;
     }
 
     public Location getPosition() {
@@ -59,7 +62,11 @@ public class Hero extends Creature {
         this.clazz = clazz;
     }
 
-//    /**
+    protected Localization getLocalization() {
+        return localization;
+    }
+
+    //    /**
 //     * Heals heroHandling for ammount of hp given in parameter
 //     *
 //     * @param healAmount

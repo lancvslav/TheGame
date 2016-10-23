@@ -26,7 +26,6 @@ public class TavernUi extends AbstractLocationUi<Tavern> {
         switch (this.choice(
                 this.get("drink offer"),
                 this.get("food offer"),
-                this.get("order"),
                 this.get("rumor"),
                 this.get("leave this place")
         )) {
@@ -37,10 +36,9 @@ public class TavernUi extends AbstractLocationUi<Tavern> {
                 new TavernOfferUi(this.getContext(), ConsumableType.FOOD).show();
                 break;
             case 2:
+                System.out.println("I won't tell you anything.");
                 break;
             case 3:
-                break;
-            case 4:
                 this.travel();
                 break;
         }

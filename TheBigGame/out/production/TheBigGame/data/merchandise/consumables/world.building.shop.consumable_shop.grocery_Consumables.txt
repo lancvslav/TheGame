@@ -1,1 +1,6 @@
-item.merchandise.consumable.food.bread;2;1;food
+item.merchandise.consumable.food.apple;1;1;food
+item.merchandise.consumable.food.carrot;1;1;food
+item.merchandise.consumable.food.nuts;2;1;food
+item.merchandise.consumable.food.bread;2;2;food
+item.merchandise.consumable.food.cheese;2;3;food
+item.merchandise.consumable.food.dried_meat;4;4;food
