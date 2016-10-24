@@ -173,20 +173,38 @@ textUi.menu.yes;Yes
 textUi.MerchandiseUi.decline;Decline offers and leave
 textUi.MerchandiseUi.not_enough_gold;Not enough gold.
 textUi.MerchandiseUi.purchased;purchased!
-textUi.MerchandiseUi.shop_happy0;It's a pleasure doing business with yer.
-textUi.MerchandiseUi.shop_happy1;Do come again.
-textUi.MerchandiseUi.shop_happy2;Thank you.
-textUi.MerchandiseUi.shop_happy3;Cometh soon.
-textUi.MerchandiseUi.shop_offer0;Choose what you want or get out.
-textUi.MerchandiseUi.shop_offer1;Take a look at my wares.
-textUi.MerchandiseUi.shop_offer2;You will not find better goods all arround.
-textUi.MerchandiseUi.shop_offer3;Well, what it is gonna be?
-textUi.MerchandiseUi.shop_offer4;Better merchant, you will find not.
-textUi.MerchandiseUi.shop_unhappy0;I see. Tis a pity. Well, what a man can do.
-textUi.MerchandiseUi.shop_unhappy1;Get out of my sight, you imbecile.
-textUi.MerchandiseUi.shop_unhappy2;What? Don't waste my time.
-textUi.MerchandiseUi.shop_unhappy3;People this days.
-textUi.MerchandiseUi.shop_unhappy4;Are you sure? Well, I might sell out while you are not around.
+textUi.no_money;No money, no funny, eh?
+textUi.resources.drink_shop_happy0;Enjoy!
+textUi.TavernUi.offer_drink;What ecaxtly you want to end yer thirst with?
+textUi.TavernUi.offer_food;What ecaxtly you want to end yer hunger with?
+textUi.resources.drink_shop_happy1;Do not overdo...
+textUi.resources.drink_shop_offer0;The most refreshing stuff, right in front of you.
+textUi.resources.drink_shop_offer1;Have a sip.
+textUi.resources.drink_shop_unhappy0;You will die of thirst.
+textUi.resources.drink_shop_unhappy1;Not thirsty after all, you say?
+textUi.resources.drink_shop_unhappy2;You will remember me. In the moment of the heat. When you will not even able to spit around
+textUi.resources.food_shop_happy0;Do not forget it in your pocket. It would mildew.
+textUi.resources.food_shop_happy1;The best is fresh. But you can keep it, for time of trouble.
+textUi.resources.food_shop_offer0;Everything is fresh!
+textUi.resources.food_shop_offer1;The most filling stuff all around.
+textUi.resources.food_shop_offer2;If you have sweet tooth, you are in the right place.
+textUi.resources.food_shop_unhappy0;I hope you will starve to death!
+textUi.resources.food_shop_unhappy1;You are missing a lot.
+textUi.resources.food_shop_unhappy2;You will remember me. In the moment of the hunger. When you will not have anything to put in yer mouth.
+textUi.resources.weapon_shop_happy0;It's a pleasure doing business with yer.
+textUi.resources.weapon_shop_happy1;Do come again.
+textUi.resources.weapon_shop_happy2;Thank you.
+textUi.resources.weapon_shop_happy3;Cometh soon.
+textUi.resources.weapon_shop_offer0;Choose what you want or get out.
+textUi.resources.weapon_shop_offer1;Take a look at my wares.
+textUi.resources.weapon_shop_offer2;You will not find better goods all around.
+textUi.resources.weapon_shop_offer3;Well, what it is gonna be?
+textUi.resources.weapon_shop_offer4;Better merchant, you will find not.
+textUi.resources.weapon_shop_unhappy0;I see. Tis a pity. Well, what a man can do.
+textUi.resources.weapon_shop_unhappy1;Get out of my sight, you imbecile.
+textUi.resources.weapon_shop_unhappy2;What? Don't waste my time.
+textUi.resources.weapon_shop_unhappy3;People this days.
+textUi.resources.weapon_shop_unhappy4;Are you sure? Well, I might sell out while you are not around.
 textUi.RestHeroUi.consume;Consume
 textUi.RestHeroUi.getUp;Get up
 textUi.RestHeroUi.inventory;Inventory

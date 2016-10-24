@@ -53,4 +53,9 @@ public class FightUi extends AbstractLocationUi {
 //            System.out.println("You died");
 //        }
     }
+
+    @Override
+    public void decisions() {
+
+    }
 }

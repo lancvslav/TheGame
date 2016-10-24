@@ -1,0 +1,3 @@
+textUi.resources.drink_shop_unhappy0
+textUi.resources.drink_shop_unhappy1
+textUi.resources.drink_shop_unhappy2

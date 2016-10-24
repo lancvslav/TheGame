@@ -1,0 +1,2 @@
+textUi.resources.drink_shop_offer0
+textUi.resources.drink_shop_offer1

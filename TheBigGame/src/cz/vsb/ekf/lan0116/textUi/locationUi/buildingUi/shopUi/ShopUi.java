@@ -25,7 +25,11 @@ public class ShopUi extends AbstractLocationUi<Shop> {
         for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
             System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
         }
-        System.out.println();
+        this.decisions();
+    }
+
+    @Override
+    public void decisions() {
         switch (this.choice(
                 this.get("textUi.ShopUi.ask"),
                 this.get("textUi.menu.rest"),

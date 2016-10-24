@@ -50,4 +50,9 @@ public class TournamentUi extends AbstractLocationUi {
         arenaUi = new ArenaUi(this.getContext());
         arenaUi.show();
     }
+
+    @Override
+    public void decisions() {
+
+    }
 }

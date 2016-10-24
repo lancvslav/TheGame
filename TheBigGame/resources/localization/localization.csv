@@ -173,7 +173,10 @@ textUi.menu.yes;Yes
 textUi.MerchandiseUi.decline;Decline offers and leave
 textUi.MerchandiseUi.not_enough_gold;Not enough gold.
 textUi.MerchandiseUi.purchased;purchased!
+textUi.no_money;No money, no funny, eh?
 textUi.resources.drink_shop_happy0;Enjoy!
+textUi.TavernUi.offer_drink;What ecaxtly you want to end yer thirst with?
+textUi.TavernUi.offer_food;What ecaxtly you want to end yer hunger with?
 textUi.resources.drink_shop_happy1;Do not overdo...
 textUi.resources.drink_shop_offer0;The most refreshing stuff, right in front of you.
 textUi.resources.drink_shop_offer1;Have a sip.

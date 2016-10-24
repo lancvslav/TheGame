@@ -35,6 +35,12 @@ public class LocationUi extends AbstractLocationUi<Location> {
                 arenaUi = new ArenaUi(this.getContext());
                 arenaUi.show();
                 return;
+            case DRINK_SHOP:
+                shopUi = new ShopUi(this.getContext());
+                shopUi.show();
+            case FOOD_SHOP:
+                shopUi = new ShopUi(this.getContext());
+                shopUi.show();
             case SHOP:
                 shopUi = new ShopUi(this.getContext());
                 shopUi.show();
@@ -51,5 +57,10 @@ public class LocationUi extends AbstractLocationUi<Location> {
             default:
                 throw new AssertionError(locType.name());
         }
+    }
+
+    @Override
+    public void decisions() {
+
     }
 }

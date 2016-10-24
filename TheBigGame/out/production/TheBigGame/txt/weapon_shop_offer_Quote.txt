@@ -1,0 +1,5 @@
+textUi.resources.weapon_shop_offer0
+textUi.resources.weapon_shop_offer1
+textUi.resources.weapon_shop_offer2
+textUi.resources.weapon_shop_offer3
+textUi.resources.weapon_shop_offer4

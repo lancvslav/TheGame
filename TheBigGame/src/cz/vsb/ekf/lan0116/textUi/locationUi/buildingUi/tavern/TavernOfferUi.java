@@ -16,6 +16,7 @@ import java.util.List;
 public class TavernOfferUi extends AbstractLocationUi<Tavern> {
 
     private ConsumableType offerDemand;
+    private List<Merchandise> consumables;
 
     private TavernUi tavernUi;
 
@@ -26,8 +27,11 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
 
     @Override
     public void show() {
-        List<Merchandise> consumables;
-        System.out.println();
+     this.decisions();
+    }
+
+    @Override
+    public void decisions() {
         switch (offerDemand) {
             case DRINK:
                 consumables = this.getLoc().getDrinkList();
@@ -38,14 +42,14 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
             default:
                 consumables = new ArrayList<>();
         }
-        this.printArray(consumablesToArray(consumables));
+        this.printArray(merchandiseToArray(consumables));
         switch (offerDemand) {
             case DRINK:
-                System.out.println(this.get("textUi.TavernUi.offer_drink"));
+                System.out.println("\n" + this.get("textUi.TavernUi.offer_drink"));
                 System.out.printf("%d %s%n", consumables.size(), this.get("textUi.TavernUi.decline_drink"));
                 break;
             case FOOD:
-                System.out.println(this.get("textUi.TavernUi.offer_food"));
+                System.out.println("\n" + this.get("textUi.TavernUi.offer_food"));
                 System.out.printf("%d %s%n", consumables.size(), this.get("textUi.TavernUi.decline_food"));
                 break;
         }
@@ -57,10 +61,12 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
             Consumable consumableReceived = (Consumable) ListManageUtil.getConsumable(consumables, choice);
             Response consumeResponse = this.getContext().getEventPublisher()
                     .getResponse(new ConsumeEvent(consumableReceived));
-            System.out.println(this.get("textUi.resources.drink_shop_happy0"));
-            System.out.println(this.get(consumableReceived.getName()) + " " + this.get("textUi.consumed"));
+            if (consumeResponse.isSuccess()) {
+                System.out.println(this.get("textUi.resources.drink_shop_happy0"));
+                System.out.println(this.get(consumableReceived.getName()) + " " + this.get("textUi.consumed"));
+            }
+            tavernUi = new TavernUi(this.getContext());
+            tavernUi.decisions();
         }
-
-
     }
 }

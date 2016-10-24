@@ -12,7 +12,7 @@ public class Shop extends Building {
     private List<Merchandise> merchandise;
 
     public Shop(String shopName, LocationType shopType) {
-        super(shopName, LocationType.SHOP);
+        super(shopName, shopType);
     }
 
     protected void setMerchandise(List<Merchandise> merchandise) {

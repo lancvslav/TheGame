@@ -6,5 +6,4 @@ interface Ui {
      * Ui for current screen
      */
     void show();
-
 }

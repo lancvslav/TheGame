@@ -22,7 +22,11 @@ public class TavernUi extends AbstractLocationUi<Tavern> {
         for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
             System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
         }
-        System.out.println();
+        this.decisions();
+    }
+
+    @Override
+    public void decisions() {
         switch (this.choice(
                 this.get("drink offer"),
                 this.get("food offer"),
@@ -37,6 +41,7 @@ public class TavernUi extends AbstractLocationUi<Tavern> {
                 break;
             case 2:
                 System.out.println("I won't tell you anything.");
+                this.decisions();
                 break;
             case 3:
                 this.travel();

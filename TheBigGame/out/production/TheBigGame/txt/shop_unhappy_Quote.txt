@@ -1,5 +1,0 @@
-textUi.MerchandiseUi.shop_unhappy0
-textUi.MerchandiseUi.shop_unhappy1
-textUi.MerchandiseUi.shop_unhappy2
-textUi.MerchandiseUi.shop_unhappy3
-textUi.MerchandiseUi.shop_unhappy4

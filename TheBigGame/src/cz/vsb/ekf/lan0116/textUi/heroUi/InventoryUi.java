@@ -26,16 +26,17 @@ public class InventoryUi extends AbstractHeroUi {
             return;
         }
         System.out.println();
-        this.printArray(itemsToArray(this.getContext().getHero().getInventory().getInventoryList()));
-        System.out.println();
+        this.decisions();
+    }
 
-        System.out.println();
+    private void decisions() {
         switch (this.choice(
                 this.get("textUi.InventoryUi.choice0.inspect"),
                 this.get("textUi.InventoryUi.choice1.equip"),
                 this.get("textUi.InventoryUi.choice2.drop"),
                 this.get("textUi.InventoryUi.choice3.close"))) {
             case 0:
+                this.printArray(itemsToArray(this.getContext().getHero().getInventory().getInventoryList()));
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 int choiceTemp = Integer.parseInt(this.getContext().getScanner().nextLine());
                 try {
@@ -48,13 +49,14 @@ public class InventoryUi extends AbstractHeroUi {
                             this.printWeapon(itemToShow);
                             break;
                     }
-                    this.show();
+                    this.decisions();
                 } catch (IndexOutOfBoundsException ex) {
                     System.out.println(this.get("textUi.InventoryUi.don't_own"));
-                    this.show();
+                    this.decisions();
                 }
                 break;
             case 1:
+                this.printArray(itemsToArray(this.getContext().getHero().getInventory().getInventoryList()));
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
                 Response responseEquip = this.getContext()
@@ -74,9 +76,10 @@ public class InventoryUi extends AbstractHeroUi {
                             break;
                     }
                 }
-                this.show();
+                this.decisions();
                 break;
             case 2:
+                this.printArray(itemsToArray(this.getContext().getHero().getInventory().getInventoryList()));
                 System.out.println(this.get("textUi.InventoryUi.which_one"));
                 choiceTemp = Integer.parseInt(getContext().getScanner().nextLine());
                 System.out.println(
@@ -101,10 +104,10 @@ public class InventoryUi extends AbstractHeroUi {
                                     break;
                             }
                         }
-                        this.show();
+                        this.decisions();
                         break;
                     case 1:
-                        this.show();
+                        this.decisions();
                 }
                 break;
             case 3:
@@ -112,4 +115,5 @@ public class InventoryUi extends AbstractHeroUi {
                 break;
         }
     }
+
 }

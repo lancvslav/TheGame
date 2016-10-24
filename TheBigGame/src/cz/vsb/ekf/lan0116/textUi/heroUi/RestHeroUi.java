@@ -1,10 +1,10 @@
 package cz.vsb.ekf.lan0116.textUi.heroUi;
 
 import cz.vsb.ekf.lan0116.textUi.Context;
+import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractHeroUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
-import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractUi;
 
-public class RestHeroUi extends AbstractUi {
+public class RestHeroUi extends AbstractHeroUi {
 
     private InventoryUi inventoryUi;
     private LocationUi locationUi;
@@ -15,7 +15,10 @@ public class RestHeroUi extends AbstractUi {
 
     @Override
     public void show() {
-        System.out.println();
+        this.decisions();
+    }
+
+    private void decisions() {
         switch (this.choice(
                 this.get("textUi.RestHeroUi.inventory"),
                 this.get("textUi.RestHeroUi.consume"),
@@ -26,12 +29,11 @@ public class RestHeroUi extends AbstractUi {
                 break;
             case 1:
                 System.out.println("\n" + this.get("textUi.RestHeroUi.starve"));
-                this.show();
+                this.decisions();
                 break;
             case 2:
                 locationUi = new LocationUi(getContext());
-                locationUi.show();
+                locationUi.decisions();
         }
     }
-
 }

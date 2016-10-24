@@ -21,6 +21,11 @@ public class ArenaUi extends AbstractLocationUi {
     public void show() {
         System.out.println("\n" + this.get("textUi.ArenaUi.welcome"));
         System.out.println(this.get("textUi.ArenaUi.tournament_selection"));
+        this.decisions();
+    }
+
+    @Override
+    public void decisions() {
         switch (this.choice(
                 this.get("textUi.ArenaUi.back"),
                 this.get("textUi.ArenaUi.sign_up"))) {

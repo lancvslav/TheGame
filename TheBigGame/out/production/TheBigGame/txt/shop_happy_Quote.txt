@@ -1,4 +1,0 @@
-textUi.MerchandiseUi.shop_happy0
-textUi.MerchandiseUi.shop_happy1
-textUi.MerchandiseUi.shop_happy2
-textUi.MerchandiseUi.shop_happy3

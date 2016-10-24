@@ -15,4 +15,8 @@ public class WildernessUi extends AbstractLocationUi<Wilderness> {
         System.out.println("You are fucked.");
     }
 
+    @Override
+    public void decisions() {
+
+    }
 }

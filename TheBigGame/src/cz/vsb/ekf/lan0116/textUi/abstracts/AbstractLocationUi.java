@@ -15,6 +15,8 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
         return (L) this.getContext().getHero().getPosition();
     }
 
+    public abstract void decisions();
+
     /**
      * Called, when user decides to travel to another location
      */

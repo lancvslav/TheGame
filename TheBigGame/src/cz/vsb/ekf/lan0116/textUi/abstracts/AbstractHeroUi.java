@@ -21,7 +21,7 @@ public abstract class AbstractHeroUi extends AbstractUi {
      */
     protected void printConsumable(Item itemToPrint) {
         Consumable item = (Consumable) itemToPrint;
-        System.out.println(this.get(item.getName()) + " "
+        System.out.println(this.get(item.getName()) + ", "
                 + this.get("textUi.InventoryUi.replenish") + ": " + item.getReplenishValue()+", "
                 + this.get("textUi.InventoryUi.value") + ": " + item.getCost()+", "
                 + this.get("textUi.InventoryUi.type") + ": " + item.getItemType().toString().toLowerCase());
@@ -32,7 +32,7 @@ public abstract class AbstractHeroUi extends AbstractUi {
      */
     protected void printWeapon(Item itemToPrint) {
         Weapon item = (Weapon) itemToPrint;
-        System.out.println(this.get(item.getName()) + " "
+        System.out.println(this.get(item.getName()) + ", "
                 + this.get("textUi.InventoryUi.damage") + " " + item.getDamage()+", "
                 + this.get("textUi.InventoryUi.value") + " " + item.getCost()+", "
                 + this.get("textUi.InventoryUi.type") + " " + item.getItemType().toString().toLowerCase());

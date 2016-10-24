@@ -23,12 +23,17 @@ class StreetUi extends AbstractLocationUi<Street> {
             System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
         }
         System.out.println("\n" + this.get(TextUtil.quote("location_decision")));
+        this.decisions();
+    }
+
+    public void decisions() {
         switch (this.choice(
                 this.get("textUi.menu.trouble"),
                 this.get("textUi.menu.rest"),
                 this.get("textUi.menu.somewhere"))) {
             case 0:
                 System.out.printf("\n%s %s%n", this.get("textUi.location.just"), this.get(this.getLoc().getName()));
+                this.decisions();
                 break;
             case 1:
                 restHeroUi = new RestHeroUi(getContext());
