@@ -32,15 +32,17 @@ public class World {
     private static Arena arena;
 
     //STREETS
-    private static Street battleQuarter;
+    private static Square battleQuarter;
 
-    private static Street centralCrossroad;
-    private static Street indecisiveCrossroad;
+    private static CrossRoad centralCrossroad;
+    private static CrossRoad indecisiveCrossroad;
+    private static CrossRoad townGate;
 
-    private static Street centralRoad;
-    private static Street cordialAlley;
-    private static Street roadOfConflict;
-    private static Street roadOfMalice;
+    private static Road centralRoad;
+    private static Road cordialAlley;
+    private static Road firstAvenue;
+    private static Road roadOfConflict;
+    private static Road roadOfMalice;
 
     public World(Location startLocation) {
         this.startLocation = startLocation;
@@ -53,20 +55,21 @@ public class World {
         swiftDrink = new SwiftDrink();
 
         tavern = new Tavern();
-        tavernBackyard = new Road("world.street.tavern_backyard");
+        tavernBackyard = new Road("world.road.tavern_backyard");
 
         arena = new Arena("world.arena.arena");
 
-        battleQuarter = new Square("world.street.battle_quarter");
+        battleQuarter = new Square("world.square.battle_quarter");
 
-        centralCrossroad = new CrossRoad("world.street.central_crossroad");
-        indecisiveCrossroad = new CrossRoad("world.street.indecisive_crossroad");
+        centralCrossroad = new CrossRoad("world.crossroad.central_crossroad");
+        indecisiveCrossroad = new CrossRoad("world.crossroad.indecisive_crossroad");
+        townGate = new CrossRoad("world.crossroad.town_gate");
 
-
-        centralRoad = new Road("world.street.central_road");
-        cordialAlley = new Road("world.street.cordial_alley");
-        roadOfConflict = new Road("world.street.road_of_conflict");
-        roadOfMalice = new Road("world.street.road_of_malice");
+        centralRoad = new Road("world.road.central_road");
+        cordialAlley = new Road("world.road.cordial_alley");
+        firstAvenue = new Road("world.road.fist_avenue");
+        roadOfConflict = new Road("world.road.road_of_conflict");
+        roadOfMalice = new Road("world.road.road_of_malice");
     }
 
     /**
@@ -75,20 +78,20 @@ public class World {
      * @return
      */
     public static World example() {
-        Location startLocation = new Square("world.street.main_square");
+        Location startLocation = new Square("world.square.main_square");
         World world = new World(startLocation);
         Location.link(startLocation,grocery);
         Location.link(startLocation,swiftDrink);
         Location.link(startLocation, tavern);
 
-        //FROM TAVERN TO BATTLE QUARTER
+        //TAVERN -> BATTLE QUARTER
         Location.link(tavern, tavernBackyard);
         Location.link(tavernBackyard, cordialAlley);
         Location.link(cordialAlley, indecisiveCrossroad);
         Location.link(indecisiveCrossroad, roadOfMalice);
         Location.link(roadOfMalice, battleQuarter);
 
-        //FROM MAIN SQUARE TO BATTLE QUARTER
+        //MAIN SQUARE -> BATTLE QUARTER
         Location.link(startLocation, centralRoad);
         Location.link(centralRoad, centralCrossroad);
         Location.link(centralCrossroad, roadOfConflict);
@@ -97,6 +100,10 @@ public class World {
         Location.link(battleQuarter, arena);
         Location.link(battleQuarter, blacksmith);
         Location.link(battleQuarter, wandShop);
+
+        //CENTRAL -> TOWN GATE
+        Location.link(centralCrossroad, firstAvenue);
+        Location.link(firstAvenue,townGate);
         return world;
     }
 

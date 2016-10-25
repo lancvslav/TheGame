@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.util.Localization;
 
 public class Sorcerer extends Hero {
 
-    private int intelligence;
+    private float intelligence;
 
     public Sorcerer(String name, Localization localization) {
         super(name, HeroClass.SORCERER, localization);
@@ -16,11 +16,11 @@ public class Sorcerer extends Hero {
         return this.getIntelligence() + this.getWeapon().getDamage();
     }
 
-    public int getIntelligence() {
+    public float getIntelligence() {
         return intelligence;
     }
 
-    public void setIntelligence(int intelligence) {
+    public void setIntelligence(float intelligence) {
         this.intelligence = intelligence;
     }
 

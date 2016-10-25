@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.util.Localization;
 
 public class Warrior extends Hero {
 
-    private int strength;
+    private float strength;
 
     public Warrior(String name, Localization localization) {
         super(name, HeroClass.WARRIOR, localization);
@@ -16,11 +16,11 @@ public class Warrior extends Hero {
         return this.getStrength() + this.getWeapon().getDamage();
     }
 
-    public int getStrength() {
+    public float getStrength() {
         return strength;
     }
 
-    public void setStrength(int strength) {
+    public void setStrength(float strength) {
         this.strength = strength;
     }
 

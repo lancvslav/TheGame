@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.util.Localization;
 
 public class Ranger extends Hero {
 
-    private int agility;
+    private float agility;
 
     public Ranger(String name, Localization localization) {
         super(name, HeroClass.RANGER, localization);
@@ -16,11 +16,11 @@ public class Ranger extends Hero {
         return this.getAgility() + this.getWeapon().getDamage();
     }
 
-    public int getAgility() {
+    public float getAgility() {
         return agility;
     }
 
-    public void setAgility(int agility) {
+    public void setAgility(float agility) {
         this.agility = agility;
     }
 
