@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.hero.ConsumeEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
-import cz.vsb.ekf.lan0116.world.building.shop.Tavern;
+import cz.vsb.ekf.lan0116.world.location.building.shop.Tavern;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;

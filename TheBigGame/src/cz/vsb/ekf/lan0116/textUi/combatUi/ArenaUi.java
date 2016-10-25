@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
-import cz.vsb.ekf.lan0116.world.building.Arena;
+import cz.vsb.ekf.lan0116.world.location.building.Arena;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 

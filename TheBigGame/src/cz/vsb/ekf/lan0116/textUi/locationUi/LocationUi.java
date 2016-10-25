@@ -5,8 +5,8 @@ import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.textUi.combatUi.ArenaUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi.ShopUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.tavern.TavernUi;
-import cz.vsb.ekf.lan0116.world.Location;
-import cz.vsb.ekf.lan0116.world.LocationType;
+import cz.vsb.ekf.lan0116.world.location.Location;
+import cz.vsb.ekf.lan0116.world.location.type.LocationSuperType;
 
 public class LocationUi extends AbstractLocationUi<Location> {
 
@@ -14,7 +14,7 @@ public class LocationUi extends AbstractLocationUi<Location> {
     private ShopUi shopUi;
     private StreetUi streetUi;
     private TavernUi tavernUi;
-    private LocationType locType;
+    private LocationSuperType locType;
 
 
     public LocationUi(Context context) {
@@ -28,19 +28,13 @@ public class LocationUi extends AbstractLocationUi<Location> {
      */
     @Override
     public void show() {
-        locType = this.getLoc().getType();
+        locType = this.getLoc().getSuperType();
         System.out.println("________________________________________________________________________________");
         switch (locType) {
             case ARENA:
                 arenaUi = new ArenaUi(this.getContext());
                 arenaUi.show();
                 return;
-            case DRINK_SHOP:
-                shopUi = new ShopUi(this.getContext());
-                shopUi.show();
-            case FOOD_SHOP:
-                shopUi = new ShopUi(this.getContext());
-                shopUi.show();
             case SHOP:
                 shopUi = new ShopUi(this.getContext());
                 shopUi.show();

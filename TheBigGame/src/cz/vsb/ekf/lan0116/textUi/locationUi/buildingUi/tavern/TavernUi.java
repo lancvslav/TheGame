@@ -3,7 +3,7 @@ package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.tavern;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
-import cz.vsb.ekf.lan0116.world.building.shop.Tavern;
+import cz.vsb.ekf.lan0116.world.location.building.shop.Tavern;
 import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;
 
 public class TavernUi extends AbstractLocationUi<Tavern> {

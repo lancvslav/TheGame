@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
-import cz.vsb.ekf.lan0116.world.building.shop.Shop;
+import cz.vsb.ekf.lan0116.world.location.building.shop.Shop;
 
 public class ShopUi extends AbstractLocationUi<Shop> {
 

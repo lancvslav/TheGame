@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
 import cz.vsb.ekf.lan0116.util.Localization;
-import cz.vsb.ekf.lan0116.world.Location;
+import cz.vsb.ekf.lan0116.world.location.Location;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
 import cz.vsb.ekf.lan0116.world.item.Weapon;

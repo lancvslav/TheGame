@@ -2,8 +2,8 @@ package cz.vsb.ekf.lan0116.textUi.abstracts;
 
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.TravelEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.world.Gateway;
-import cz.vsb.ekf.lan0116.world.Location;
+import cz.vsb.ekf.lan0116.world.location.Gateway;
+import cz.vsb.ekf.lan0116.world.location.Location;
 
 public abstract class AbstractLocationUi<L extends Location> extends AbstractUi {
 

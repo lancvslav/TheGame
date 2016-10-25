@@ -7,7 +7,7 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
-import cz.vsb.ekf.lan0116.world.building.shop.Shop;
+import cz.vsb.ekf.lan0116.world.location.building.shop.Shop;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
 import java.util.List;
@@ -33,8 +33,9 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
     public void show() {
         merchandiseList = this.getLoc().getMerchandise();
         this.printArray(merchandiseToArray(merchandiseList));
-        //QUOTE SPECIFIED FOR CURRENT SHOP TYPE
-        System.out.println("\n" + this.get(TextUtil.quote(this.getLoc().getType().name().toLowerCase() + "_offer")));
+        //QUOTE SPECIFIED FOR CURRENT SHOP type
+        System.out.println("\n" + this.get(TextUtil.quote(
+                this.getLoc().getType().toString().toLowerCase() + "_offer")));
         System.out.printf("%d %s%n", merchandiseList.size(), this.get("textUi.MerchandiseUi.decline"));
         this.decisions();
     }

@@ -3,7 +3,7 @@ package cz.vsb.ekf.lan0116.eventSystem.events.hero;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
-import cz.vsb.ekf.lan0116.world.Gateway;
+import cz.vsb.ekf.lan0116.world.location.Gateway;
 
 public class TravelEvent implements Event {
 

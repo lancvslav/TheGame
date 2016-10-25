@@ -1,12 +1,17 @@
 package cz.vsb.ekf.lan0116.world;
 
-import cz.vsb.ekf.lan0116.world.building.Arena;
-import cz.vsb.ekf.lan0116.world.building.shop.consumableShop.Grocery;
-import cz.vsb.ekf.lan0116.world.building.shop.consumableShop.SwiftDrink;
-import cz.vsb.ekf.lan0116.world.building.shop.weaponShop.Archery;
-import cz.vsb.ekf.lan0116.world.building.shop.weaponShop.Blacksmith;
-import cz.vsb.ekf.lan0116.world.building.shop.Tavern;
-import cz.vsb.ekf.lan0116.world.building.shop.weaponShop.WandShop;
+import cz.vsb.ekf.lan0116.world.location.*;
+import cz.vsb.ekf.lan0116.world.location.building.Arena;
+import cz.vsb.ekf.lan0116.world.location.building.shop.consumableShop.Grocery;
+import cz.vsb.ekf.lan0116.world.location.building.shop.consumableShop.SwiftDrink;
+import cz.vsb.ekf.lan0116.world.location.building.shop.weaponShop.Archery;
+import cz.vsb.ekf.lan0116.world.location.building.shop.weaponShop.Blacksmith;
+import cz.vsb.ekf.lan0116.world.location.building.shop.Tavern;
+import cz.vsb.ekf.lan0116.world.location.building.shop.weaponShop.WandShop;
+import cz.vsb.ekf.lan0116.world.location.street.CrossRoad;
+import cz.vsb.ekf.lan0116.world.location.street.Road;
+import cz.vsb.ekf.lan0116.world.location.street.Square;
+import cz.vsb.ekf.lan0116.world.location.street.Street;
 
 public class World {
 
@@ -48,20 +53,20 @@ public class World {
         swiftDrink = new SwiftDrink();
 
         tavern = new Tavern();
-        tavernBackyard = new Street("world.street.tavern_backyard");
+        tavernBackyard = new Road("world.street.tavern_backyard");
 
         arena = new Arena("world.arena.arena");
 
-        battleQuarter = new Street("world.street.battle_quarter");
+        battleQuarter = new Square("world.street.battle_quarter");
 
-        centralCrossroad = new Street("world.street.central_crossroad");
-        indecisiveCrossroad = new Street("world.street.indecisive_crossroad");
+        centralCrossroad = new CrossRoad("world.street.central_crossroad");
+        indecisiveCrossroad = new CrossRoad("world.street.indecisive_crossroad");
 
 
-        centralRoad = new Street("world.street.central_road");
-        cordialAlley = new Street("world.street.cordial_alley");
-        roadOfConflict = new Street("world.street.road_of_conflict");
-        roadOfMalice = new Street("world.street.road_of_malice");
+        centralRoad = new Road("world.street.central_road");
+        cordialAlley = new Road("world.street.cordial_alley");
+        roadOfConflict = new Road("world.street.road_of_conflict");
+        roadOfMalice = new Road("world.street.road_of_malice");
     }
 
     /**
@@ -70,7 +75,7 @@ public class World {
      * @return
      */
     public static World example() {
-        Location startLocation = new Street("world.street.main_square");
+        Location startLocation = new Square("world.street.main_square");
         World world = new World(startLocation);
         Location.link(startLocation,grocery);
         Location.link(startLocation,swiftDrink);
