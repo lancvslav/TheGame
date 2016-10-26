@@ -233,12 +233,14 @@ world.building.shop.tavern;tavern
 world.building.shop.weapon_shop.archery;archery
 world.building.shop.weapon_shop.blacksmith;blacksmith
 world.building.shop.weapon_shop.wand_shop;wand shop
-world.street.battle_quarter;battle quarter
-world.street.central_crossroad;central crossroad
-world.street.central_road;central road
-world.street.cordial_alley;cordial alley
-world.street.indecisive_crossroad;indecisive crossroad
-world.street.main_square;main square
-world.street.road_of_conflict;road of conflict
-world.street.road_of_malice;raod of malice
-world.street.tavern_backyard;tavern backyard
+world.square.battle_quarter;battle quarter
+world.crossroad.central_crossroad;central crossroad
+world.road.central_road;central road
+world.road.cordial_alley;cordial alley
+world.crossroad.indecisive_crossroad;indecisive crossroad
+world.square.main_square;main square
+world.road.road_of_conflict;road of conflict
+world.road.road_of_malice;raod of malice
+world.road.tavern_backyard;tavern backyard
+world.road.fist_avenue;first avenue
+world.crossroad.town_gate;town gate
