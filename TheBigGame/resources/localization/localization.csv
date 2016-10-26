@@ -47,6 +47,28 @@ enemies.swamp.hydra;hydra
 hero.class.ranger;ranger
 hero.class.sorcerer;sorcerer
 hero.class.warrior;warrior
+item.merchandise.consumable.drink.beer;beer
+item.merchandise.consumable.drink.bottle_of_beer;bottle of beer
+item.merchandise.consumable.drink.bottle_of_cider;bottle of cider
+item.merchandise.consumable.drink.bottle_of_mead;bottle of mead
+item.merchandise.consumable.drink.bottle_of_spirits;bottle of spirits
+item.merchandise.consumable.drink.bottle_of_watter;bottle of watter
+item.merchandise.consumable.drink.bottle_of_wine;bottle of wine
+item.merchandise.consumable.drink.mead;mead
+item.merchandise.consumable.drink.water;water
+item.merchandise.consumable.drink.wine;wine
+item.merchandise.consumable.food.apple;apple
+item.merchandise.consumable.food.beef_goulash;beef goulash
+item.merchandise.consumable.food.braised_duck_and_rice;braised duck and rice
+item.merchandise.consumable.food.bread;bread
+item.merchandise.consumable.food.carrot;carrot
+item.merchandise.consumable.food.dried_meat;dried meat
+item.merchandise.consumable.food.fresh_bread_witch_cheese;fresh bread with cheese
+item.merchandise.consumable.food.grilled_chicken_with_mashed_potatoes;grilled chicken with mashed potatoes
+item.merchandise.consumable.food.cheese;cheese
+item.merchandise.consumable.food.chicken_ragout;chicken ragout
+item.merchandise.consumable.food.nuts;nuts
+item.merchandise.consumable.food.roasted_pig;roasted pig
 item.merchandise.weapon.melee.bastard_sword;bastard sword
 item.merchandise.weapon.melee.claymore;claymore
 item.merchandise.weapon.melee.club;club
@@ -101,6 +123,8 @@ textUi.ArenaUi.tournament0;All folks try hard
 textUi.ArenaUi.tournament1;You are the prey now
 textUi.ArenaUi.tournament2;Prepare to get wet
 textUi.ArenaUi.welcome;Welcome to the Arena
+textUi.consumed;consumed
+textUi.cost;cost
 textUi.current_location0;You are standing at
 textUi.current_location1;Here you are, at
 textUi.current_location2;You are at
@@ -115,9 +139,10 @@ textUi.HeroCreationUi.name0;What is thy noble name, sir?
 textUi.HeroCreationUi.name1;Please, tell me how to call thee.
 textUi.HeroCreationUi.new_game.expecting;I have been expecting thee...
 textUi.HeroCreationUi.pleasure;Pleasure to meet thee,
-textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, higher damage done, but not as vital as warrior.
+textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, moderate damage done, average vitality.
 textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
-textUi.HeroCreationUi.warrior;0. Brave warrior. High vitality and endurance, but lower damage. Able to wield shield.
+textUi.HeroCreationUi.warrior;0. Brave warrior. High survivability, mediocre damage. Able to wield shield.
+textUi.InventoryUi.damage;damage
 textUi.InventoryUi.don't_own;You do not own this item.
 textUi.InventoryUi.dropped;What is done, can not be undone.
 textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.
@@ -130,6 +155,9 @@ textUi.InventoryUi.not_eligible;You are not eligible to wield this weapon.
 textUi.InventoryUi.not_in_inventory;Cant drop what you do not own.
 textUi.InventoryUi.really0;Do you really wan't to drop
 textUi.InventoryUi.really1;? You will not be able to recover it.
+textUi.InventoryUi.replenish;replenish value
+textUi.InventoryUi.type;type
+textUi.InventoryUi.value;value
 textUi.InventoryUi.which_one;Which one?
 textUi.InventoryUi.wielding;You are wielding
 textUi.loation_decision0;Would you rather
@@ -145,20 +173,38 @@ textUi.menu.yes;Yes
 textUi.MerchandiseUi.decline;Decline offers and leave
 textUi.MerchandiseUi.not_enough_gold;Not enough gold.
 textUi.MerchandiseUi.purchased;purchased!
-textUi.MerchandiseUi.shop_happy0;It's a pleasure doing business with yer.
-textUi.MerchandiseUi.shop_happy1;Do come again.
-textUi.MerchandiseUi.shop_happy2;Thank you.
-textUi.MerchandiseUi.shop_happy3;Cometh soon.
-textUi.MerchandiseUi.shop_offer0;Choose what you want or get out.
-textUi.MerchandiseUi.shop_offer1;Take a look at my wares.
-textUi.MerchandiseUi.shop_offer2;You will not find better goods all arround.
-textUi.MerchandiseUi.shop_offer3;Well, what it is gonna be?
-textUi.MerchandiseUi.shop_offer4;Better merchant, you will find not.
-textUi.MerchandiseUi.shop_unhappy0;I see. Tis a pity. Well, what a man can do.
-textUi.MerchandiseUi.shop_unhappy1;Get out of my sight, you imbecile.
-textUi.MerchandiseUi.shop_unhappy2;What? Don't waste my time.
-textUi.MerchandiseUi.shop_unhappy3;People this days.
-textUi.MerchandiseUi.shop_unhappy4;Are you sure? Well, I might sell out while you are not around.
+textUi.no_money;No money, no funny, eh?
+textUi.resources.drink_shop_happy0;Enjoy!
+textUi.TavernUi.offer_drink;What ecaxtly you want to end yer thirst with?
+textUi.TavernUi.offer_food;What ecaxtly you want to end yer hunger with?
+textUi.resources.drink_shop_happy1;Do not overdo...
+textUi.resources.drink_shop_offer0;The most refreshing stuff, right in front of you.
+textUi.resources.drink_shop_offer1;Have a sip.
+textUi.resources.drink_shop_unhappy0;You will die of thirst.
+textUi.resources.drink_shop_unhappy1;Not thirsty after all, you say?
+textUi.resources.drink_shop_unhappy2;You will remember me. In the moment of the heat. When you will not even able to spit around
+textUi.resources.food_shop_happy0;Do not forget it in your pocket. It would mildew.
+textUi.resources.food_shop_happy1;The best is fresh. But you can keep it, for time of trouble.
+textUi.resources.food_shop_offer0;Everything is fresh!
+textUi.resources.food_shop_offer1;The most filling stuff all around.
+textUi.resources.food_shop_offer2;If you have sweet tooth, you are in the right place.
+textUi.resources.food_shop_unhappy0;I hope you will starve to death!
+textUi.resources.food_shop_unhappy1;You are missing a lot.
+textUi.resources.food_shop_unhappy2;You will remember me. In the moment of the hunger. When you will not have anything to put in yer mouth.
+textUi.resources.weapon_shop_happy0;It's a pleasure doing business with yer.
+textUi.resources.weapon_shop_happy1;Do come again.
+textUi.resources.weapon_shop_happy2;Thank you.
+textUi.resources.weapon_shop_happy3;Cometh soon.
+textUi.resources.weapon_shop_offer0;Choose what you want or get out.
+textUi.resources.weapon_shop_offer1;Take a look at my wares.
+textUi.resources.weapon_shop_offer2;You will not find better goods all around.
+textUi.resources.weapon_shop_offer3;Well, what it is gonna be?
+textUi.resources.weapon_shop_offer4;Better merchant, you will find not.
+textUi.resources.weapon_shop_unhappy0;I see. Tis a pity. Well, what a man can do.
+textUi.resources.weapon_shop_unhappy1;Get out of my sight, you imbecile.
+textUi.resources.weapon_shop_unhappy2;What? Don't waste my time.
+textUi.resources.weapon_shop_unhappy3;People this days.
+textUi.resources.weapon_shop_unhappy4;Are you sure? Well, I might sell out while you are not around.
 textUi.RestHeroUi.consume;Consume
 textUi.RestHeroUi.getUp;Get up
 textUi.RestHeroUi.inventory;Inventory
@@ -167,14 +213,32 @@ textUi.ShopUi.ask;Buy
 textUi.ShopUi.doors;Doors you see lead to:
 textUi.ShopUi.leave;Leave this place
 textUi.StreetUi.paths;Paths you can take lead to:
+textUi.TavernUi.decline_drink;Not thirsty after all
+textUi.TavernUi.decline_food;Not hungry after all
 textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
 textUi.TournamentUi.next;Next enemy:
 texUi.TournamentUi.coward;You coward!
 texUi.TournamentUi.flee;Flee
 texUi.TournamentUi.proceed;Proceed
 texUi.TournamentUi.won;You won.
+toString.hero.essence_wields;essence of life and wields
+toString.hero.has;has
+toString.ranger.brave;Swift ranger, called
+toString.sorcerer.brave;Wise caster, called
+toString.warrior.brave;Brave warrior, called
 world.arena.arena;arena
-world.buildings.shop.weapon_shop.archery;archery
-world.buildings.shop.weapon_shop.blacksmith;blacksmith
-world.buildings.shop.weapon_shop.wand_shop;wand shop
+world.building.shop.consumable_shop.grocery;grocery
+world.building.shop.consumable_shop.swift_drink;SwiftDrink
+world.building.shop.tavern;tavern
+world.building.shop.weapon_shop.archery;archery
+world.building.shop.weapon_shop.blacksmith;blacksmith
+world.building.shop.weapon_shop.wand_shop;wand shop
+world.street.battle_quarter;battle quarter
+world.street.central_crossroad;central crossroad
+world.street.central_road;central road
+world.street.cordial_alley;cordial alley
+world.street.indecisive_crossroad;indecisive crossroad
 world.street.main_square;main square
+world.street.road_of_conflict;road of conflict
+world.street.road_of_malice;raod of malice
+world.street.tavern_backyard;tavern backyard
