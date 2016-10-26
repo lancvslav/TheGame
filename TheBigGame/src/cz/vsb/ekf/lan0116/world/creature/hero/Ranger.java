@@ -1,13 +1,11 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
-import cz.vsb.ekf.lan0116.util.Localization;
-
 public class Ranger extends Hero {
 
     private float agility;
 
-    public Ranger(String name, Localization localization) {
-        super(name, HeroClass.RANGER, localization);
+    public Ranger(String name) {
+        super(name, HeroClass.RANGER);
         this.agility = HeroClass.RANGER.getDamage();
     }
 
@@ -26,10 +24,7 @@ public class Ranger extends Hero {
 
     @Override
     public String toString() {
-        return this.getLocalization().get("toString.ranger.brave") + " " + this.getName() + ", "
-                + this.getLocalization().get("toString.hero.has") + " "+ this.getCurrentLifeEssence()
-                + " " + this.getLocalization().get("toString.hero.essence_wields")
-                + this.getLocalization().get(this.getWeapon().getName());
+        return "Only for testing:";
     }
 
 }

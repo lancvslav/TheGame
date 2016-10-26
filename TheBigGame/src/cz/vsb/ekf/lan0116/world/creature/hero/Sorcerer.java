@@ -1,13 +1,11 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
-import cz.vsb.ekf.lan0116.util.Localization;
-
 public class Sorcerer extends Hero {
 
     private float intelligence;
 
-    public Sorcerer(String name, Localization localization) {
-        super(name, HeroClass.SORCERER, localization);
+    public Sorcerer(String name) {
+        super(name, HeroClass.SORCERER);
         this.intelligence = HeroClass.SORCERER.getDamage();
     }
 
@@ -26,10 +24,7 @@ public class Sorcerer extends Hero {
 
     @Override
     public String toString() {
-        return this.getLocalization().get("toString.sorcerer.brave") + " " + this.getName() + ", "
-                + this.getLocalization().get("toString.hero.has") + " " + this.getCurrentLifeEssence()
-                + " " + this.getLocalization().get("toString.hero.essence_wields")
-                + this.getLocalization().get(this.getWeapon().getName());
+        return "Only for testing:";
     }
 
 }
