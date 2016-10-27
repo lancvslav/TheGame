@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.world.creature;
 
-import cz.vsb.ekf.lan0116.combat.Attacks;
+import cz.vsb.ekf.lan0116.combat.EnemyAtacks;
 
 public class Enemy extends Creature {
 
@@ -8,7 +8,7 @@ public class Enemy extends Creature {
 
     public Enemy(String name) {
         super(name, 10, 10, 10);
-        this.specialAttack = Attacks.HIT;
+        this.specialAttack = EnemyAtacks.HIT;
     }
 
     public Enemy(String name, int maxHp, int attack, int defense, Enum specialAttack) {
@@ -16,8 +16,8 @@ public class Enemy extends Creature {
         this.specialAttack = specialAttack;
     }
 
-    public Attacks getSpecialAttack() {
-        return (Attacks) specialAttack;
+    public EnemyAtacks getSpecialAttack() {
+        return (EnemyAtacks) specialAttack;
     }
 
     @Override
