@@ -30,8 +30,11 @@ public class HeroChannel extends EventHandler {
                 Consumable subjectOfConsumption = ((ConsumeEvent) event).getSubjectOfConsumption();
                 //PREPARED TO DISTINCT SECONDARY STAT (ENERGY, MANA, RAGE)
                 //ConsumableType consumableType = (ConsumableType) subjectOfConsumption.getItemType();
-                this.getHero().setCurrentLifeEssence(Math.min(this.getHero().getMaxLifeEssence()
-                        + subjectOfConsumption.getReplenishValue(), this.getHero().getMaxLifeEssence()));
+                this.getHero().setCurrentLifeEssence(
+                        this.getHero().getCurrentLifeEssence() + subjectOfConsumption.getReplenishValue());
+                if (this.getHero().getCurrentLifeEssence() > this.getHero().getMaxLifeEssence()) {
+                    this.getHero().setCurrentLifeEssence(this.getHero().getMaxLifeEssence());
+                }
                 return Response.SUCCESS;
             case DROP:
                 DropEvent dropEvent = (DropEvent) event;
