@@ -15,26 +15,9 @@ public class CreatureStatusUi extends AbstractHeroUi {
 
     @Override
     public void show() {
-        System.out.println(lifeIndicator());
+        System.out.println();
     }
 
-    public String lifeIndicator() {
-        StringBuffer sBuff = new StringBuffer();
-        sBuff.append("[");
 
-        int total = 20;
-        double count = Math.round(((double) this.getHero().getCurrentLifeEssence() / this.getHero().getMaxLifeEssence()) * total);
-        if ((count < 1) && (creature.isAlive())) {
-            count = 1;
-        }
-        for (int i = 0; i < count; i++) {
-            sBuff.append("#");
-        }
-        for (int i = 0; i < total - count; i++) {
-            sBuff.append("_");
-        }
-        sBuff.append("]");
-        return sBuff.toString();
-    }
 
 }
