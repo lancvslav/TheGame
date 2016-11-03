@@ -1,5 +1,0 @@
-textUi.resources.weapon_shop_unhappy0
-textUi.resources.weapon_shop_unhappy1
-textUi.resources.weapon_shop_unhappy2
-textUi.resources.weapon_shop_unhappy3
-textUi.resources.weapon_shop_unhappy4

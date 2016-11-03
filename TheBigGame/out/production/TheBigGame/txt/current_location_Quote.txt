@@ -1,3 +1,0 @@
-textUi.current_location0
-textUi.current_location1
-textUi.current_location2

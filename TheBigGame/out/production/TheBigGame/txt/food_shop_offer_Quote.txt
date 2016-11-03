@@ -1,3 +1,0 @@
-textUi.resources.food_shop_offer0
-textUi.resources.food_shop_offer1
-textUi.resources.food_shop_offer2

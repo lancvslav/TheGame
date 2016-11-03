@@ -1,4 +1,0 @@
-enemies.swamp.great_mosquito;1;1;0;BLEED
-enemies.swamp.giant_frog;2;2;0;POISON
-enemies.swamp.basilisk;8;8;0;BLIND
-enemies.swamp.hydra;10;12;0;INITIATIVE

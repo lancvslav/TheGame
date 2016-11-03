@@ -1,4 +1,0 @@
-textUi.loation_decision0
-textUi.loation_decision1
-textUi.loation_decision2
-textUi.loation_decision3

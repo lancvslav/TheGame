@@ -1,3 +1,0 @@
-textUi.resources.food_shop_unhappy0
-textUi.resources.food_shop_unhappy1
-textUi.resources.food_shop_unhappy2

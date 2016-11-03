@@ -1,5 +1,0 @@
-enemies.forest.lumberjack;1;1;0;BLEED
-enemies.forest.chopped_tree;4;3;0;CRUSHING_BLOW
-enemies.forest.wolf;7;5;0;BLEED
-enemies.forest.dark_elf;10;7;7;SHOOT
-enemies.forest.bear;15;6;0;BLEED

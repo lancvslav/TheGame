@@ -1,6 +1,0 @@
-item.merchandise.consumable.drink.bottle_of_watter;1;1;drink
-item.merchandise.consumable.drink.bottle_of_spirits;2;2;drink
-item.merchandise.consumable.drink.bottle_of_beer;3;3;drink
-item.merchandise.consumable.drink.bottle_of_cider;4;3;drink
-item.merchandise.consumable.drink.bottle_of_wine;4;4;drink
-item.merchandise.consumable.drink.bottle_of_mead;5;5;drink

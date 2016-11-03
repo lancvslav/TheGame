@@ -1,2 +1,0 @@
-textUi.resources.food_shop_happy0
-textUi.resources.food_shop_happy1

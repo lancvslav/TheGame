@@ -37,15 +37,15 @@ public class HeroCreationUi {
             scanner.nextLine();
             switch (tempChoiceNumber) {
                 case 0:
-                    hero = new Warrior(nameOfHero, localization);
+                    hero = new Warrior(nameOfHero);
                     System.out.println("\n"+ hero.toString()+"\n");
                     break;
                 case 1:
-                    hero = new Ranger(nameOfHero, localization);
+                    hero = new Ranger(nameOfHero);
                     System.out.println("\n"+ hero.toString()+"\n");;
                     break;
                 case 2:
-                    hero = new Sorcerer(nameOfHero, localization);
+                    hero = new Sorcerer(nameOfHero);
                     System.out.println("\n"+ hero.toString()+"\n");
                     break;
             }
