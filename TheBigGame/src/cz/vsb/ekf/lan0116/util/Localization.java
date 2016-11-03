@@ -18,8 +18,10 @@ public class Localization {
         localization = new HashMap<>();
         List<String> localList = ResourceUtil.getResource(ResourceType.LOCALIZATION, "localization");
         for (String line : localList) {
-            String[] split = line.split(";");
-            localization.put(split[0], split[1]);
+            if (!line.isEmpty()) {
+                String[] split = line.split(";");
+                localization.put(split[0], split[1]);
+            }
         }
 //        localList.stream().map(line -> line.split(";")).collect(Collectors.toMap(x -> x[0], x -> x[1]));
         return localization;
