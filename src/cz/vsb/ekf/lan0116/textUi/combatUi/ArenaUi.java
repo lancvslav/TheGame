@@ -14,7 +14,7 @@ public class ArenaUi extends AbstractLocationUi {
 
     @Override
     public Arena getLoc() {
-        return (Arena) this.getContext().getHero().getPosition();
+        return (Arena) this.getContext().getHero().getHeroInteraction().getPosition();
     }
 
     @Override

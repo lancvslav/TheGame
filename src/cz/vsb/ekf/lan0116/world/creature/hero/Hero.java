@@ -3,7 +3,6 @@ package cz.vsb.ekf.lan0116.world.creature.hero;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
 import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
-import cz.vsb.ekf.lan0116.world.location.Location;
 
 import java.util.Objects;
 
@@ -23,14 +22,6 @@ public abstract class Hero extends Creature {
         this.coins = 1000;
         this.clazz = heroClass;
         this.heroInteraction = new HeroInteraction();
-    }
-
-    public Location getPosition() {
-        return heroInteraction.getPosition();
-    }
-
-    public void setPosition(Location position) {
-        heroInteraction.setPosition(position);
     }
 
     public Weapon getWeapon() {
@@ -64,35 +55,6 @@ public abstract class Hero extends Creature {
     public HeroInteraction getHeroInteraction() {
         return heroInteraction;
     }
-
-    //    /**
-//     * Heals heroHandling for ammount of hp given in parameter
-//     *
-//     * @param healAmount
-//     */
-//    public void heal(int healAmount) {
-//        int ableToHeal = this.getMaxLifeEssence() - this.getCurrentLifeEssence();
-//        if (healAmount > ableToHeal) {
-//            this.setCurrentLifeEssence(this.getMaxLifeEssence());
-//        } else {
-//            this.setCurrentLifeEssence(this.getCurrentLifeEssence() + healAmount);
-//        }
-//    }
-//
-//    /**
-//     * Damages heroHandling for ammount of hp given in parameter
-//     *
-//     * @param damage
-//     */
-//    public void inflict(int damage) {
-//        int damageDone = damage - this.getDefense();
-//        if (damageDone > 0) {
-//            if (this.getCurrentLifeEssence() <= (damageDone)) {
-//            } else {
-//                this.setCurrentLifeEssence(this.getCurrentLifeEssence() - damageDone);
-//            }
-//        }
-//    }
 
     @Override
     public String toString() {

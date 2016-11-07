@@ -23,7 +23,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
 
     @Override
     public Shop getLoc() {
-        return (Shop) this.getContext().getHero().getPosition();
+        return (Shop) this.getContext().getHero().getHeroInteraction().getPosition();
     }
 
     /**
