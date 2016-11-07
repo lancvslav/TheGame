@@ -47,5 +47,4 @@ Temporary Items
 .apdisk
 .idea
 
-TheBigGame/out/*
-TheBigGame/target/*
+out/*
