@@ -7,13 +7,13 @@ import cz.vsb.ekf.lan0116.world.location.Location;
 
 import java.util.Objects;
 
-public class Hero extends Creature {
+public abstract class Hero extends Creature {
 
-    private Location position;
     private Weapon weapon;
     private Inventory inventory;
     private int coins;
     private HeroClass clazz;
+    private final HeroInteraction heroInteraction;
 
 
     public Hero(String name, HeroClass heroClass) {
@@ -22,14 +22,15 @@ public class Hero extends Creature {
         this.inventory = new Inventory(this.getWeapon());
         this.coins = 1000;
         this.clazz = heroClass;
-            }
+        this.heroInteraction = new HeroInteraction();
+    }
 
     public Location getPosition() {
-        return position;
+        return heroInteraction.getPosition();
     }
 
     public void setPosition(Location position) {
-        this.position = position;
+        heroInteraction.setPosition(position);
     }
 
     public Weapon getWeapon() {
@@ -58,6 +59,10 @@ public class Hero extends Creature {
 
     public void setClazz(HeroClass clazz) {
         this.clazz = clazz;
+    }
+
+    public HeroInteraction getHeroInteraction() {
+        return heroInteraction;
     }
 
     //    /**
