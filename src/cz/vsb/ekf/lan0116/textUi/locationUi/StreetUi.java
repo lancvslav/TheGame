@@ -36,7 +36,7 @@ class StreetUi extends AbstractLocationUi<Street> {
                 this.decisions();
                 break;
             case 1:
-                restHeroUi = new RestHeroUi(getContext());
+                restHeroUi = new RestHeroUi(this.getContext());
                 restHeroUi.show();
                 break;
             case 2:

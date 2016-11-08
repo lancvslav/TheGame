@@ -2,8 +2,8 @@ package cz.vsb.ekf.lan0116.world.creature.hero.attack;
 
 public interface HeroAttacks {
 
-//    private float damageMultiplier;
-//    private float staminaConsumption;
+//     float damageMultiplier;
+//    float staminaConsumption ;
 //
 //    public HeroAttacks(float damageMultiplier, float staminaConsumption) {
 //        this.damageMultiplier = damageMultiplier;
@@ -18,9 +18,9 @@ public interface HeroAttacks {
 //        return staminaConsumption;
 //    }
 
-    public float getDamageMultiplier();
+ float getDamageMultiplier();
 
-    public float getStaminaConsumption();
+float getStaminaConsumption();
 
 
 }
