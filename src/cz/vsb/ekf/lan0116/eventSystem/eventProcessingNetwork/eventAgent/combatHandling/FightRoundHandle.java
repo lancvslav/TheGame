@@ -23,7 +23,7 @@ public class FightRoundHandle {
 
         //CHECKING, WHETHER ENEMY SHOULD START FIRST
         boolean enemyStarts = enemy.getSpecialAttack().equals(EnemyAtacks.INITIATIVE);
-        if (enemyStarts == true) {
+        if (enemyStarts) {
             fighter0 = enemy;
             figter1 = hero;
         }
