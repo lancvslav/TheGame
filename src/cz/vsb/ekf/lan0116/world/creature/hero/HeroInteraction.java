@@ -11,6 +11,7 @@ public class HeroInteraction {
     private Location position;
     private Creature currentEnemy;
     private Queue<Enemy> enemyQueue;
+    private HeroStatus status;
 
     public HeroInteraction() {
     }
@@ -37,5 +38,21 @@ public class HeroInteraction {
 
     public void setEnemyQueue(Queue<Enemy> enemyQueue) {
         this.enemyQueue = enemyQueue;
+    }
+
+    public HeroStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(HeroStatus status) {
+        this.status = status;
+    }
+
+    public enum HeroStatus {
+        READY,
+        IN_COMBAT,
+        RESTING,
+        SHOPPING,
+        /**/;
     }
 }
