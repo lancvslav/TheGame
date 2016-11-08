@@ -18,11 +18,11 @@ public class GameChannel extends EventHandler {
         GameType eventType = (GameType) event.getType();
         switch (eventType) {
             case NEW_GAME:
-                this.getHero().setPosition(this.getWorld().getStartLocation());
+                this.getHero().getHeroInteraction().setPosition(this.getWorld().getStartLocation());
                 return Response.SUCCESS;
             case RESPAWN:
                 this.getHero().setCurrentLifeEssence(this.getHero().getMaxLifeEssence());
-                this.getHero().setPosition(this.getWorld().getStartLocation());
+                this.getHero().getHeroInteraction().setPosition(this.getWorld().getStartLocation());
                 return Response.SUCCESS;
             default:
                 throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");

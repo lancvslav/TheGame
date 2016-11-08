@@ -12,7 +12,7 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
     }
 
     public L getLoc() {
-        return (L) this.getContext().getHero().getPosition();
+        return (L) this.getContext().getHero().getHeroInteraction().getPosition();
     }
 
     public abstract void decisions();
@@ -21,7 +21,7 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
      * Called, when user decides to travel to another location
      */
     protected void travel() {
-        Location loc = getContext().getHero().getPosition();
+        Location loc = getContext().getHero().getHeroInteraction().getPosition();
         System.out.print("\n" + this.get("textUi.AbstractLocationUi.where"));
         int choice = this.choice(loc.getGateways().stream()
                 .map(Gateway::getTarget)//RETURNS Location LINKED TO CURRENT ONE
