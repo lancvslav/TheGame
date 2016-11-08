@@ -5,6 +5,7 @@ import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.CombatCh
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.GameChannel;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.HeroChannel;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
+import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 
@@ -14,10 +15,10 @@ public class EventPublisher {
     private final GameChannel gameChannel;
     private final HeroChannel heroChannel;
 
-    public EventPublisher(Hero hero, World world) {
-        this.combatChannel = new CombatChannel(hero, world);
-        this.gameChannel = new GameChannel(hero, world);
-        this.heroChannel = new HeroChannel(hero, world);
+    public EventPublisher(Hero hero, World world, ResponseChannel responseChannel) {
+        this.combatChannel = new CombatChannel(hero, world, responseChannel);
+        this.gameChannel = new GameChannel(hero, world, responseChannel);
+        this.heroChannel = new HeroChannel(hero, world, responseChannel);
     }
 
     public CombatChannel getCombatChannel() {

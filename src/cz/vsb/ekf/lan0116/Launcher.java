@@ -1,6 +1,8 @@
 package cz.vsb.ekf.lan0116;
 
+import cz.vsb.ekf.lan0116.eventSystem.Session;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
+import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextEvents;
 import cz.vsb.ekf.lan0116.textUi.heroUi.HeroCreationUi;
@@ -20,8 +22,10 @@ public class Launcher {
                 (ResourceUtil.getResource(ResourceType.LOCALIZATION, "localization"));
         Scanner scanner = new Scanner(System.in, "UTF-8");
         Hero hero = HeroCreationUi.creationOfHero(scanner, localization);
-        EventPublisher eventPublisher = new EventPublisher(hero, world);
-        Context context = new Context(eventPublisher, hero, world, scanner, localization);
+        ResponseChannel responseChannel = new ResponseChannel();
+        EventPublisher eventPublisher = new EventPublisher(hero, world, responseChannel);
+        Session session = new Session(eventPublisher, responseChannel);
+        Context context = new Context(eventPublisher, hero, world, scanner, localization, session);
         TextEvents textEvents = new TextEvents(context);
         textEvents.playGame();
     }

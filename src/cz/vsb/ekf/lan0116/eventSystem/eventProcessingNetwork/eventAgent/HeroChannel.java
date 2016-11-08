@@ -3,6 +3,7 @@ package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent;
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventHandler;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
+import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.*;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 import cz.vsb.ekf.lan0116.eventSystem.failures.EquipFailure;
@@ -17,8 +18,8 @@ import cz.vsb.ekf.lan0116.world.item.Weapon;
 
 public class HeroChannel extends EventHandler {
 
-    public HeroChannel(Hero hero, World world) {
-        super(hero, world);
+    public HeroChannel(Hero hero, World world, ResponseChannel responseChannel) {
+        super(hero, world, responseChannel);
     }
 
     @Override
