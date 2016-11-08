@@ -3,17 +3,16 @@ package cz.vsb.ekf.lan0116.world.creature.hero;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
 import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
-import cz.vsb.ekf.lan0116.world.location.Location;
 
 import java.util.Objects;
 
-public class Hero extends Creature {
+public abstract class Hero extends Creature {
 
-    private Location position;
     private Weapon weapon;
     private Inventory inventory;
     private int coins;
     private HeroClass clazz;
+    private final HeroInteraction heroInteraction;
 
 
     public Hero(String name, HeroClass heroClass) {
@@ -22,14 +21,7 @@ public class Hero extends Creature {
         this.inventory = new Inventory(this.getWeapon());
         this.coins = 1000;
         this.clazz = heroClass;
-            }
-
-    public Location getPosition() {
-        return position;
-    }
-
-    public void setPosition(Location position) {
-        this.position = position;
+        this.heroInteraction = new HeroInteraction();
     }
 
     public Weapon getWeapon() {
@@ -60,34 +52,9 @@ public class Hero extends Creature {
         this.clazz = clazz;
     }
 
-    //    /**
-//     * Heals heroHandling for ammount of hp given in parameter
-//     *
-//     * @param healAmount
-//     */
-//    public void heal(int healAmount) {
-//        int ableToHeal = this.getMaxLifeEssence() - this.getCurrentLifeEssence();
-//        if (healAmount > ableToHeal) {
-//            this.setCurrentLifeEssence(this.getMaxLifeEssence());
-//        } else {
-//            this.setCurrentLifeEssence(this.getCurrentLifeEssence() + healAmount);
-//        }
-//    }
-//
-//    /**
-//     * Damages heroHandling for ammount of hp given in parameter
-//     *
-//     * @param damage
-//     */
-//    public void inflict(int damage) {
-//        int damageDone = damage - this.getDefense();
-//        if (damageDone > 0) {
-//            if (this.getCurrentLifeEssence() <= (damageDone)) {
-//            } else {
-//                this.setCurrentLifeEssence(this.getCurrentLifeEssence() - damageDone);
-//            }
-//        }
-//    }
+    public HeroInteraction getHeroInteraction() {
+        return heroInteraction;
+    }
 
     @Override
     public String toString() {

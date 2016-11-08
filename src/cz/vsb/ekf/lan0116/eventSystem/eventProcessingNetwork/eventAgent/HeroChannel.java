@@ -55,10 +55,11 @@ public class HeroChannel extends EventHandler {
                 return Response.SUCCESS;
             case TRAVEL:
                 TravelEvent travelEvent = (TravelEvent) event;
-                if (!(this.getHero().getPosition().getGateways().contains(travelEvent.getGateway()))) {
+                if (!(this.getHero().getHeroInteraction()
+                        .getPosition().getGateways().contains(travelEvent.getGateway()))) {
                     return new Response(TravelFailure.NO_GATEWAY);
                 }
-                this.getHero().setPosition(travelEvent.getGateway().getTarget());
+                this.getHero().getHeroInteraction().setPosition(travelEvent.getGateway().getTarget());
                 return Response.SUCCESS;
             default:
                 throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");
