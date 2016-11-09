@@ -42,7 +42,7 @@ public class HeroCreationUi {
                     break;
                 case 1:
                     hero = new Ranger(nameOfHero);
-                    System.out.println("\n"+ hero.toString()+"\n");;
+                    System.out.println("\n"+ hero.toString()+"\n");
                     break;
                 case 2:
                     hero = new Sorcerer(nameOfHero);
