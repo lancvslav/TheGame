@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.abstracts;
 
+import cz.vsb.ekf.lan0116.eventSystem.events.game.GiveUpEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.world.item.Item;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
@@ -29,6 +30,7 @@ public abstract class AbstractUi implements Ui {
         System.out.println();
         String choice = this.getContext().getScanner().nextLine();
         if (this.getContext().getLocalization().get("textUi.AbstractUi.flee").equals(choice)) {
+            context.getSession().fireEvent(new GiveUpEvent());
             throw new RuntimeException(this.get("textUi.AbstractUi.fled") + "\n");
         }
         return Integer.parseInt(choice);

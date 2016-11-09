@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.combat;
 
-public enum EnemyAtacks {
+public enum EnemyAttacks {
     BACKSTAB,//DOUBLE DMG
     BLEED,//DMG APPLIED TWICE, SECOND TIME REDUCED BY HALF
     BLIND,//WEAKEN RANGED ATTACK

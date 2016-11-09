@@ -5,7 +5,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 
 public enum GameType implements EventType {
     NEW_GAME,
-    RESPAWN,;
+    RESPAWN,
+    GIVE_UP,
+    /**/;
 
     @Override
     public EventSuperType getEventSuperType() {
