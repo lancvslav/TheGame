@@ -48,10 +48,6 @@ public abstract class Hero extends Creature {
         return clazz;
     }
 
-    public void setClazz(HeroClass clazz) {
-        this.clazz = clazz;
-    }
-
     public HeroInteraction getHeroInteraction() {
         return heroInteraction;
     }
