@@ -1,18 +1,20 @@
 package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling;
 
-import cz.vsb.ekf.lan0116.combat.EnemyAttacks;
 import cz.vsb.ekf.lan0116.eventSystem.events.combat.FightRoundEvent;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.Enemy;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
+import cz.vsb.ekf.lan0116.world.creature.hero.attack.HeroAttacks;
 
 public class FightRoundHandle {
 
     private final Hero hero;
+    private final HeroAttacks heroAttack;
     private final Enemy enemy;
 
-    public FightRoundHandle(FightRoundEvent event) {
+    public FightRoundHandle(FightRoundEvent event, HeroAttacks heroAttack) {
         this.hero = event.getHero();
+        this.heroAttack = heroAttack;
         this.enemy = event.getEnemy();
     }
 
@@ -20,26 +22,36 @@ public class FightRoundHandle {
 
         float hitPower;
 
-        //CHECKING, WHETHER ENEMY SHOULD START FIRST
-        boolean enemyStarts = enemy.getSpecialAttack().equals(EnemyAttacks.INITIATIVE);
-        if (enemyStarts) {
-            fighter0 = enemy;
-            figter1 = hero;
-        }
 
         hitPower = hero.getAttack();
 
+        float damageToEnemy = defending(enemy, hitPower);
 
+        if (!enemy.isAlive()) return;
 
+        hitPower = enemy.getAttack()*(heroAttack.getDamageMultiplier());
 
-        public float defending ( float hitPower){
-            float damageDone = ((hitPower) / (1 + (defender.getDefense() / 100)));
-            if (damageDone > 0) {
-                return damageDone;
-            } else {
-                return 0;
-            }
+        float damageToHero = defending(hero, hitPower);
+    }
+
+    private float defending(Creature creature, float hitPower) {
+        float damageDone = ((hitPower) / (1 + (enemy.getDefense() / 100)));
+        if (damageDone > 0) {
+            return damageDone;
+        } else {
+            return 0;
         }
+    }
+}
+
+//CHECKING, WHETHER ENEMY SHOULD START FIRST
+//        boolean enemyStarts = enemy.getSpecialAttack().equals(EnemyAttacks.INITIATIVE);
+//        if (enemyStarts) {
+//            fighter0 = enemy;
+//            fighter1 = hero;
+//        }
+
+
 //        while (heroHandling.isAlive() && enemy.isAlive()) {
 //            Fight fight = new Fight(heroHandling, enemy);
 //
@@ -69,6 +81,6 @@ public class FightRoundHandle {
 //        }
 
 
-    }
 
-}
+
+
