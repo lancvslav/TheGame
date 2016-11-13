@@ -5,18 +5,20 @@ public abstract class Creature {
     private final String name;
     private float currentLifeEssence;
     private float maxLifeEssence;
+    private float currentStamina;
+    private float maxStamina;
     private float attack;
     private float defense;
-    private float vitality;
 
 
-    public Creature(String name, int maxLifeEssence, int attack, int defense) {
+    public Creature(String name, float maxLifeEssence, float maxStamina, float attack, float defense) {
         this.name = name;
         this.maxLifeEssence = maxLifeEssence;
-        this.currentLifeEssence = getMaxLifeEssence();
+        this.maxStamina = maxStamina;
+        this.currentStamina = this.getMaxStamina();
+        this.currentLifeEssence = this.getMaxLifeEssence();
         this.attack = attack;
         this.defense = defense;
-        this.vitality = this.getMaxLifeEssence() + this.getDefense();
     }
 
     public String getName() {
@@ -43,6 +45,22 @@ public abstract class Creature {
         this.maxLifeEssence = maxLifeEssence;
     }
 
+    public float getCurrentStamina() {
+        return currentStamina;
+    }
+
+    public void setCurrentStamina(float currentStamina) {
+        this.currentStamina = currentStamina;
+    }
+
+    public float getMaxStamina() {
+        return maxStamina;
+    }
+
+    public void setMaxStamina(float maxStamina) {
+        this.maxStamina = maxStamina;
+    }
+
     public float getAttack() {
         return attack;
     }
@@ -57,14 +75,6 @@ public abstract class Creature {
 
     public void setDefense(float defense) {
         this.defense = defense;
-    }
-
-    public float getVitality() {
-        return this.currentLifeEssence + this.defense;
-    }
-
-    public void setVitality(float vitality) {
-        this.vitality = vitality;
     }
 
     public void heal(float healAmount) {

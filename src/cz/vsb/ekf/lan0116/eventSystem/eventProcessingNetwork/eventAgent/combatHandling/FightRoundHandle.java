@@ -1,8 +1,9 @@
 package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling;
 
+import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttacks;
 import cz.vsb.ekf.lan0116.eventSystem.events.combat.FightRoundEvent;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
-import cz.vsb.ekf.lan0116.world.creature.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.creature.hero.attack.HeroAttacks;
 
@@ -23,25 +24,37 @@ public class FightRoundHandle {
         float hitPower;
 
 
-        hitPower = hero.getAttack();
+        hitPower = hero.getAttack() * (heroAttack.getDamageMultiplier());
 
         float damageToEnemy = defending(enemy, hitPower);
 
         if (!enemy.isAlive()) return;
 
-        hitPower = enemy.getAttack()*(heroAttack.getDamageMultiplier());
+        hitPower = enemy.getAttack();
 
         float damageToHero = defending(hero, hitPower);
     }
 
     private float defending(Creature creature, float hitPower) {
-        float damageDone = ((hitPower) / (1 + (enemy.getDefense() / 100)));
+        float damageDone = ((hitPower) / (1 + (creature.getDefense() / 100)));
         if (damageDone > 0) {
             return damageDone;
         } else {
             return 0;
         }
     }
+
+    private float handleEnemyAttack(float hitPower, EnemyAttacks attack) {
+        switch (attack) {
+            case BACKSTAB:
+                return hitPower * 2;
+            case BLEED: return hitPower+(hitPower*0.5f);
+            case CRUSHING_BLOW:
+            default:
+                return hitPower;
+        }
+    }
+
 }
 
 //CHECKING, WHETHER ENEMY SHOULD START FIRST

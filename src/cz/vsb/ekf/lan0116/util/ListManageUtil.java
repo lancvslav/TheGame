@@ -1,12 +1,12 @@
 package cz.vsb.ekf.lan0116.util;
 
-import cz.vsb.ekf.lan0116.combat.EnemyAttacks;
+import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttacks;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;
 import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
-import cz.vsb.ekf.lan0116.world.creature.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,12 +72,13 @@ public class ListManageUtil {
         for (String line : enemiesListString) {
             String[] split = line.split(";");
             String name = split[0];
-            int maxHp = Integer.parseInt(split[1]);
-            int attack = Integer.parseInt(split[2]);
-            int defense = Integer.parseInt(split[3]);
-            String attackString = split[4].toUpperCase();
+            float maxHp = Integer.parseInt(split[1]);
+            float maxStamina = Integer.parseInt(split[2]);
+            float attack = Integer.parseInt(split[3]);
+            float defense = Integer.parseInt(split[4]);
+            String attackString = split[5].toUpperCase();
             EnemyAttacks specialAttack = EnemyAttacks.valueOf(attackString);
-            Enemy enemy = new Enemy(name, maxHp, attack, defense, specialAttack);
+            Enemy enemy = new Enemy(name, maxHp,maxStamina, attack, defense, specialAttack);
             list.add(enemy);
         }
         return list;

@@ -16,7 +16,7 @@ public abstract class Hero extends Creature {
 
 
     public Hero(String name, HeroClass heroClass) {
-        super(name, heroClass.getHealth(), heroClass.getDamage(), heroClass.getDefense());
+        super(name, heroClass.getHealth(), heroClass.getStamina(), heroClass.getDamage(), heroClass.getDefense());
         this.weapon = new Weapon("item.weapon.flower", 0, 1, WeaponType.UNISEX);
         this.inventory = new Inventory(this.getWeapon());
         this.coins = 1000;

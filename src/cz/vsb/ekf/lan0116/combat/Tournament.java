@@ -3,7 +3,7 @@ package cz.vsb.ekf.lan0116.combat;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
 import cz.vsb.ekf.lan0116.util.ResourceType;
 import cz.vsb.ekf.lan0116.util.ResourceUtil;
-import cz.vsb.ekf.lan0116.world.creature.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
 
 import java.util.ArrayList;
 import java.util.List;

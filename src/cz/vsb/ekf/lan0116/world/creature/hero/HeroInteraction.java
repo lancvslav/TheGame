@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
 import cz.vsb.ekf.lan0116.world.creature.Creature;
-import cz.vsb.ekf.lan0116.world.creature.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
 import cz.vsb.ekf.lan0116.world.location.Location;
 
 import java.util.Queue;

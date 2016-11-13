@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.creature.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
 
 public class FightUi extends AbstractLocationUi {
 
