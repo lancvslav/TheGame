@@ -68,7 +68,7 @@ public class FightRoundEvent implements Event {
 //}
 //
 ////    private Response inflict(Creature damagedOne, float dmg) {
-////        return this.channelGame.handleEvent(new InflictDamageEvent(damagedOne, dmg));
+////        return this.channelGame.handleEvent(new DamageInflictionEvent(damagedOne, dmg));
 ////    }
 
 

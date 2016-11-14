@@ -5,12 +5,12 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
-public class InflictDamageEvent implements Event {
+public class DamageInflictionEvent implements Event {
 
     private final Creature damagedOne;
     private float damage;
 
-    public InflictDamageEvent(Creature damagedOne, float damage) {
+    public DamageInflictionEvent(Creature damagedOne, float damage) {
         this.damagedOne = damagedOne;
         this.damage = damage;
     }
@@ -25,7 +25,7 @@ public class InflictDamageEvent implements Event {
 
     @Override
     public EventType getType() {
-        return CombatType.INFLICT_DAMAGE;
+        return CombatType.DAMAGE_INFLICTION;
     }
 
 }

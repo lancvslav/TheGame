@@ -5,26 +5,26 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
-public class StaminaDecreaseEvent implements Event {
+public class StaminaReplenishmentEvent implements Event {
 
     private final Creature staminaUser;
-    private final float staminaDecrease;
+    private final float replenishValue;
 
-    public StaminaDecreaseEvent(Creature staminaUser, float staminaDecrease) {
+    public StaminaReplenishmentEvent(Creature staminaUser, float replenishValue) {
         this.staminaUser = staminaUser;
-        this.staminaDecrease = staminaDecrease;
+        this.replenishValue = replenishValue;
     }
 
     public Creature getStaminaUser() {
         return staminaUser;
     }
 
-    public float getStaminaDecrease() {
-        return staminaDecrease;
+    public float getReplenishValue() {
+        return replenishValue;
     }
 
     @Override
     public EventType getType() {
-        return CombatType.STAMINA_DECREASE;
+        return CombatType.STAMINA_REPLENISHMENT;
     }
 }

@@ -129,7 +129,7 @@ textUi.current_location0;You are standing at
 textUi.current_location1;Here you are, at
 textUi.current_location2;You are at
 textUi.HeroCreatinUi.new_game.another;... or just another mere pawn, whom his desperate fate brought here.
-textUi.HeroCreatinUi.new_game.devour;Lest this edge of the world devour thee. As it devoured many others.
+textUi.HeroCreatinUi.new_game.devour;Be careful out there. Lest this edge of the world devour thee. As it devoured many others.
 textUi.HeroCreatinUi.new_game.first;But first...
 textUi.HeroCreatinUi.new_game.fragile;I see. Now thou are frail and fragile. 
 textUi.HeroCreatinUi.new_game.perhaps;Perhaps... Art thou The chosen one?
@@ -233,7 +233,7 @@ world.building.shop.tavern;tavern
 world.building.shop.weapon_shop.archery;archery
 world.building.shop.weapon_shop.blacksmith;blacksmith
 world.building.shop.weapon_shop.wand_shop;wand shop
-
+;
 world.square.battle_quarter;battle quarter
 world.crossroad.central_crossroad;central crossroad
 world.road.central_road;central road
@@ -245,4 +245,3 @@ world.road.road_of_malice;raod of malice
 world.road.tavern_backyard;tavern backyard
 world.road.fist_avenue;first avenue
 world.crossroad.town_gate;town gate
-

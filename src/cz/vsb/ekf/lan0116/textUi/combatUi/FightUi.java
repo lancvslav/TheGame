@@ -29,7 +29,7 @@ public class FightUi extends AbstractLocationUi {
 //            Fight combat = new Fight(heroHandling, enemy);
 //
 //            this.getContext().getDeprecatedHandler().
-//                    handleEvent(new InflictDamageEvent(enemy, combat.attacking(heroHandling, enemy)));
+//                    handleEvent(new DamageInflictionEvent(enemy, combat.attacking(heroHandling, enemy)));
 //            System.out.println("You hit with " +
 //                    this.get(heroHandling.getWeapon().getName()) + " for: " + combat.attacking(heroHandling, enemy));
 //            TextUtil.sleep(90);
@@ -40,7 +40,7 @@ public class FightUi extends AbstractLocationUi {
 //            }
 //
 //            this.getContext().getDeprecatedHandler().
-//                    handleEvent(new InflictDamageEvent(heroHandling, combat.attacking(enemy, heroHandling)));
+//                    handleEvent(new DamageInflictionEvent(heroHandling, combat.attacking(enemy, heroHandling)));
 //            TextUtil.sleep(90);
 //            System.out.println("Enemy hit for " + combat.attacking(enemy, heroHandling) +
 //                    " dmg. Your life essence status: " + heroHandling.getCurrentLifeEssence());

@@ -2,7 +2,9 @@ package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatH
 
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.CombatChannel;
-import cz.vsb.ekf.lan0116.eventSystem.events.combat.InflictDamageEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.DamageInflictionEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.HealEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.StaminaConsumeEvent;
 import cz.vsb.ekf.lan0116.eventSystem.failures.FightFailure;
 import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttack;
 import cz.vsb.ekf.lan0116.eventSystem.events.combat.FightRoundEvent;
@@ -35,16 +37,20 @@ public class FightRoundHandle {
 
         damageToEnemy = defending(enemy, hitPower);
 
-        this.combatChannel.handleEvent(new InflictDamageEvent(enemy, damageToEnemy));
+        this.combatChannel.handleEvent(new DamageInflictionEvent(enemy, damageToEnemy));
+        this.combatChannel.handleEvent(new StaminaConsumeEvent
+                (hero, heroAttack.getStaminaConsumption()));
 
         if (!enemy.isAlive()) return new Response(FightFailure.ENEMY_DEAD);
 
         if (enemy.getCurrentStamina() >= enemy.getSpecialAttack().getStaminaConsumption()) {
             damageToHero = this.handleEnemyAttack(enemy.getAttack(), enemy.getSpecialAttack());
+            this.combatChannel.handleEvent(new StaminaConsumeEvent
+                    (enemy, enemy.getSpecialAttack().getStaminaConsumption()));
         } else {
             damageToHero = this.defending(hero, hitPower);
         }
-        this.combatChannel.handleEvent(new InflictDamageEvent(hero, damageToHero));
+        this.combatChannel.handleEvent(new DamageInflictionEvent(hero, damageToHero));
 
         if (!hero.isAlive()) return new Response(FightFailure.HERO_DEAD);
 
@@ -75,7 +81,8 @@ public class FightRoundHandle {
                 return this.defending(hero, hitPower);
             case LIFESTEAL:
                 damagePortion = this.defending(hero, hitPower);
-                this.stolenEssence = damagePortion * 0.3f;
+                stolenEssence = damagePortion * 0.3f;
+                this.combatChannel.handleEvent(new HealEvent(enemy, stolenEssence));
                 return damagePortion;
             case MAGIC_BOLT:
                 return this.defending(hero, (hitPower * 1.2f));
@@ -94,37 +101,6 @@ public class FightRoundHandle {
 //            fighter0 = enemy;
 //            fighter1 = hero;
 //        }
-
-
-//        while (heroHandling.isAlive() && enemy.isAlive()) {
-//            Fight combat = new Fight(heroHandling, enemy);
-//
-//            this.getContext().getDeprecatedHandler().
-//                    handleEvent(new InflictDamageEvent(enemy, combat.attacking(heroHandling, enemy)));
-//            System.out.println("You hit with " +
-//                    this.get(heroHandling.getWeapon().getName()) + " for: " + combat.attacking(heroHandling, enemy));
-//            TextUtil.sleep(90);
-//            if (!enemy.isAlive()) {
-//                System.out.println("Enemy died.");
-//                TextUtil.sleep(50);
-//                return;
-//            }
-//
-//            this.getContext().getDeprecatedHandler().
-//                    handleEvent(new InflictDamageEvent(heroHandling, combat.attacking(enemy, heroHandling)));
-//            TextUtil.sleep(90);
-//            System.out.println("Enemy hit for " + combat.attacking(enemy, heroHandling) +
-//                    " dmg. Your life essence status: " + heroHandling.getCurrentLifeEssence());
-//            new CreatureStatusUi(this.getContext(), heroHandling).show();
-//            TextUtil.sleep(20);
-//        }
-//
-//        if (!heroHandling.isAlive()) {
-//            TextUtil.sleep(90);
-//            System.out.println("You died");
-//        }
-
-
 
 
 
