@@ -1,14 +1,14 @@
 package cz.vsb.ekf.lan0116.world.creature.hero.attack;
 
-public enum SorcererAttacks implements HeroAttacks {
-    LIGHT_BOLT(1.2f, 1),
-    ARCANE_BOLT(1.1f, 1),;
-
+public enum WarriorAttack implements HeroAttack {
+    STING(1, 0),
+    QUICK_STAB(1.1f, 1),
+    STRONG_STRIKE(1.2f, 1.1f),;
 
     private final float damageMultiplier;
     private final float staminaConsumption;
 
-    SorcererAttacks(float damageMultiplier, float staminaConsumption) {
+    WarriorAttack(float damageMultiplier, float staminaConsumption) {
         this.damageMultiplier = damageMultiplier;
         this.staminaConsumption = staminaConsumption;
     }

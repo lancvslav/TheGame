@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.CombatCh
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.GameChannel;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.HeroChannel;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
-import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 

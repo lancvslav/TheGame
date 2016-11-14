@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork;
 
-import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 

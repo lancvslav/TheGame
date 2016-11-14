@@ -1,6 +1,4 @@
-package cz.vsb.ekf.lan0116.eventSystem.events;
-
-import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
+package cz.vsb.ekf.lan0116.eventSystem.serverEvents;
 
 import java.util.LinkedList;
 import java.util.Queue;

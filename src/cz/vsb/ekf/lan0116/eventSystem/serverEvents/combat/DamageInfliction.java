@@ -1,8 +1,9 @@
-package cz.vsb.ekf.lan0116.eventSystem.serverEvents.fight;
+package cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat;
 
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
 public class DamageInfliction implements FightResponse {
+
     private Creature attacker;
     private Creature defender;
     private float damageDealt;

@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116.eventSystem;
 
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
-import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 
 import java.util.Queue;

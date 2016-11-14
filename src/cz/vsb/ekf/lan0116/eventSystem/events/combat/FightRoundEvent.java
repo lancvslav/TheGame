@@ -4,22 +4,28 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
+import cz.vsb.ekf.lan0116.world.creature.hero.attack.HeroAttack;
 
 public class FightRoundEvent implements Event {
 
     private final Hero hero;
+    private final HeroAttack attack;
     private final Enemy enemy;
 
-    public FightRoundEvent(Enemy enemy, Context context) {
+    public FightRoundEvent(Enemy enemy, HeroAttack attack, Context context) {
         this.hero = context.getHero();
+        this.attack = attack;
         this.enemy = enemy;
     }
 
     public Hero getHero() {
         return hero;
+    }
+
+    public HeroAttack getAttack() {
+        return attack;
     }
 
     public Enemy getEnemy() {
@@ -32,34 +38,37 @@ public class FightRoundEvent implements Event {
     }
 
 
-    /**
-     * @return Damage done
-     */
-    private float attackersHit() {
-        float hitPower = hero.getAttack();
-        return this.defending(this.hero, hitPower);
-    }
 
-    /**
-     * @return Damage done by defender
-     */
-    private float counterHit() {
-        float hitPower = enemy.getAttack();
-        return this.defending(this.enemy, hitPower);
-    }
-
-    private float defending(Creature defender, float hitPower) {
-        float damageDone = ((hitPower) / (1 + (defender.getDefense() / 100)));
-        if (damageDone > 0) {
-            return damageDone;
-        } else {
-            return 0;
-        }
-    }
 }
 
-//    private Response inflict(Creature creature, float dmg) {
-//        return this.channelGame.handleEvent(new InflictDamageEvent(creature, dmg));
+//    /**
+//     * @return Damage done
+//     */
+//    private float attackersHit() {
+//        float hitPower = hero.getAttack();
+//        return this.defending(this.hero, hitPower);
 //    }
+//
+//    /**
+//     * @return Damage done by defender
+//     */
+//    private float counterHit() {
+//        float hitPower = enemy.getAttack();
+//        return this.defending(this.enemy, hitPower);
+//    }
+//
+//    private float defending(Creature defender, float hitPower) {
+//        float damageDone = ((hitPower) / (1 + (defender.getDefense() / 100)));
+//        if (damageDone > 0) {
+//            return damageDone;
+//        } else {
+//            return 0;
+//        }
+//    }
+//}
+//
+////    private Response inflict(Creature damagedOne, float dmg) {
+////        return this.channelGame.handleEvent(new InflictDamageEvent(damagedOne, dmg));
+////    }
 
 

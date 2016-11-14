@@ -1,4 +1,4 @@
-package cz.vsb.ekf.lan0116.eventSystem.serverEvents.fight;
+package cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat;
 
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 

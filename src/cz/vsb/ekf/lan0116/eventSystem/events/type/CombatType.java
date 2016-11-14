@@ -8,7 +8,8 @@ public enum CombatType implements EventType {
     ENGAGE,
     INFLICT_DAMAGE,
     PROCEED,
-    ROUND,;
+    ROUND,
+    STAMINA_DECREASE,;
 
     @Override
     public EventSuperType getEventSuperType() {

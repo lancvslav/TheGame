@@ -1,12 +1,12 @@
 package cz.vsb.ekf.lan0116.world.creature.enemy;
 
-import cz.vsb.ekf.lan0116.combat.Attacks;
+import cz.vsb.ekf.lan0116.combat.Attack;
 
-public enum EnemyAttacks implements Attacks {
+public enum EnemyAttack implements Attack {
     BACKSTAB(5f),//DOUBLE DMG
     BLEED(2f),//DMG APPLIED TWICE, SECOND TIME REDUCED BY HALF
     //BLIND(2)  ,//WEAKEN RANGED ATTACK
-    CRUSHING_BLOW(3f),//ATTACK TWICE, NOT IN SINGLE HIT, BUT TWICE, SO DEFENSE MORE EFFICIENT
+    CRUSHING_BLOW(3f),//IGNORES PART OF TARGETS DEFENSE
     //FEAR(10),//RESTRICTS ATTACK FOR ONE "LAP"
     HIT(0f),
     //INITIATIVE,
@@ -21,7 +21,7 @@ public enum EnemyAttacks implements Attacks {
 
     private final float staminaConsumption;
 
-    EnemyAttacks(float staminaConsumption) {
+    EnemyAttack(float staminaConsumption) {
         this.staminaConsumption = staminaConsumption;
     }
 

@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116;
 
 import cz.vsb.ekf.lan0116.eventSystem.Session;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
-import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextEvents;
 import cz.vsb.ekf.lan0116.textUi.heroUi.HeroCreationUi;

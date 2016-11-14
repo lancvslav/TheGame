@@ -7,24 +7,20 @@ import cz.vsb.ekf.lan0116.world.creature.Creature;
 
 public class InflictDamageEvent implements Event {
 
-    public final Creature creature;
+    private final Creature damagedOne;
     private float damage;
 
-    public InflictDamageEvent(Creature creature, float damage) {
-        this.creature = creature;
+    public InflictDamageEvent(Creature damagedOne, float damage) {
+        this.damagedOne = damagedOne;
         this.damage = damage;
     }
 
-    public Creature getCreature() {
-        return creature;
+    public Creature getDamagedOne() {
+        return damagedOne;
     }
 
     public float getDamage() {
         return damage;
-    }
-
-    void setDamage(float damage) {
-        this.damage = damage;
     }
 
     @Override

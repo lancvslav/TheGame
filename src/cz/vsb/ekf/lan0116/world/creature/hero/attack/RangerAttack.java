@@ -1,14 +1,13 @@
 package cz.vsb.ekf.lan0116.world.creature.hero.attack;
 
-public enum WarriorAttacks implements HeroAttacks {
-    STING(1, 0),
-    QUICK_STAB(1.1f, 1),
-    STRONG_STRIKE(1.2f, 1.1f),;
+public enum RangerAttack implements HeroAttack {
+    HAWK_STRIKE(1.2f, 1),
+    QUICK_SHOT(1, 0),;
 
     private final float damageMultiplier;
     private final float staminaConsumption;
 
-    WarriorAttacks(float damageMultiplier, float staminaConsumption) {
+    RangerAttack(float damageMultiplier, float staminaConsumption) {
         this.damageMultiplier = damageMultiplier;
         this.staminaConsumption = staminaConsumption;
     }

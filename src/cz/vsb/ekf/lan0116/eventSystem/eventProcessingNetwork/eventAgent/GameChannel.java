@@ -3,7 +3,7 @@ package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent;
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventHandler;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
-import cz.vsb.ekf.lan0116.eventSystem.events.ResponseChannel;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.GameType;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
 import cz.vsb.ekf.lan0116.world.World;
