@@ -1,6 +1,8 @@
 package cz.vsb.ekf.lan0116.world.creature.hero.attack;
 
-public enum RangerAttack implements HeroAttack {
+import cz.vsb.ekf.lan0116.combat.Attack;
+
+public enum RangerAttack implements Attack {
     HAWK_STRIKE(1.2f, 1),
     QUICK_SHOT(1, 0),;
 

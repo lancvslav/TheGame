@@ -1,6 +1,8 @@
 package cz.vsb.ekf.lan0116.world.creature.hero.attack;
 
-public enum WarriorAttack implements HeroAttack {
+import cz.vsb.ekf.lan0116.combat.Attack;
+
+public enum WarriorAttack implements Attack {
     STING(1, 0),
     QUICK_STAB(1.1f, 1),
     STRONG_STRIKE(1.2f, 1.1f),;
