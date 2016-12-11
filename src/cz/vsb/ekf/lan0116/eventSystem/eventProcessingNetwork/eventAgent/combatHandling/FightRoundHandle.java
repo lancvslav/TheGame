@@ -1,14 +1,14 @@
 package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling;
 
-import cz.vsb.ekf.lan0116.combat.Attack;
+import cz.vsb.ekf.lan0116.combat.AttackDeprecated;
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.failures.CombatFailure;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
-import static cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttack.*;
-import static cz.vsb.ekf.lan0116.world.creature.hero.attack.RangerAttack.*;
-import static cz.vsb.ekf.lan0116.world.creature.hero.attack.SorcererAttack.*;
-import static cz.vsb.ekf.lan0116.world.creature.hero.attack.WarriorAttack.*;
+import static cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttackDeprecated.*;
+import static cz.vsb.ekf.lan0116.world.creature.hero.attack.RangerAttackDeprecated.*;
+import static cz.vsb.ekf.lan0116.world.creature.hero.attack.SorcererAttackDeprecated.*;
+import static cz.vsb.ekf.lan0116.world.creature.hero.attack.WarriorAttackDeprecated.*;
 
 public class FightRoundHandle {
 
@@ -31,7 +31,7 @@ public class FightRoundHandle {
 //    public Response handleRound() {
 //        float hitPower;
 //
-//        hitPower = hero.getAttack() * (heroAttack.getDamageMultiplier());
+//        hitPower = hero.getAttackDeprecated() * (heroAttack.getDamageMultiplier());
 //
 //        damageToEnemy = defending(enemy, hitPower);
 //
@@ -42,7 +42,7 @@ public class FightRoundHandle {
 //        if (!enemy.isAlive()) return new Response(CombatFailure.ENEMY_DEAD);
 //
 //        if (enemy.getCurrentStamina() >= enemy.getSpecialAttack().getStaminaConsumption()) {
-//            damageToHero = this.handleAttack(enemy.getAttack(), enemy.getSpecialAttack());
+//            damageToHero = this.handleAttack(enemy.getAttackDeprecated(), enemy.getSpecialAttack());
 //            this.combatChannel.handleEvent(new StaminaConsumeEvent
 //                    (enemy, enemy.getSpecialAttack().getStaminaConsumption()));
 //        } else {
@@ -64,7 +64,7 @@ public class FightRoundHandle {
         }
     }
 
-    private Response handleAttack(Creature attacker, Attack attack, Creature defender) {
+    private Response handleAttack(Creature attacker, AttackDeprecated attackDeprecated, Creature defender) {
 
         if (!defender.isAlive()) return new Response(CombatFailure.ENEMY_DEAD);
 
@@ -74,7 +74,7 @@ public class FightRoundHandle {
         float attackerCS = attacker.getCurrentStamina();
         float defenderCLE = defender.getCurrentLifeEssence();
         float defenderCS = defender.getCurrentStamina();
-        float staminaCon = attack.getStaminaConsumption();
+        float staminaCon = attackDeprecated.getStaminaConsumption();
 
         if (attackerCS < staminaCon) {
             damage = this.defending(defender, attackerAtt);
@@ -83,12 +83,12 @@ public class FightRoundHandle {
             return Response.SUCCESS;
         }
 
-        switch (attack) {
+        switch (attackDeprecated) {
             /*
             EnemyAttacks
              */
             case BACKSTAB:
-                damage = this.defending(defender, (defender.getAttack() * attack.getDamageMultiplier()));
+                damage = this.defending(defender, (defender.getAttack() * attackDeprecated.getDamageMultiplier()));
                 break;
             case BLEED:
                 damage = this.defending(defender, attackerAtt);
@@ -106,12 +106,12 @@ public class FightRoundHandle {
                 attacker.setCurrentLifeEssence(Math.min(attacker.getMaxLifeEssence(), attackerCS + stolenEssence));
                 break;
             case MAGIC_BOLT:
-                damage = this.defending(defender, (attackerAtt * attack.getDamageMultiplier()));
+                damage = this.defending(defender, (attackerAtt * attackDeprecated.getDamageMultiplier()));
                 break;
             case SHOOT:
-                damage = this.defending(defender, (attackerAtt * attack.getDamageMultiplier()));
+                damage = this.defending(defender, (attackerAtt * attackDeprecated.getDamageMultiplier()));
                 break;
-            
+
                 /*
                 RangerAttacks
                  */
@@ -143,7 +143,7 @@ public class FightRoundHandle {
 }
 
 //CHECKING, WHETHER ENEMY SHOULD START FIRST
-//        boolean enemyStarts = enemy.getSpecialAttack().equals(EnemyAttack.INITIATIVE);
+//        boolean enemyStarts = enemy.getSpecialAttack().equals(EnemyAttackDeprecated.INITIATIVE);
 //        if (enemyStarts) {
 //            fighter0 = enemy;
 //            fighter1 = hero;

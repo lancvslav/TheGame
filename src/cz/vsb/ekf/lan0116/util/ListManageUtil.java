@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.util;
 
-import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttack;
+import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttackDeprecated;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;
@@ -77,7 +77,7 @@ public class ListManageUtil {
             float attack = Integer.parseInt(split[3]);
             float defense = Integer.parseInt(split[4]);
             String attackString = split[5].toUpperCase();
-            EnemyAttack specialAttack = EnemyAttack.valueOf(attackString);
+            EnemyAttackDeprecated specialAttack = EnemyAttackDeprecated.valueOf(attackString);
             Enemy enemy = new Enemy(name, maxHp,maxStamina, attack, defense, specialAttack);
             list.add(enemy);
         }

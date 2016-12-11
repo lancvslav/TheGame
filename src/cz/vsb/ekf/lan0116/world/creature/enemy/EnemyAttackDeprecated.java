@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.world.creature.enemy;
 
-import cz.vsb.ekf.lan0116.combat.Attack;
+import cz.vsb.ekf.lan0116.combat.AttackDeprecated;
 
-public enum EnemyAttack implements Attack {
+public enum EnemyAttackDeprecated implements AttackDeprecated {
     BACKSTAB(2, 5f),//DOUBLE DMG
     BLEED(1, 2f),//DMG APPLIED TWICE, SECOND TIME REDUCED BY HALF
     //BLIND(2,2f)  ,//WEAKEN RANGED ATTACK
@@ -22,7 +22,7 @@ public enum EnemyAttack implements Attack {
     private final float damageMultiplier;
     private final float staminaConsumption;
 
-    EnemyAttack(float damageMultiplier, float staminaConsumption) {
+    EnemyAttackDeprecated(float damageMultiplier, float staminaConsumption) {
         this.damageMultiplier = damageMultiplier;
         this.staminaConsumption = staminaConsumption;
     }

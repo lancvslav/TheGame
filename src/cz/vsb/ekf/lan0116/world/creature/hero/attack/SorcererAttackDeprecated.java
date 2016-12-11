@@ -1,15 +1,16 @@
 package cz.vsb.ekf.lan0116.world.creature.hero.attack;
 
-import cz.vsb.ekf.lan0116.combat.Attack;
+import cz.vsb.ekf.lan0116.combat.AttackDeprecated;
 
-public enum RangerAttack implements Attack {
-    HAWK_STRIKE(1.2f, 1),
-    QUICK_SHOT(1, 0),;
+public enum SorcererAttackDeprecated implements AttackDeprecated {
+    LIGHT_BOLT(1.2f, 1),
+    ARCANE_BOLT(1.1f, 1),;
+
 
     private final float damageMultiplier;
     private final float staminaConsumption;
 
-    RangerAttack(float damageMultiplier, float staminaConsumption) {
+    SorcererAttackDeprecated(float damageMultiplier, float staminaConsumption) {
         this.damageMultiplier = damageMultiplier;
         this.staminaConsumption = staminaConsumption;
     }

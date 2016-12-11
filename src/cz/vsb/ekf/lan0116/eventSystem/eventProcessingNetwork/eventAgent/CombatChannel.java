@@ -40,7 +40,7 @@ public class CombatChannel extends EventHandler {
             case ROUND:
                 FightRoundEvent fightRoundEvent = (FightRoundEvent) event;
                 FightRoundHandle fightRoundHandle = new
-                        FightRoundHandle(fightRoundEvent, fightRoundEvent.getAttack(), this);
+                        FightRoundHandle(fightRoundEvent, fightRoundEvent.getAttackDeprecated(), this);
                 return fightRoundHandle.handleRound();
             case STAMINA_CONSUMPTION:
                 StaminaConsumeEvent staminaConsumeEvent = (StaminaConsumeEvent) event;

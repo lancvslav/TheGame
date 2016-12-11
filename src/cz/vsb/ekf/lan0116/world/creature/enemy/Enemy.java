@@ -8,7 +8,7 @@ public class Enemy extends Creature {
 
     public Enemy(String name) {
         super(name, 10, 10, 10, 10);
-        this.specialAttack = EnemyAttack.HIT;
+        this.specialAttack = EnemyAttackDeprecated.HIT;
     }
 
     public Enemy(String name, float maxHp, float maxStamina, float attack, float defense, Enum specialAttack) {
@@ -16,8 +16,8 @@ public class Enemy extends Creature {
         this.specialAttack = specialAttack;
     }
 
-    public EnemyAttack getSpecialAttack() {
-        return (EnemyAttack) specialAttack;
+    public EnemyAttackDeprecated getSpecialAttack() {
+        return (EnemyAttackDeprecated) specialAttack;
     }
 
     @Override
