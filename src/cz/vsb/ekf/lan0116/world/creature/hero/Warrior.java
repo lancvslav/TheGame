@@ -10,7 +10,7 @@ public class Warrior extends Hero {
     }
 
     @Override
-    public float getAttack() {
+    public float getAttackPower() {
         return this.getStrength() + this.getWeapon().getDamage();
     }
 

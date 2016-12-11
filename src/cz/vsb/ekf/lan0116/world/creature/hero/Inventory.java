@@ -10,16 +10,16 @@ public class Inventory {
     private List<Item> inventory;
 
     public Inventory() {
-        inventory = new ArrayList<>();
+        this.inventory = new ArrayList<>();
     }
 
     public Inventory(Item item) {
-        inventory = new ArrayList<>();
-        inventory.add(item);
+        this.inventory = new ArrayList<>();
+        this.inventory.add(item);
     }
 
     public Inventory(Item... items) {
-        inventory = new ArrayList<>(Arrays.asList(items));
+        this.inventory = new ArrayList<>(Arrays.asList(items));
     }
 
     public List<Item> getInventoryList() {

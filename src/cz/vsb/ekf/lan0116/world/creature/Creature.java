@@ -1,5 +1,12 @@
 package cz.vsb.ekf.lan0116.world.creature;
 
+import cz.vsb.ekf.lan0116.combat.Attack;
+import cz.vsb.ekf.lan0116.util.ListManageUtil;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public abstract class Creature {
 
     private final String name;
@@ -7,18 +14,45 @@ public abstract class Creature {
     private float maxLifeEssence;
     private float currentStamina;
     private float maxStamina;
-    private float attack;
+    private float attackPower;
     private float defense;
+    private List<Attack> attacks;
 
 
-    public Creature(String name, float maxLifeEssence, float maxStamina, float attack, float defense) {
+    public Creature(String name, float maxLifeEssence, float maxStamina, float attackPower, float defense) {
         this.name = name;
         this.maxLifeEssence = maxLifeEssence;
         this.maxStamina = maxStamina;
         this.currentStamina = this.getMaxStamina();
         this.currentLifeEssence = this.getMaxLifeEssence();
-        this.attack = attack;
+        this.attackPower = attackPower;
         this.defense = defense;
+        attacks = new ArrayList<>();
+    }
+
+    public Creature(String name, float maxLifeEssence, float maxStamina, float attackPower, float defense,
+                    String attack) {
+        this.name = name;
+        this.maxLifeEssence = maxLifeEssence;
+        this.maxStamina = maxStamina;
+        this.currentStamina = this.getMaxStamina();
+        this.currentLifeEssence = this.getMaxLifeEssence();
+        this.attackPower = attackPower;
+        this.defense = defense;
+        this.attacks = new ArrayList<>();
+        this.attacks.add(ListManageUtil.getAttackObject(attack));
+    }
+
+    public Creature(String name, float maxLifeEssence, float maxStamina, float attackPower, float defense,
+                    String... attacks) {
+        this.name = name;
+        this.maxLifeEssence = maxLifeEssence;
+        this.maxStamina = maxStamina;
+        this.currentStamina = this.getMaxStamina();
+        this.currentLifeEssence = this.getMaxLifeEssence();
+        this.attackPower = attackPower;
+        this.defense = defense;
+        this.attacks = ListManageUtil.attackList(Arrays.asList(attacks));
     }
 
     public String getName() {
@@ -61,12 +95,12 @@ public abstract class Creature {
         this.maxStamina = maxStamina;
     }
 
-    public float getAttack() {
-        return attack;
+    public float getAttackPower() {
+        return attackPower;
     }
 
-    public void setAttack(float attack) {
-        this.attack = attack;
+    public void setAttackPower(float attackPower) {
+        this.attackPower = attackPower;
     }
 
     public float getDefense() {

@@ -27,7 +27,7 @@ public class Fight {
     public float attacking(Creature attacker, Creature defender) {
         this.attacker = attacker;
         this.defender = defender;
-        float hitPower = attacker.getAttack();
+        float hitPower = attacker.getAttackPower();
         return this.defending(hitPower);
     }
 

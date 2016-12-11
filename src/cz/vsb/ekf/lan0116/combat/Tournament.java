@@ -17,7 +17,7 @@ public class Tournament {
      */
     public Tournament(int tournamentType) {
         this.enemyList = new ArrayList<>();
-        enemyList = ListManageUtil.getEnemies(ResourceUtil.getResource(ResourceType.ARENA,
+        enemyList = ListManageUtil.getEnemies(ResourceUtil.getResource(ResourceType.ARENA_ENEMY,
                 ("arena" + String.valueOf(tournamentType))));
     }
 

@@ -69,7 +69,7 @@ public class FightRoundHandle {
         if (!defender.isAlive()) return new Response(CombatFailure.ENEMY_DEAD);
 
         float damage;
-        float attackerAtt = attacker.getAttack();
+        float attackerAtt = attacker.getAttackPower();
         float attackerCLE = attacker.getCurrentLifeEssence();
         float attackerCS = attacker.getCurrentStamina();
         float defenderCLE = defender.getCurrentLifeEssence();
@@ -88,7 +88,7 @@ public class FightRoundHandle {
             EnemyAttacks
              */
             case BACKSTAB:
-                damage = this.defending(defender, (defender.getAttack() * attackDeprecated.getDamageMultiplier()));
+                damage = this.defending(defender, (defender.getAttackPower() * attackDeprecated.getDamageMultiplier()));
                 break;
             case BLEED:
                 damage = this.defending(defender, attackerAtt);
