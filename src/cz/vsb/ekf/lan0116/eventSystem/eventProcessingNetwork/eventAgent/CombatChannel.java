@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent;
 
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventHandler;
-import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling.FightRoundHandle;
+import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling.AttackMoveHandle;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.combat.DamageInflictionEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.combat.FightRoundEvent;
@@ -25,6 +25,11 @@ public class CombatChannel extends EventHandler {
         float currentLifeEssence;
         float currentStamina;
         switch (eventType) {
+            case ATTACK_MOVE:
+                FightRoundEvent fightRoundEvent = (FightRoundEvent) event;
+                AttackMoveHandle attackMoveHandle = new
+                        AttackMoveHandle(fightRoundEvent, fightRoundEvent.getAttack(), this);
+                return attackMoveHandle.handleRound();
             case DAMAGE_INFLICTION:
                 DamageInflictionEvent damageInflictionEvent = (DamageInflictionEvent) event;
                 currentLifeEssence = damageInflictionEvent.getDamagedOne().getCurrentLifeEssence();
@@ -37,12 +42,7 @@ public class CombatChannel extends EventHandler {
                 healEvent.getHealedOne().setCurrentLifeEssence(Math.min(
                         healEvent.getHealedOne().getMaxLifeEssence(), currentLifeEssence + healEvent.getHealAmount()));
                 return Response.SUCCESS;
-            case ROUND:
-                FightRoundEvent fightRoundEvent = (FightRoundEvent) event;
-                FightRoundHandle fightRoundHandle = new
-                        FightRoundHandle(fightRoundEvent, fightRoundEvent.getAttackDeprecated(), this);
-                return fightRoundHandle.handleRound();
-            case STAMINA_CONSUMPTION:
+                        case STAMINA_CONSUMPTION:
                 StaminaConsumeEvent staminaConsumeEvent = (StaminaConsumeEvent) event;
                 currentStamina = staminaConsumeEvent.getStaminaUser().getCurrentStamina();
                 staminaConsumeEvent.getStaminaUser().setCurrentStamina(

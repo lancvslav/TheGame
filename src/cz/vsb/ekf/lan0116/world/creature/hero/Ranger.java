@@ -11,7 +11,7 @@ public class Ranger extends Hero {
 
     @Override
     public float getAttackPower() {
-        return this.getAgility() + this.getWeapon().getDamage();
+        return this.getAgility() + this.getWeapon().getDamageRatio();
     }
 
     public float getAgility() {

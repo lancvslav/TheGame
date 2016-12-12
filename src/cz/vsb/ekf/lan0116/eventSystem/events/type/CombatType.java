@@ -5,11 +5,11 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 
 public enum CombatType implements EventType {
     AMBUSH,
+    ATTACK_MOVE,
     DAMAGE_INFLICTION,
     ENGAGE,
     HEAL,
     PROCEED,
-    ROUND,
     STAMINA_CONSUMPTION,
     STAMINA_REPLENISHMENT,;
 

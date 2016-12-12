@@ -11,7 +11,7 @@ public class Sorcerer extends Hero {
 
     @Override
     public float getAttackPower() {
-        return this.getIntelligence() + this.getWeapon().getDamage();
+        return this.getIntelligence() + this.getWeapon().getDamageRatio();
     }
 
     public float getIntelligence() {

@@ -3,7 +3,7 @@ attack.bite;lifesteal;0.1;0.9;2
 attack.bleed;stamina_reduction;0;1;2
 attack.blind;weaken_ranged;0;1;2
 attack.crushing_blow;none;0.7;0.85;3
-attack.fear;weaken;1;1.1f;10
+attack.fear;weaken;1;1.100;10
 attack.hit;none;0;1;0
 attack.poison;poison;1;1;2
 attack.scream;weaken;1;1;2
@@ -11,5 +11,5 @@ attack.shoot;none;0.15;2;2
 attack.silence;weaken_magic;0;1;5
 attack.slash;none;0.25;1;1
 attack.strike;none;0.5;0.75;1
-attack.thrust;none;0.05;1.7f;1
+attack.thrust;none;0.1;1.700;1
 attack.weaken;weaken_melee;0;1;2

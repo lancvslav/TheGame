@@ -6,14 +6,14 @@ public class Attack {
     private AttackProperty property;
     private float penetration;
     private float multiplier;
-    private float staminaRequired;
+    private float staminaConsumption;
 
-    public Attack(String name, AttackProperty property, float penetration, float multiplier, float staminaRequired) {
+    public Attack(String name, AttackProperty property, float penetration, float multiplier, float staminaConsumption) {
         this.name = name;
         this.property = property;
         this.penetration = penetration;
         this.multiplier = multiplier;
-        this.staminaRequired = staminaRequired;
+        this.staminaConsumption = staminaConsumption;
     }
 
     public String getName() {
@@ -32,7 +32,7 @@ public class Attack {
         return multiplier;
     }
 
-    public float getStaminaRequired() {
-        return staminaRequired;
+    public float getStaminaConsumption() {
+        return staminaConsumption;
     }
 }
