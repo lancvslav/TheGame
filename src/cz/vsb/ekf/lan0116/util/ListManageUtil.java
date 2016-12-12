@@ -3,7 +3,6 @@ package cz.vsb.ekf.lan0116.util;
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.combat.AttackProperty;
 import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
-import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyAttackDeprecated;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
@@ -18,21 +17,20 @@ public class ListManageUtil {
     private ListManageUtil() {
     }
 
-    //FINISH IT, ENEMY!
-    public static List<Attack> attackList(List<String> attackListString) {
+    public static List<Attack> attackList(List<String> attackIdList) {
         List<Attack> list = new ArrayList<>();
-        for (String line : attackListString) {
-            Attack attack = ListManageUtil.getAttackObject(line);
+        for (String id : attackIdList) {
+            Attack attack = ListManageUtil.getAttackObject(id);
             list.add(attack);
         }
         return list;
     }
 
     public static Attack getAttackObject(String attackId) {
-        List<String> attackListString = new ArrayList<>(ResourceUtil
+        List<String> attackIdList = new ArrayList<>(ResourceUtil
                 .getResource(ResourceType.ATTACK_ALL, "attacks"));
-        int index = attackListString.indexOf(attackId);
-        String toSplit = attackListString.get(index);
+        int index = attackIdList.indexOf(attackId);
+        String toSplit = attackIdList.get(index);
         String[] split = toSplit.split(";");
         String name = split[0];
         String property = split[1];
@@ -62,27 +60,29 @@ public class ListManageUtil {
         return listWithConsumable.get(index);
     }
 
-    //USE ATTACKS AS TEMPLATE
     public static List<Enemy> getEnemies(List<String> enemyIdList) {
         List<Enemy> list = new ArrayList<>();
         for (String id : enemyIdList) {
-            ListManageUtil.getEnemyObject(id);
-            String[] split = id.split(";");
-            String name = split[0];
-            float maxHp = Integer.parseInt(split[1]);
-            float maxStamina = Integer.parseInt(split[2]);
-            float attack = Integer.parseInt(split[3]);
-            float defense = Integer.parseInt(split[4]);
-            String attackString = split[5].toUpperCase();
-            EnemyAttackDeprecated specialAttack = EnemyAttackDeprecated.valueOf(attackString);
-            Enemy enemy = new Enemy(name, maxHp, maxStamina, attack, defense, specialAttack);
+            Enemy enemy = ListManageUtil.getEnemyObject(id);
             list.add(enemy);
         }
         return list;
     }
 
     private static Enemy getEnemyObject(String enemyId) {
-        return null;
+        List<String> enemyIdList = new ArrayList<>(ResourceUtil
+                .getResource(ResourceType.ENEMY_ALL, "enemies"));
+        int index = enemyIdList.indexOf(enemyId);
+        String toSplit = enemyIdList.get(index);
+        String[] split = toSplit.split(";");
+        String name = split[0];
+        float maxHp = Integer.parseInt(split[1]);
+        float maxStamina = Integer.parseInt(split[2]);
+        float attackPower = Integer.parseInt(split[3]);
+        float defense = Integer.parseInt(split[4]);
+        String attackSection = split[5];
+        String[] attacks = attackSection.split(","); //Using simple comma to separate single attacks
+        return new Enemy(name, maxHp, maxStamina, attackPower, defense, attacks);
     }
 
     public static List<Merchandise> merchandiseList(List<String> merchandiseListString) {
