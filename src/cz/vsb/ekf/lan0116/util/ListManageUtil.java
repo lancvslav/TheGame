@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116.util;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.combat.AttackProperty;
-import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyDeprecated;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
@@ -60,16 +60,16 @@ public class ListManageUtil {
         return listWithConsumable.get(index);
     }
 
-    public static List<Enemy> getEnemies(List<String> enemyIdList) {
-        List<Enemy> list = new ArrayList<>();
+    public static List<EnemyDeprecated> getEnemies(List<String> enemyIdList) {
+        List<EnemyDeprecated> list = new ArrayList<>();
         for (String id : enemyIdList) {
-            Enemy enemy = ListManageUtil.getEnemyObject(id);
-            list.add(enemy);
+            EnemyDeprecated enemyDeprecated = ListManageUtil.getEnemyObject(id);
+            list.add(enemyDeprecated);
         }
         return list;
     }
 
-    private static Enemy getEnemyObject(String enemyId) {
+    private static EnemyDeprecated getEnemyObject(String enemyId) {
         List<String> enemyIdList = new ArrayList<>(ResourceUtil
                 .getResource(ResourceType.ENEMY_ALL, "enemies"));
         int index = enemyIdList.indexOf(enemyId);
@@ -82,9 +82,10 @@ public class ListManageUtil {
         float defense = Integer.parseInt(split[4]);
         String attackSection = split[5];
         String[] attacks = attackSection.split(","); //Using simple comma to separate single attacks
-        return new Enemy(name, maxHp, maxStamina, attackPower, defense, attacks);
+        return new EnemyDeprecated(name, maxHp, maxStamina, attackPower, defense, attacks);
     }
 
+    @Deprecated
     public static List<Merchandise> merchandiseList(List<String> merchandiseListString) {
         List<Merchandise> list = new ArrayList<>();
         for (String line : merchandiseListString) {
@@ -96,26 +97,32 @@ public class ListManageUtil {
         return list;
     }
 
+    @Deprecated
     public static Merchandise getMerchandise(List<Merchandise> listWithItem, int index) {
         return listWithItem.get(index);
     }
 
     public static List<Merchandise> weaponsList(List<String> weaponListString) {
         List<Merchandise> list = new ArrayList<>();
-        for (String line : weaponListString) {
-            String[] split = line.split(";");
-            String name = split[0];
-            int cost = Integer.parseInt(split[1]);
-            int dmg = Integer.parseInt(split[2]);
-            String type = split[3].toUpperCase();
-            WeaponType weaponType = WeaponType.valueOf(type);
-            list.add(new Weapon(name, cost, dmg, weaponType));
+        for (String id : weaponListString) {
+            Weapon weapon = ListManageUtil.getWeaponObject(id);
+            list.add(weapon);
         }
         return list;
     }
 
-    public static Weapon getWeapon(List<Weapon> listWithWeapon, int index) {
-        return listWithWeapon.get(index);
+    public static Weapon getWeaponObject(String weaponId) {
+        List<String> weaponIdList = new ArrayList<>(ResourceUtil
+                .getResource(ResourceType.WEAPON_ALL, "weapons"));
+        int index = weaponIdList.indexOf(weaponId);
+        String toSplit = weaponIdList.get(index);
+        String[] split = toSplit.split(";");
+        String name = split[0];
+        int cost = Integer.parseInt(split[1]);
+        int damageRatio = Integer.parseInt(split[2]);
+        String type = split[3];
+        WeaponType weaponType = WeaponType.valueOf(type);
+        return new Weapon(name,cost,damageRatio,weaponType);
     }
 
 }

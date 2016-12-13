@@ -10,7 +10,7 @@ public class WeaponShop extends Shop {
 
     public WeaponShop(String shopName) {
         super(shopName, ShopType.WEAPON_SHOP);
-        this.setMerchandise(ListManageUtil.weaponsList(ResourceUtil.getResource(ResourceType.WEAPON, shopName)));
+        this.setMerchandise(ListManageUtil.weaponsList(ResourceUtil.getResource(ResourceType.WEAPON_SHOP, shopName)));
     }
 
 }

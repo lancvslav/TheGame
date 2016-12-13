@@ -31,19 +31,6 @@ public abstract class Creature {
     }
 
     public Creature(String name, float maxLifeEssence, float maxStamina, float attackPower, float defense,
-                    String attack) {
-        this.name = name;
-        this.maxLifeEssence = maxLifeEssence;
-        this.maxStamina = maxStamina;
-        this.currentStamina = this.getMaxStamina();
-        this.currentLifeEssence = this.getMaxLifeEssence();
-        this.attackPower = attackPower;
-        this.defense = defense;
-        this.attacks = new ArrayList<>();
-        this.attacks.add(ListManageUtil.getAttackObject(attack));
-    }
-
-    public Creature(String name, float maxLifeEssence, float maxStamina, float attackPower, float defense,
                     String... attacks) {
         this.name = name;
         this.maxLifeEssence = maxLifeEssence;

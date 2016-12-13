@@ -5,7 +5,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.game.RespawnEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.creature.enemy.Enemy;
+import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyDeprecated;
 
 public class TournamentUi extends AbstractLocationUi {
 
@@ -13,7 +13,7 @@ public class TournamentUi extends AbstractLocationUi {
     private Tournament tournament;
     private FightUi fightUi;
     private ArenaUi arenaUi;
-    private Enemy currentEnemy;
+    private EnemyDeprecated currentEnemyDeprecated;
 
     public TournamentUi(Context context, Tournament tournament) {
         super(context);
@@ -24,12 +24,12 @@ public class TournamentUi extends AbstractLocationUi {
 
     @Override
     public void show() {
-        for (int enemyId = 0; enemyId < tournament.getEnemyList().size(); enemyId++) {
+        for (int enemyId = 0; enemyId < tournament.getEnemyDeprecatedList().size(); enemyId++) {
             if (!hero.isAlive()) {
                 break;
             }
-            currentEnemy = tournament.getEnemyList().get(enemyId);
-            System.out.println("\n" + this.get("textUi.TournamentUi.next") + " " + this.get(currentEnemy.getName()));
+            currentEnemyDeprecated = tournament.getEnemyDeprecatedList().get(enemyId);
+            System.out.println("\n" + this.get("textUi.TournamentUi.next") + " " + this.get(currentEnemyDeprecated.getName()));
             switch (this.choice(
                     this.get("texUi.TournamentUi.flee"),
                     this.get("texUi.TournamentUi.proceed"))) {
@@ -39,7 +39,7 @@ public class TournamentUi extends AbstractLocationUi {
                     return;
             }
             System.out.println();
-            fightUi = new FightUi(this.getContext(), hero, currentEnemy, tournament);
+            fightUi = new FightUi(this.getContext(), hero, currentEnemyDeprecated, tournament);
             fightUi.show();
         }
         if (!hero.isAlive()) {

@@ -1,14 +1,12 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
-import cz.vsb.ekf.lan0116.world.creature.Creature;
-import cz.vsb.ekf.lan0116.world.item.Weapon;
-import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
+import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.world.creature.creatureType.Humanoid;
 
 import java.util.Objects;
 
-public abstract class Hero extends Creature {
+public abstract class Hero extends Humanoid {
 
-    private Weapon weapon;
     private Inventory inventory;
     private int coins;
     private HeroClass clazz;
@@ -17,19 +15,11 @@ public abstract class Hero extends Creature {
 
     public Hero(String name, HeroClass heroClass) {
         super(name, heroClass.getHealth(), heroClass.getStamina(), heroClass.getDamage(), heroClass.getDefense());
-        this.weapon = new Weapon("item.weapon.flower", 0, 1, WeaponType.UNISEX);
+        this.setWeapon(ListManageUtil.getWeaponObject("item.weapon.flower"));
         this.inventory = new Inventory(this.getWeapon());
         this.coins = 1000;
         this.clazz = heroClass;
         this.heroInteraction = new HeroInteraction();
-    }
-
-    public Weapon getWeapon() {
-        return weapon;
-    }
-
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
     }
 
     public Inventory getInventory() {
@@ -53,8 +43,8 @@ public abstract class Hero extends Creature {
     }
 
     @Override
-    public String toString() {
-        return this.getName();
+    public float getAttackPower() {
+        return super.getAttackPower() + this.getWeapon().getDamageRatio();
     }
 
     @Override

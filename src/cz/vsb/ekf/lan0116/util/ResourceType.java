@@ -13,7 +13,8 @@ public enum ResourceType {
     QUOTE("/txt/", "_Quote.txt"),
     TEXT("/txt/", ".txt"),
     UI("/ui/", "_Ui.txt"),
-    WEAPON("/data/merchandise/weapons/", "_Weapons.txt"),;
+    WEAPON_ALL("/data/merchandise/weapons/", ".csv"),
+    WEAPON_SHOP("/data/merchandise/weapons/shops/", "_Weapons.txt"),;
 
     private final String path;
     private final String ext;

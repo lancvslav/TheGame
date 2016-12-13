@@ -1,1 +1,1 @@
-name;maxLifeEssence;maxStamina;att;def,SPECIAL_ATTACK
+name;maxLifeEssence;maxStamina;att;def;race;attack(,s);weapon

@@ -10,20 +10,24 @@ import java.util.List;
 public class Weapon extends Merchandise {
 
     private final int damageRatio;
-    private List<Attack> moveset;
+    private List<Attack> moveSet;
+
+    public Weapon(String weaponId){
+        ListManageUtil.getWeaponObject(weaponId);
+    }
 
     public Weapon(String name, int cost, int damageRatio, WeaponType type, String... attackId) {
         super(name, type, cost);
         this.damageRatio = damageRatio;
-        this.moveset = ListManageUtil.attackList(Arrays.asList(attackId));
+        this.moveSet = ListManageUtil.attackList(Arrays.asList(attackId));
     }
 
     public int getDamageRatio() {
         return damageRatio;
     }
 
-    public List<Attack> getMoveset() {
-        return moveset;
+    public List<Attack> getMoveSet() {
+        return moveSet;
     }
 
     public WeaponType getType() {
