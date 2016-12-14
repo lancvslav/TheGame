@@ -29,11 +29,18 @@ public class ListManageUtil {
     public static Attack getAttackObject(String attackId) {
         List<String> attackIdList = new ArrayList<>(ResourceUtil
                 .getResource(ResourceType.ATTACK_ALL, "attacks"));
-        int index = attackIdList.indexOf(attackId);
-        String toSplit = attackIdList.get(index);
+        String toSplit = "";
+        int index = 0;
+        while (toSplit.equals("") || index >= attackIdList.size()) {
+            if (attackIdList.get(index).startsWith(attackId)) {
+                toSplit = attackIdList.get(index);
+            } else {
+                index++;
+            }
+        }
         String[] split = toSplit.split(";");
         String name = split[0];
-        String property = split[1];
+        String property = split[1].toUpperCase();
         AttackProperty attackProperty = AttackProperty.valueOf(property);
         float penetration = Float.parseFloat(split[2]);
         float multiplier = Float.parseFloat(split[3]);
@@ -72,15 +79,22 @@ public class ListManageUtil {
     private static Creature getEnemyObject(String enemyId) {
         List<String> enemyIdList = new ArrayList<>(ResourceUtil
                 .getResource(ResourceType.ENEMY_ALL, "enemies"));
-        int index = enemyIdList.indexOf(enemyId);
-        String toSplit = enemyIdList.get(index);
+        String toSplit = "";
+        int index = 0;
+        while (toSplit.equals("") || index >= enemyIdList.size()) {
+            if (enemyIdList.get(index).startsWith(enemyId)) {
+                toSplit = enemyIdList.get(index);
+            } else {
+                index++;
+            }
+        }
         String[] split = toSplit.split(";");
         String name = split[0];
         float maxHp = Integer.parseInt(split[1]);
         float maxStamina = Integer.parseInt(split[2]);
         float attackPower = Integer.parseInt(split[3]);
         float defense = Integer.parseInt(split[4]);
-        String attackSection = split[5];
+        String attackSection = split[6];
         String[] attacks = attackSection.split(","); //Using simple comma to separate single attacks
         return new Creature(name, maxHp, maxStamina, attackPower, defense, attacks);
     }
@@ -119,12 +133,10 @@ public class ListManageUtil {
         while (toSplit.equals("") || index >= weaponIdList.size()) {
             if (weaponIdList.get(index).startsWith(weaponId)) {
                 toSplit = weaponIdList.get(index);
-                index = 0;
             } else {
                 index++;
             }
         }
-//        int index = weaponIdList.indexOf(weaponId);
         String[] split = toSplit.split(";");
         String name = split[0];
         int cost = Integer.parseInt(split[1]);
