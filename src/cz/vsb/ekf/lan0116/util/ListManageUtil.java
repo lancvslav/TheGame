@@ -114,15 +114,24 @@ public class ListManageUtil {
     public static Weapon getWeaponObject(String weaponId) {
         List<String> weaponIdList = new ArrayList<>(ResourceUtil
                 .getResource(ResourceType.WEAPON_ALL, "weapons"));
-        int index = weaponIdList.indexOf(weaponId);
-        String toSplit = weaponIdList.get(index);
+        String toSplit = "";
+        int index = 0;
+        while (toSplit.equals("") || index >= weaponIdList.size()) {
+            if (weaponIdList.get(index).startsWith(weaponId)) {
+                toSplit = weaponIdList.get(index);
+                index = 0;
+            } else {
+                index++;
+            }
+        }
+//        int index = weaponIdList.indexOf(weaponId);
         String[] split = toSplit.split(";");
         String name = split[0];
         int cost = Integer.parseInt(split[1]);
         int damageRatio = Integer.parseInt(split[2]);
-        String type = split[3];
+        String type = split[3].toUpperCase();
         WeaponType weaponType = WeaponType.valueOf(type);
-        return new Weapon(name,cost,damageRatio,weaponType);
+        return new Weapon(name, cost, damageRatio, weaponType);
     }
 
 }
