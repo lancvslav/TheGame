@@ -1,12 +1,14 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
+import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
+
 public class Sorcerer extends Hero {
 
     private float intelligence;
 
     public Sorcerer(String name) {
-        super(name, HeroClass.SORCERER);
-        this.intelligence = HeroClass.SORCERER.getDamage();
+        super(name, CreatureClass.SORCERER);
+        this.intelligence = CreatureClass.SORCERER.getDamage();
     }
 
     @Override

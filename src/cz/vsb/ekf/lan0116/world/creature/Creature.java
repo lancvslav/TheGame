@@ -10,6 +10,7 @@ import java.util.List;
 public class Creature {
 
     private final String name;
+    private CreatureClass clazz;
     private float currentLifeEssence;
     private float maxLifeEssence;
     private float currentStamina;
@@ -19,8 +20,10 @@ public class Creature {
     private List<Attack> attacks;
 
 
-    public Creature(String name, float maxLifeEssence, float maxStamina, float attackPower, float defense) {
+    public Creature(String name, CreatureClass clazz,
+                    float maxLifeEssence, float maxStamina, float attackPower, float defense) {
         this.name = name;
+        this.clazz = clazz;
         this.maxLifeEssence = maxLifeEssence;
         this.maxStamina = maxStamina;
         this.currentStamina = this.getMaxStamina();
@@ -30,9 +33,10 @@ public class Creature {
         attacks = new ArrayList<>();
     }
 
-    public Creature(String name, float maxLifeEssence, float maxStamina, float attackPower, float defense,
-                    String... attacks) {
+    public Creature(String name, CreatureClass clazz,
+                    float maxLifeEssence, float maxStamina, float attackPower, float defense, String... attacks) {
         this.name = name;
+        this.clazz = clazz;
         this.maxLifeEssence = maxLifeEssence;
         this.maxStamina = maxStamina;
         this.currentStamina = this.getMaxStamina();
@@ -44,6 +48,10 @@ public class Creature {
 
     public String getName() {
         return name;
+    }
+
+    public CreatureClass getClazz() {
+        return clazz;
     }
 
     public final boolean isAlive() {

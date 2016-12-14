@@ -1,28 +1,28 @@
 package cz.vsb.ekf.lan0116.world.item.type;
 
-import cz.vsb.ekf.lan0116.world.creature.hero.HeroClass;
+import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
 
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
 public enum WeaponType implements ItemType {
-    UNISEX(EnumSet.allOf(HeroClass.class)),
+    UNISEX(EnumSet.allOf(CreatureClass.class)),
 
-    MELEE(HeroClass.WARRIOR),
-    RANGED(HeroClass.RANGER),
-    WAND(HeroClass.SORCERER);
-    private final Set<HeroClass> availableFor;
+    MELEE(CreatureClass.WARRIOR),
+    RANGED(CreatureClass.RANGER),
+    WAND(CreatureClass.SORCERER);
+    private final Set<CreatureClass> availableFor;
 
-    WeaponType(HeroClass availableFor) {
+    WeaponType(CreatureClass availableFor) {
         this.availableFor = Collections.singleton(availableFor);
     }
 
-    WeaponType(Set<HeroClass> set) {
+    WeaponType(Set<CreatureClass> set) {
         this.availableFor = Collections.unmodifiableSet(set);
     }
 
-    public Set<HeroClass> getAvailableFor() {
+    public Set<CreatureClass> getAvailableFor() {
         return availableFor;
     }
 

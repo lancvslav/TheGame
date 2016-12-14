@@ -3,6 +3,8 @@ package cz.vsb.ekf.lan0116.util;
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.combat.AttackProperty;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
+import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
+import cz.vsb.ekf.lan0116.world.creature.creatureType.Humanoid;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
@@ -94,9 +96,15 @@ public class ListManageUtil {
         float maxStamina = Integer.parseInt(split[2]);
         float attackPower = Integer.parseInt(split[3]);
         float defense = Integer.parseInt(split[4]);
-        String attackSection = split[6];
+        String attackSection = split[5];
         String[] attacks = attackSection.split(","); //Using simple comma to separate single attacks
-        return new Creature(name, maxHp, maxStamina, attackPower, defense, attacks);
+        String clazz = split[7];
+        CreatureClass creatureClass = CreatureClass.valueOf(clazz);
+        if (split[8].equals("humanoid")) {
+            String weapon = split[6];
+            return new Humanoid(name, creatureClass, maxHp, maxStamina, attackPower, defense, weapon, attacks);
+        }
+        return new Creature(name, creatureClass, maxHp, maxStamina, attackPower, defense, attacks);
     }
 
     @Deprecated
@@ -135,6 +143,9 @@ public class ListManageUtil {
                 toSplit = weaponIdList.get(index);
             } else {
                 index++;
+                if(index>=weaponIdList.size()){
+                    System.out.println(toSplit);
+                }
             }
         }
         String[] split = toSplit.split(";");

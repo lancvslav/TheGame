@@ -1,12 +1,14 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
+import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
+
 public class Ranger extends Hero {
 
     private float agility;
 
     public Ranger(String name) {
-        super(name, HeroClass.RANGER);
-        this.agility = HeroClass.RANGER.getDamage();
+        super(name, CreatureClass.RANGER);
+        this.agility = CreatureClass.RANGER.getDamage();
     }
 
     @Override

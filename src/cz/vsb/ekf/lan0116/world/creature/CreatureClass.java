@@ -1,6 +1,6 @@
-package cz.vsb.ekf.lan0116.world.creature.hero;
+package cz.vsb.ekf.lan0116.world.creature;
 
-public enum HeroClass {
+public enum CreatureClass {
     RANGER(14, 20, 7, 6),
     SORCERER(10, 18, 5, 10),
     WARRIOR(20, 22, 10, 2),;
@@ -10,7 +10,7 @@ public enum HeroClass {
     private final float defense;
     private final float damage;
 
-    HeroClass(int health, float stamina, int defense, int damage) {
+    CreatureClass(int health, float stamina, int defense, int damage) {
         this.health = health;
         this.stamina = stamina;
         this.defense = defense;
