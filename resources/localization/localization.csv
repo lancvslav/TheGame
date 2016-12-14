@@ -216,7 +216,7 @@ textUi.StreetUi.paths;Paths you can take lead to:
 textUi.TavernUi.decline_drink;Not thirsty after all
 textUi.TavernUi.decline_food;Not hungry after all
 textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
-textUi.TournamentUi.next;Next enemyDeprecated:
+textUi.TournamentUi.next;Next enemy:
 texUi.TournamentUi.coward;You coward!
 texUi.TournamentUi.flee;Flee
 texUi.TournamentUi.proceed;Proceed

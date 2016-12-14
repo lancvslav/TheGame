@@ -5,9 +5,11 @@ import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 
 public enum CombatFailure implements FailureCause {
     ENEMY_DEAD,
-    TARGET_DEAD,
     HERO_DEAD,
-    UNKNOWN,;
+    NOT_ENOUGH_STAMINA,
+    TARGET_DEAD,
+    UNKNOWN,
+    YOU_DIED,;
 
     @Override
     public EventType getEventType() {

@@ -2,6 +2,7 @@ package cz.vsb.ekf.lan0116.world.creature.enemy;
 
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
+@Deprecated
 public class EnemyDeprecated extends Creature {
 
     public EnemyDeprecated(String name, float maxHp, float maxStamina, float attack, float defense, String attackId) {

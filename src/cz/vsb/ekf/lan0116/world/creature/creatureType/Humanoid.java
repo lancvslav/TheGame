@@ -20,6 +20,12 @@ public class Humanoid extends Creature {
         return weapon;
     }
 
+    @Override
+    public float getAttackPower() {
+        return this.getWeapon() != null ? (super.getAttackPower() + this.getWeapon().getDamageRatio()) :
+                super.getAttackPower();
+    }
+
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }

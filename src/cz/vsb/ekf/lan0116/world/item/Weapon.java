@@ -12,10 +12,6 @@ public class Weapon extends Merchandise {
     private final int damageRatio;
     private List<Attack> moveSet;
 
-    public Weapon(String weaponId){
-        ListManageUtil.getWeaponObject(weaponId);
-    }
-
     public Weapon(String name, int cost, int damageRatio, WeaponType type, String... attackId) {
         super(name, type, cost);
         this.damageRatio = damageRatio;

@@ -5,24 +5,24 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyDeprecated;
+import cz.vsb.ekf.lan0116.world.creature.Creature;
 
 public class FightRoundEvent implements Event {
 
     private final Attack attack;
-    private final EnemyDeprecated enemyDeprecated;
+    private final Creature enemy;
 
-    public FightRoundEvent(EnemyDeprecated enemyDeprecated, Attack attack, Context context) {
+    public FightRoundEvent(Creature enemy, Attack attack, Context context) {
         this.attack = attack;
-        this.enemyDeprecated = enemyDeprecated;
+        this.enemy = enemy;
     }
 
     public Attack getAttack() {
         return attack;
     }
 
-    public EnemyDeprecated getEnemyDeprecated() {
-        return enemyDeprecated;
+    public Creature getEnemy() {
+        return enemy;
     }
 
     @Override

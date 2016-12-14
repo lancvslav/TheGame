@@ -42,12 +42,7 @@ public abstract class Hero extends Humanoid {
         return heroInteraction;
     }
 
-    @Override
-    public float getAttackPower() {
-        return super.getAttackPower() + this.getWeapon().getDamageRatio();
-    }
-
-    @Override
+        @Override
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + Objects.hashCode(this.getName());

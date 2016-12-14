@@ -2,6 +2,7 @@ package cz.vsb.ekf.lan0116.world.creature.enemy;
 
 import cz.vsb.ekf.lan0116.combat.AttackDeprecated;
 
+@Deprecated
 public enum EnemyAttackDeprecated implements AttackDeprecated {
     BACKSTAB(2, 5f),//DOUBLE DMG
     BLEED(1, 2f),//DMG APPLIED TWICE, SECOND TIME REDUCED BY HALF

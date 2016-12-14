@@ -98,17 +98,13 @@ public abstract class Creature {
         this.defense = defense;
     }
 
-//    public void heal(float healAmount) {
-//        float ableToHeal = this.getMaxLifeEssence() - this.getCurrentLifeEssence();
-//        if (healAmount > ableToHeal) {
-//            this.setCurrentLifeEssence(this.getMaxLifeEssence());
-//        } else {
-//            this.setCurrentLifeEssence(this.getCurrentLifeEssence() + healAmount);
-//        }
-//    }
-//
-//    public void inflictDamage(float damage) {
-//        currentLifeEssence = currentLifeEssence - damage;
-//        if (currentLifeEssence < 0) currentLifeEssence = 0;
-//    }
+    public List<Attack> getAttacks() {
+        return attacks;
+    }
+
+    public void learnAttack(Attack... attacks) {
+        for (Attack attack : attacks) {
+            this.attacks.add(attack);
+        }
+    }
 }
