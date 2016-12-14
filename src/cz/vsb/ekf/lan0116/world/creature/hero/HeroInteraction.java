@@ -1,7 +1,6 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
 import cz.vsb.ekf.lan0116.world.creature.Creature;
-import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyDeprecated;
 import cz.vsb.ekf.lan0116.world.location.Location;
 
 import java.util.Queue;
@@ -10,7 +9,7 @@ public class HeroInteraction {
 
     private Location position;
     private Creature currentEnemy;
-    private Queue<EnemyDeprecated> enemyDeprecatedQueue;
+    private Queue<Creature> enemyQueue;
     private HeroStatus status;
 
     public HeroInteraction() {
@@ -32,12 +31,12 @@ public class HeroInteraction {
         this.currentEnemy = currentEnemy;
     }
 
-    public Queue<EnemyDeprecated> getEnemyDeprecatedQueue() {
-        return enemyDeprecatedQueue;
+    public Queue<Creature> getEnemyQueue() {
+        return enemyQueue;
     }
 
-    public void setEnemyDeprecatedQueue(Queue<EnemyDeprecated> enemyDeprecatedQueue) {
-        this.enemyDeprecatedQueue = enemyDeprecatedQueue;
+    public void setEnemyQueue(Queue<Creature> enemyQueue) {
+        this.enemyQueue = enemyQueue;
     }
 
     public HeroStatus getStatus() {

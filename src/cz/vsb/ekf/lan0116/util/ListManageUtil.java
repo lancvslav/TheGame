@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116.util;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.combat.AttackProperty;
-import cz.vsb.ekf.lan0116.world.creature.enemy.EnemyDeprecated;
+import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
@@ -60,16 +60,16 @@ public class ListManageUtil {
         return listWithConsumable.get(index);
     }
 
-    public static List<EnemyDeprecated> getEnemies(List<String> enemyIdList) {
-        List<EnemyDeprecated> list = new ArrayList<>();
+    public static List<Creature> getEnemies(List<String> enemyIdList) {
+        List<Creature> list = new ArrayList<>();
         for (String id : enemyIdList) {
-            EnemyDeprecated enemyDeprecated = ListManageUtil.getEnemyObject(id);
-            list.add(enemyDeprecated);
+            Creature enemy = ListManageUtil.getEnemyObject(id);
+            list.add(enemy);
         }
         return list;
     }
 
-    private static EnemyDeprecated getEnemyObject(String enemyId) {
+    private static Creature getEnemyObject(String enemyId) {
         List<String> enemyIdList = new ArrayList<>(ResourceUtil
                 .getResource(ResourceType.ENEMY_ALL, "enemies"));
         int index = enemyIdList.indexOf(enemyId);
@@ -82,7 +82,7 @@ public class ListManageUtil {
         float defense = Integer.parseInt(split[4]);
         String attackSection = split[5];
         String[] attacks = attackSection.split(","); //Using simple comma to separate single attacks
-        return new EnemyDeprecated(name, maxHp, maxStamina, attackPower, defense, attacks);
+        return new Creature(name, maxHp, maxStamina, attackPower, defense, attacks);
     }
 
     @Deprecated
