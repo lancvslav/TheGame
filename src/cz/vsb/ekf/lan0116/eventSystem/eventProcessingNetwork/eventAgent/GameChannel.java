@@ -27,6 +27,7 @@ public class GameChannel extends EventHandler {
             case RESPAWN:
                 this.getHero().setCurrentLifeEssence(this.getHero().getMaxLifeEssence());
                 this.getHero().getHeroInteraction().setPosition(this.getWorld().getStartLocation());
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case GIVE_UP:
                 this.getResponseChannel().respond(new GameOverResponse(GameOverResponse.Reason.SURRENDER));

@@ -6,7 +6,7 @@ public enum ResourceType {
     CONSUMABLE("/data/merchandise/consumables/","_Consumables.txt"),
     DATA("/data/", ".txt"),
     DRINK("/data/merchandise/consumables/",".drink_Consumables.txt"),
-    ENEMY_ALL("/data/enemies/",".csv"),
+    CREATURES_ALL("/data/enemies/",".csv"),
     FOOD("/data/merchandise/consumables/",".food_Consumables.txt"),
     LOCALIZATION("/localization/", ".csv"),
     MERCHANDISE("/data/merchandise/", "_Merchandise.txt"),

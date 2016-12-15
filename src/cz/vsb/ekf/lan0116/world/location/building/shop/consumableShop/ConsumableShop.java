@@ -8,8 +8,8 @@ import cz.vsb.ekf.lan0116.world.location.type.LocationType;
 
 public class ConsumableShop extends Shop {
 
-    public ConsumableShop(String shopName, LocationType consumableType) {
-        super(shopName, consumableType);
+    public ConsumableShop(String shopName, String merchantId, LocationType consumableType) {
+        super(shopName, merchantId, consumableType);
         this.setMerchandise(ListManageUtil.consumableList(ResourceUtil.getResource(ResourceType.CONSUMABLE, shopName)));
     }
 }

@@ -4,16 +4,16 @@ import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 
 import java.util.List;
 
-public class FightRoundResponse implements ServerEvent {
+public class AttackMoveResponse implements ServerEvent {
     List<FightResponse> battleLog;
 
-    public FightRoundResponse(List<FightResponse> battleLog) {
+    public AttackMoveResponse(List<FightResponse> battleLog) {
         this.battleLog = battleLog;
     }
 
     @Override
     public ServerEventType getType() {
-        return ServerEventType.FIGHT_ROUND_SUMMARY;
+        return ServerEventType.ATTACK_MOVE_SUMMARY;
     }
 
     public List<FightResponse> getBattleLog() {

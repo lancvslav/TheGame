@@ -7,6 +7,7 @@ public interface FightResponse {
         DAMAGE_INFLICTION,
         INFORMATION,
         SPEECH,
-        STAMINA_CONSUMPTION,;
+        STAMINA_CONSUMPTION,
+        YOU_DIED,;
     }
 }

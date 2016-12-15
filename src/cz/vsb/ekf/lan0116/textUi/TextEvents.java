@@ -4,7 +4,6 @@ import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.NewGameEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
-import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 
 public class TextEvents {
@@ -30,7 +29,7 @@ public class TextEvents {
                 if (event.getType() == ServerEvent.ServerEventType.GAME_OVER) {
                     System.out.println("Game is over, because " + ((GameOverResponse) event).getReason());
                     return;
-                } if (event.getType() == ServerEvent.ServerEventType.FIGHT_ROUND_SUMMARY) {
+                } if (event.getType() == ServerEvent.ServerEventType.ATTACK_MOVE_SUMMARY) {
                     // show summary
                 }
             }

@@ -69,18 +69,18 @@ public class ListManageUtil {
         return listWithConsumable.get(index);
     }
 
-    public static List<Creature> getEnemies(List<String> enemyIdList) {
+    public static List<Creature> getCreatures(List<String> enemyIdList) {
         List<Creature> list = new ArrayList<>();
         for (String id : enemyIdList) {
-            Creature enemy = ListManageUtil.getEnemyObject(id);
+            Creature enemy = ListManageUtil.getCreatureObject(id);
             list.add(enemy);
         }
         return list;
     }
 
-    private static Creature getEnemyObject(String enemyId) {
+    public static Creature getCreatureObject(String enemyId) {
         List<String> enemyIdList = new ArrayList<>(ResourceUtil
-                .getResource(ResourceType.ENEMY_ALL, "enemies"));
+                .getResource(ResourceType.CREATURES_ALL, "creatures"));
         String toSplit = "";
         int index = 0;
         while (toSplit.equals("") || index >= enemyIdList.size()) {

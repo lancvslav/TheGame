@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.world.location.type.ShopType;
 
 public class DrinkShop extends ConsumableShop {
 
-    public DrinkShop(String shopName) {
-        super(shopName, ShopType.DRINK_SHOP);
+    public DrinkShop(String shopName, String merchantId) {
+        super(shopName, merchantId,ShopType.DRINK_SHOP);
     }
 }

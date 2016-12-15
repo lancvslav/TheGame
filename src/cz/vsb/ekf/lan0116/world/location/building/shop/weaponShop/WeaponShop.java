@@ -8,8 +8,8 @@ import cz.vsb.ekf.lan0116.world.location.type.ShopType;
 
 public class WeaponShop extends Shop {
 
-    public WeaponShop(String shopName) {
-        super(shopName, ShopType.WEAPON_SHOP);
+    public WeaponShop(String shopName, String merchantId) {
+        super(shopName, merchantId, ShopType.WEAPON_SHOP);
         this.setMerchandise(ListManageUtil.weaponsList(ResourceUtil.getResource(ResourceType.WEAPON_SHOP, shopName)));
     }
 
