@@ -5,6 +5,7 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.world.item.Item;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class AbstractUi implements Ui {
@@ -32,6 +33,14 @@ public abstract class AbstractUi implements Ui {
         if (this.getContext().getLocalization().get("textUi.AbstractUi.flee").equals(choice)) {
             context.getSession().fireEvent(new GiveUpEvent());
             throw new RuntimeException(this.get("textUi.AbstractUi.fled") + "\n");
+        }
+        String[] strNumbers = new String[choices.length];
+        for (int i = 0; i < choices.length; i++) {
+            strNumbers[i] = String.valueOf(i);
+        }
+        while (!Arrays.asList(strNumbers).contains(choice)) {
+            System.out.println(this.get("textUi.not_an_option"));
+            choice = this.getContext().getScanner().nextLine();
         }
         return Integer.parseInt(choice);
     }

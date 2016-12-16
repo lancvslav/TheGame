@@ -30,7 +30,8 @@ public class Creature {
         this.currentLifeEssence = this.getMaxLifeEssence();
         this.attackPower = attackPower;
         this.defense = defense;
-        attacks = new ArrayList<>();
+        this.attacks = new ArrayList<>();
+        this.attacks.add(ListManageUtil.getAttackObject("attack.hit"));
     }
 
     public Creature(String name, CreatureClass clazz,
@@ -44,6 +45,7 @@ public class Creature {
         this.attackPower = attackPower;
         this.defense = defense;
         this.attacks = ListManageUtil.attackList(Arrays.asList(attacks));
+        this.attacks.add(ListManageUtil.getAttackObject("attack.hit"));
     }
 
     public String getName() {

@@ -26,7 +26,7 @@ public class Ranger extends Hero {
 
     @Override
     public String toString() {
-        return "Only for testing:";
+        return "Ranger toString Only for testing:";
     }
 
 }

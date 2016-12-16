@@ -26,7 +26,7 @@ public class Sorcerer extends Hero {
 
     @Override
     public String toString() {
-        return "Only for testing:";
+        return "Sorc toString Only for testing:";
     }
 
 }

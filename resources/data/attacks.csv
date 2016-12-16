@@ -24,6 +24,7 @@ attack.magic_spear;none;0.2;1;1
 attack.mindfuck;none;1;1;0
 attack.miraculous_force;none;0.3;0.95;0
 attack.orb;none;0;0.8;0
+attack.poison_bite;poison;0.3;1;0
 attack.poison_mist;poison;1;1;2
 attack.repeating_shoot;none;0.05;1;0
 attack.scraps_of_life;lifesteal;0.2;1;2

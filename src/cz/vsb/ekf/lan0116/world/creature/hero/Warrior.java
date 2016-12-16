@@ -26,7 +26,7 @@ public class Warrior extends Hero {
 
     @Override
     public String toString() {
-        return "Only for testing:";
+        return "War toString Only for testing:";
     }
 
 }

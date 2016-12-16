@@ -33,20 +33,25 @@ public class HeroCreationUi {
         Hero hero = null;
         while (hero == null) {
             printClasses(localization);
-            int tempChoiceNumber = scanner.nextInt();
-            scanner.nextLine();
+            String tempString = "";
+            tempString = scanner.nextLine();
+            while (!(tempString.equals("0") || tempString.equals("1") || tempString.equals("2"))) {
+                System.out.println(localization.get("textUi.one_job"));
+                tempString = scanner.nextLine();
+            }
+            int tempChoiceNumber = Integer.parseInt(tempString);
             switch (tempChoiceNumber) {
                 case 0:
                     hero = new Warrior(nameOfHero);
-                    System.out.println("\n"+ hero.toString()+"\n");
+                    System.out.println("\n" + hero.toString() + "\n");
                     break;
                 case 1:
                     hero = new Ranger(nameOfHero);
-                    System.out.println("\n"+ hero.toString()+"\n");
+                    System.out.println("\n" + hero.toString() + "\n");
                     break;
                 case 2:
                     hero = new Sorcerer(nameOfHero);
-                    System.out.println("\n"+ hero.toString()+"\n");
+                    System.out.println("\n" + hero.toString() + "\n");
                     break;
             }
         }
@@ -56,6 +61,7 @@ public class HeroCreationUi {
     /**
      * Prints text variety of heroHandling's classes to select
      */
+
     public static void printClasses(Localization localization) {
         System.out.println(localization.get("textUi.HeroCreationUi.kind_of_man") + "\n");
         System.out.println(localization.get("textUi.HeroCreationUi.warrior"));

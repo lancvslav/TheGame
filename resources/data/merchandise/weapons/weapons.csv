@@ -1,4 +1,5 @@
 item.merchandise.weapon.melee.bastard_sword;50;10;melee;attack.slash,attack.thrust
+item.merchandise.weapon.melee.pickaxe;10;4;melee;attack.thrust
 item.merchandise.weapon.melee.claymore;55;11;melee;attack.slash,attack.thrust
 item.merchandise.weapon.melee.club;15;3;melee;attack.strike,attack.crushing_blow
 item.merchandise.weapon.melee.dagger;10;2;melee;attack.slash,attack.thrust
@@ -43,3 +44,5 @@ item.weapon.flower;0;1;unisex;attack.strike
 item.weapon.broken_bottle;0;5;unisex;attack.thrust
 item.weapon.blacksmith_hammer;0;10;melee;attack.slash
 item.weapon.dry_bread;0;5;unisex;attack.slash
+item.merchandise.weapon.melee.axe;7;4;melee;attack.strike,attack.slash
+item.weapon.stone_hammer;0;20;melee;attack.strike
