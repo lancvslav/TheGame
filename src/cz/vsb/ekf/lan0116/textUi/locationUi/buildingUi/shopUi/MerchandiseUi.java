@@ -44,10 +44,11 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
     public void decisions() {
         int choice = Integer.parseInt(this.getContext().getScanner().nextLine());
         if (choice >= (merchandiseList.size())) {
-            System.out.println(this.get(TextUtil.quote(this.getLoc().getType().toString().toLowerCase() + "_unhappy")));
+            System.out.println(this.get(TextUtil.quote(this.getLoc().getType()
+                    .toString().toLowerCase() + "_unhappy")));
             this.travel();
         } else {
-            Merchandise merchandiseToPurchase = ListManageUtil.getMerchandise(merchandiseList, choice);
+            Merchandise merchandiseToPurchase = ListManageUtil.getMerchandiseToBuy(merchandiseList, choice);
             Response responseTrade = this.getContext().
                     getEventPublisher().getResponse(new TradeEvent(merchandiseToPurchase));
             if (responseTrade.isSuccess()) {

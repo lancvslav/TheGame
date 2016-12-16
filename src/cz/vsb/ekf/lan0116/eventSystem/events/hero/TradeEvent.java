@@ -13,7 +13,7 @@ public class TradeEvent implements Event {
     private final Merchandise merchandise;
 
     public TradeEvent(List<Merchandise> listWithItem, int index) {
-        this.merchandise = ListManageUtil.getMerchandise(listWithItem, index);
+        this.merchandise = ListManageUtil.getMerchandiseToBuy(listWithItem, index);
     }
 
     public TradeEvent(Merchandise merchandise) {

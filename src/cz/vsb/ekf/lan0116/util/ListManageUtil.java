@@ -51,22 +51,34 @@ public class ListManageUtil {
     }
 
 
-    public static List<Merchandise> consumableList(List<String> consumableListString) {
+    public static List<Merchandise> consumableList(List<String> consumableIdList) {
         List<Merchandise> list = new ArrayList<>();
-        for (String line : consumableListString) {
-            String[] split = line.split(";");
-            String name = split[0];
-            int cost = Integer.parseInt(split[1]);
-            int replenishValue = Integer.parseInt(split[2]);
-            String type = split[3].toUpperCase();
-            ConsumableType consumableType = ConsumableType.valueOf(type);
-            list.add(new Consumable(name, consumableType, cost, replenishValue));
+        for (String id : consumableIdList) {
+            Consumable consumable = ListManageUtil.getConsumableObject(id);
+            list.add(consumable);
         }
         return list;
     }
 
-    public static Merchandise getConsumable(List<Merchandise> listWithConsumable, int index) {
-        return listWithConsumable.get(index);
+    public static Consumable getConsumableObject(String consumableId) {
+        List<String> consumableIdList = new ArrayList<>(ResourceUtil
+                .getResource(ResourceType.CONSUMABLE_ALL, "consumables"));
+        String toSplit = "";
+        int index = 0;
+        while (toSplit.equals("") || index >= consumableIdList.size()) {
+            if (consumableIdList.get(index).startsWith(consumableId)) {
+                toSplit = consumableIdList.get(index);
+            } else {
+                index++;
+            }
+        }
+        String[] split = toSplit.split(";");
+        String name = split[0];
+        int cost = Integer.parseInt(split[1]);
+        int replenishValue = Integer.parseInt(split[2]);
+        String type = split[3].toUpperCase();
+        ConsumableType consumableType = ConsumableType.valueOf(type);
+        return new Consumable(name, consumableType, cost, replenishValue);
     }
 
     public static List<Creature> getCreatures(List<String> enemyIdList) {
@@ -107,7 +119,6 @@ public class ListManageUtil {
         return new Creature(name, creatureClass, maxHp, maxStamina, attackPower, defense, attacks);
     }
 
-    @Deprecated
     public static List<Merchandise> merchandiseList(List<String> merchandiseListString) {
         List<Merchandise> list = new ArrayList<>();
         for (String line : merchandiseListString) {
@@ -119,8 +130,7 @@ public class ListManageUtil {
         return list;
     }
 
-    @Deprecated
-    public static Merchandise getMerchandise(List<Merchandise> listWithItem, int index) {
+    public static Merchandise getMerchandiseToBuy(List<Merchandise> listWithItem, int index) {
         return listWithItem.get(index);
     }
 
@@ -143,7 +153,7 @@ public class ListManageUtil {
                 toSplit = weaponIdList.get(index);
             } else {
                 index++;
-                if(index>=weaponIdList.size()){
+                if (index >= weaponIdList.size()) {
                     System.out.println(toSplit);
                 }
             }

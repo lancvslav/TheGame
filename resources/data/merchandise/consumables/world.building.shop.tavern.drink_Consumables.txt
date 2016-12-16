@@ -1,4 +1,4 @@
-item.merchandise.consumable.drink.water;1;1;drink
-item.merchandise.consumable.drink.beer;2;2;drink
-item.merchandise.consumable.drink.wine;3;3;drink
-item.merchandise.consumable.drink.mead;4;4;drink
+item.merchandise.consumable.drink.water
+item.merchandise.consumable.drink.beer
+item.merchandise.consumable.drink.wine
+item.merchandise.consumable.drink.mead
