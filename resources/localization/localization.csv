@@ -223,11 +223,6 @@ texUi.TournamentUi.coward;You coward!
 texUi.TournamentUi.flee;Flee
 texUi.TournamentUi.proceed;Proceed
 texUi.TournamentUi.won;You won.
-toString.hero.essence_wields;essence of life and wields
-toString.hero.has;has
-toString.ranger.brave;Swift ranger, called
-toString.sorcerer.brave;Wise caster, called
-toString.warrior.brave;Brave warrior, called
 world.arena.arena;arena
 world.building.shop.consumable_shop.grocery;grocery
 world.building.shop.consumable_shop.swift_drink;SwiftDrink
