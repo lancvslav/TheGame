@@ -1,0 +1,12 @@
+item.merchandise.weapon.ranged.short_bow
+item.merchandise.weapon.ranged.bow
+item.merchandise.weapon.ranged.long_bow
+item.merchandise.weapon.ranged.composite_bow
+item.merchandise.weapon.ranged.light_crossbow
+item.merchandise.weapon.ranged.combat_bow
+item.merchandise.weapon.ranged.heavy_crossbow
+item.merchandise.weapon.ranged.war_bow
+item.merchandise.weapon.ranged.repeating_crossbow
+item.merchandise.weapon.ranged.hunters_bow
+item.merchandise.weapon.ranged.shadow_bow
+item.merchandise.weapon.ranged.greatbow

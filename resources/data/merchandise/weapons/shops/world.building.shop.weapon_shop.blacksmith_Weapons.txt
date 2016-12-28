@@ -1,0 +1,17 @@
+item.merchandise.weapon.melee.dagger
+item.merchandise.weapon.melee.dirk
+item.merchandise.weapon.melee.club
+item.merchandise.weapon.melee.spiked_club
+item.merchandise.weapon.melee.mace
+item.merchandise.weapon.melee.morning_star
+item.merchandise.weapon.melee.flail
+item.merchandise.weapon.melee.short_sword
+item.merchandise.weapon.melee.scimitar
+item.merchandise.weapon.melee.sword
+item.merchandise.weapon.melee.long_sword
+item.merchandise.weapon.melee.flamberge
+item.merchandise.weapon.melee.bastard_sword
+item.merchandise.weapon.melee.claymore
+item.merchandise.weapon.melee.katana
+item.merchandise.weapon.melee.greatsword
+item.merchandise.weapon.melee.zweihander

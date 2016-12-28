@@ -1,0 +1,12 @@
+item.merchandise.weapon.wand.demons_staff
+item.merchandise.weapon.wand.enhanced_wand
+item.merchandise.weapon.wand.magic_talisman
+item.merchandise.weapon.wand.staff
+item.merchandise.weapon.wand.staff_of_darkness
+item.merchandise.weapon.wand.staff_of_destruction
+item.merchandise.weapon.wand.staff_of_power
+item.merchandise.weapon.wand.staff_of_wisdom
+item.merchandise.weapon.wand.sun_staff
+item.merchandise.weapon.wand.talisman_of_life
+item.merchandise.weapon.wand.talisman_of_lightning
+item.merchandise.weapon.wand.wand
