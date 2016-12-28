@@ -4,7 +4,7 @@ public interface ServerEvent {
     ServerEventType getType();
 
     enum ServerEventType {
-        ATTACK_MOVE_SUMMARY,
+        BATTLE_LOG,
         GAME_OVER,
         /**/;
     }

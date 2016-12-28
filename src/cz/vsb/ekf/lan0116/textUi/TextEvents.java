@@ -29,7 +29,7 @@ public class TextEvents {
                 if (event.getType() == ServerEvent.ServerEventType.GAME_OVER) {
                     System.out.println("Game is over, because " + ((GameOverResponse) event).getReason());
                     return;
-                } if (event.getType() == ServerEvent.ServerEventType.ATTACK_MOVE_SUMMARY) {
+                } if (event.getType() == ServerEvent.ServerEventType.BATTLE_LOG) {
                     // show summary
                 }
             }

@@ -4,8 +4,13 @@ import cz.vsb.ekf.lan0116.world.creature.Creature;
 
 public class StaminaConsumption implements FightResponse {
 
-    private Creature staminaUser;
-    private float staminaDecrease;
+    private final Creature staminaUser;
+    private final float staminaDecrease;
+
+    public StaminaConsumption(Creature staminaUser, float staminaDecrease) {
+        this.staminaUser = staminaUser;
+        this.staminaDecrease = staminaDecrease;
+    }
 
     @Override
     public FightResponseType getType() {

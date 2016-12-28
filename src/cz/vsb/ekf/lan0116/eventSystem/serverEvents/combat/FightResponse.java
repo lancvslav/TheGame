@@ -5,9 +5,10 @@ public interface FightResponse {
 
     enum FightResponseType {
         DAMAGE_INFLICTION,
+        STAMINA_CONSUMPTION,
+        HEALING,
         INFORMATION,
         SPEECH,
-        STAMINA_CONSUMPTION,
         YOU_DIED,;
     }
 }

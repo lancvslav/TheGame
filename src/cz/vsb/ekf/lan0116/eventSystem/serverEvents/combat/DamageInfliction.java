@@ -4,9 +4,15 @@ import cz.vsb.ekf.lan0116.world.creature.Creature;
 
 public class DamageInfliction implements FightResponse {
 
-    private Creature attacker;
-    private Creature defender;
-    private float damageDealt;
+    private final Creature attacker;
+    private final Creature defender;
+    private final float damageDealt;
+
+    public DamageInfliction(Creature attacker, Creature defender, float damageDealt) {
+        this.attacker = attacker;
+        this.defender = defender;
+        this.damageDealt = damageDealt;
+    }
 
     @Override
     public FightResponseType getType() {

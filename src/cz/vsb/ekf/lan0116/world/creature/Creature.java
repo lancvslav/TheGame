@@ -68,6 +68,15 @@ public class Creature {
         this.currentLifeEssence = currentLifeEssence;
     }
 
+    public void addCurrentLifeEssence(float addedHealth) {
+        this.currentLifeEssence += addedHealth;
+        currentLifeEssence = Math.min(maxLifeEssence, currentLifeEssence + addedHealth);
+    }
+
+    public void decreaseCurrentLifeEssence(float damage) {
+        this.currentLifeEssence -= damage;
+    }
+
     public float getMaxLifeEssence() {
         return maxLifeEssence;
     }
@@ -82,6 +91,17 @@ public class Creature {
 
     public void setCurrentStamina(float currentStamina) {
         this.currentStamina = currentStamina;
+    }
+
+    public void addCurrentStamina(float addedStamina) {
+        currentStamina = Math.min(maxStamina, currentStamina + addedStamina);
+    }
+
+    public void decreaseCurrentStamina(float consumedStamina) {
+        if (consumedStamina > currentStamina) {
+            throw new IllegalArgumentException("Cannot remove more stamina than there is currently");
+        }
+        currentStamina -= consumedStamina;
     }
 
     public float getMaxStamina() {
