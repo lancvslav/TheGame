@@ -3,8 +3,12 @@ package cz.vsb.ekf.lan0116.textUi;
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.NewGameEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.BattleLogServerEvent;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.FightResponse;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
+
+import java.util.List;
 
 public class TextEvents {
 
@@ -24,13 +28,20 @@ public class TextEvents {
         LocationUi locUi = new LocationUi(context);
 
         while (true) {
-            ServerEvent event;
-            while ((event = context.getSession().getResponses().poll()) != null) {
-                if (event.getType() == ServerEvent.ServerEventType.GAME_OVER) {
-                    System.out.println("Game is over, because " + ((GameOverResponse) event).getReason());
+            ServerEvent serverEvent;
+            while ((serverEvent = context.getSession().getResponses().poll()) != null) {
+                if (serverEvent.getType() == ServerEvent.ServerEventType.GAME_OVER) {
+                    System.out.println("Game is over, because " + ((GameOverResponse) serverEvent).getReason());
                     return;
-                } if (event.getType() == ServerEvent.ServerEventType.BATTLE_LOG) {
-                    // show summary
+                }
+                if (serverEvent.getType() == ServerEvent.ServerEventType.BATTLE_LOG) {
+                    BattleLogServerEvent event = (BattleLogServerEvent) serverEvent;
+                    List<FightResponse> battleLog = event.getBattleLog();
+                    for (FightResponse response : battleLog) {
+                        switch(response.getType()){
+                            //finish me please please me
+                        }
+                    }
                 }
             }
             switch (context.getHero().getHeroInteraction().getStatus()) {
