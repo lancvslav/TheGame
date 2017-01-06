@@ -5,6 +5,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.game.NewGameEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.*;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
+import cz.vsb.ekf.lan0116.textUi.combatUi.FightUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 
 import java.util.List;
@@ -24,7 +25,9 @@ public class TextEvents {
             throw new ExceptionInInitializerError();
         }
         System.out.println(this.context.getLocalization().get("textUi.textEvents.flee") + "\n\n");
+
         LocationUi locUi = new LocationUi(context);
+        FightUi fightUi;
 
         while (true) {
             ServerEvent serverEvent;
@@ -65,7 +68,8 @@ public class TextEvents {
                     locUi.show();
                     break;
                 case IN_COMBAT:
-                    // fightUi?
+                    fightUi = new FightUi(context, context.getHero(),
+                            context.getHero().getHeroInteraction().getCurrentEnemy());
                     break;
                 case RESTING:
                     // restUi?

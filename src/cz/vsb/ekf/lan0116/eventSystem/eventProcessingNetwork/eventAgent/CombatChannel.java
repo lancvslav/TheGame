@@ -4,14 +4,16 @@ import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventHandler;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
-import cz.vsb.ekf.lan0116.eventSystem.events.combat.FightRoundEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.AttackMoveEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
+import cz.vsb.ekf.lan0116.eventSystem.failures.CombatFailure;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.BattleLogServerEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.FightResponse;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
+import cz.vsb.ekf.lan0116.world.location.building.Arena;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +29,13 @@ public class CombatChannel extends EventHandler {
 
     @Override
     public Response handleEvent(Event rawEvent) {
+        Hero hero = this.getHero();
         CombatType eventType = (CombatType) rawEvent.getType();
         switch (eventType) {
             case ATTACK_MOVE:
                 // if (not in combat) return Response.FUCK_YOU;
                 List<FightResponse> battleLog = new ArrayList<>();
-                FightRoundEvent event = (FightRoundEvent) rawEvent;
-                Hero hero = getHero();
+                AttackMoveEvent event = (AttackMoveEvent) rawEvent;
                 Attack heroAttack = event.getAttack();
                 Creature enemy = hero.getHeroInteraction().getCurrentEnemy();
                 battleLog.addAll(attack(hero, heroAttack, enemy));
@@ -41,9 +43,14 @@ public class CombatChannel extends EventHandler {
                     battleLog.addAll(attack(enemy, selectAttack(enemy), hero));
                 }
                 getResponseChannel().respond(new BattleLogServerEvent(battleLog));
-
                 return Response.SUCCESS;
-
+            case FLEE:
+                if (hero.getCurrentStamina() < 3) {
+                    return new Response(CombatFailure.FLEE_WEAK);
+                }
+                if (hero.getHeroInteraction().getPosition().equals(new Arena("test"))) {
+                    return new Response(CombatFailure.FLEE_DISABLED);
+                }
             default:
                 throw new UnsupportedOperationException("Event type " + rawEvent.getType() + " is not supported.");
         }

@@ -5,11 +5,11 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 
-public class FightRoundEvent implements Event {
+public class AttackMoveEvent implements Event {
 
     private final Attack attack;
 
-    public FightRoundEvent(Attack attack) {
+    public AttackMoveEvent(Attack attack) {
         this.attack = attack;
     }
 

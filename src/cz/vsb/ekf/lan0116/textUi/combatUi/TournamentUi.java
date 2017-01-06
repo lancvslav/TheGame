@@ -6,6 +6,7 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
+import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
 
 public class TournamentUi extends AbstractLocationUi {
 
@@ -37,10 +38,14 @@ public class TournamentUi extends AbstractLocationUi {
                     System.out.println("\n" + this.get("texUi.TournamentUi.coward"));
                     this.travel();
                     return;
+                case 1:
+                    System.out.println();
+                    this.getContext().getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+//                    fightUi = new FightUi(this.getContext(), hero, currentEnemy, tournament);
+//                    fightUi.show();
+                    break;
             }
-            System.out.println();
-            fightUi = new FightUi(this.getContext(), hero, currentEnemy, tournament);
-            fightUi.show();
+
         }
         if (!hero.isAlive()) {
             this.getContext().getEventPublisher().getResponse(new RespawnEvent());
@@ -53,6 +58,5 @@ public class TournamentUi extends AbstractLocationUi {
 
     @Override
     public void decisions() {
-
     }
 }

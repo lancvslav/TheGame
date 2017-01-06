@@ -5,6 +5,8 @@ import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 
 public enum CombatFailure implements FailureCause {
     ENEMY_DEAD,
+    FLEE_DISABLED,
+    FLEE_WEAK,
     HERO_DEAD,
     NOT_ENOUGH_STAMINA,
     TARGET_DEAD,
