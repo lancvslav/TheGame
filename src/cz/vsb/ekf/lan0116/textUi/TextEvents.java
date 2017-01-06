@@ -3,8 +3,7 @@ package cz.vsb.ekf.lan0116.textUi;
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.NewGameEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
-import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.BattleLogServerEvent;
-import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.FightResponse;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.*;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 
@@ -38,8 +37,25 @@ public class TextEvents {
                     BattleLogServerEvent event = (BattleLogServerEvent) serverEvent;
                     List<FightResponse> battleLog = event.getBattleLog();
                     for (FightResponse response : battleLog) {
-                        switch(response.getType()){
-                            //finish me please please me
+                        switch (response.getType()) {
+                            case DAMAGE_INFLICTION:
+                                DamageInfliction damageInfliction = (DamageInfliction) response;
+                                String attacker = damageInfliction.getAttacker().getName();
+                                String defender = damageInfliction.getDefender().getName();
+                                float damage = damageInfliction.getDamageDealt();
+                                System.out.println(attacker + " dealt " + damage + " damage to " + defender);
+                                break;
+                            case HEALING:
+                                Healing healing = (Healing) response;
+                                String healedOne = healing.getCreature().getName();
+                                float healed = healing.getHealed();
+                                System.out.println(healedOne + " was healed for " + healed);
+                                break;
+                            case STAMINA_CONSUMPTION:
+                                StaminaConsumption consumption = (StaminaConsumption) response;
+                                String consumer = consumption.getStaminaUser().getName();
+                                float consumed = consumption.getStaminaDecrease();
+                                System.out.println(consumer + " used " + consumed + " stamina");
                         }
                     }
                 }

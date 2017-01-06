@@ -27,10 +27,6 @@ public class HeroInteraction {
         return currentEnemy;
     }
 
-    public void setCurrentEnemy(Creature currentEnemy) {
-        this.currentEnemy = currentEnemy;
-    }
-
     public Queue<Creature> getEnemyQueue() {
         return enemyQueue;
     }
