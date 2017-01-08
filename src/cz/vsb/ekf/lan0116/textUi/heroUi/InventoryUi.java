@@ -25,7 +25,6 @@ public class InventoryUi extends AbstractHeroUi {
             restHeroUi.show();
             return;
         }
-        System.out.println();
         this.decisions();
     }
 

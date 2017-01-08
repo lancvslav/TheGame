@@ -1,6 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
+import cz.vsb.ekf.lan0116.eventSystem.Response;
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.AttackMoveEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractHeroUi;
 import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
@@ -19,22 +21,20 @@ public class AttacksUi extends AbstractHeroUi {
 
     @Override
     public void show() {
-        System.out.println("Attacks showtime");
         this.printArray(attacks);
+        System.out.println();
         if (this.getHero().getHeroInteraction().getStatus().equals(HeroInteraction.HeroStatus.IN_COMBAT)) {
             switch (this.choice("select", "close")) {
                 case 0:
-
+                    System.out.println("Choose move:");
+                    String tempString = this.getContext().getScanner().nextLine();
+                    int tempChoiceNumber = Integer.parseInt(tempString);
+                    Attack attack = this.getHero().getAttacks().get(tempChoiceNumber);
+                    Response response = this.getContext().getEventPublisher().getResponse(new AttackMoveEvent(attack));
                     break;
                 case 1:
-                    break;
+                    new FightUi(this.getContext()).decisions();
             }
         }
-        int index = this.choice(attacks);
-        Attack attack = this.getHero().getAttacks().get(index);
-    }
-
-    private Attack getAttack() {
-        return null;//null
     }
 }

@@ -25,35 +25,27 @@ public class TournamentUi extends AbstractLocationUi {
 
     @Override
     public void show() {
-        for (int enemyId = 0; enemyId < tournament.getEnemyList().size(); enemyId++) {
-            if (!hero.isAlive()) {
-                break;
-            }
-            currentEnemy = tournament.getEnemyList().get(enemyId);
-            System.out.println("\n" + this.get("textUi.TournamentUi.next") + " " + this.get(currentEnemy.getName()));
-            switch (this.choice(
-                    this.get("texUi.TournamentUi.flee"),
-                    this.get("texUi.TournamentUi.proceed"))) {
-                case 0:
-                    System.out.println("\n" + this.get("texUi.TournamentUi.coward"));
-                    this.travel();
-                    return;
-                case 1:
-                    System.out.println();
-                    this.getContext().getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
-//                    fightUi = new FightUi(this.getContext(), hero, currentEnemy, tournament);
-//                    fightUi.show();
-                    break;
-            }
-
+        currentEnemy = this.getContext().getHero().getHeroInteraction().pullNextEnemy();
+        if (currentEnemy == null) {
+            System.out.println("won");
+            return;
+        }
+        System.out.println("\n" + this.get("textUi.TournamentUi.next") + " " + this.get(currentEnemy.getName()));
+        switch (this.choice(
+                this.get("texUi.TournamentUi.pussyout"),
+                this.get("texUi.TournamentUi.proceed"))) {
+            case 0:
+                System.out.println("\n" + this.get("texUi.TournamentUi.coward"));
+                this.travel();
+                return;
+            case 1:
+                System.out.println();
+                this.getContext().getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+                return;
         }
         if (!hero.isAlive()) {
             this.getContext().getEventPublisher().getResponse(new RespawnEvent());
-            return;
         }
-        System.out.println(this.get("texUi.TournamentUi.won"));
-        arenaUi = new ArenaUi(this.getContext());
-        arenaUi.show();
     }
 
     @Override

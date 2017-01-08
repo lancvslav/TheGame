@@ -1,39 +1,55 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
+import cz.vsb.ekf.lan0116.eventSystem.Response;
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.FleeEvent;
+import cz.vsb.ekf.lan0116.eventSystem.failures.CombatFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
+import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
-import cz.vsb.ekf.lan0116.world.creature.Creature;
-import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
+import cz.vsb.ekf.lan0116.textUi.heroUi.InventoryUi;
 
 public class FightUi extends AbstractLocationUi {
 
-    private Hero hero;
-    private Creature enemy;
-    private CreatureStatusUi creatureStatusUi;
-
-
-    public FightUi(Context context, Creature hero, Creature enemy) {
+    public FightUi(Context context) {
         super(context);
-        this.hero = (Hero) hero;
-        this.enemy = enemy;
     }
 
     @Override
     public void show() {
-        System.out.println("You are facing " + this.getContext().getHero().getHeroInteraction().getCurrentEnemy());
-        switch (this.choice("attacks", "inventory", "try to flee")) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            default: //enemy attacks without questions
-        }
+        System.out.println(this.get("textUi.FightUi.facing") + " "
+                + this.get(this.getContext().getHero().getHeroInteraction().getCurrentEnemy().getName()));
+        this.decisions();
     }
 
     @Override
     public void decisions() {
-
+        switch (this.choice(this.get("textUi.FightUi.attacks"),
+                this.get("textUi.FightUi.inventory"),
+                this.get("textUi.FightUi.try_flee"))) {
+            case 0:
+                new AttacksUi(this.getContext()).show();
+                break;
+            case 1:
+                new InventoryUi(this.getContext()).show();
+                break;
+            case 2:
+                Response response = this.getContext().getEventPublisher().getResponse(new FleeEvent());
+                if (response.isSuccess()) {
+                    TextUtil.quote("flee");
+                    this.travel();
+                } else {
+                    CombatFailure fleeFailure = (CombatFailure) response.getFailureCause();
+                    switch (fleeFailure) {
+                        case FLEE_DISABLED:
+                            TextUtil.quote("flee_disabled");
+                            break;
+                        case FLEE_WEAK:
+                            TextUtil.quote("flee_weak");
+                            break;
+                    }
+                }
+                break;
+            default: //enemy attacks without questions, but how?
+        }
     }
 }

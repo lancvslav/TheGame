@@ -27,7 +27,6 @@ public class TextEvents {
         System.out.println(this.context.getLocalization().get("textUi.textEvents.flee") + "\n\n");
 
         LocationUi locUi = new LocationUi(context);
-        FightUi fightUi;
 
         while (true) {
             ServerEvent serverEvent;
@@ -68,8 +67,7 @@ public class TextEvents {
                     locUi.show();
                     break;
                 case IN_COMBAT:
-                    fightUi = new FightUi(context, context.getHero(),
-                            context.getHero().getHeroInteraction().getCurrentEnemy());
+                    new FightUi(context).show();
                     break;
                 case RESTING:
                     // restUi?

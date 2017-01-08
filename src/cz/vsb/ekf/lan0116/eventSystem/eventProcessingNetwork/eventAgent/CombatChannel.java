@@ -13,7 +13,8 @@ import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.FightResponse;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.location.building.Arena;
+import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
+import cz.vsb.ekf.lan0116.world.location.type.LocationSuperType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +49,13 @@ public class CombatChannel extends EventHandler {
                 if (hero.getCurrentStamina() < 3) {
                     return new Response(CombatFailure.FLEE_WEAK);
                 }
-                if (hero.getHeroInteraction().getPosition().equals(new Arena("test"))) {
+                //if (hero.getHeroInteraction().getPosition().equals(new Arena("test"))) { PROČ TO NEJDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE -> VLASEC? DON'T KILL ME THO
+                if (hero.getHeroInteraction().getPosition().getSuperType().equals(LocationSuperType.ARENA)) {
                     return new Response(CombatFailure.FLEE_DISABLED);
                 }
+                hero.getHeroInteraction().setEnemyQueue(null);
+                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                return Response.SUCCESS;
             default:
                 throw new UnsupportedOperationException("Event type " + rawEvent.getType() + " is not supported.");
         }

@@ -1,6 +1,7 @@
 package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
+import cz.vsb.ekf.lan0116.combat.AttackProperty;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.*;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
@@ -20,14 +21,16 @@ public class FightUtils {
             float damageDealt = calculateDamage(powerOf(attacker, attack), defender.getDefense(), attack.getPenetration());
             defender.decreaseCurrentLifeEssence(damageDealt);
             battleLog.add(new DamageInfliction(attacker, defender, damageDealt));
-            switch (attack.getProperty()) {
-                case LIFESTEAL:
-                    float stolen = damageDealt * 0.2f;
-                    attacker.addCurrentLifeEssence(stolen);
-                    battleLog.add(new Healing(attacker, stolen));
-                    break;
-                default:
-                    throw new UnsupportedOperationException("not implemented yet");
+            if (attack.getProperty() != AttackProperty.NONE) {
+                switch (attack.getProperty()) {
+                    case LIFESTEAL:
+                        float stolen = damageDealt * 0.2f;
+                        attacker.addCurrentLifeEssence(stolen);
+                        battleLog.add(new Healing(attacker, stolen));
+                        break;
+                    default:
+                        throw new UnsupportedOperationException("not implemented yet");
+                }
             }
             if (defender.getCurrentLifeEssence() <= 0) {
                 battleLog.add(new Information(defender, Information.Info.DEATH));

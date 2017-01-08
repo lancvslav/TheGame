@@ -220,7 +220,7 @@ textUi.TavernUi.offer_food;What ecaxtly you want to end yer hunger with?
 textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
 textUi.TournamentUi.next;Next enemy:
 texUi.TournamentUi.coward;You coward!
-texUi.TournamentUi.flee;Flee
+texUi.TournamentUi.pussyout;Pussy out
 texUi.TournamentUi.proceed;Proceed
 texUi.TournamentUi.won;You won.
 world.arena.arena;arena
@@ -241,3 +241,15 @@ world.road.road_of_malice;raod of malice
 world.road.tavern_backyard;tavern backyard
 world.square.battle_quarter;battle quarter
 world.square.main_square;main square
+textUi.FightUi.facing;You are facing
+textUi.FightUi.attacks;Attacks
+textUi.FightUi.inventory;Inventory
+textUi.FightUi.try_flee;Try to flee
+textUi.resources.flee0;You managed to flee. Cough cough... pushover, eh cough cough...
+textUi.resources.flee1;Unsuccessful coward successfully fled.
+textUi.resources.flee_disabled0;You just don't get it do you. You are mine now!
+textUi.resources.flee_disabled1;It looks like you are not going anywhere.
+textUi.resources.flee_disabled2;Can not escape once you are in arena.
+textUi.resources.flee_weak0;You are to much of a baby even for an escape.
+textUi.resources.flee_weak1;Not enough stamina.
+textUi.resources.flee_weak2;Don't forget you need stamina to run.
