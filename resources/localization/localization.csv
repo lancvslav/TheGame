@@ -253,3 +253,16 @@ textUi.resources.flee_disabled2;Can not escape once you are in arena.
 textUi.resources.flee_weak0;You are to much of a baby even for an escape.
 textUi.resources.flee_weak1;Not enough stamina.
 textUi.resources.flee_weak2;Don't forget you need stamina to run.
+textUi.AttacksUi.select;Select
+textUi.AttacksUi.close;Close
+textUi.AttacksUi.choose;Choose move:
+textUi.TavernUi.drink;Drink offer
+textUi.TavernUi.food;Food offer
+textUi.TavernUi.rumor;Rumor
+textUi.textEvents.failed;Failed to load the game.
+textUi.textEvents.game_over;Game is over, because
+textUi.textEvents.dealt;dealt
+textUi.textEvents.damage_to;damage to
+textUi.textEvents.healed;was healed for
+textUi.textEvents.used;used
+textUi.textEvents.stamina;stamina
