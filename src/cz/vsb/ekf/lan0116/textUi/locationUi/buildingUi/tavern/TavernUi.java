@@ -28,10 +28,10 @@ public class TavernUi extends AbstractLocationUi<Tavern> {
     @Override
     public void decisions() {
         switch (this.choice(
-                this.get("drink offer"),
-                this.get("food offer"),
-                this.get("rumor"),
-                this.get("leave this place")
+                this.get("textUi.TavernUi.drink"),
+                this.get("textUi.TavernUi.food"),
+                this.get("textUi.TavernUi.rumor"),
+                this.get("textUi.ShopUi.leave")
         )) {
             case 0:
                 new TavernOfferUi(this.getContext(), ConsumableType.DRINK).show();

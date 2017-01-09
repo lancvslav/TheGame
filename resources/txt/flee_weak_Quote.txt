@@ -1,0 +1,3 @@
+textUi.resources.flee_weak0
+textUi.resources.flee_weak1
+textUi.resources.flee_weak2

@@ -1,0 +1,3 @@
+textUi.resources.flee_disabled0
+textUi.resources.flee_disabled1
+textUi.resources.flee_disabled2

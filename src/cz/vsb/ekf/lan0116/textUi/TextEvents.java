@@ -18,13 +18,14 @@ public class TextEvents {
         this.context = context;
     }
 
+
     public void playGame() {
         Response responseNewGame = context.getEventPublisher().getResponse(new NewGameEvent());
         if (!responseNewGame.isSuccess()) {
-            System.out.println("Failed to load game.");
+            System.out.println(this.get("textUi.textEvents.failed"));
             throw new ExceptionInInitializerError();
         }
-        System.out.println(this.context.getLocalization().get("textUi.textEvents.flee") + "\n\n");
+        System.out.println(this.get("textUi.textEvents.flee") + "\n\n");
 
         LocationUi locUi = new LocationUi(context);
 
@@ -32,7 +33,8 @@ public class TextEvents {
             ServerEvent serverEvent;
             while ((serverEvent = context.getSession().getResponses().poll()) != null) {
                 if (serverEvent.getType() == ServerEvent.ServerEventType.GAME_OVER) {
-                    System.out.println("Game is over, because " + ((GameOverResponse) serverEvent).getReason());
+                    System.out.println(this.get("textUi.textEvents.game_over") + " "
+                            + ((GameOverResponse) serverEvent).getReason());
                     return;
                 }
                 if (serverEvent.getType() == ServerEvent.ServerEventType.BATTLE_LOG) {
@@ -45,19 +47,22 @@ public class TextEvents {
                                 String attacker = damageInfliction.getAttacker().getName();
                                 String defender = damageInfliction.getDefender().getName();
                                 float damage = damageInfliction.getDamageDealt();
-                                System.out.println(attacker + " dealt " + damage + " damage to " + defender);
+                                System.out.println(attacker + " " + this.get("textUi.textEvents.dealt") + " " + damage
+                                        + " " + this.get("textUi.textEvents.damage_to") + " " + defender);
                                 break;
                             case HEALING:
                                 Healing healing = (Healing) response;
                                 String healedOne = healing.getCreature().getName();
                                 float healed = healing.getHealed();
-                                System.out.println(healedOne + " was healed for " + healed);
+                                System.out.println(healedOne + " "
+                                        + this.get("textUi.textEvents.healed") + " " + healed);
                                 break;
                             case STAMINA_CONSUMPTION:
                                 StaminaConsumption consumption = (StaminaConsumption) response;
                                 String consumer = consumption.getStaminaUser().getName();
                                 float consumed = consumption.getStaminaDecrease();
-                                System.out.println(consumer + " used " + consumed + " stamina");
+                                System.out.println(consumer + " " + this.get("textUi.textEvents.used")
+                                        + " " + consumed + " " + this.get("textUi.textEvents.stamina"));
                         }
                     }
                 }
@@ -79,5 +84,9 @@ public class TextEvents {
                     // fail? do nothing?
             }
         }
+    }
+
+    private String get(String key) {
+        return context.getLocalization().get(key);
     }
 }
