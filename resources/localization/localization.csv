@@ -123,11 +123,18 @@ textUi.ArenaUi.tournament0;All folks try hard
 textUi.ArenaUi.tournament1;You are the prey now
 textUi.ArenaUi.tournament2;Prepare to get wet
 textUi.ArenaUi.welcome;Welcome to the Arena
+textUi.AttacksUi.close;Close
+textUi.AttacksUi.choose;Choose move:
+textUi.AttacksUi.select;Select
 textUi.consumed;consumed
 textUi.cost;cost
 textUi.current_location0;You are standing at
 textUi.current_location1;Here you are, at
 textUi.current_location2;You are at
+textUi.FightUi.attacks;Attacks
+textUi.FightUi.facing;You are facing
+textUi.FightUi.inventory;Inventory
+textUi.FightUi.try_flee;Try to flee
 textUi.HeroCreatinUi.new_game.another;... or just another mere pawn, whom his desperate fate brought here.
 textUi.HeroCreatinUi.new_game.devour;Be careful out there. Lest this edge of the world devour thee. As it devoured many others.
 textUi.HeroCreatinUi.new_game.first;But first...
@@ -183,6 +190,14 @@ textUi.resources.drink_shop_offer1;Have a sip.
 textUi.resources.drink_shop_unhappy0;You will die of thirst.
 textUi.resources.drink_shop_unhappy1;Not thirsty after all, you say?
 textUi.resources.drink_shop_unhappy2;You will remember me. In the moment of the heat. When you will not even able to spit around
+textUi.resources.flee_disabled0;You just don't get it do you. You are mine now!
+textUi.resources.flee_disabled1;It looks like you are not going anywhere.
+textUi.resources.flee_disabled2;Can not escape once you are in arena.
+textUi.resources.flee_weak0;You are to much of a baby even for an escape.
+textUi.resources.flee_weak1;Not enough stamina.
+textUi.resources.flee_weak2;Don't forget you need stamina to run.
+textUi.resources.flee0;You managed to flee. Cough cough... pushover, eh cough cough...
+textUi.resources.flee1;Unsuccessful coward successfully fled.
 textUi.resources.food_shop_happy0;Do not forget it in your pocket. It would mildew.
 textUi.resources.food_shop_happy1;The best is fresh. But you can keep it, for time of trouble.
 textUi.resources.food_shop_offer0;Everything is fresh!
@@ -215,13 +230,23 @@ textUi.ShopUi.leave;Leave this place
 textUi.StreetUi.paths;Paths you can take lead to:
 textUi.TavernUi.decline_drink;Not thirsty after all
 textUi.TavernUi.decline_food;Not hungry after all
+textUi.TavernUi.drink;Drink offer
+textUi.TavernUi.food;Food offer
 textUi.TavernUi.offer_drink;What ecaxtly you want to end yer thirst with?
 textUi.TavernUi.offer_food;What ecaxtly you want to end yer hunger with?
+textUi.TavernUi.rumor;Rumor
+textUi.textEvents.damage_to;damage to
+textUi.textEvents.dealt;dealt
+textUi.textEvents.failed;Failed to load the game.
 textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
+textUi.textEvents.game_over;Game is over, because
+textUi.textEvents.healed;was healed for
+textUi.textEvents.stamina;stamina
+textUi.textEvents.used;used
 textUi.TournamentUi.next;Next enemy:
 texUi.TournamentUi.coward;You coward!
-texUi.TournamentUi.pussyout;Pussy out
 texUi.TournamentUi.proceed;Proceed
+texUi.TournamentUi.pussyout;Pussy out
 texUi.TournamentUi.won;You won.
 world.arena.arena;arena
 world.building.shop.consumable_shop.grocery;grocery
@@ -241,28 +266,3 @@ world.road.road_of_malice;raod of malice
 world.road.tavern_backyard;tavern backyard
 world.square.battle_quarter;battle quarter
 world.square.main_square;main square
-textUi.FightUi.facing;You are facing
-textUi.FightUi.attacks;Attacks
-textUi.FightUi.inventory;Inventory
-textUi.FightUi.try_flee;Try to flee
-textUi.resources.flee0;You managed to flee. Cough cough... pushover, eh cough cough...
-textUi.resources.flee1;Unsuccessful coward successfully fled.
-textUi.resources.flee_disabled0;You just don't get it do you. You are mine now!
-textUi.resources.flee_disabled1;It looks like you are not going anywhere.
-textUi.resources.flee_disabled2;Can not escape once you are in arena.
-textUi.resources.flee_weak0;You are to much of a baby even for an escape.
-textUi.resources.flee_weak1;Not enough stamina.
-textUi.resources.flee_weak2;Don't forget you need stamina to run.
-textUi.AttacksUi.select;Select
-textUi.AttacksUi.close;Close
-textUi.AttacksUi.choose;Choose move:
-textUi.TavernUi.drink;Drink offer
-textUi.TavernUi.food;Food offer
-textUi.TavernUi.rumor;Rumor
-textUi.textEvents.failed;Failed to load the game.
-textUi.textEvents.game_over;Game is over, because
-textUi.textEvents.dealt;dealt
-textUi.textEvents.damage_to;damage to
-textUi.textEvents.healed;was healed for
-textUi.textEvents.used;used
-textUi.textEvents.stamina;stamina
