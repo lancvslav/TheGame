@@ -22,6 +22,8 @@ public class RestHeroUi extends AbstractHeroUi {
         switch (this.choice(
                 this.get("textUi.RestHeroUi.inventory"),
                 this.get("textUi.RestHeroUi.consume"),
+                "status",
+                //localize, or maybe don't, just testing for now
                 this.get("textUi.RestHeroUi.getUp"))) {
             case 0:
                 inventoryUi = new InventoryUi(getContext());
@@ -32,8 +34,12 @@ public class RestHeroUi extends AbstractHeroUi {
                 this.decisions();
                 break;
             case 2:
+                System.out.println(this.getHero().getCurrentLifeEssence());
+                break;
+            case 3:
                 locationUi = new LocationUi(getContext());
                 locationUi.decisions();
+                break;
         }
     }
 }

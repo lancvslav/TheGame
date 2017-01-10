@@ -32,7 +32,7 @@ public class FightUtils {
                         throw new UnsupportedOperationException("not implemented yet");
                 }
             }
-            if (defender.getCurrentLifeEssence() <= 0) {
+            if (!defender.isAlive()) {
                 battleLog.add(new Information(defender, Information.Info.DEATH));
             }
         } else {

@@ -9,7 +9,8 @@ public enum CombatType implements EventType {
     ENGAGE,
     FLEE,
     HEAL,
-    STAMINA_REPLENISHMENT,;
+    STAMINA_REPLENISHMENT,
+    /**/;
 
     @Override
     public EventSuperType getEventSuperType() {

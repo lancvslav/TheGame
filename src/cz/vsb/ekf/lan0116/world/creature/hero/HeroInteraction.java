@@ -27,9 +27,9 @@ public class HeroInteraction {
         return this.getEnemyQueue().peek();
     }
 
-    public Creature pullNextEnemy() {
-        return this.getEnemyQueue().poll();
-    }
+//    public Creature pullNextEnemy() {
+//        return this.getEnemyQueue().poll();
+//    }
 
     public Queue<Creature> getEnemyQueue() {
         return enemyQueue;

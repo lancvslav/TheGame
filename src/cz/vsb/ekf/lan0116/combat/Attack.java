@@ -1,7 +1,8 @@
 package cz.vsb.ekf.lan0116.combat;
 
 public class Attack {
-    public static final Attack FEEBLE_ATTACK = new Attack("feeble attack", AttackProperty.NONE, 0, 0.2f, 0);
+    public static final Attack FEEBLE_ATTACK = new Attack("attack.feeble_attack",
+            AttackProperty.NONE, 0, 0.2f, 0);
 
     private String name;
     private AttackProperty property;

@@ -7,11 +7,11 @@ public enum CombatFailure implements FailureCause {
     ENEMY_DEAD,
     FLEE_DISABLED,
     FLEE_WEAK,
-    HERO_DEAD,
     NOT_ENOUGH_STAMINA,
     TARGET_DEAD,
     UNKNOWN,
-    YOU_DIED,;
+    YOU_DIED,
+    /**/;
 
     @Override
     public EventType getEventType() {

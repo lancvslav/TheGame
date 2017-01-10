@@ -41,29 +41,7 @@ public class TextEvents {
                     BattleLogServerEvent event = (BattleLogServerEvent) serverEvent;
                     List<FightResponse> battleLog = event.getBattleLog();
                     for (FightResponse response : battleLog) {
-                        switch (response.getType()) {
-                            case DAMAGE_INFLICTION:
-                                DamageInfliction damageInfliction = (DamageInfliction) response;
-                                String attacker = damageInfliction.getAttacker().getName();
-                                String defender = damageInfliction.getDefender().getName();
-                                float damage = damageInfliction.getDamageDealt();
-                                System.out.println(attacker + " " + this.get("textUi.textEvents.dealt") + " " + damage
-                                        + " " + this.get("textUi.textEvents.damage_to") + " " + defender);
-                                break;
-                            case HEALING:
-                                Healing healing = (Healing) response;
-                                String healedOne = healing.getCreature().getName();
-                                float healed = healing.getHealed();
-                                System.out.println(healedOne + " "
-                                        + this.get("textUi.textEvents.healed") + " " + healed);
-                                break;
-                            case STAMINA_CONSUMPTION:
-                                StaminaConsumption consumption = (StaminaConsumption) response;
-                                String consumer = consumption.getStaminaUser().getName();
-                                float consumed = consumption.getStaminaDecrease();
-                                System.out.println(consumer + " " + this.get("textUi.textEvents.used")
-                                        + " " + consumed + " " + this.get("textUi.textEvents.stamina"));
-                        }
+                        this.printResponse(response);
                     }
                 }
             }
@@ -83,6 +61,49 @@ public class TextEvents {
                 default:
                     // fail? do nothing?
             }
+        }
+    }
+
+    private void printResponse(FightResponse response) {
+        switch (response.getType()) {
+            case DAMAGE_INFLICTION:
+                DamageInfliction damageInfliction = (DamageInfliction) response;
+                String attacker = this.get(damageInfliction.getAttacker().getName());
+                String defender = this.get(damageInfliction.getDefender().getName());
+                float damage = damageInfliction.getDamageDealt();
+                System.out.println(attacker + " " + this.get("textUi.textEvents.dealt") + " " + damage
+                        + " " + this.get("textUi.textEvents.damage_to") + " " + defender);
+                break;
+            case HEALING:
+                Healing healing = (Healing) response;
+                String healedOne = this.get(healing.getCreature().getName());
+                float healed = healing.getHealed();
+                System.out.println(healedOne + " "
+                        + this.get("textUi.textEvents.healed") + " " + healed);
+                break;
+            case INFORMATION:
+                Information information = (Information) response;
+                switch (information.getMessage()) {
+                    case DEATH:
+                        System.out.println(this.get(information.getSubject().getName()) + " "
+                                + this.get("textUi.textEvents.died"));
+                        break;
+                    case INSUFFICIENT_STAMINA:
+                        System.out.println(this.get(information.getSubject().getName())
+                                + " " + this.get("textUi.textEvents.not_enough_stamina"));
+                        break;
+                }
+                break;
+            case STAMINA_CONSUMPTION:
+                StaminaConsumption consumption = (StaminaConsumption) response;
+                String consumer = consumption.getStaminaUser().getName();
+                float consumed = consumption.getStaminaDecrease();
+                System.out.println(consumer + " " + this.get("textUi.textEvents.used")
+                        + " " + consumed + " " + this.get("textUi.textEvents.stamina"));
+                break;
+            case YOU_DIED:
+                System.out.println(this.get("textUi.textEvents.YOU_DIED"));
+                break;
         }
     }
 

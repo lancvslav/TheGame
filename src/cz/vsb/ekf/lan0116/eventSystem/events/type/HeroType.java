@@ -7,8 +7,10 @@ public enum HeroType implements EventType {
     CONSUME,
     DROP,
     EQUIP,
+    SIGN_IN,
     TRADE,
-    TRAVEL,;
+    TRAVEL,
+    /**/;
 
     @Override
     public EventSuperType getEventSuperType() {

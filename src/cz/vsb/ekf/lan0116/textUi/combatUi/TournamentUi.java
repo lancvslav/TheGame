@@ -1,6 +1,5 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
-import cz.vsb.ekf.lan0116.combat.Tournament;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.RespawnEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
@@ -11,21 +10,17 @@ import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
 public class TournamentUi extends AbstractLocationUi {
 
     private Hero hero;
-    private Tournament tournament;
-    private FightUi fightUi;
-    private ArenaUi arenaUi;
     private Creature currentEnemy;
 
-    public TournamentUi(Context context, Tournament tournament) {
+    public TournamentUi(Context context) {
         super(context);
         hero = context.getHero();
-        this.tournament = tournament;
 
     }
 
     @Override
     public void show() {
-        currentEnemy = this.getContext().getHero().getHeroInteraction().pullNextEnemy();
+        currentEnemy = this.getContext().getHero().getHeroInteraction().getCurrentEnemy();//bad bad bad
         if (currentEnemy == null) {
             System.out.println("won");
             return;

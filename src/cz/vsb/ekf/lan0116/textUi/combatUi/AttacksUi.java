@@ -3,6 +3,8 @@ package cz.vsb.ekf.lan0116.textUi.combatUi;
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.events.combat.AttackMoveEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.game.RespawnEvent;
+import cz.vsb.ekf.lan0116.eventSystem.failures.CombatFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractHeroUi;
 import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
@@ -32,6 +34,12 @@ public class AttacksUi extends AbstractHeroUi {
                     int tempChoiceNumber = Integer.parseInt(tempString);
                     Attack attack = this.getHero().getAttacks().get(tempChoiceNumber);
                     Response response = this.getContext().getEventPublisher().getResponse(new AttackMoveEvent(attack));
+                    if (response.getFailureCause() != null) {
+                        if (response.getFailureCause().equals(CombatFailure.YOU_DIED)) {
+                            this.getContext().getEventPublisher().getResponse(new RespawnEvent());
+                            return;
+                        }
+                    }
                     break;
                 case 1:
                     new FightUi(this.getContext()).decisions();

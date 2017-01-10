@@ -17,7 +17,8 @@ public class Context {
     private final Session session;
 
 
-    public Context(EventPublisher eventPublisher, Hero hero, World world, Scanner scanner, Localization localization, Session session) {
+    public Context(EventPublisher eventPublisher, Hero hero, World world, Scanner scanner,
+                   Localization localization, Session session) {
         this.eventPublisher = eventPublisher;
         this.hero = hero;
         this.world = world;

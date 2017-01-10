@@ -21,15 +21,15 @@ public class EventPublisher {
         this.heroChannel = new HeroChannel(hero, world, responseChannel);
     }
 
-    public CombatChannel getCombatChannel() {
+    private CombatChannel getCombatChannel() {
         return combatChannel;
     }
 
-    public GameChannel getGameChannel() {
+    private GameChannel getGameChannel() {
         return gameChannel;
     }
 
-    public HeroChannel getHeroChannel() {
+    private HeroChannel getHeroChannel() {
         return heroChannel;
     }
 

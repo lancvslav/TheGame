@@ -1,49 +1,86 @@
-enemies.abandoned_town.bandit;bandit
-enemies.abandoned_town.dog;dog
-enemies.abandoned_town.peasant;peasant
-enemies.abandoned_town.thiev;thiev
-enemies.arena0.enemy0.little_child;little child
-enemies.arena0.enemy1.street_toad;street toad
-enemies.arena0.enemy2.bastard;bastard
-enemies.arena0.enemy3.enraged_man;enraged man
-enemies.arena0.enemy4.old_mercenary;old mercenary
-enemies.arena0.enemy5.infantryman;infantry man
-enemies.arena0.enemy6.trained_bruiser;trained bruiser
-enemies.arena1.enemy0.sheep;sheep
-enemies.arena1.enemy1.cat;cat
-enemies.arena1.enemy2.turtle;turtle
-enemies.arena1.enemy3.dog;dog
-enemies.arena1.enemy4.snake;snake
-enemies.arena1.enemy5.wolf;wolf
-enemies.arena1.enemy6.bear;bear
-enemies.arena1.enemy7.lion;lion
-enemies.arena1.enemy8.tiger;tiger
-enemies.arena1.enemy9.mastodon;mastodon
-enemies.cave.blind_wanderer;blind wanderer
-enemies.cave.dark_dwarf;dark dwarf
-enemies.cave.dark_mole;dark mole
-enemies.cave.lost_miner;lost miner
-enemies.cave.shadow_mist;shadow mist
-enemies.cave.shadowlurker;shadowlurker
-enemies.forest.bear;bear
-enemies.forest.dark_elf;dark elf
-enemies.forest.chopped_tree;chopped tree
-enemies.forest.lumberjack;lumberjack
-enemies.forest.wolf;wolf
-enemies.graveyard.gargoyle;gargoyle
-enemies.graveyard.ghoul;ghoul
-enemies.graveyard.skeleton_archer;skeleton archer
-enemies.graveyard.skeleton_warrior;skeleton warrior
-enemies.graveyard.vampire;vampire
-enemies.graveyard.zombie;zombie
-enemies.mountains.dwarf;dwarf
-enemies.mountains.eagle;eagle
-enemies.mountains.chamois;chamois
-enemies.mountains.stone_warrior;stone warrior
-enemies.swamp.basilisk;basilisk
-enemies.swamp.giant_frog;giant frog
-enemies.swamp.great_mosquito;great mosquito
-enemies.swamp.hydra;hydra
+attac.emit_force;emit force
+attack.backstab;backstab
+attack.bite;bite
+attack.bleed;bleed
+attack.blind;blind
+attack.blinding_sunshine;blinding sunshine
+attack.brainstorm;brainstorm
+attack.concentrate_force;concentrate force
+attack.crushing_blow;crushing blow
+attack.dark_orb;dark orb
+attack.dark_strorm;dark storm
+attack.demon_orb;demon orb
+attack.destructive_orb;destructive orb
+attack.destructive_shoot;destructive shoot
+attack.destructive_storm;destructive storm
+attack.double_shoot;double shoot
+attack.fear;fear
+attack.feeble_attack;feeble attack
+attack.hawk_shoot;hawk shoot
+attack.hit;hit
+attack.chaos_orb;chaos orb
+attack.lightning_spear;lightning spear
+attack.magic_orb;magic orb
+attack.magic_spear;magic spear
+attack.mindfuck;mindfuck
+attack.miraculous_force;miraculous force
+attack.orb;orb
+attack.poison_bite;poison bite
+attack.poison_mist;poison mist
+attack.repeating_shoot;repeating shoot
+attack.scraps_of_life;scraps of life
+attack.scream;scream
+attack.shoot;shoot
+attack.silence;silence
+attack.slash;slash
+attack.strike;strike
+attack.sunlight_spear;sunlight spear
+attack.thrust;thrust
+attack.thunderstorm;thunderstorm
+attack.weaken;weaken
+enemies.bandit;bandit
+enemies.basilisk;basilisk
+enemies.bastard;bastard
+enemies.bear;bear
+enemies.blind_wanderer;blind wanderer
+enemies.cat;cat
+enemies.dark_dwarf;dark dwarf
+enemies.dark_elf;dark elf
+enemies.dark_mole;dark mole
+enemies.dog;dog
+enemies.dwarf;dwarf
+enemies.eagle;eagle
+enemies.enraged_man;enraged man
+enemies.gargoyle;gargoyle
+enemies.ghoul;ghoul
+enemies.giant_frog;giant frog
+enemies.great_mosquito;great mosquito
+enemies.hydra;hydra
+enemies.chamois;chamois
+enemies.chopped_tree;chopped tree
+enemies.infantryman;infantry man
+enemies.lion;lion
+enemies.little_child;little child
+enemies.lost_miner;lost miner
+enemies.lumberjack;lumberjack
+enemies.mastodon;mastodon
+enemies.old_mercenary;old mercenary
+enemies.peasant;peasant
+enemies.shadow_mist;shadow mist
+enemies.shadowlurker;shadowlurker
+enemies.sheep;sheep
+enemies.skeleton_archer;skeleton archer
+enemies.skeleton_warrior;skeleton warrior
+enemies.snake;snake
+enemies.stone_warrior;stone warrior
+enemies.street_toad;street toad
+enemies.thiev;thiev
+enemies.tiger;tiger
+enemies.trained_bruiser;trained bruiser
+enemies.turtle;turtle
+enemies.vampire;vampire
+enemies.wolf;wolf
+enemies.zombie;zombie
 hero.class.ranger;ranger
 hero.class.sorcerer;sorcerer
 hero.class.warrior;warrior
@@ -237,12 +274,15 @@ textUi.TavernUi.offer_food;What ecaxtly you want to end yer hunger with?
 textUi.TavernUi.rumor;Rumor
 textUi.textEvents.damage_to;damage to
 textUi.textEvents.dealt;dealt
+textUi.textEvents.died;died
 textUi.textEvents.failed;Failed to load the game.
 textUi.textEvents.flee;To leave this world, scream: 'flee foolishly'
 textUi.textEvents.game_over;Game is over, because
 textUi.textEvents.healed;was healed for
+textUi.textEvents.not_enough_stamina;doesn't have enough stamina to use attack.
 textUi.textEvents.stamina;stamina
 textUi.textEvents.used;used
+textUi.textEvents.YOU_DIED;YOU DIED
 textUi.TournamentUi.next;Next enemy:
 texUi.TournamentUi.coward;You coward!
 texUi.TournamentUi.proceed;Proceed

@@ -5,6 +5,7 @@ import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventHandler;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.combat.AttackMoveEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.EngageEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 import cz.vsb.ekf.lan0116.eventSystem.failures.CombatFailure;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
@@ -17,6 +18,7 @@ import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
 import cz.vsb.ekf.lan0116.world.location.type.LocationSuperType;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import static cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling.FightUtils.attack;
@@ -36,15 +38,30 @@ public class CombatChannel extends EventHandler {
             case ATTACK_MOVE:
                 // if (not in combat) return Response.FUCK_YOU;
                 List<FightResponse> battleLog = new ArrayList<>();
-                AttackMoveEvent event = (AttackMoveEvent) rawEvent;
-                Attack heroAttack = event.getAttack();
+                AttackMoveEvent moveEvent = (AttackMoveEvent) rawEvent;
+                Attack heroAttack = moveEvent.getAttack();
                 Creature enemy = hero.getHeroInteraction().getCurrentEnemy();
                 battleLog.addAll(attack(hero, heroAttack, enemy));
-                if (enemy.getCurrentLifeEssence() > 0) {
+                if (enemy.isAlive()) {
                     battleLog.addAll(attack(enemy, selectAttack(enemy), hero));
+                } else {
+                    if (hero.getHeroInteraction().getEnemyQueue().isEmpty()) {
+                        hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                    }
+                    hero.getHeroInteraction().getEnemyQueue().remove();
                 }
                 getResponseChannel().respond(new BattleLogServerEvent(battleLog));
+                if (!hero.isAlive()) {
+                    return new Response(CombatFailure.YOU_DIED);
+                }
                 return Response.SUCCESS;
+            case ENGAGE:
+                EngageEvent engageEvent = (EngageEvent) rawEvent;
+                LinkedList<Creature> queue = new LinkedList<>();
+                queue.add(engageEvent.getEnemy());
+                hero.getHeroInteraction().setEnemyQueue(queue);
+                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+                return null;
             case FLEE:
                 if (hero.getCurrentStamina() < 3) {
                     return new Response(CombatFailure.FLEE_WEAK);

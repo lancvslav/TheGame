@@ -35,16 +35,16 @@ public class FightUi extends AbstractLocationUi {
             case 2:
                 Response response = this.getContext().getEventPublisher().getResponse(new FleeEvent());
                 if (response.isSuccess()) {
-                    TextUtil.quote("flee");
+                    System.out.println(this.get(TextUtil.quote("flee")));
                     this.travel();
                 } else {
                     CombatFailure fleeFailure = (CombatFailure) response.getFailureCause();
                     switch (fleeFailure) {
                         case FLEE_DISABLED:
-                            TextUtil.quote("flee_disabled");
+                            System.out.println(this.get(TextUtil.quote("flee_disabled")));
                             break;
                         case FLEE_WEAK:
-                            TextUtil.quote("flee_weak");
+                            System.out.println(this.get(TextUtil.quote("flee_weak")));
                             break;
                     }
                 }

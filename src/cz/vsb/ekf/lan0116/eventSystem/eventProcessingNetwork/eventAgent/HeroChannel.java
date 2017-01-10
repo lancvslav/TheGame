@@ -11,10 +11,13 @@ import cz.vsb.ekf.lan0116.eventSystem.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.TradeFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.TravelFailure;
 import cz.vsb.ekf.lan0116.world.World;
+import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Item;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
+
+import java.util.LinkedList;
 
 public class HeroChannel extends EventHandler {
 
@@ -46,6 +49,12 @@ public class HeroChannel extends EventHandler {
                 return Response.SUCCESS;
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
+            case SIGN_IN:
+                SignInEvent signInEvent = (SignInEvent) event;
+                LinkedList<Creature> queue = new LinkedList<>(signInEvent.getTournament().getEnemyList());
+                this.getHero().getHeroInteraction().setEnemyQueue(queue);
+                return Response.SUCCESS;
+                //return;
             case TRADE:
                 TradeEvent tradeEvent = (TradeEvent) event;
                 if (this.getHero().getCoins() < tradeEvent.getMerchandise().getCost()) {

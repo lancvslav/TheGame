@@ -51,10 +51,9 @@ public abstract class AbstractUi implements Ui {
      * @param values Array of choices to print
      */
     protected void printArray(String[] values) {
-        int oneLine = 27;
         for (int index = 0, column = 0; index < values.length; index++, column++) {
             if (column % 3 == 0) System.out.println();
-            System.out.printf("%2d %-24s", index, values[index]);
+            System.out.printf("%2d %-24s", index, this.get(values[index]));
             if (!(index % 3 == 2)) System.out.print("|");
         }
     }
