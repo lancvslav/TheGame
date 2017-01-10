@@ -11,18 +11,14 @@ import cz.vsb.ekf.lan0116.world.item.Item;
 
 public class InventoryUi extends AbstractHeroUi {
 
-    private RestHeroUi restHeroUi;
-
     public InventoryUi(Context context) {
         super(context);
-        restHeroUi = new RestHeroUi(context);
     }
 
     @Override
     public void show() {
         if (this.getContext().getHero().getInventory().getInventoryList().isEmpty()) {
             System.out.printf("\n%s\n%n", this.get("textUi.InventoryUi.empty"));
-            restHeroUi.show();
             return;
         }
         this.decisions();
@@ -110,8 +106,7 @@ public class InventoryUi extends AbstractHeroUi {
                 }
                 break;
             case 3:
-                restHeroUi.show();
-                break;
+                //close (return;)
         }
     }
 

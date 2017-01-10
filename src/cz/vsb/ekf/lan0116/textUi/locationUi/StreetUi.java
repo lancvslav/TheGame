@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi;
 
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.RestEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
@@ -36,8 +37,7 @@ class StreetUi extends AbstractLocationUi<Street> {
                 this.decisions();
                 break;
             case 1:
-                restHeroUi = new RestHeroUi(this.getContext());
-                restHeroUi.show();
+                this.getContext().getEventPublisher().getResponse(new RestEvent());
                 break;
             case 2:
                 this.travel();

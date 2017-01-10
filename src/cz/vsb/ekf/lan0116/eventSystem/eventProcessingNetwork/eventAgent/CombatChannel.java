@@ -48,9 +48,10 @@ public class CombatChannel extends EventHandler {
                     if (hero.getHeroInteraction().getEnemyQueue().isEmpty()) {
                         hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                     }
+                    hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                     hero.getHeroInteraction().getEnemyQueue().remove();
                 }
-                getResponseChannel().respond(new BattleLogServerEvent(battleLog));
+                this.getResponseChannel().respond(new BattleLogServerEvent(battleLog));
                 if (!hero.isAlive()) {
                     return new Response(CombatFailure.YOU_DIED);
                 }

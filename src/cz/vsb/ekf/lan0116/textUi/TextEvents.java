@@ -6,6 +6,7 @@ import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.*;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
 import cz.vsb.ekf.lan0116.textUi.combatUi.FightUi;
+import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 
 import java.util.List;
@@ -53,7 +54,7 @@ public class TextEvents {
                     new FightUi(context).show();
                     break;
                 case RESTING:
-                    // restUi?
+                    new RestHeroUi(context).show();
                     break;
                 case SHOPPING:
                     // shopping?
@@ -101,9 +102,9 @@ public class TextEvents {
                 System.out.println(consumer + " " + this.get("textUi.textEvents.used")
                         + " " + consumed + " " + this.get("textUi.textEvents.stamina"));
                 break;
-            case YOU_DIED:
-                System.out.println(this.get("textUi.textEvents.YOU_DIED"));
-                break;
+//            case YOU_DIED:
+//                System.out.println(this.get("textUi.textEvents.YOU_DIED"));
+//                break;
         }
     }
 

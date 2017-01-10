@@ -15,12 +15,11 @@ public class TournamentUi extends AbstractLocationUi {
     public TournamentUi(Context context) {
         super(context);
         hero = context.getHero();
-
     }
 
     @Override
     public void show() {
-        currentEnemy = this.getContext().getHero().getHeroInteraction().getCurrentEnemy();//bad bad bad
+        currentEnemy = this.getContext().getHero().getHeroInteraction().getCurrentEnemy();
         if (currentEnemy == null) {
             System.out.println("won");
             return;

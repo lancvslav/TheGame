@@ -186,7 +186,7 @@ textUi.HeroCreationUi.pleasure;Pleasure to meet thee,
 textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, moderate damageRatio done, average vitality.
 textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
 textUi.HeroCreationUi.warrior;0. Brave warrior. High survivability, mediocre damageRatio. Able to wield shield.
-textUi.InventoryUi.damageRatio;damageRatio
+textUi.InventoryUi.damage_ratio;damageRatio
 textUi.InventoryUi.don't_own;You do not own this item.
 textUi.InventoryUi.dropped;What is done, can not be undone.
 textUi.InventoryUi.empty;You are as poor as a rat. Well, at least rats have friends.

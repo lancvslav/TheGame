@@ -13,6 +13,7 @@ import cz.vsb.ekf.lan0116.eventSystem.failures.TravelFailure;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
+import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Item;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
@@ -30,7 +31,6 @@ public class HeroChannel extends EventHandler {
         HeroType eventType = (HeroType) event.getType();
         switch (eventType) {
             case CONSUME:
-                ConsumeEvent consumeEvent = (ConsumeEvent) event;
                 Consumable subjectOfConsumption = ((ConsumeEvent) event).getSubjectOfConsumption();
                 //PREPARED TO DISTINCT SECONDARY STAT (ENERGY, MANA, RAGE)
                 //ConsumableType consumableType = (ConsumableType) subjectOfConsumption.getItemType();
@@ -49,12 +49,15 @@ public class HeroChannel extends EventHandler {
                 return Response.SUCCESS;
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
+            case REST:
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.RESTING);
+                return Response.SUCCESS;
             case SIGN_IN:
                 SignInEvent signInEvent = (SignInEvent) event;
                 LinkedList<Creature> queue = new LinkedList<>(signInEvent.getTournament().getEnemyList());
                 this.getHero().getHeroInteraction().setEnemyQueue(queue);
+                this.getHero().getHeroInteraction().setPosition(signInEvent.getTournament());
                 return Response.SUCCESS;
-                //return;
             case TRADE:
                 TradeEvent tradeEvent = (TradeEvent) event;
                 if (this.getHero().getCoins() < tradeEvent.getMerchandise().getCost()) {

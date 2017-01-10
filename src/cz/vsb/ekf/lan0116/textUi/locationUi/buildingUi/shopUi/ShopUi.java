@@ -1,15 +1,12 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi;
 
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.RestEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
-import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
 import cz.vsb.ekf.lan0116.world.location.building.shop.Shop;
 
 public class ShopUi extends AbstractLocationUi<Shop> {
-
-    private MerchandiseUi merchandiseUi;
-    private RestHeroUi restHeroUi;
 
     public ShopUi(Context context) {
         super(context);
@@ -35,12 +32,10 @@ public class ShopUi extends AbstractLocationUi<Shop> {
                 this.get("textUi.menu.rest"),
                 this.get("textUi.ShopUi.leave"))) {
             case 0:
-                merchandiseUi = new MerchandiseUi(getContext());
-                merchandiseUi.show();
+                new MerchandiseUi(getContext()).show();
                 break;
             case 1:
-                restHeroUi = new RestHeroUi(getContext());
-                restHeroUi.show();
+                this.getContext().getEventPublisher().getResponse(new RestEvent());
                 break;
             case 2:
                 this.travel();

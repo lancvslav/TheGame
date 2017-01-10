@@ -7,6 +7,7 @@ public enum HeroType implements EventType {
     CONSUME,
     DROP,
     EQUIP,
+    REST,
     SIGN_IN,
     TRADE,
     TRAVEL,
