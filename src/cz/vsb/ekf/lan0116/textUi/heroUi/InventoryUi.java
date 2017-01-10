@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi.heroUi;
 
 import cz.vsb.ekf.lan0116.eventSystem.Response;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.DropEvent;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.EquipEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.DropEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.EquipEvent;
 import cz.vsb.ekf.lan0116.eventSystem.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;

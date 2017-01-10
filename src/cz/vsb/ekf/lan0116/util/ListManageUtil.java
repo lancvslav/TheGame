@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.combat.AttackProperty;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
-import cz.vsb.ekf.lan0116.world.creature.creatureType.Humanoid;
+import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.Weapon;

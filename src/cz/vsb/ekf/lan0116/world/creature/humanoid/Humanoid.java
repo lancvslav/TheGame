@@ -1,4 +1,4 @@
-package cz.vsb.ekf.lan0116.world.creature.creatureType;
+package cz.vsb.ekf.lan0116.world.creature.humanoid;
 
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
 import cz.vsb.ekf.lan0116.world.creature.Creature;

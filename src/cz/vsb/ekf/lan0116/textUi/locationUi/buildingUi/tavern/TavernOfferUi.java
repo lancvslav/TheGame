@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.tavern;
 
 import cz.vsb.ekf.lan0116.eventSystem.Response;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.ConsumeEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.ConsumeEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.util.ListManageUtil;

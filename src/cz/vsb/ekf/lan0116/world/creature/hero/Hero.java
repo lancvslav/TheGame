@@ -2,7 +2,7 @@ package cz.vsb.ekf.lan0116.world.creature.hero;
 
 import cz.vsb.ekf.lan0116.util.ListManageUtil;
 import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
-import cz.vsb.ekf.lan0116.world.creature.creatureType.Humanoid;
+import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 
 import java.util.Objects;
 

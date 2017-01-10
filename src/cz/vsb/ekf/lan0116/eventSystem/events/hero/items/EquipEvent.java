@@ -1,4 +1,4 @@
-package cz.vsb.ekf.lan0116.eventSystem.events.hero;
+package cz.vsb.ekf.lan0116.eventSystem.events.hero.items;
 
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
