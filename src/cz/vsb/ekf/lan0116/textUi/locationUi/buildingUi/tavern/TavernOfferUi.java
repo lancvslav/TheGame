@@ -4,7 +4,7 @@ import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.ConsumeEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
-import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.util.ObjectFactory;
 import cz.vsb.ekf.lan0116.world.location.building.shop.Tavern;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
@@ -59,7 +59,7 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
             new TavernUi(this.getContext()).show();
         } else {
             String consumableId = consumables.get(choice).getName();
-            Consumable consumableReceived = ListManageUtil.getConsumableObject(consumableId);
+            Consumable consumableReceived = ObjectFactory.getConsumableObject(consumableId);
             Response consumeResponse = this.getContext().getEventPublisher()
                     .getResponse(new ConsumeEvent(consumableReceived));
             if (consumeResponse.isSuccess()) {

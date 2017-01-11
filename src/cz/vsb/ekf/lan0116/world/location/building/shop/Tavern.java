@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.world.location.building.shop;
 
-import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.util.ObjectFactory;
 import cz.vsb.ekf.lan0116.util.ResourceType;
 import cz.vsb.ekf.lan0116.util.ResourceUtil;
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
@@ -18,8 +18,8 @@ public class Tavern extends Building {
 
     public Tavern() {
         super("world.building.shop.tavern", TavernType.TAVERN);
-        this.drinkList = ListManageUtil.consumableList(ResourceUtil.getResource(ResourceType.DRINK, this.getName()));
-        this.foodList = ListManageUtil.consumableList(ResourceUtil.getResource(ResourceType.FOOD, this.getName()));
+        this.drinkList = ObjectFactory.consumableList(ResourceUtil.getResource(ResourceType.DRINK, this.getName()));
+        this.foodList = ObjectFactory.consumableList(ResourceUtil.getResource(ResourceType.FOOD, this.getName()));
     }
 
     public List<Merchandise> getDrinkList() {

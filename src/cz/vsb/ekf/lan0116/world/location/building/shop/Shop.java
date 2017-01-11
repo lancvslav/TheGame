@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.world.location.building.shop;
 
-import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.util.ObjectFactory;
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.location.building.Building;
@@ -16,7 +16,7 @@ public class Shop extends Building {
 
     public Shop(String shopName, String merchantId, LocationType shopType) {
         super(shopName, shopType);
-        this.merchant = (Humanoid) ListManageUtil.getCreatureObject(merchantId);
+        this.merchant = (Humanoid) ObjectFactory.getCreatureObject(merchantId);
     }
 
     protected void setMerchandise(List<Merchandise> merchandise) {

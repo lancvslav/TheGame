@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.world.item;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
-import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.util.ObjectFactory;
 import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
 
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class Weapon extends Merchandise {
     public Weapon(String name, int cost, int damageRatio, WeaponType type, String... attackId) {
         super(name, type, cost);
         this.damageRatio = damageRatio;
-        this.moveSet = ListManageUtil.attackList(Arrays.asList(attackId));
+        this.moveSet = ObjectFactory.attackList(Arrays.asList(attackId));
     }
 
     public int getDamageRatio() {

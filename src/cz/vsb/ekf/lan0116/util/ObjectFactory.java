@@ -14,15 +14,15 @@ import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListManageUtil {
+public class ObjectFactory {
 
-    private ListManageUtil() {
+    private ObjectFactory() {
     }
 
     public static List<Attack> attackList(List<String> attackIdList) {
         List<Attack> list = new ArrayList<>();
         for (String id : attackIdList) {
-            Attack attack = ListManageUtil.getAttackObject(id);
+            Attack attack = ObjectFactory.getAttackObject(id);
             list.add(attack);
         }
         return list;
@@ -50,11 +50,10 @@ public class ListManageUtil {
         return new Attack(name, attackProperty, penetration, multiplier, staminaReq);
     }
 
-
     public static List<Merchandise> consumableList(List<String> consumableIdList) {
         List<Merchandise> list = new ArrayList<>();
         for (String id : consumableIdList) {
-            Consumable consumable = ListManageUtil.getConsumableObject(id);
+            Consumable consumable = ObjectFactory.getConsumableObject(id);
             list.add(consumable);
         }
         return list;
@@ -81,22 +80,22 @@ public class ListManageUtil {
         return new Consumable(name, consumableType, cost, replenishValue);
     }
 
-    public static List<Creature> getCreatures(List<String> enemyIdList) {
+    public static List<Creature> getCreatures(List<String> creatureIdList) {
         List<Creature> list = new ArrayList<>();
-        for (String id : enemyIdList) {
-            Creature enemy = ListManageUtil.getCreatureObject(id);
+        for (String id : creatureIdList) {
+            Creature enemy = ObjectFactory.getCreatureObject(id);
             list.add(enemy);
         }
         return list;
     }
 
-    public static Creature getCreatureObject(String enemyId) {
+    public static Creature getCreatureObject(String creatureId) {
         List<String> enemyIdList = new ArrayList<>(ResourceUtil
                 .getResource(ResourceType.CREATURES_ALL, "creatures"));
         String toSplit = "";
         int index = 0;
         while (toSplit.equals("") || index >= enemyIdList.size()) {
-            if (enemyIdList.get(index).startsWith(enemyId)) {
+            if (enemyIdList.get(index).startsWith(creatureId)) {
                 toSplit = enemyIdList.get(index);
             } else {
                 index++;
@@ -137,7 +136,7 @@ public class ListManageUtil {
     public static List<Merchandise> weaponsList(List<String> weaponListString) {
         List<Merchandise> list = new ArrayList<>();
         for (String id : weaponListString) {
-            Weapon weapon = ListManageUtil.getWeaponObject(id);
+            Weapon weapon = ObjectFactory.getWeaponObject(id);
             list.add(weapon);
         }
         return list;

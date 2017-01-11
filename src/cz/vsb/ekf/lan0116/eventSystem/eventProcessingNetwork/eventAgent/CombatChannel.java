@@ -67,7 +67,6 @@ public class CombatChannel extends EventHandler {
                 if (hero.getCurrentStamina() < 3) {
                     return new Response(CombatFailure.FLEE_WEAK);
                 }
-                //if (hero.getHeroInteraction().getPosition().equals(new Arena("test"))) { PROČ TO NEJDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE -> VLASEC? DON'T KILL ME THO
                 if (hero.getHeroInteraction().getPosition().getSuperType().equals(LocationSuperType.ARENA)) {
                     return new Response(CombatFailure.FLEE_DISABLED);
                 }

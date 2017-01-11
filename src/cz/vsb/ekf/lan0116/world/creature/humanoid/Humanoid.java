@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.world.creature.humanoid;
 
-import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.util.ObjectFactory;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
@@ -18,7 +18,13 @@ public class Humanoid extends Creature {
                     float maxLifeEssence, float maxStamina, float attackPower, float defense,
                     String weaponId, String... attacks) {
         super(name, clazz, maxLifeEssence, maxStamina, attackPower, defense, attacks);
-        this.setWeapon(ListManageUtil.getWeaponObject(weaponId));
+        this.setWeapon(ObjectFactory.getWeaponObject(weaponId));
+    }
+
+    public Humanoid(String humanoidId) {
+        super(humanoidId);
+        Humanoid humanoid = (Humanoid) ObjectFactory.getCreatureObject(humanoidId);
+        this.setWeapon(humanoid.getWeapon());
     }
 
     public Weapon getWeapon() {

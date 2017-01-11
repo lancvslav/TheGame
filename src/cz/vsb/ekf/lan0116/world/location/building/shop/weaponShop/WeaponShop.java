@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.world.location.building.shop.weaponShop;
 
-import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.util.ObjectFactory;
 import cz.vsb.ekf.lan0116.util.ResourceType;
 import cz.vsb.ekf.lan0116.util.ResourceUtil;
 import cz.vsb.ekf.lan0116.world.location.building.shop.Shop;
@@ -10,7 +10,7 @@ public class WeaponShop extends Shop {
 
     public WeaponShop(String shopName, String merchantId) {
         super(shopName, merchantId, ShopType.WEAPON_SHOP);
-        this.setMerchandise(ListManageUtil.weaponsList(ResourceUtil.getResource(ResourceType.WEAPON_SHOP, shopName)));
+        this.setMerchandise(ObjectFactory.weaponsList(ResourceUtil.getResource(ResourceType.WEAPON_SHOP, shopName)));
     }
 
 }

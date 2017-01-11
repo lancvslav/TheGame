@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.world.creature;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
-import cz.vsb.ekf.lan0116.util.ListManageUtil;
+import cz.vsb.ekf.lan0116.util.ObjectFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Creature {
 
-    private final String name;
+    private String name;
     private CreatureClass clazz;
     private float currentLifeEssence;
     private float maxLifeEssence;
@@ -26,12 +26,12 @@ public class Creature {
         this.clazz = clazz;
         this.maxLifeEssence = maxLifeEssence;
         this.maxStamina = maxStamina;
-        this.currentStamina = this.getMaxStamina();
         this.currentLifeEssence = this.getMaxLifeEssence();
+        this.currentStamina = this.getMaxStamina();
         this.attackPower = attackPower;
         this.defense = defense;
         this.attacks = new ArrayList<>();
-        this.attacks.add(ListManageUtil.getAttackObject("attack.hit"));
+        this.attacks.add(ObjectFactory.getAttackObject("attack.hit"));
     }
 
     public Creature(String name, CreatureClass clazz,
@@ -40,20 +40,54 @@ public class Creature {
         this.clazz = clazz;
         this.maxLifeEssence = maxLifeEssence;
         this.maxStamina = maxStamina;
-        this.currentStamina = this.getMaxStamina();
         this.currentLifeEssence = this.getMaxLifeEssence();
+        this.currentStamina = this.getMaxStamina();
         this.attackPower = attackPower;
         this.defense = defense;
-        this.attacks = ListManageUtil.attackList(Arrays.asList(attacks));
-        this.attacks.add(ListManageUtil.getAttackObject("attack.hit"));
+        this.attacks = ObjectFactory.attackList(Arrays.asList(attacks));
+        this.attacks.add(ObjectFactory.getAttackObject("attack.hit"));
+    }
+
+    public Creature(String name, CreatureClass clazz, float maxLifeEssence, float maxStamina, float attackPower,
+                    float defense, List<Attack> attacks) {
+        this.name = name;
+        this.clazz = clazz;
+        this.maxLifeEssence = maxLifeEssence;
+        this.maxStamina = maxStamina;
+        this.currentLifeEssence = this.getMaxLifeEssence();
+        this.currentStamina = this.getMaxStamina();
+        this.attackPower = attackPower;
+        this.defense = defense;
+        this.attacks = attacks;
+    }
+
+    public Creature(String creatureId) {
+        Creature creature = ObjectFactory.getCreatureObject(creatureId);
+        this.name = creature.getName();
+        this.clazz = creature.getClazz();
+        this.maxLifeEssence = creature.getMaxLifeEssence();
+        this.maxStamina = creature.getMaxStamina();
+        this.currentLifeEssence = this.getMaxLifeEssence();
+        this.currentStamina = this.getMaxStamina();
+        this.attackPower = creature.getAttackPower();
+        this.defense = creature.getDefense();
+        this.attacks = creature.getAttacks();
     }
 
     public String getName() {
         return name;
     }
 
+    protected void setName(String name) {
+        this.name = name;
+    }
+
     public CreatureClass getClazz() {
         return clazz;
+    }
+
+    protected void setClazz(CreatureClass clazz) {
+        this.clazz = clazz;
     }
 
     public final boolean isAlive() {
@@ -133,6 +167,12 @@ public class Creature {
     }
 
     public void learnAttack(Attack... attacks) {
+        for (Attack attack : attacks) {
+            this.attacks.add(attack);
+        }
+    }
+
+    public void learnAttack(List<Attack> attacks) {
         for (Attack attack : attacks) {
             this.attacks.add(attack);
         }
