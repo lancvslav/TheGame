@@ -1,9 +1,12 @@
 package cz.vsb.ekf.lan0116.world.creature.humanoid;
 
-import cz.vsb.ekf.lan0116.util.ObjectFactory;
+import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Humanoid extends Creature {
 
@@ -16,19 +19,23 @@ public class Humanoid extends Creature {
 
     public Humanoid(String name, CreatureClass clazz,
                     float maxLifeEssence, float maxStamina, float attackPower, float defense,
-                    String weaponId, String... attacks) {
+                    Weapon weapon, Attack... attacks) {
         super(name, clazz, maxLifeEssence, maxStamina, attackPower, defense, attacks);
-        this.setWeapon(ObjectFactory.getWeaponObject(weaponId));
+        this.setWeapon(weapon);
     }
 
-    public Humanoid(String humanoidId) {
-        super(humanoidId);
-        Humanoid humanoid = (Humanoid) ObjectFactory.getCreatureObject(humanoidId);
-        this.setWeapon(humanoid.getWeapon());
-    }
+//    public Humanoid(String humanoidId) {
+//        super(humanoidId);
+//        Humanoid humanoid = (Humanoid) ObjectFactory.cloneCreature(humanoidId);
+//        this.setWeapon(humanoid.getWeapon());
+//    }
 
     public Weapon getWeapon() {
         return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
     @Override
@@ -37,7 +44,11 @@ public class Humanoid extends Creature {
                 super.getAttackPower();
     }
 
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
+    @Override
+    public List<Attack> getAttacks() {
+        List<Attack> list = new ArrayList<>();
+        list.addAll(weapon.getMoveSet());
+        list.addAll(super.getAttacks());
+        return list;
     }
 }

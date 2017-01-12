@@ -4,11 +4,10 @@ import cz.vsb.ekf.lan0116.eventSystem.Response;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.ConsumeEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
-import cz.vsb.ekf.lan0116.util.ObjectFactory;
-import cz.vsb.ekf.lan0116.world.location.building.shop.Tavern;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;
+import cz.vsb.ekf.lan0116.world.location.building.shop.Tavern;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
 
     @Override
     public void show() {
-     this.decisions();
+        this.decisions();
     }
 
     @Override
@@ -58,8 +57,7 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
             System.out.println(this.get("textUi.no_money"));
             new TavernUi(this.getContext()).show();
         } else {
-            String consumableId = consumables.get(choice).getName();
-            Consumable consumableReceived = ObjectFactory.getConsumableObject(consumableId);
+            Consumable consumableReceived = (Consumable) consumables.get(choice);
             Response consumeResponse = this.getContext().getEventPublisher()
                     .getResponse(new ConsumeEvent(consumableReceived));
             if (consumeResponse.isSuccess()) {

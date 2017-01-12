@@ -69,6 +69,7 @@ public class ResourceToMapUtil {
             Creature creature;
             //useless switch, only made for possible improvement in future
             switch (split[8]) {
+                //I will fix this after Vlasec aproves this approach
                 case "animal":
                     creature = new Animal(name, creatureClass, maxHp, maxStamina, attackPower, defense, attacks);
                     break;

@@ -48,10 +48,10 @@ enemies.tiger_shark;8;18;12;0;attack.bite,;;WARRIOR;animal
 enemies.trained_bruiser;17;9;18;15;;item.merchandise.weapon.melee.mace;WARRIOR;humanoid
 enemies.turtle;7;2;1;10;;;WARRIOR;animal
 enemies.vampire;5;10;5;0;attack.bite,;;WARRIOR;beast
-enemies.vampire_fish;4;10;6;0;attack.bite,;;WARRIOR;-
-enemies.white_shark;12;20;15;0;attack.bite,;;WARRIOR;-
-enemies.wolf;5;4;6;0;attack.bite,;;WARRIOR;-
-enemies.zombie;1;4;1;0;;;WARRIOR;-
+enemies.vampire_fish;4;10;6;0;attack.bite,;;WARRIOR;animal
+enemies.white_shark;12;20;15;0;attack.bite,;;WARRIOR;animal
+enemies.wolf;5;4;6;0;attack.bite,;;WARRIOR;animal
+enemies.zombie;1;4;1;0;;;WARRIOR;beast
 merchant.weapons.blacksmith;10;5;5;5;;item.weapon.blacksmith_hammer;WARRIOR;humanoid
 merchant.weapons.hunter;8;4;7;3;;item.merchandise.weapon.ranged.hunters_bow;RANGER;humanoid
 merchant.weapons.wizard;7;6;10;1;;item.merchandise.weapon.wand.staff;SORCERER;humanoid

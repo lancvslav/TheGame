@@ -1,8 +1,5 @@
 package cz.vsb.ekf.lan0116.combat;
 
-import cz.vsb.ekf.lan0116.util.ObjectFactory;
-import cz.vsb.ekf.lan0116.util.ResourceType;
-import cz.vsb.ekf.lan0116.util.ResourceUtil;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.location.Location;
 import cz.vsb.ekf.lan0116.world.location.type.ArenaType;
@@ -17,11 +14,10 @@ public class Tournament extends Location {
     /**
      * Tournament loads from .txt enemies based of type given in parameter
      */
-    public Tournament(int tournamentType) {
+    public Tournament(List<Creature> enemyList) {
         super("arena", ArenaType.TOURNAMENT);
         this.enemyList = new ArrayList<>();
-        enemyList = ObjectFactory.getCreatures(ResourceUtil.getResource(ResourceType.ARENA_ENEMY,
-                ("arena" + String.valueOf(tournamentType))));
+        this.enemyList = enemyList;
     }
 
     public List<Creature> getEnemyList() {

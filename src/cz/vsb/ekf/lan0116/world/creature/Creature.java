@@ -1,7 +1,6 @@
 package cz.vsb.ekf.lan0116.world.creature;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
-import cz.vsb.ekf.lan0116.util.ObjectFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,11 +30,11 @@ public class Creature {
         this.attackPower = attackPower;
         this.defense = defense;
         this.attacks = new ArrayList<>();
-        this.attacks.add(ObjectFactory.getAttackObject("attack.hit"));
+        this.attacks.add(Attack.FEEBLE_ATTACK);
     }
 
     public Creature(String name, CreatureClass clazz,
-                    float maxLifeEssence, float maxStamina, float attackPower, float defense, String... attacks) {
+                    float maxLifeEssence, float maxStamina, float attackPower, float defense, Attack... attacks) {
         this.name = name;
         this.clazz = clazz;
         this.maxLifeEssence = maxLifeEssence;
@@ -44,8 +43,8 @@ public class Creature {
         this.currentStamina = this.getMaxStamina();
         this.attackPower = attackPower;
         this.defense = defense;
-        this.attacks = ObjectFactory.attackList(Arrays.asList(attacks));
-        this.attacks.add(ObjectFactory.getAttackObject("attack.hit"));
+        this.attacks = new ArrayList<>(Arrays.asList(attacks));
+        this.attacks.add(Attack.FEEBLE_ATTACK);
     }
 
     public Creature(String name, CreatureClass clazz, float maxLifeEssence, float maxStamina, float attackPower,
@@ -59,20 +58,22 @@ public class Creature {
         this.attackPower = attackPower;
         this.defense = defense;
         this.attacks = attacks;
+        this.attacks.add(Attack.FEEBLE_ATTACK);
     }
 
-    public Creature(String creatureId) {
-        Creature creature = ObjectFactory.getCreatureObject(creatureId);
-        this.name = creature.getName();
-        this.clazz = creature.getClazz();
-        this.maxLifeEssence = creature.getMaxLifeEssence();
-        this.maxStamina = creature.getMaxStamina();
-        this.currentLifeEssence = this.getMaxLifeEssence();
-        this.currentStamina = this.getMaxStamina();
-        this.attackPower = creature.getAttackPower();
-        this.defense = creature.getDefense();
-        this.attacks = creature.getAttacks();
-    }
+//    public Creature(String creatureId) {
+//        Creature creature = ObjectFactory.cloneCreature(creatureId);
+//        this.name = creature.getName();
+//        this.clazz = creature.getClazz();
+//        this.maxLifeEssence = creature.getMaxLifeEssence();
+//        this.maxStamina = creature.getMaxStamina();
+//        this.currentLifeEssence = this.getMaxLifeEssence();
+//        this.currentStamina = this.getMaxStamina();
+//        this.attackPower = creature.getAttackPower();
+//        this.defense = creature.getDefense();
+//        this.attacks = creature.getAttacks();
+//        this.attacks.add(Attack.FEEBLE_ATTACK);
+//    }
 
     public String getName() {
         return name;

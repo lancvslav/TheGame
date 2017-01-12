@@ -1,8 +1,11 @@
 package cz.vsb.ekf.lan0116.world.creature.hero;
 
-import cz.vsb.ekf.lan0116.util.ObjectFactory;
+import cz.vsb.ekf.lan0116.combat.Attack;
+import cz.vsb.ekf.lan0116.combat.AttackProperty;
 import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
+import cz.vsb.ekf.lan0116.world.item.Weapon;
+import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
 
 import java.util.Objects;
 
@@ -16,7 +19,9 @@ public abstract class Hero extends Humanoid {
     public Hero(String name, CreatureClass creatureClass) {
         super(name, creatureClass, creatureClass.getHealth(), creatureClass.getStamina(),
                 creatureClass.getDamage(), creatureClass.getDefense());
-        this.setWeapon(ObjectFactory.getWeaponObject("item.weapon.flower"));
+        Attack attack = new Attack("attack.strike", AttackProperty.NONE, 0, 1, 1);
+        Weapon weapon = new Weapon("item.weapon.flower", 0, 1, WeaponType.UNISEX, attack);
+        this.setWeapon(weapon);
         this.inventory = new Inventory(this.getWeapon());
         this.coins = 1000;
         this.heroInteraction = new HeroInteraction();
