@@ -1,5 +1,0 @@
-enemies.lumberjack
-enemies.chopped_tree
-enemies.dire_wolf
-enemies.dark_elf
-enemies.bear

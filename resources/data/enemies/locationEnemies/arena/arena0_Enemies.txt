@@ -1,7 +1,0 @@
-enemies.little_child
-enemies.street_toad
-enemies.bastard
-enemies.enraged_man
-enemies.old_mercenary
-enemies.infantryman
-enemies.trained_bruiser

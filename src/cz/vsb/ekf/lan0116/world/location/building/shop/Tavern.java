@@ -9,12 +9,13 @@ import java.util.List;
 
 public class Tavern extends Building {
 
+    private Humanoid innkeeper;
     private List<Merchandise> drinkList;
     private List<Merchandise> foodList;
-    private Humanoid inkeeper;
 
-    public Tavern(List<Merchandise> drinkList, List<Merchandise> foodList) {
+    public Tavern(Humanoid innkeeper, List<Merchandise> drinkList, List<Merchandise> foodList) {
         super("world.building.shop.tavern", TavernType.TAVERN);
+        this.innkeeper = innkeeper;
         this.drinkList = drinkList;
         this.foodList = foodList;
     }
@@ -27,7 +28,7 @@ public class Tavern extends Building {
         return foodList;
     }
 
-    public Humanoid getInkeeper() {
-        return inkeeper;
+    public Humanoid getInnkeeper() {
+        return innkeeper;
     }
 }

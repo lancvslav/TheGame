@@ -1,4 +1,0 @@
-enemies.peasant
-enemies.dog
-enemies.thief
-enemies.bandit

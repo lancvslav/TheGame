@@ -1,6 +1,0 @@
-enemies.dark_mole
-enemies.lost_miner
-enemies.blind_wanderer
-enemies.dark_dwarf
-enemies.shadow_mist
-enemies.shadowlurker

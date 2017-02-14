@@ -1,7 +1,6 @@
 package cz.vsb.ekf.lan0116.world.location.building.shop;
 
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
-import cz.vsb.ekf.lan0116.world.creature.humanoid.Merchant;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.location.building.Building;
 import cz.vsb.ekf.lan0116.world.location.type.LocationType;
@@ -14,7 +13,7 @@ public class Shop extends Building {
     private List<Merchandise> merchandise;
     private Humanoid merchant;
 
-    public Shop(String shopName, Merchant merchant, LocationType shopType, List<Merchandise> merchandise) {
+    public Shop(String shopName, Humanoid merchant, LocationType shopType, List<Merchandise> merchandise) {
         super(shopName, shopType);
         this.merchandise = merchandise;
         this.merchant = merchant;

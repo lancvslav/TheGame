@@ -22,14 +22,12 @@ public class HeroCreationUi {
 //        TextUtil.newGame(localization);
         String nameOfHero;
         System.out.println(localization.get("textUi.HeroCreationUi.name0"));
-        while (true) {
-            nameOfHero = scanner.nextLine();
-            if (!((nameOfHero == null) || (nameOfHero.equals("")))) {
-                break;
-            }
-            System.out.println(localization.get("textUi.HeroCreationUi.name1") + "\n");
-        }
-        System.out.println("\n" + localization.get("textUi.HeroCreationUi.pleasure") + "\n" + nameOfHero);
+        scanner.nextLine();
+        System.out.println(localization.get("textUi.HeroCreationUi.poop0"));
+        System.out.println(localization.get("textUi.HeroCreationUi.poop1"));
+        scanner.nextLine();
+        System.out.println("\n" + localization.get("textUi.HeroCreationUi.pleasure") + "\n");
+        nameOfHero = "Little poop";
         Hero hero = null;
         while (hero == null) {
             printClasses(localization);

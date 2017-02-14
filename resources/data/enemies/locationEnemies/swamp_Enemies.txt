@@ -1,4 +1,0 @@
-enemies.great_mosquito
-enemies.giant_frog
-enemies.basilisk
-enemies.hydra

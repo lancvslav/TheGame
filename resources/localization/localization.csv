@@ -84,6 +84,7 @@ enemies.zombie;zombie
 hero.class.ranger;ranger
 hero.class.sorcerer;sorcerer
 hero.class.warrior;warrior
+innkeeper.tavern.gwen;Gwen
 item.merchandise.consumable.drink.beer;beer
 item.merchandise.consumable.drink.bottle_of_beer;bottle of beer
 item.merchandise.consumable.drink.bottle_of_cider;bottle of cider
@@ -182,7 +183,9 @@ textUi.HeroCreationUi.kind_of_man;What kind of man thou art?
 textUi.HeroCreationUi.name0;What is thy noble name, sir?
 textUi.HeroCreationUi.name1;Please, tell me how to call thee.
 textUi.HeroCreationUi.new_game.expecting;I have been expecting thee...
-textUi.HeroCreationUi.pleasure;Pleasure to meet thee,
+textUi.HeroCreationUi.pleasure;Wonderful. Pleasure to meet thee, Little Poop
+textUi.HeroCreationUi.poop0;Thou said 'Little Poop', is that right?
+textUi.HeroCreationUi.poop1;0 Yes 1 No
 textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, moderate damageRatio done, average vitality.
 textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
 textUi.HeroCreationUi.warrior;0. Brave warrior. High survivability, mediocre damageRatio. Able to wield shield.

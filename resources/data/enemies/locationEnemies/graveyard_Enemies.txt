@@ -1,5 +1,0 @@
-enemies.zombie
-enemies.skeleton_archer
-enemies.ghoul
-enemies.vampire
-enemies.gargoyle
