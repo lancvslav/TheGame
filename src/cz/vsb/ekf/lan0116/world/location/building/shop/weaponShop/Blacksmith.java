@@ -10,9 +10,4 @@ public class Blacksmith extends WeaponShop {
     public Blacksmith(String shopName, Merchant merchant, List<Merchandise> weapons) {
         super(shopName, merchant, weapons);
     }
-
-//    public Blacksmith() {
-//        super("world.building.shop.weapon_shop.blacksmith","merchant.weapons.blacksmith");
-//    }
-
 }

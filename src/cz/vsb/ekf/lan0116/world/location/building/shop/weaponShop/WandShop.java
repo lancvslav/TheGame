@@ -10,10 +10,4 @@ public class WandShop extends WeaponShop {
     public WandShop(String shopName, Merchant merchant, List<Merchandise> weapons) {
         super(shopName, merchant, weapons);
     }
-
-//    public WandShop() {
-//        super("world.building.shop.weapon_shop.wand_shop","merchant.weapons.wizard");
-//    }
-
-
 }

@@ -3,7 +3,10 @@ package cz.vsb.ekf.lan0116.world;
 import cz.vsb.ekf.lan0116.util.ResourceCache;
 import cz.vsb.ekf.lan0116.util.ResourceType;
 import cz.vsb.ekf.lan0116.util.ResourceUtil;
+import cz.vsb.ekf.lan0116.util.cloner.Clone;
+import cz.vsb.ekf.lan0116.util.cloner.creature.HumanoidCloning;
 import cz.vsb.ekf.lan0116.util.cloner.iClone;
+import cz.vsb.ekf.lan0116.util.cloner.item.ConsumableCloning;
 import cz.vsb.ekf.lan0116.util.cloner.item.WeaponCloning;
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Merchant;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
@@ -13,8 +16,6 @@ import cz.vsb.ekf.lan0116.world.location.building.Arena;
 import cz.vsb.ekf.lan0116.world.location.building.shop.Tavern;
 import cz.vsb.ekf.lan0116.world.location.building.shop.consumableShop.DrinkShop;
 import cz.vsb.ekf.lan0116.world.location.building.shop.consumableShop.FoodShop;
-import cz.vsb.ekf.lan0116.world.location.building.shop.consumableShop.Grocery;
-import cz.vsb.ekf.lan0116.world.location.building.shop.consumableShop.SwiftDrink;
 import cz.vsb.ekf.lan0116.world.location.building.shop.weaponShop.Archery;
 import cz.vsb.ekf.lan0116.world.location.building.shop.weaponShop.Blacksmith;
 import cz.vsb.ekf.lan0116.world.location.building.shop.weaponShop.WandShop;
@@ -29,7 +30,10 @@ import java.util.List;
 public class World {
 
     private Location startLocation;
-    private iClone cloner;
+
+    private ConsumableCloning consumableCloning;
+    private HumanoidCloning humanoidCloning;
+    private WeaponCloning weaponCloning;
 
     //SHOPS
     private static Archery archery;
@@ -59,9 +63,11 @@ public class World {
     private static Road roadOfMalice;
 
     public World(Location startLocation, ResourceCache cache) {
+        this.consumableCloning = new ConsumableCloning(cache);
+        this.humanoidCloning = new HumanoidCloning(cache);
+        this.weaponCloning = new WeaponCloning(cache);
         this.startLocation = startLocation;
-
-
+        this.init(cache);
     }
 
     /**
@@ -107,27 +113,42 @@ public class World {
     public void init(ResourceCache cache) {
 
         //WEAPON SHOP START
-        //for cloning weapons
-        cloner = new WeaponCloning(cache);
-
-        //archeryInit
+        //archery init
         List<String> archeryString = ResourceUtil.getResource(ResourceType.WEAPON_SHOP, "archery");
-        List<Merchandise> archeryWeapons = new ArrayList<>();
+        List<Merchandise> archeryMerch = new ArrayList<>();
         for (String id : archeryString) {
-            archeryWeapons.add((Weapon) cloner.clone(id));
+            archeryMerch.add(weaponCloning.clone(id));
         }
         archery = new Archery("world.building.shop.weapon_shop.archery",
-                (Merchant) cache.getCreatureMap().get("merchant.weapons.hunter"), archeryWeapons);
+                (Merchant) humanoidCloning.clone("merchant.weapons.hunter"), archeryMerch);
 
-        blacksmith = new Blacksmith();
-        wandShop = new WandShop();
+        //blacksmith init
+        List<String> blacksmithString = ResourceUtil.getResource(ResourceType.WEAPON_SHOP, "blacksmith");
+        List<Merchandise> blaskmithMerch = new ArrayList<>();
+        for (String id : blacksmithString) {
+            blaskmithMerch.add(weaponCloning.clone(id));
+        }
+        blacksmith = new Blacksmith("world.building.shop.weapon_shop.blacksmith",
+                (Merchant) humanoidCloning.clone("merchant.weapons.blacksmith"), blaskmithMerch);
+
+        //wand shop init
+        List<String> wandShopString = ResourceUtil.getResource(ResourceType.WEAPON_SHOP, "wand_shop");
+        List<Merchandise> wandShopMerch = new ArrayList<>();
+        for (String id : wandShopString) {
+            wandShopMerch.add(weaponCloning.clone("id"));
+        }
+        wandShop = new WandShop("world.building.shop.weapon_shop.wand_shop",
+                (Merchant) humanoidCloning.clone("merchant.weapons.wizard"), wandShopMerch);
         //WEAPON SHOP END
 
-        grocery = new Grocery();
-        swiftDrink = new SwiftDrink();
+        //CONSUMABLE SHOP START
+        grocery = new FoodShop("world.building.shop.consumable_shop.grocery",
+                (Merchant) humanoidCloning.clone("merchant.consumables.food_shop.gordon"), );
+        swiftDrink = new DrinkShop();
 
         tavern = new Tavern();
         tavernBackyard = new Road("world.road.tavern_backyard");
+        //CONSUMABLE SHOP END
 
         arena = new Arena("world.arena.arena");
 
