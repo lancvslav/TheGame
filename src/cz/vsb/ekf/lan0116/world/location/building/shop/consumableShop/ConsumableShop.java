@@ -12,7 +12,7 @@ public class ConsumableShop extends Shop {
     public ConsumableShop(String shopName, Merchant merchant, LocationType consumableType,
                           List<Merchandise> merchandise) {
         super(shopName, merchant, consumableType, merchandise);
-        //        this.setMerchandise(ObjectFactory.consumableList(ResourceUtil
+        //        this.setMerchandise(ResourceCache.consumableList(ResourceUtil
 //                .getResource(ResourceType.CONSUMABLE_SHOP, shopName)));
     }
 }

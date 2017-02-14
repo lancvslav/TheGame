@@ -1,6 +1,7 @@
 package cz.vsb.ekf.lan0116.world.location.building;
 
 import cz.vsb.ekf.lan0116.combat.Tournament;
+import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.location.type.ArenaType;
 
 import java.util.ArrayList;
@@ -10,11 +11,11 @@ public class Arena extends Building {
 
     private final List<Tournament> tournaments;
 
-    public Arena(String nameOfLocation) {
+    public Arena(String nameOfLocation, List<List<Creature>> creatureMultipleLists) {
         super(nameOfLocation, ArenaType.ARENA);
         tournaments = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            tournaments.add(new Tournament(i));
+        for (List<Creature> creatureList : creatureMultipleLists) {
+            tournaments.add(new Tournament(creatureList));
         }
     }
 

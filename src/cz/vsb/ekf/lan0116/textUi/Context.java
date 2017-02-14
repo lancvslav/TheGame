@@ -3,7 +3,7 @@ package cz.vsb.ekf.lan0116.textUi;
 import cz.vsb.ekf.lan0116.eventSystem.Session;
 import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
 import cz.vsb.ekf.lan0116.util.Localization;
-import cz.vsb.ekf.lan0116.util.ObjectFactory;
+import cz.vsb.ekf.lan0116.util.ResourceCache;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 
@@ -13,18 +13,18 @@ public class Context {
     private final EventPublisher eventPublisher;
     private final Hero hero;
     private final World world;
-    private final ObjectFactory factory;
+    private final ResourceCache cache;
     private final Scanner scanner;
     private final Localization localization;
     private final Session session;
 
 
-    public Context(EventPublisher eventPublisher, Hero hero, World world, ObjectFactory factory, Scanner scanner,
+    public Context(EventPublisher eventPublisher, Hero hero, World world, ResourceCache cache, Scanner scanner,
                    Localization localization, Session session) {
         this.eventPublisher = eventPublisher;
         this.hero = hero;
         this.world = world;
-        this.factory = factory;
+        this.cache = cache;
         this.scanner = scanner;
         this.localization = localization;
         this.session = session;
@@ -42,8 +42,8 @@ public class Context {
         return world;
     }
 
-    public ObjectFactory getFactory() {
-        return factory;
+    public ResourceCache getCache() {
+        return cache;
     }
 
     public Scanner getScanner() {

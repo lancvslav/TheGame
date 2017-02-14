@@ -13,6 +13,7 @@ import cz.vsb.ekf.lan0116.world.item.Weapon;
 import cz.vsb.ekf.lan0116.world.item.type.ConsumableType;
 import cz.vsb.ekf.lan0116.world.item.type.WeaponType;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +54,9 @@ public class ResourceToMapUtil {
         return consumableMap;
     }
 
-    public static Map<String, Creature> createCreatureMap(List<String> creatureResource) {
+    public static Map<String, Creature> createCreatureMap(List<String> creatureResource,
+                                                          Map<String, Attack> attackMap,
+                                                          Map<String, Weapon> weaponMap) {
         Map<String, Creature> creatureMap = new HashMap<>();
         for (String toSplit : creatureResource) {
             String[] split = toSplit.split(";");
@@ -67,22 +70,30 @@ public class ResourceToMapUtil {
             String clazz = split[7];
             CreatureClass creatureClass = CreatureClass.valueOf(clazz);
             Creature creature;
-            //useless switch, only made for possible improvement in future
+            List<Attack> attackList = new ArrayList<>();
             switch (split[8]) {
-                //I will fix this after Vlasec aproves this approach
                 case "animal":
-                    creature = new Animal(name, creatureClass, maxHp, maxStamina, attackPower, defense, attacks);
+                    for (String attackId : attacks) {
+                        attackList.add(attackMap.get(attackId));
+                    }
+                    creature = new Animal(name, creatureClass, maxHp, maxStamina, attackPower, defense, attackList);
                     break;
                 case "beast":
-                    creature = new Beast(name, creatureClass, maxHp, maxStamina, attackPower, defense, attacks);
+                    for (String attackId : attacks) {
+                        attackList.add(attackMap.get(attackId));
+                    }
+                    creature = new Beast(name, creatureClass, maxHp, maxStamina, attackPower, defense, attackList);
                     break;
                 case "humanoid":
-                    String weapon = split[6];
-                    creature = new Humanoid(name, creatureClass, maxHp, maxStamina, attackPower, defense, weapon,
-                            attacks);
+                    String weaponString = split[6];
+                    Weapon weapon = weaponMap.get(weaponString);
+                    creature = new Humanoid(name, creatureClass, maxHp, maxStamina, attackPower, defense, weapon);
                     break;
                 default:
-                    creature = new Creature(name, creatureClass, maxHp, maxStamina, attackPower, defense, attacks);
+                    for (String attackId : attacks) {
+                        attackList.add(attackMap.get(attackId));
+                    }
+                    creature = new Creature(name, creatureClass, maxHp, maxStamina, attackPower, defense, attackList);
                     break;
             }
             creatureMap.put(name, creature);

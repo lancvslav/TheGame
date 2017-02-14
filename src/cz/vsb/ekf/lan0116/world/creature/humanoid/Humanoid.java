@@ -18,17 +18,10 @@ public class Humanoid extends Creature {
     }
 
     public Humanoid(String name, CreatureClass clazz,
-                    float maxLifeEssence, float maxStamina, float attackPower, float defense,
-                    Weapon weapon, Attack... attacks) {
-        super(name, clazz, maxLifeEssence, maxStamina, attackPower, defense, attacks);
-        this.setWeapon(weapon);
+                    float maxLifeEssence, float maxStamina, float attackPower, float defense, Weapon weapon) {
+        super(name, clazz, maxLifeEssence, maxStamina, attackPower, defense);
+        this.weapon = weapon;
     }
-
-//    public Humanoid(String humanoidId) {
-//        super(humanoidId);
-//        Humanoid humanoid = (Humanoid) ObjectFactory.cloneCreature(humanoidId);
-//        this.setWeapon(humanoid.getWeapon());
-//    }
 
     public Weapon getWeapon() {
         return weapon;

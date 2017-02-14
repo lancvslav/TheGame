@@ -10,17 +10,9 @@ public class Animal extends Creature {
         super(name, clazz, maxLifeEssence, maxStamina, attackPower, defense);
     }
 
-    public Animal(String name, CreatureClass clazz, float maxLifeEssence, float maxStamina, float attackPower,
-                  float defense, Attack... attacks) {
-        super(name, clazz, maxLifeEssence, maxStamina, attackPower, defense, attacks);
-    }
-
     public Animal(String name, CreatureClass clazz, float maxLifeEssence, float maxStamina,
                   float attackPower, float defense, List<Attack> attacks) {
         super(name, clazz, maxLifeEssence, maxStamina, attackPower, defense, attacks);
     }
 
-    public Animal(String creatureId) {
-        super(creatureId);
-    }
 }
