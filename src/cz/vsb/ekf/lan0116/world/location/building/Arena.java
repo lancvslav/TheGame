@@ -11,10 +11,10 @@ public class Arena extends Building {
 
     private final List<Tournament> tournaments;
 
-    public Arena(String nameOfLocation, List<List<Creature>> creatureMultipleLists) {
+    public Arena(String nameOfLocation, List<List<? extends Creature>> creatureMultipleLists) {
         super(nameOfLocation, ArenaType.ARENA);
         tournaments = new ArrayList<>();
-        for (List<Creature> creatureList : creatureMultipleLists) {
+        for (List<? extends Creature> creatureList : creatureMultipleLists) {
             tournaments.add(new Tournament(creatureList));
         }
     }

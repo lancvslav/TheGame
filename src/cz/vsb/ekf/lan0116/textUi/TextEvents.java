@@ -8,6 +8,7 @@ import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
 import cz.vsb.ekf.lan0116.textUi.combatUi.FightUi;
 import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
+import cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi.ShopUi;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class TextEvents {
             System.out.println(this.get("textUi.textEvents.failed"));
             throw new ExceptionInInitializerError();
         }
-        System.out.println(this.get("textUi.textEvents.flee") + "\n\n");
+        System.out.println(this.get("textUi.textEvents.flee"));
 
         LocationUi locUi = new LocationUi(context);
 
@@ -57,7 +58,7 @@ public class TextEvents {
                     new RestHeroUi(context).show();
                     break;
                 case SHOPPING:
-                    // shopping?
+                    new ShopUi(context).show();
                     break;
                 default:
                     // fail? do nothing?

@@ -22,6 +22,7 @@ public class ShopUi extends AbstractLocationUi<Shop> {
         for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
             System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
         }
+        System.out.println(this.get("You see owner of shop."));
         this.decisions();
     }
 
@@ -30,7 +31,8 @@ public class ShopUi extends AbstractLocationUi<Shop> {
         switch (this.choice(
                 this.get("textUi.ShopUi.ask"),
                 this.get("textUi.menu.rest"),
-                this.get("textUi.ShopUi.leave"))) {
+                this.get("textUi.ShopUi.leave"),
+                this.get("textUi.shopUi.talk"))) {
             case 0:
                 new MerchandiseUi(getContext()).show();
                 break;
@@ -40,6 +42,7 @@ public class ShopUi extends AbstractLocationUi<Shop> {
             case 2:
                 this.travel();
                 break;
+            case 3:
         }
     }
 }

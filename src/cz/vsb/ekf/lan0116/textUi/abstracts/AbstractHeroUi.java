@@ -6,7 +6,7 @@ import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Item;
 import cz.vsb.ekf.lan0116.world.item.Weapon;
 
-public abstract class AbstractHeroUi extends AbstractUi {
+public abstract class AbstractHeroUi extends AbstractCreatureUi {
 
     protected AbstractHeroUi(Context context) {
         super(context);

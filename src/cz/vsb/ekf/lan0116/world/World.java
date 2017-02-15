@@ -3,9 +3,13 @@ package cz.vsb.ekf.lan0116.world;
 import cz.vsb.ekf.lan0116.util.ResourceCache;
 import cz.vsb.ekf.lan0116.util.ResourceType;
 import cz.vsb.ekf.lan0116.util.ResourceUtil;
+import cz.vsb.ekf.lan0116.util.cloner.creature.AnimalCloning;
 import cz.vsb.ekf.lan0116.util.cloner.creature.HumanoidCloning;
 import cz.vsb.ekf.lan0116.util.cloner.item.ConsumableCloning;
 import cz.vsb.ekf.lan0116.util.cloner.item.WeaponCloning;
+import cz.vsb.ekf.lan0116.world.creature.Animal;
+import cz.vsb.ekf.lan0116.world.creature.Creature;
+import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.location.Location;
 import cz.vsb.ekf.lan0116.world.location.building.Arena;
@@ -27,6 +31,7 @@ public class World {
 
     private Location startLocation;
 
+    private AnimalCloning animalCloning;
     private ConsumableCloning consumableCloning;
     private HumanoidCloning humanoidCloning;
     private WeaponCloning weaponCloning;
@@ -59,6 +64,7 @@ public class World {
     private static Road roadOfMalice;
 
     public World(Location startLocation, ResourceCache cache) {
+        this.animalCloning = new AnimalCloning(cache);
         this.consumableCloning = new ConsumableCloning(cache);
         this.humanoidCloning = new HumanoidCloning(cache);
         this.weaponCloning = new WeaponCloning(cache);
@@ -108,6 +114,7 @@ public class World {
 
     public void init(ResourceCache cache) {
 
+        //SHOP START
         //WEAPON SHOP START
         //archery init
         List<String> archeryString = ResourceUtil.getResource(ResourceType.WEAPON_SHOP,
@@ -176,11 +183,38 @@ public class World {
         }
         tavern = new Tavern(humanoidCloning.clone("innkeeper.tavern.gwen"), drinkMerch, foodMerch);
         //CONSUMABLE SHOP END
+        //SHOP END
 
+        //ARENA
+        List<String> humanoidString = ResourceUtil.getResource(ResourceType.ARENA_ENEMY, "arena0");
+        List<String> anim1String = ResourceUtil.getResource(ResourceType.ARENA_ENEMY, "arena1");
+        List<String> anim2String = ResourceUtil.getResource(ResourceType.ARENA_ENEMY, "arena2");
+
+        List<Humanoid> humanoids = new ArrayList<>();
+        for (String id : humanoidString) {
+            humanoids.add(humanoidCloning.clone(id));
+        }
+
+        List<Animal> animals1 = new ArrayList<>();
+        for (String id : anim1String) {
+            animals1.add(animalCloning.clone(id));
+        }
+
+        List<Animal> animals2 = new ArrayList<>();
+        for (String id : anim2String) {
+            animals2.add(animalCloning.clone(id));
+        }
+
+        List<List<? extends Creature>> creatures = new ArrayList<>();
+        creatures.add(humanoids);
+        creatures.add(animals1);
+        creatures.add(animals2);
+
+        arena = new Arena("world.arena.arena", creatures);
+
+
+        //STREET START
         tavernBackyard = new Road("world.road.tavern_backyard");
-
-
-//        arena = new Arena("world.arena.arena");
 
         battleQuarter = new Square("world.square.battle_quarter");
 

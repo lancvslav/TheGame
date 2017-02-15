@@ -1,7 +1,7 @@
 package cz.vsb.ekf.lan0116.util;
 
 public enum ResourceType {
-    ARENA_ENEMY("/data/enemies/locationEnemies/arena/", "_Enemies.txt"),
+    ARENA_ENEMY("/data/creatures/locationEnemies/arena/", "_Enemies.txt"),
     ATTACK_ALL("/data/",".csv"),
     CONSUMABLE_ALL("/data/merchandise/consumables/",".csv"),
     CONSUMABLE_SHOP("/data/merchandise/consumables/","_Consumables.txt"),

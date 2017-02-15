@@ -1,3 +1,7 @@
+textUi.MerchantUi.trade;Trade
+textUi.MerchantUi.talk;Leave
+textUi.MerchantUi.talk;Talk
+textUi.shopUi.talk;Aproach owner
 attac.emit_force;emit force
 attack.backstab;backstab
 attack.bite;bite
@@ -182,6 +186,7 @@ textUi.HeroCreatinUi.new_game.prove;Now go, prove thou art not just pawn, but Th
 textUi.HeroCreationUi.kind_of_man;What kind of man thou art?
 textUi.HeroCreationUi.name0;What is thy noble name, sir?
 textUi.HeroCreationUi.name1;Please, tell me how to call thee.
+textUi.HeroCreationUi.wields;wields
 textUi.HeroCreationUi.new_game.expecting;I have been expecting thee...
 textUi.HeroCreationUi.pleasure;Wonderful. Pleasure to meet thee, Little Poop
 textUi.HeroCreationUi.poop0;Thou said 'Little Poop', is that right?

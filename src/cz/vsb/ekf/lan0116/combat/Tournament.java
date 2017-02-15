@@ -9,18 +9,18 @@ import java.util.List;
 
 public class Tournament extends Location {
 
-    private List<Creature> enemyList;
+    private List<? extends Creature> enemyList;
 
     /**
      * Tournament loads from .txt enemies based of type given in parameter
      */
-    public Tournament(List<Creature> enemyList) {
+    public Tournament(List<? extends Creature> enemyList) {
         super("arena", ArenaType.TOURNAMENT);
         this.enemyList = new ArrayList<>();
         this.enemyList = enemyList;
     }
 
-    public List<Creature> getEnemyList() {
+    public List<? extends Creature> getEnemyList() {
         return enemyList;
     }
 }

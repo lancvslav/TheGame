@@ -41,17 +41,16 @@ public class HeroCreationUi {
             switch (tempChoiceNumber) {
                 case 0:
                     hero = new Warrior(nameOfHero);
-                    System.out.println("\n" + hero.toString() + "\n");
                     break;
                 case 1:
                     hero = new Ranger(nameOfHero);
-                    System.out.println("\n" + hero.toString() + "\n");
                     break;
                 case 2:
                     hero = new Sorcerer(nameOfHero);
-                    System.out.println("\n" + hero.toString() + "\n");
                     break;
             }
+            System.out.println(localization.get(nameOfHero) + " " + localization.get("textUi.HeroCreationUi.wields")
+                    + " " + localization.get(hero.getWeapon().getName()));
         }
         return hero;
     }
