@@ -7,8 +7,9 @@ import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.*;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
 import cz.vsb.ekf.lan0116.textUi.combatUi.FightUi;
 import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
+import cz.vsb.ekf.lan0116.textUi.locationUi.InteractUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
-import cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi.ShopUi;
+import cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi.MerchandiseUi;
 
 import java.util.List;
 
@@ -48,17 +49,20 @@ public class TextEvents {
                 }
             }
             switch (context.getHero().getHeroInteraction().getStatus()) {
-                case READY:
-                    locUi.show();
-                    break;
                 case IN_COMBAT:
                     new FightUi(context).show();
+                    break;
+                case INTERACTING:
+                    new InteractUi(context).show();
+                    break;
+                case READY:
+                    locUi.show();
                     break;
                 case RESTING:
                     new RestHeroUi(context).show();
                     break;
                 case SHOPPING:
-                    new ShopUi(context).show();
+                    new MerchandiseUi(context).show();
                     break;
                 default:
                     // fail? do nothing?

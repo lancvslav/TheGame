@@ -3,23 +3,22 @@ package cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping;
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
-import cz.vsb.ekf.lan0116.world.item.Merchandise;
+import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 
 public class TradeEvent implements Event {
 
-    private final Merchandise merchandise;
+    private Humanoid merchant;
 
-    public TradeEvent(Merchandise merchandise) {
-        this.merchandise = merchandise;
+    public TradeEvent(Humanoid merchant) {
+        this.merchant = merchant;
     }
 
-    public Merchandise getMerchandise() {
-        return merchandise;
+    public Humanoid getMerchant() {
+        return merchant;
     }
 
     @Override
     public EventType getType() {
         return HeroType.TRADE;
     }
-
 }

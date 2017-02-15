@@ -1,7 +1,7 @@
 textUi.MerchantUi.trade;Trade
-textUi.MerchantUi.talk;Leave
+textUi.MerchantUi.leave;Leave
 textUi.MerchantUi.talk;Talk
-textUi.shopUi.talk;Aproach owner
+textUi.ShopUi.talk;Aproach owner
 attac.emit_force;emit force
 attack.backstab;backstab
 attack.bite;bite
@@ -314,3 +314,6 @@ world.road.road_of_malice;raod of malice
 world.road.tavern_backyard;tavern backyard
 world.square.battle_quarter;battle quarter
 world.square.main_square;main square
+textUi.InteractUi.talk;Talk
+textUi.InteractUi.trade;Trade
+textUi.InteractUi.leave;Leave

@@ -48,8 +48,9 @@ public class HeroInteraction {
     }
 
     public enum HeroStatus {
-        READY,
         IN_COMBAT,
+        INTERACTING,
+        READY,
         RESTING,
         SHOPPING,
         /**/;

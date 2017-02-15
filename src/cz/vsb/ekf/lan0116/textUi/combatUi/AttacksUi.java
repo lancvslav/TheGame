@@ -21,6 +21,7 @@ public class AttacksUi extends AbstractHeroUi {
         }
     }
 
+
     @Override
     public void show() {
         this.printArray(attacks);
@@ -45,5 +46,9 @@ public class AttacksUi extends AbstractHeroUi {
                     new FightUi(this.getContext()).decisions();
             }
         }
+    }
+
+    @Override
+    protected void decisions() {
     }
 }

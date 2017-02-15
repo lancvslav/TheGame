@@ -4,12 +4,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.hero.RestEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
-import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
 import cz.vsb.ekf.lan0116.world.location.street.Street;
 
 class StreetUi extends AbstractLocationUi<Street> {
-
-    RestHeroUi restHeroUi;
 
     public StreetUi(Context context) {
         super(context);

@@ -24,7 +24,7 @@ public class InventoryUi extends AbstractHeroUi {
         this.decisions();
     }
 
-    private void decisions() {
+    protected void decisions() {
         switch (this.choice(
                 this.get("textUi.InventoryUi.choice0.inspect"),
                 this.get("textUi.InventoryUi.choice1.equip"),
@@ -106,7 +106,7 @@ public class InventoryUi extends AbstractHeroUi {
                 }
                 break;
             case 3:
-                //close (return;)
+                return;
         }
     }
 

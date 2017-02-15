@@ -19,5 +19,7 @@ public class CreatureStatusUi extends AbstractHeroUi {
     }
 
 
-
+    @Override
+    protected void decisions() {
+    }
 }

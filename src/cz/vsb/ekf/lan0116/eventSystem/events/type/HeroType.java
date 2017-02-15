@@ -7,10 +7,13 @@ public enum HeroType implements EventType {
     CONSUME,
     DROP,
     EQUIP,
+    GET_READY,
+    INTERACT,
     REST,
     SIGN_IN,
     TRADE,
     TRAVEL,
+    PURCHASE,
     /**/;
 
     @Override

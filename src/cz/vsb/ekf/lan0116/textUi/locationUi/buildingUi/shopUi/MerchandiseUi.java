@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi;
 
 import cz.vsb.ekf.lan0116.eventSystem.Response;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.TradeEvent;
-import cz.vsb.ekf.lan0116.eventSystem.failures.TradeFailure;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.PurchaseEvent;
+import cz.vsb.ekf.lan0116.eventSystem.failures.PurchaseFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
@@ -13,7 +13,6 @@ import java.util.List;
 
 public class MerchandiseUi extends AbstractLocationUi<Shop> {
 
-    private ShopUi shopUi;
     private List<Merchandise> merchandiseList;
 
     public MerchandiseUi(Context context) {
@@ -49,16 +48,14 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
         } else {
             Merchandise merchandiseToPurchase = this.getLoc().getMerchandise().get(choice);
             Response responseTrade = this.getContext().
-                    getEventPublisher().getResponse(new TradeEvent(merchandiseToPurchase));
+                    getEventPublisher().getResponse(new PurchaseEvent(merchandiseToPurchase));
             if (responseTrade.isSuccess()) {
                 System.out.println(
                         this.get(TextUtil.quote(this.getLoc().getType().toString().toLowerCase() + "_happy")));
                 System.out.println(this.getContext().getLocalization().get(merchandiseToPurchase.getName()) + " " +
                         this.get("textUi.MerchandiseUi.purchased"));
-                shopUi = new ShopUi(this.getContext());
-                shopUi.decisions();
             } else {
-                TradeFailure failureCause = (TradeFailure) responseTrade.getFailureCause();
+                PurchaseFailure failureCause = (PurchaseFailure) responseTrade.getFailureCause();
                 switch (failureCause) {
                     case NOT_ENOUGH_GOLD:
                         System.out.println(this.get("textUi.MerchandiseUi.not_enough_gold"));

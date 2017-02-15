@@ -6,13 +6,13 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.ConsumeEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.DropEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.EquipEvent;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.TradeEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.PurchaseEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.*;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 import cz.vsb.ekf.lan0116.eventSystem.failures.EquipFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.InventoryFailure;
-import cz.vsb.ekf.lan0116.eventSystem.failures.TradeFailure;
+import cz.vsb.ekf.lan0116.eventSystem.failures.PurchaseFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.TravelFailure;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
@@ -53,6 +53,12 @@ public class HeroChannel extends EventHandler {
                 return Response.SUCCESS;
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
+            case GET_READY:
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                return Response.SUCCESS;
+            case INTERACT:
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
+                return Response.SUCCESS;
             case REST:
                 this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.RESTING);
                 return Response.SUCCESS;
@@ -63,12 +69,7 @@ public class HeroChannel extends EventHandler {
                 this.getHero().getHeroInteraction().setPosition(signInEvent.getTournament());
                 return Response.SUCCESS;
             case TRADE:
-                TradeEvent tradeEvent = (TradeEvent) event;
-                if (this.getHero().getCoins() < tradeEvent.getMerchandise().getCost()) {
-                    return new Response(TradeFailure.NOT_ENOUGH_GOLD);
-                }
-                this.getHero().setCoins(this.getHero().getCoins() - tradeEvent.getMerchandise().getCost());
-                this.getHero().getInventory().addItem(tradeEvent.getMerchandise());
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.SHOPPING);
                 return Response.SUCCESS;
             case TRAVEL:
                 TravelEvent travelEvent = (TravelEvent) event;
@@ -77,6 +78,15 @@ public class HeroChannel extends EventHandler {
                     return new Response(TravelFailure.NO_GATEWAY);
                 }
                 this.getHero().getHeroInteraction().setPosition(travelEvent.getGateway().getTarget());
+                return Response.SUCCESS;
+            case PURCHASE:
+                PurchaseEvent purchaseEvent = (PurchaseEvent) event;
+                if (this.getHero().getCoins() < purchaseEvent.getMerchandise().getCost()) {
+                    return new Response(PurchaseFailure.NOT_ENOUGH_GOLD);
+                }
+                this.getHero().setCoins(this.getHero().getCoins() - purchaseEvent.getMerchandise().getCost());
+                this.getHero().getInventory().addItem(purchaseEvent.getMerchandise());
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
                 return Response.SUCCESS;
             default:
                 throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");

@@ -96,4 +96,6 @@ public abstract class AbstractUi implements Ui {
         return this.getContext().getLocalization().get(keyFormat);
     }
 
+    protected abstract void decisions();
+
 }

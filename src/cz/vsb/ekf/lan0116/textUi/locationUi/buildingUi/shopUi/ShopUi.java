@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi;
 
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.InteractEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.RestEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
@@ -31,8 +32,8 @@ public class ShopUi extends AbstractLocationUi<Shop> {
         switch (this.choice(
                 this.get("textUi.ShopUi.ask"),
                 this.get("textUi.menu.rest"),
-                this.get("textUi.ShopUi.leave"),
-                this.get("textUi.shopUi.talk"))) {
+                this.get("textUi.ShopUi.talk"),
+                this.get("textUi.ShopUi.leave"))) {
             case 0:
                 new MerchandiseUi(getContext()).show();
                 break;
@@ -40,9 +41,11 @@ public class ShopUi extends AbstractLocationUi<Shop> {
                 this.getContext().getEventPublisher().getResponse(new RestEvent());
                 break;
             case 2:
-                this.travel();
+                this.getContext().getEventPublisher().getResponse(new InteractEvent(this.getLoc().getMerchant()));
                 break;
             case 3:
+                this.travel();
+                break;
         }
     }
 }

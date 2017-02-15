@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi.heroUi;
 
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.GetReadyEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractHeroUi;
-import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
 
 public class RestHeroUi extends AbstractHeroUi {
 
@@ -15,7 +15,7 @@ public class RestHeroUi extends AbstractHeroUi {
         this.decisions();
     }
 
-    private void decisions() {
+    protected void decisions() {
         switch (this.choice(
                 this.get("textUi.RestHeroUi.inventory"),
                 this.get("textUi.RestHeroUi.consume"),
@@ -33,7 +33,7 @@ public class RestHeroUi extends AbstractHeroUi {
                 System.out.println(this.getHero().getCurrentLifeEssence());
                 break;
             case 3:
-                new LocationUi(getContext()).show();
+                this.getContext().getEventPublisher().getResponse(new GetReadyEvent());
                 break;
         }
     }
