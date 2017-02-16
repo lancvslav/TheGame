@@ -22,42 +22,48 @@ public class Launcher {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in, "UTF-8");
         System.out.println("Language/Jazyk");
-        System.out.println("en/cz");
+        String pref;
+        do {
+            System.out.println("en/cz");
+            pref = scanner.nextLine();
+        } while (!(pref.equals("en") || pref.equals("cz")));
         Localization l;
-        String pref = scanner.nextLine();
-        if (pref.equals("en")) {
-            l = new Localization
-                    (ResourceUtil.getResource(ResourceType.LOCALIZATION, "en"));
-        } else {
-            if (pref.equals("cz")) {
+        switch (pref) {
+            case "en":
+                l = new Localization
+                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "en"));
+                break;
+            case "cz":
                 l = new Localization
                         (ResourceUtil.getResource(ResourceType.LOCALIZATION, "cz"));
-            } else {
+                break;
+            default:
                 l = new Localization
-                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "cz"));
-            }
-            Localization localization = l;
-
-            Map<String, Attack> attackMap = ResourceToMapUtil.createAttackMap(ResourceUtil
-                    .getResource(ResourceType.ATTACK_ALL, "attacks"));
-            Map<String, Consumable> consumableMap = ResourceToMapUtil.createConsumableMap(ResourceUtil
-                    .getResource(ResourceType.CONSUMABLE_ALL, "consumables"));
-            Map<String, Weapon> weaponMap = ResourceToMapUtil.createWeaponMap(ResourceUtil
-                            .getResource(ResourceType.WEAPON_ALL, "weapons"),
-                    attackMap);
-            Map<String, Creature> creatureMap = ResourceToMapUtil.createCreatureMap(ResourceUtil
-                    .getResource(ResourceType.CREATURES_ALL, "creatures"), attackMap, weaponMap);
-
-            ResourceCache cache = new ResourceCache(attackMap, consumableMap, creatureMap, null, weaponMap);
-            World world = World.layout(cache);
-
-            Hero hero = HeroCreationUi.creationOfHero(scanner, localization);
-            ResponseChannel responseChannel = new ResponseChannel();
-            EventPublisher eventPublisher = new EventPublisher(hero, world, responseChannel);
-            Session session = new Session(eventPublisher, responseChannel);
-            Context context = new Context(eventPublisher, hero, world, cache, scanner, localization, session);
-            TextEvents textEvents = new TextEvents(context);
-            textEvents.playGame();
+                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "en"));
+                break;
         }
+        Localization localization = l;
+
+        Map<String, Attack> attackMap = ResourceToMapUtil.createAttackMap(ResourceUtil
+                .getResource(ResourceType.ATTACK_ALL, "attacks"));
+        Map<String, Consumable> consumableMap = ResourceToMapUtil.createConsumableMap(ResourceUtil
+                .getResource(ResourceType.CONSUMABLE_ALL, "consumables"));
+        Map<String, Weapon> weaponMap = ResourceToMapUtil.createWeaponMap(ResourceUtil
+                        .getResource(ResourceType.WEAPON_ALL, "weapons"),
+                attackMap);
+        Map<String, Creature> creatureMap = ResourceToMapUtil.createCreatureMap(ResourceUtil
+                .getResource(ResourceType.CREATURES_ALL, "creatures"), attackMap, weaponMap);
+
+        ResourceCache cache = new ResourceCache(attackMap, consumableMap, creatureMap, null, weaponMap);
+        World world = World.layout(cache);
+
+        Hero hero = HeroCreationUi.creationOfHero(scanner, localization);
+        ResponseChannel responseChannel = new ResponseChannel();
+        EventPublisher eventPublisher = new EventPublisher(hero, world, responseChannel);
+        Session session = new Session(eventPublisher, responseChannel);
+        Context context = new Context(eventPublisher, hero, world, cache, scanner, localization, session);
+        TextEvents textEvents = new TextEvents(context);
+        textEvents.playGame();
     }
 }
+
