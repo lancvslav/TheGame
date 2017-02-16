@@ -225,6 +225,9 @@ textUi.menu.yes;Yes
 textUi.MerchandiseUi.decline;Decline offers and leave
 textUi.MerchandiseUi.not_enough_gold;Not enough gold.
 textUi.MerchandiseUi.purchased;purchased!
+textUi.MerchantUi.leave;Leave
+textUi.MerchantUi.talk;Talk
+textUi.MerchantUi.trade;Trade
 textUi.no_money;No money, no funny, eh?
 textUi.not_an_option;Not an option
 textUi.one_job;You had one job...
@@ -272,6 +275,7 @@ textUi.RestHeroUi.starve;It looks like you will starve to death.
 textUi.ShopUi.ask;Buy
 textUi.ShopUi.doors;Doors you see lead to:
 textUi.ShopUi.leave;Leave this place
+textUi.ShopUi.talk;Aproach owner
 textUi.StreetUi.paths;Paths you can take lead to:
 textUi.TavernUi.decline_drink;Not thirsty after all
 textUi.TavernUi.decline_food;Not hungry after all
@@ -317,3 +321,5 @@ world.square.main_square;main square
 textUi.InteractUi.talk;Talk
 textUi.InteractUi.trade;Trade
 textUi.InteractUi.leave;Leave
+world.square.battle_quarter;battle quarter
+world.square.main_square;main square
