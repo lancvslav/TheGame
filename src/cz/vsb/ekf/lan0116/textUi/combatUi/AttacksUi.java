@@ -30,7 +30,7 @@ public class AttacksUi extends AbstractHeroUi {
             switch (this.choice(this.get("textUi.AttacksUi.select"),
                     this.get("textUi.AttacksUi.close"))) {
                 case 0:
-                    System.out.println(this.get("textUi.AttacksUi.choose"));
+                    System.out.println(this.get("textUi.AttacksUi.choose") + ":");
                     String tempString = this.getContext().getScanner().nextLine();
                     int tempChoiceNumber = Integer.parseInt(tempString);
                     Attack attack = this.getHero().getAttacks().get(tempChoiceNumber);

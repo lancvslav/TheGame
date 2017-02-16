@@ -1,9 +1,15 @@
 package cz.vsb.ekf.lan0116.textUi.abstracts;
 
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.TravelEvent;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.BattleLogServerEvent;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.DamageInfliction;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.FightResponse;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.world.location.Gateway;
 import cz.vsb.ekf.lan0116.world.location.Location;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractLocationUi<L extends Location> extends AbstractUi {
 
@@ -30,6 +36,11 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
             this.getContext().getEventPublisher().getResponse(new TravelEvent(loc.getGateways().get(choice)));
         } else {
             System.out.println("\n" + this.get("textUi.AbstractLocationUi.you_hit"));
+            List<FightResponse> selfDamage = new ArrayList<>();
+            selfDamage.add(new DamageInfliction(this.getContext().getHero(),
+                    this.getContext().getHero(), 1.0F));
+            this.getContext().getSession().getResponseChannel()
+                    .respond(new BattleLogServerEvent(selfDamage));
             this.travel();
         }
     }

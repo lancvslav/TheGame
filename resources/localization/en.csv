@@ -74,7 +74,7 @@ enemies.skeleton_warrior;skeleton warrior
 enemies.snake;snake
 enemies.stone_warrior;stone warrior
 enemies.street_toad;street toad
-enemies.thiev;thief
+enemies.thief;thief
 enemies.tiger;tiger
 enemies.trained_bruiser;trained bruiser
 enemies.turtle;turtle
@@ -162,7 +162,7 @@ textUi.ArenaUi.tournament1;You are the prey now
 textUi.ArenaUi.tournament2;Prepare to get wet
 textUi.ArenaUi.welcome;Welcome to the Arena
 textUi.AttacksUi.close;Close
-textUi.AttacksUi.choose;Choose move:
+textUi.AttacksUi.choose;Choose move
 textUi.AttacksUi.select;Select
 textUi.consumed;consumed
 textUi.cost;cost
@@ -272,7 +272,7 @@ textUi.ShopUi.ask;Buy
 textUi.ShopUi.doors;Doors you see lead to:
 textUi.ShopUi.leave;Leave this place
 textUi.ShopUi.talk;Aproach owner
-textUi.StreetUi.paths;Paths you can take lead to:
+textUi.StreetUi.paths;Paths you can take lead to
 textUi.TavernUi.decline_drink;Not thirsty after all
 textUi.TavernUi.decline_food;Not hungry after all
 textUi.TavernUi.drink;Drink offer
@@ -302,7 +302,7 @@ world.building.shop.consumable_shop.swift_drink;SwiftDrink
 world.building.shop.tavern;tavern
 world.building.shop.weapon_shop.archery;archery
 world.building.shop.weapon_shop.blacksmith;blacksmith
-world.building.shop.weapon_shop.wand_shop;wand shop
+world.building.shop.weapon_shop.wand_shop;Oliwander's
 world.crossroad.central_crossroad;central crossroad
 world.crossroad.indecisive_crossroad;indecisive crossroad
 world.crossroad.town_gate;town gate

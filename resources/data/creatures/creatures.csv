@@ -42,7 +42,7 @@ enemies.snake;4;2;7;0;attack.poison_bite;;WARRIOR;animal
 enemies.stone_warrior;7;6;5;20;;item.weapon.stone_hammer;WARRIOR;humanoid
 enemies.street_toad;2;0;1;1;;item.weapon.broken_bottle;WARRIOR;humanoid
 enemies.sword_fish;3;6;3;0;;;WARRIOR;animal
-enemies.thiev;3;10;3;1;;item.merchandise.weapon.melee.dirk;WARRIOR;humanoid
+enemies.thief;3;10;3;1;;item.merchandise.weapon.melee.dirk;WARRIOR;humanoid
 enemies.tiger;11;10;18;0;attack.bite,;;WARRIOR;animal
 enemies.tiger_shark;8;18;12;0;attack.bite,;;WARRIOR;animal
 enemies.trained_bruiser;17;9;18;15;;item.merchandise.weapon.melee.mace;WARRIOR;humanoid

@@ -24,4 +24,8 @@ public class Session {
     public Queue<ServerEvent> getResponses() {
         return responseChannel.getResponses();
     }
+
+    public ResponseChannel getResponseChannel() {
+        return responseChannel;
+    }
 }
