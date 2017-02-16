@@ -1,0 +1,319 @@
+attac.emit_force;vyslaní síly
+attack.backstab;úder do zad
+attack.bite;kousnutí
+attack.bleed;krvácení
+attack.blind;oslepnutí
+attack.blinding_sunshine;oslepující sluneèní záøe
+attack.brainstorm;brainstorm
+attack.concentrate_force;koncentrovat sílu
+attack.crushing_blow;drtící úder
+attack.dark_orb;tìleso temna
+attack.dark_strorm;bouøe temna
+attack.demon_orb;tìleso démona
+attack.destructive_orb;znièující tìleso
+attack.destructive_shoot;destruktivní støela
+attack.destructive_storm;bouøe destrukce
+attack.double_shoot;dvojšíp
+attack.fear;strach
+attack.feeble_attack;slabı útok
+attack.hawk_shoot;jestøábí støela
+attack.hit;úder
+attack.chaos_orb;tìleso chaosu
+attack.lightning_spear;oštìp bleskù
+attack.magic_orb;magické tìleso
+attack.magic_spear;magickı oštìp
+attack.mindfuck;mindfuck
+attack.miraculous_force;zázraèná síla
+attack.orb;tìleso
+attack.poison_bite;kousnutí jedu
+attack.poison_mist;toxická mlha
+attack.repeating_shoot;opakovací støela
+attack.scraps_of_life;støípky ivota
+attack.scream;vøísko
+attack.shoot;støela
+attack.silence;ztišení
+attack.slash;sekunutí
+attack.strike;rána
+attack.sunlight_spear;oštìp sluneèního svìtla
+attack.thrust;bodnutí
+attack.thunderstorm;bouøe
+attack.weaken;oslabení
+enemies.bandit;bandita
+enemies.basilisk;basilišek
+enemies.bastard;bastard
+enemies.bear;medvìd
+enemies.blind_wanderer;slepı tulák
+enemies.cat;koèka
+enemies.dark_dwarf;temnı trpaslík
+enemies.dark_elf;temnı elf
+enemies.dark_mole;temnı krtek
+enemies.dog;pes
+enemies.dwarf;trpaslík
+enemies.eagle;orel
+enemies.enraged_man;rozzuøenı chasník
+enemies.gargoyle;gargojl
+enemies.ghoul;gh?l
+enemies.giant_frog;obøí ropucha
+enemies.great_mosquito;pøerostlı komár
+enemies.hydra;hydra
+enemies.chamois;kamzík
+enemies.chopped_tree;satı strom
+enemies.infantryman;pìšák
+enemies.lion;lev
+enemies.little_child;malé dítko
+enemies.lost_miner;ztracenı horník
+enemies.lumberjack;døevorubec
+enemies.mastodon;mamut
+enemies.old_mercenary;vyslouilı oldák
+enemies.peasant;sedlák
+enemies.shadow_mist;mlha stínù
+enemies.shadowlurker;dìsivı stín
+enemies.sheep;ovce
+enemies.skeleton_archer;kostlivec luèištník
+enemies.skeleton_warrior;kostlivec váleèník
+enemies.snake;had
+enemies.stone_warrior;kamennı váleèník
+enemies.street_toad;poulièní bídák
+enemies.thiev;zlodìj
+enemies.tiger;tygr
+enemies.trained_bruiser;zdatnı rváè
+enemies.turtle;elva
+enemies.vampire;upír
+enemies.wolf;vlk
+enemies.zombie;nemrtvı
+hero.class.ranger;lovec
+hero.class.sorcerer;mág
+hero.class.warrior;váleèník
+innkeeper.tavern.gwen;Gwen
+item.merchandise.consumable.drink.beer;pivo
+item.merchandise.consumable.drink.bottle_of_beer;láhev piva
+item.merchandise.consumable.drink.bottle_of_cider;láhev moštu
+item.merchandise.consumable.drink.bottle_of_mead;láhev medoviny
+item.merchandise.consumable.drink.bottle_of_spirits;láhev spiritusu
+item.merchandise.consumable.drink.bottle_of_watter;láhev vody
+item.merchandise.consumable.drink.bottle_of_wine;láhev vína
+item.merchandise.consumable.drink.mead;medovina
+item.merchandise.consumable.drink.water;voda
+item.merchandise.consumable.drink.wine;víno
+item.merchandise.consumable.food.apple;jablko
+item.merchandise.consumable.food.beef_goulash;hovìzí guláš
+item.merchandise.consumable.food.braised_duck_and_rice;dušená kachna s rıí
+item.merchandise.consumable.food.bread;chléb
+item.merchandise.consumable.food.carrot;mrkev
+item.merchandise.consumable.food.dried_meat;sušené maso
+item.merchandise.consumable.food.fresh_bread_witch_cheese;èersvı chléb se sırem
+item.merchandise.consumable.food.grilled_chicken_with_mashed_potatoes;grilované kuøe s bramborovou kaší
+item.merchandise.consumable.food.cheese;sır
+item.merchandise.consumable.food.chicken_ragout;kuøecí ragù
+item.merchandise.consumable.food.nuts;oøechy
+item.merchandise.consumable.food.roasted_pig;peèené kuøe
+item.merchandise.weapon.melee.bastard_sword;bastardùv meè
+item.merchandise.weapon.melee.claymore;skotskı meè
+item.merchandise.weapon.melee.club;kyj
+item.merchandise.weapon.melee.dagger;dıka
+item.merchandise.weapon.melee.dirk;skotská dıka
+item.merchandise.weapon.melee.flail;cep
+item.merchandise.weapon.melee.flamberge;flamberge
+item.merchandise.weapon.melee.greatsword;jednoapùlruèní meè
+item.merchandise.weapon.melee.katana;katana
+item.merchandise.weapon.melee.long_sword;dlouhı meè
+item.merchandise.weapon.melee.mace;palcát
+item.merchandise.weapon.melee.morning_star;palcát jitøenky
+item.merchandise.weapon.melee.scimitar;scimitar
+item.merchandise.weapon.melee.short_sword;krátkı meè
+item.merchandise.weapon.melee.spiked_club;okovanı kyj
+item.merchandise.weapon.melee.sword;meè
+item.merchandise.weapon.melee.zweihander;zweihander
+item.merchandise.weapon.ranged.bow;luk
+item.merchandise.weapon.ranged.combat_bow;bojovı luk
+item.merchandise.weapon.ranged.composite_bow;skládnı luk
+item.merchandise.weapon.ranged.greatbow;luk obrù
+item.merchandise.weapon.ranged.heavy_crossbow;tìká kuš
+item.merchandise.weapon.ranged.hunters_bow;loveckı luk
+item.merchandise.weapon.ranged.light_crossbow;lehká kuš
+item.merchandise.weapon.ranged.long_bow;dlouhı luk
+item.merchandise.weapon.ranged.repeating_crossbow;opakovací kuš
+item.merchandise.weapon.ranged.shadow_bow;luk stínù
+item.merchandise.weapon.ranged.short_bow;kráktı luk
+item.merchandise.weapon.ranged.war_bow;váleènı luk
+item.merchandise.weapon.wand.demons_staff;hùl démonù
+item.merchandise.weapon.wand.enhanced_wand;kouzelná hùlka
+item.merchandise.weapon.wand.magic_talisman;magickı talisman
+item.merchandise.weapon.wand.staff;hùl
+item.merchandise.weapon.wand.staff_of_darkness;hùl temnoty
+item.merchandise.weapon.wand.staff_of_destruction;hùl destrukce
+item.merchandise.weapon.wand.staff_of_power;hùl moci
+item.merchandise.weapon.wand.staff_of_wisdom;hùl moudrosti
+item.merchandise.weapon.wand.sun_staff;hùl slunce
+item.merchandise.weapon.wand.talisman_of_knowledge;talisman moudrosti
+item.merchandise.weapon.wand.talisman_of_lightning;talisman bouøe
+item.merchandise.weapon.wand.wand;hùlka
+item.weapon.flower;kytka
+textUi.AbstractLocationUi.where;Kam bys rád šel?
+textUi.AbstractLocationUi.you_hit;Hlupáku! Narazils do zdi, tudy cesta rozhodnì nevede. Teï krvácíš.
+textUi.AbstractUi.fled;Ten srab nedokázal unést tíhu tohoto svìta, tak prchl
+textUi.AbstractUi.flee;zbabìle utéct
+textUi.ArenaUi.back;Odstoupit
+textUi.ArenaUi.entered_tournament;Vítej, cestovateli. Musíš mít odvahu, to se musí nechat. Jak jinak zdùvodnit, e se pouštíš do takového nebezpeèí. Nebo jsi moná pouhı blázen
+textUi.ArenaUi.sign_up;Zapsat se k turnaji
+textUi.ArenaUi.tournament_selection;Kterého turnaje by ses rád zùèastnil?
+textUi.ArenaUi.tournament0;Všichni bojují a na krev
+textUi.ArenaUi.tournament1;Koøistí jsi nyní ty
+textUi.ArenaUi.tournament2;Pøiprav se zmoknout
+textUi.ArenaUi.welcome;Vítej v arénì
+textUi.AttacksUi.close;Zavøít
+textUi.AttacksUi.choose;Vybrat tah:
+textUi.AttacksUi.select;Vybrat
+textUi.consumed;zkonzumováno
+textUi.cost;hodnota
+textUi.current_location0;Stojíš v
+textUi.current_location1;Naházíš se v
+textUi.current_location2;Jsi na
+textUi.FightUi.attacks;Útoky
+textUi.FightUi.facing;Èelíš
+textUi.FightUi.inventory;Inventáø
+textUi.FightUi.try_flee;Pokusit se utéct
+textUi.HeroCreatinUi.new_game.another;... nebo pouhá další loutka, kterou sem osud zavál.
+textUi.HeroCreatinUi.new_game.devour;Dávej na sebe pozor. Aby tì tento svìt nepohltil... Tak jak ji pohltil mnoho jinıch
+textUi.HeroCreatinUi.new_game.first;Ale nejdøív
+textUi.HeroCreatinUi.new_game.fragile;Nyní jsi køehkı s slabı
+textUi.HeroCreatinUi.new_game.perhaps;Moná... Jsi ten vyvoelnı?
+textUi.HeroCreatinUi.new_game.prove;Nyní jdi, doka, e nejsi pouhá loutka, ale Ten, koho ji dlouho oèekáváme
+textUi.HeroCreationUi.kind_of_man;Jakı typ jsi?
+textUi.HeroCreationUi.name0;Jaké je tvé ctìné jméno?
+textUi.HeroCreationUi.name1;Prosím, øekni jak tì mám nazıvat
+textUi.HeroCreationUi.wields;drí
+textUi.HeroCreationUi.new_game.expecting;Oèekával jsem tì.
+textUi.HeroCreationUi.pleasure;Vıteènì! Rád tì poznávám, Poseroutko!
+textUi.HeroCreationUi.poop0;Øíkal jsi 'Poseroutka', rozumìl jsem správnì?
+textUi.HeroCreationUi.poop1;0 Ano 1 Ne
+textUi.HeroCreationUi.ranger;1. Rychlı lovec. Ohebnı, prùmìrné poškození, prùmìrná ivotnost
+textUi.HeroCreationUi.sorcerer;2. Moudrı kouzelník. Tøímá mohutné síly, ale je rozmáèknut lehce jako malina
+textUi.HeroCreationUi.warrior;0. Statènı váleèník. Vysoká ivotnost, podprùmìrné poškození
+textUi.InventoryUi.damage_ratio;poškození
+textUi.InventoryUi.don't_own;Nevlastníš tuto vìc
+textUi.InventoryUi.dropped;Co jsi udìlal, u nejde vrátit zpìt
+textUi.InventoryUi.empty;Jsi chudı jak krysa
+textUi.InventoryUi.choice0.inspect;Prozkoumat vìc
+textUi.InventoryUi.choice1.equip;Vybavit se
+textUi.InventoryUi.choice2.drop;Odhodit zbraò
+textUi.InventoryUi.choice3.close;Zavøít inventáø
+textUi.InventoryUi.not_a_weapon;To co se snaíš pouít není zbraò. Buï máš divnı smysl pro humor, nebo jsi úplnì blbı
+textUi.InventoryUi.not_eligible;Nemùeš pouívat tuto zbraò
+textUi.InventoryUi.not_in_inventory;Nemùeš zahodit to, co nevlastníš
+textUi.InventoryUi.really0;Opravdu chceš zahodit
+textUi.InventoryUi.really1;? U to nezískáš zpìt
+textUi.InventoryUi.replenish;doplòující hodnota
+textUi.InventoryUi.type;typ
+textUi.InventoryUi.value;hodnota
+textUi.InventoryUi.which_one;Které?
+textUi.InventoryUi.wielding;Dríš
+textUi.loation_decision0;Hm?
+textUi.loation_decision1;Co bys rád dìlal?
+textUi.loation_decision2;Jakı je plán?
+textUi.loation_decision3;Co udìláš?
+textUi.location.just;Je to jen
+textUi.menu.no;Ne
+textUi.menu.rest;Spoènout
+textUi.menu.somewhere;Jít jinam
+textUi.menu.trouble;Vyhledat trable
+textUi.menu.yes;Ano
+textUi.MerchandiseUi.decline;Odmítnout nabídku a odejít
+textUi.MerchandiseUi.not_enough_gold;Nedostatek zlata
+textUi.MerchandiseUi.purchased;zakoupeno!
+textUi.MerchantUi.leave;Opustit
+textUi.MerchantUi.talk;Promluvit
+textUi.MerchantUi.trade;Obchodovat
+textUi.no_money;Bez penìz do hospody nelez
+textUi.not_an_option;Není monost
+textUi.one_job;Mìl jsi jen jeden úkol...
+textUi.resources.drink_shop_happy0;Uíj si to
+textUi.resources.drink_shop_happy1;Nepøeeò to
+textUi.resources.drink_shop_offer0;Nejosvìující nabídka, pøímo pøed tebou
+textUi.resources.drink_shop_offer1;Jen si lokni
+textUi.resources.drink_shop_unhappy0;Chcípneš ízní
+textUi.resources.drink_shop_unhappy1;Nemáš ízeò jo?
+textUi.resources.drink_shop_unhappy2;Však ty si na mì vzpomeneš, a budeš chcípat ízní
+textUi.resources.flee_disabled0;Ty to prostì nechápeš. Teï jsi MÙJ!
+textUi.resources.flee_disabled1;Nikam nejdeš!
+textUi.resources.flee_disabled2;Nemùeš utéct po té, co jsi vstoupil do bojištì
+textUi.resources.flee_weak0;Jsi moc velkı srab i na to, abys utekl
+textUi.resources.flee_weak1;Nedostatek energie
+textUi.resources.flee_weak2;Nezapomeò, e k útìku potøebuješ energii
+textUi.resources.flee0;Podaøilo se ti utéct. Ehm ehm... Srabehm Ehm
+textUi.resources.flee1;Neúspìšnı zbabìlec úspìšnì uprkl
+textUi.resources.food_shop_happy0;Hlavnì si to nezapomeò v kapse. Ještì by ti to tam shnilo
+textUi.resources.food_shop_happy1;Nejlepší jíst èerstvé, ale mùeš si to schovat, pro pøípad, e by se to hodilo pozdìji.
+textUi.resources.food_shop_offer0;Všechno èerstvé!
+textUi.resources.food_shop_offer1;Nejsytìjší jídlo široko daleko
+textUi.resources.food_shop_offer2;Pokud hledáš nìco na zub, jsi tu správnì
+textUi.resources.food_shop_unhappy0;Doufám, e chcípneš hlady
+textUi.resources.food_shop_unhappy1;Pøicházíš o hodnì
+textUi.resources.food_shop_unhappy2;Však ty si na mì vzpomeneš, a nebudeš mít co dát do huby
+textUi.resources.weapon_shop_happy0;Je mi ctí s Vámi obchodovat
+textUi.resources.weapon_shop_happy1;Pøijï zase
+textUi.resources.weapon_shop_happy2;Dìkuji
+textUi.resources.weapon_shop_happy3;Vra se brzy
+textUi.resources.weapon_shop_offer0;Ber nebo vypadni
+textUi.resources.weapon_shop_offer1;Podívej co nabízím
+textUi.resources.weapon_shop_offer2;Nejlepší zboí široko daleko
+textUi.resources.weapon_shop_offer3;Tak co to bude?
+textUi.resources.weapon_shop_offer4;Lepšího obchodníka nenajdeš široko daleko
+textUi.resources.weapon_shop_unhappy0;Hm... To je škoda. No, co mùu nadìlat...
+textUi.resources.weapon_shop_unhappy1;Vypadni
+textUi.resources.weapon_shop_unhappy2;Coe? Neplıtvej mım èasem
+textUi.resources.weapon_shop_unhappy3;Dnešní lidi...
+textUi.resources.weapon_shop_unhappy4;Jsi si jistı? Abych všechno nevyprodal, dokud se nevrátíš
+textUi.RestHeroUi.consume;Zkonzumovat
+textUi.RestHeroUi.getUp;Vstát
+textUi.RestHeroUi.inventory;Inventáø
+textUi.RestHeroUi.starve;Vypadá to, e zemøeš hlady
+textUi.ShopUi.ask;Koupit
+textUi.ShopUi.doors;Dveøe vedou
+textUi.ShopUi.leave;Opustit toto místo
+textUi.ShopUi.talk;Pøistoupit k majiteli
+textUi.StreetUi.paths;Cesty vedou:
+textUi.TavernUi.decline_drink;Nakonec nemám ízeò
+textUi.TavernUi.decline_food;Nakonec nejsem hladov
+textUi.TavernUi.drink;Nabídka nápojù
+textUi.TavernUi.food;Nabídka jídel
+textUi.TavernUi.offer_drink;Èím bys chtìl ukonèit své trápení ízní?
+textUi.TavernUi.offer_food;Èím bys chtìl ukonèit své trápení hladem?
+textUi.TavernUi.rumor;Pomluvy
+textUi.textEvents.damage_to;poškození
+textUi.textEvents.dealt;udìlil
+textUi.textEvents.died;mrtev
+textUi.textEvents.failed;Nepodaøilo se naèíst hru
+textUi.textEvents.flee;K úprku z tohoto svìta zaøvi: 'flee foolishly'
+textUi.textEvents.game_over;Konec hry.
+textUi.textEvents.healed;byl vyléèen
+textUi.textEvents.not_enough_stamina;nemáš dostatek energie pro tento útok
+textUi.textEvents.stamina;energie
+textUi.textEvents.used;pouil
+textUi.textEvents.YOU_DIED;ZDECHLS
+textUi.TournamentUi.next;Následující nepøítel:
+texUi.TournamentUi.coward;Zbabìlèe!
+texUi.TournamentUi.proceed;Pokraèovat
+texUi.TournamentUi.pussyout;Vycouvat
+texUi.TournamentUi.won;Vyhráls
+world.arena.arena;aréna
+world.building.shop.consumable_shop.grocery;potraviny
+world.building.shop.consumable_shop.swift_drink;Zabiják íznì
+world.building.shop.tavern;putyka
+world.building.shop.weapon_shop.archery;lovecké potøeby
+world.building.shop.weapon_shop.blacksmith;kovárna
+world.building.shop.weapon_shop.wand_shop;obchod mágù
+world.crossroad.central_crossroad;centrální køiovatka
+world.crossroad.indecisive_crossroad;nerozhodná køiovatka
+world.crossroad.town_gate;brána mìsta
+world.road.central_road;centrální cesta
+world.road.cordial_alley;srdeèná álej
+world.road.fist_avenue;hlavní tøída
+world.road.road_of_conflict;ulice konfliktù
+world.road.road_of_malice;ulice zlomyslnosti
+world.road.tavern_backyard;zadní dvorek
+textUi.InteractUi.talk;Promluvit
+textUi.InteractUi.trade;Obchodovat
+textUi.InteractUi.leave;Opustit
+world.square.battle_quarter;váleèná èvr
+world.square.main_square;hlavní námìstí

@@ -20,29 +20,44 @@ import java.util.Scanner;
 public class Launcher {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Language/Jazyk");
+        System.out.println("en/cz");
+        Localization l;
+        String pref = scanner.nextLine();
+        if (pref.equals("en")) {
+            l = new Localization
+                    (ResourceUtil.getResource(ResourceType.LOCALIZATION, "en"));
+        } else {
+            if (pref.equals("cz")) {
+                l = new Localization
+                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "cz"));
+            } else {
+                l = new Localization
+                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "cz"));
+            }
+            Localization localization = l;
 
-        Localization localization = new Localization
-                (ResourceUtil.getResource(ResourceType.LOCALIZATION, "localization"));
+            Map<String, Attack> attackMap = ResourceToMapUtil.createAttackMap(ResourceUtil
+                    .getResource(ResourceType.ATTACK_ALL, "attacks"));
+            Map<String, Consumable> consumableMap = ResourceToMapUtil.createConsumableMap(ResourceUtil
+                    .getResource(ResourceType.CONSUMABLE_ALL, "consumables"));
+            Map<String, Weapon> weaponMap = ResourceToMapUtil.createWeaponMap(ResourceUtil
+                            .getResource(ResourceType.WEAPON_ALL, "weapons"),
+                    attackMap);
+            Map<String, Creature> creatureMap = ResourceToMapUtil.createCreatureMap(ResourceUtil
+                    .getResource(ResourceType.CREATURES_ALL, "creatures"), attackMap, weaponMap);
 
-        Map<String, Attack> attackMap = ResourceToMapUtil.createAttackMap(ResourceUtil
-                .getResource(ResourceType.ATTACK_ALL, "attacks"));
-        Map<String, Consumable> consumableMap = ResourceToMapUtil.createConsumableMap(ResourceUtil
-                .getResource(ResourceType.CONSUMABLE_ALL, "consumables"));
-        Map<String, Weapon> weaponMap = ResourceToMapUtil.createWeaponMap(ResourceUtil
-                        .getResource(ResourceType.WEAPON_ALL, "weapons"),
-                attackMap);
-        Map<String, Creature> creatureMap = ResourceToMapUtil.createCreatureMap(ResourceUtil
-                .getResource(ResourceType.CREATURES_ALL, "creatures"), attackMap, weaponMap);
+            ResourceCache cache = new ResourceCache(attackMap, consumableMap, creatureMap, null, weaponMap);
+            World world = World.layout(cache);
 
-        ResourceCache cache = new ResourceCache(attackMap, consumableMap, creatureMap, null, weaponMap);
-        World world = World.layout(cache);
-        Scanner scanner = new Scanner(System.in, "UTF-8");
-        Hero hero = HeroCreationUi.creationOfHero(scanner, localization);
-        ResponseChannel responseChannel = new ResponseChannel();
-        EventPublisher eventPublisher = new EventPublisher(hero, world, responseChannel);
-        Session session = new Session(eventPublisher, responseChannel);
-        Context context = new Context(eventPublisher, hero, world, cache, scanner, localization, session);
-        TextEvents textEvents = new TextEvents(context);
-        textEvents.playGame();
+            Hero hero = HeroCreationUi.creationOfHero(scanner, localization);
+            ResponseChannel responseChannel = new ResponseChannel();
+            EventPublisher eventPublisher = new EventPublisher(hero, world, responseChannel);
+            Session session = new Session(eventPublisher, responseChannel);
+            Context context = new Context(eventPublisher, hero, world, cache, scanner, localization, session);
+            TextEvents textEvents = new TextEvents(context);
+            textEvents.playGame();
+        }
     }
 }

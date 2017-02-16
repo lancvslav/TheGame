@@ -1,0 +1,4 @@
+enemies.chamois
+enemies.eagle
+enemies.stone_warrior
+enemies.dwarf
