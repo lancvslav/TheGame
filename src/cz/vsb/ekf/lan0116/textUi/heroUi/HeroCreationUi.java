@@ -27,7 +27,7 @@ public class HeroCreationUi {
         System.out.println(localization.get("textUi.HeroCreationUi.poop1"));
         scanner.nextLine();
         System.out.println("\n" + localization.get("textUi.HeroCreationUi.pleasure") + "\n");
-        nameOfHero = "Little poop";
+        nameOfHero = "hero_name.poop";
         Hero hero = null;
         while (hero == null) {
             printClasses(localization);

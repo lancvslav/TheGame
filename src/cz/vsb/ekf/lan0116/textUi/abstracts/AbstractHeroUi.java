@@ -24,7 +24,7 @@ public abstract class AbstractHeroUi extends AbstractCreatureUi {
         System.out.println(this.get(item.getName()) + ", "
                 + this.get("textUi.InventoryUi.replenish") + ": " + item.getReplenishValue()+", "
                 + this.get("textUi.InventoryUi.value") + ": " + item.getCost()+", "
-                + this.get("textUi.InventoryUi.type") + ": " + item.getItemType().toString().toLowerCase());
+                + this.get("textUi.InventoryUi.type") + ": " + this.get(item.getItemType().toString().toLowerCase()));
     }
 
     /**
@@ -35,6 +35,6 @@ public abstract class AbstractHeroUi extends AbstractCreatureUi {
         System.out.println(this.get(item.getName()) + ", "
                 + this.get("textUi.InventoryUi.damage_ratio") + " " + item.getDamageRatio()+", "
                 + this.get("textUi.InventoryUi.value") + " " + item.getCost()+", "
-                + this.get("textUi.InventoryUi.type") + " " + item.getItemType().toString().toLowerCase());
+                + this.get("textUi.InventoryUi.type") + " " + this.get(item.getItemType().toString().toLowerCase()));
     }
 }

@@ -310,10 +310,17 @@ world.road.central_road;central road
 world.road.cordial_alley;cordial alley
 world.road.fist_avenue;first avenue
 world.road.road_of_conflict;road of conflict
-world.road.road_of_malice;raod of malice
+world.road.road_of_malice;road of malice
 world.road.tavern_backyard;tavern backyard
 textUi.InteractUi.talk;Talk
 textUi.InteractUi.trade;Trade
 textUi.InteractUi.leave;Leave
 world.square.battle_quarter;battle quarter
 world.square.main_square;main square
+hero_name.poop;Little Poop
+textUi.ShopUi.you_see;You see a shop owner
+drink;drink
+food;food
+melee;melee
+wand;wand
+ranged;ranged

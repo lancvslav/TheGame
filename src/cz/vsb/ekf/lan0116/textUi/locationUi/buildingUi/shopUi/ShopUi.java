@@ -23,27 +23,23 @@ public class ShopUi extends AbstractLocationUi<Shop> {
         for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
             System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
         }
-        System.out.println(this.get("You see owner of shop."));
+        System.out.println(this.get("textUi.ShopUi.you_see"));
         this.decisions();
     }
 
     @Override
     public void decisions() {
         switch (this.choice(
-                this.get("textUi.ShopUi.ask"),
                 this.get("textUi.menu.rest"),
                 this.get("textUi.ShopUi.talk"),
                 this.get("textUi.ShopUi.leave"))) {
             case 0:
-                new MerchandiseUi(getContext()).show();
-                break;
-            case 1:
                 this.getContext().getEventPublisher().getResponse(new RestEvent());
                 break;
-            case 2:
+            case 1:
                 this.getContext().getEventPublisher().getResponse(new InteractEvent(this.getLoc().getMerchant()));
                 break;
-            case 3:
+            case 2:
                 this.travel();
                 break;
         }

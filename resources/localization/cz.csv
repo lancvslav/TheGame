@@ -168,7 +168,7 @@ textUi.consumed;pozřeno
 textUi.cost;hodnota
 textUi.current_location0;Stojíš v
 textUi.current_location1;Nacházíš se v
-textUi.current_location2;Jsi na
+textUi.current_location2;Jsi v
 textUi.FightUi.attacks;Útoky
 textUi.FightUi.facing;Čelíš
 textUi.FightUi.inventory;Inventář
@@ -184,7 +184,7 @@ textUi.HeroCreationUi.name0;Jaké je tvé ctěné jméno?
 textUi.HeroCreationUi.name1;Prosím, sděl mi jak tě mám nazývat
 textUi.HeroCreationUi.wields;tříme
 textUi.HeroCreationUi.new_game.expecting;Očekával jsem tě.
-textUi.HeroCreationUi.pleasure;V?te?n?! Rád tě poznávám, Poseroutko!
+textUi.HeroCreationUi.pleasure;Vítečně! Rád tě poznávám, Poseroutko!
 textUi.HeroCreationUi.poop0;Řkul jsi 'Poseroutka', rozuměl jsem správně?
 textUi.HeroCreationUi.poop1;0 Ano 1 Ne
 textUi.HeroCreationUi.ranger;1. Rychlý lovec. Ohebný, průměrné poškození, průměrná odolnost
@@ -196,7 +196,7 @@ textUi.InventoryUi.dropped;Co jsi udělal, nejde vrátit zpět
 textUi.InventoryUi.empty;Jsi chudý jak krysa
 textUi.InventoryUi.choice0.inspect;Prozkoumat věc
 textUi.InventoryUi.choice1.equip;Ozbrojit se
-textUi.InventoryUi.choice2.drop;Odhodit zbraň
+textUi.InventoryUi.choice2.drop;Odhodit věc
 textUi.InventoryUi.choice3.close;Zavřít inventář
 textUi.InventoryUi.not_a_weapon;To, čím se snažíš vyzbrojit, není zbraň. Buďto máš divný smysl pro humor, nebo jsi úplně blbý...
 textUi.InventoryUi.not_eligible;Nejsi schopen používat tuto zbraň
@@ -221,7 +221,7 @@ textUi.menu.yes;Ano
 textUi.MerchandiseUi.decline;Odmítnout nabídku a odejít
 textUi.MerchandiseUi.not_enough_gold;Nedostatek zlata
 textUi.MerchandiseUi.purchased;zakoupeno!
-textUi.MerchantUi.leave;Opustit
+textUi.MerchantUi.leave;Odstoupit
 textUi.MerchantUi.talk;Promluvit
 textUi.MerchantUi.trade;Obchodovat
 textUi.no_money;Bez peněz do hospody nelez
@@ -317,3 +317,10 @@ textUi.InteractUi.trade;Obchodovat
 textUi.InteractUi.leave;Opustit
 world.square.battle_quarter;Válečná čtvrť
 world.square.main_square;hlavní náměstí
+hero_name.poop;Poseroutka
+textUi.ShopUi.you_see;Vidíš majitele obchodu
+drink;pití
+food;jídlo
+melee;zbraň válečníků
+wand;zbraň mágů
+ranged;zbraň lovců

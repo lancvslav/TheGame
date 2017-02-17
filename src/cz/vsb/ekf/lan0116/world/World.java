@@ -83,7 +83,7 @@ public class World {
         Location.link(startLocation, grocery);
         Location.link(startLocation, swiftDrink);
         Location.link(startLocation, tavern);
-//        Location.link(startLocation, arena);
+        Location.link(startLocation, arena);
 
         //TAVERN -> BATTLE QUARTER
         Location.link(tavern, tavernBackyard);
@@ -98,7 +98,7 @@ public class World {
         Location.link(centralCrossroad, roadOfConflict);
         Location.link(roadOfConflict, battleQuarter);
         Location.link(battleQuarter, archery);
-//        Location.link(battleQuarter, arena);
+        Location.link(battleQuarter, arena);
         Location.link(battleQuarter, blacksmith);
         Location.link(battleQuarter, wandShop);
 

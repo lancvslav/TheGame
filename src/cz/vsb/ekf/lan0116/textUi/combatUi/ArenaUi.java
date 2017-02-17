@@ -29,6 +29,10 @@ public class ArenaUi extends AbstractLocationUi {
                 this.get("textUi.ArenaUi.back"),
                 this.get("textUi.ArenaUi.sign_up"))) {
             case 0:
+                System.out.println(this.get("textUi.StreetUi.paths") + ":");
+                for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
+                    System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
+                }
                 this.travel();
                 break;
             case 1:

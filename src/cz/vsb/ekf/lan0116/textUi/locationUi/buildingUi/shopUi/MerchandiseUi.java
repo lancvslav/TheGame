@@ -1,6 +1,7 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi;
 
 import cz.vsb.ekf.lan0116.eventSystem.Response;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.InteractEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.PurchaseEvent;
 import cz.vsb.ekf.lan0116.eventSystem.failures.PurchaseFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
@@ -44,7 +45,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
         if (choice >= (merchandiseList.size())) {
             System.out.println(this.get(TextUtil.quote(this.getLoc().getType()
                     .toString().toLowerCase() + "_unhappy")));
-            this.travel();
+            this.getContext().getEventPublisher().getResponse(new InteractEvent(this.getLoc().getMerchant()));
         } else {
             Merchandise merchandiseToPurchase = this.getLoc().getMerchandise().get(choice);
             Response responseTrade = this.getContext().
