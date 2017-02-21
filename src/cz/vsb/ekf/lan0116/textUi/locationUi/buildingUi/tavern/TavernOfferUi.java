@@ -58,8 +58,7 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
             new TavernUi(this.getContext()).show();
         } else {
             Consumable consumableReceived = (Consumable) consumables.get(choice);
-            Response consumeResponse = this.getContext().getEventPublisher()
-                    .getResponse(new ConsumeEvent(consumableReceived));
+            Response consumeResponse = this.getContext().getSession().fireEvent(new ConsumeEvent(consumableReceived));
             if (consumeResponse.isSuccess()) {
                 System.out.println(this.get("textUi.resources.drink_shop_happy0"));
                 System.out.println(this.get(consumableReceived.getName()) + " " + this.get("textUi.consumed"));

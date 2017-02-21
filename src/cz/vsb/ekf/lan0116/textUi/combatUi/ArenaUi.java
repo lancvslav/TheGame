@@ -41,23 +41,19 @@ public class ArenaUi extends AbstractLocationUi {
                         this.get("textUi.ArenaUi.tournament1"),
                         this.get("textUi.ArenaUi.tournament2"))) {
                     case 0:
-                        this.getContext().getEventPublisher()
-                                .getResponse(new SignInEvent(this.getLoc().getTournaments().get(0)));
+                        this.getContext().getSession().fireEvent(new SignInEvent(this.getLoc().getTournaments().get(0)));
                         new TournamentUi(this.getContext()).show();
                         break;
                     case 1:
-                        this.getContext().getEventPublisher()
-                                .getResponse(new SignInEvent(this.getLoc().getTournaments().get(1)));
+                        this.getContext().getSession().fireEvent(new SignInEvent(this.getLoc().getTournaments().get(1)));
                         new TournamentUi(this.getContext()).show();
                         break;
                     case 2:
-                        this.getContext().getEventPublisher()
-                                .getResponse(new SignInEvent(this.getLoc().getTournaments().get(2)));
+                        this.getContext().getSession().fireEvent(new SignInEvent(this.getLoc().getTournaments().get(2)));
                         new TournamentUi(this.getContext()).show();
                         break;
                     default:
-                        this.getContext().getEventPublisher()
-                                .getResponse(new SignInEvent(this.getLoc().getTournaments().get(0)));
+                        this.getContext().getSession().fireEvent(new SignInEvent(this.getLoc().getTournaments().get(0)));
                         new TournamentUi(this.getContext()).show();
                         break;
                 }

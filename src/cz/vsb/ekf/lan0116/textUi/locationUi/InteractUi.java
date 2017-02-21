@@ -24,10 +24,10 @@ public class InteractUi extends AbstractMerchantUi {
                 //talk Ui?
                 break;
             case 1:
-                this.getContext().getEventPublisher().getResponse(new TradeEvent(this.getMerchant()));
+                this.getContext().getSession().fireEvent(new TradeEvent(this.getMerchant()));
                 break;
             case 2:
-                this.getContext().getEventPublisher().getResponse(new GetReadyEvent());
+                this.getContext().getSession().fireEvent(new GetReadyEvent());
                 break;
         }
     }

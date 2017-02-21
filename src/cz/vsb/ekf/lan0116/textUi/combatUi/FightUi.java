@@ -33,7 +33,7 @@ public class FightUi extends AbstractLocationUi {
                 new InventoryUi(this.getContext()).show();
                 break;
             case 2:
-                Response response = this.getContext().getEventPublisher().getResponse(new FleeEvent());
+                Response response = this.getContext().getSession().fireEvent(new FleeEvent());
                 if (response.isSuccess()) {
                     System.out.println(this.get(TextUtil.quote("flee")));
                     this.travel();

@@ -34,10 +34,10 @@ public class AttacksUi extends AbstractHeroUi {
                     String tempString = this.getContext().getScanner().nextLine();
                     int tempChoiceNumber = Integer.parseInt(tempString);
                     Attack attack = this.getHero().getAttacks().get(tempChoiceNumber);
-                    Response response = this.getContext().getEventPublisher().getResponse(new AttackMoveEvent(attack));
+                    Response response = this.getContext().getSession().fireEvent(new AttackMoveEvent(attack));
                     if (response.getFailureCause() != null) {
                         if (response.getFailureCause().equals(CombatFailure.YOU_DIED)) {
-                            this.getContext().getEventPublisher().getResponse(new RespawnEvent());
+                            this.getContext().getSession().fireEvent(new RespawnEvent());
                             return;
                         }
                     }

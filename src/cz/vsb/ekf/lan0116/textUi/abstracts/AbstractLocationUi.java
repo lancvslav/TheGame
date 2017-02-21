@@ -33,7 +33,7 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
                 .map(this.getContext().getLocalization()::get)
                 .toArray(String[]::new));
         if (choice >= 0 && choice < loc.getGateways().size()) {//CHECKING IF USER SELECTED CHOICE FROM OFFERED ONES
-            this.getContext().getEventPublisher().getResponse(new TravelEvent(loc.getGateways().get(choice)));
+            this.getContext().getSession().fireEvent(new TravelEvent(loc.getGateways().get(choice)));
         } else {
             System.out.println("\n" + this.get("textUi.AbstractLocationUi.you_hit"));
             List<FightResponse> selfDamage = new ArrayList<>();

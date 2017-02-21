@@ -34,7 +34,7 @@ class StreetUi extends AbstractLocationUi<Street> {
                 this.decisions();
                 break;
             case 1:
-                this.getContext().getEventPublisher().getResponse(new RestEvent());
+                this.getContext().getSession().fireEvent(new RestEvent());
                 break;
             case 2:
                 this.travel();

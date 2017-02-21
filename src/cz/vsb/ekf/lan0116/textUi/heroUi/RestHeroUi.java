@@ -33,7 +33,7 @@ public class RestHeroUi extends AbstractHeroUi {
                 System.out.println(this.getHero().getCurrentLifeEssence());
                 break;
             case 3:
-                this.getContext().getEventPublisher().getResponse(new GetReadyEvent());
+                this.getContext().getSession().fireEvent(new GetReadyEvent());
                 break;
         }
     }

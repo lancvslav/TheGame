@@ -23,7 +23,7 @@ public class TextEvents {
 
 
     public void playGame() {
-        Response responseNewGame = context.getEventPublisher().getResponse(new NewGameEvent());
+        Response responseNewGame = context.getSession().fireEvent(new NewGameEvent());
         if (!responseNewGame.isSuccess()) {
             System.out.println(this.get("textUi.textEvents.failed"));
             throw new ExceptionInInitializerError();

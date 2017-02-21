@@ -38,7 +38,7 @@ public class TournamentUi extends AbstractLocationUi {
                 return;
         }
         if (!hero.isAlive()) {
-            this.getContext().getEventPublisher().getResponse(new RespawnEvent());
+            this.getContext().getSession().fireEvent(new RespawnEvent());
         }
     }
 

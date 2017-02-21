@@ -61,7 +61,7 @@ public class Launcher {
         ResponseChannel responseChannel = new ResponseChannel();
         EventPublisher eventPublisher = new EventPublisher(hero, world, responseChannel);
         Session session = new Session(eventPublisher, responseChannel);
-        Context context = new Context(eventPublisher, hero, world, cache, scanner, localization, session);
+        Context context = new Context(hero, world, cache, scanner, localization, session);
         TextEvents textEvents = new TextEvents(context);
         textEvents.playGame();
     }

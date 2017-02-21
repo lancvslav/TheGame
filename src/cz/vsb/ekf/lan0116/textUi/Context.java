@@ -1,7 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi;
 
 import cz.vsb.ekf.lan0116.eventSystem.Session;
-import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
 import cz.vsb.ekf.lan0116.util.Localization;
 import cz.vsb.ekf.lan0116.util.ResourceCache;
 import cz.vsb.ekf.lan0116.world.World;
@@ -10,7 +9,6 @@ import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import java.util.Scanner;
 
 public class Context {
-    private final EventPublisher eventPublisher;
     private final Hero hero;
     private final World world;
     private final ResourceCache cache;
@@ -19,19 +17,14 @@ public class Context {
     private final Session session;
 
 
-    public Context(EventPublisher eventPublisher, Hero hero, World world, ResourceCache cache, Scanner scanner,
+    public Context(Hero hero, World world, ResourceCache cache, Scanner scanner,
                    Localization localization, Session session) {
-        this.eventPublisher = eventPublisher;
         this.hero = hero;
         this.world = world;
         this.cache = cache;
         this.scanner = scanner;
         this.localization = localization;
         this.session = session;
-    }
-
-    public EventPublisher getEventPublisher() {
-        return eventPublisher;
     }
 
     public Hero getHero() {

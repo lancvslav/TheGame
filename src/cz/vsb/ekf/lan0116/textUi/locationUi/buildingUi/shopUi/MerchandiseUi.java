@@ -45,11 +45,11 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
         if (choice >= (merchandiseList.size())) {
             System.out.println(this.get(TextUtil.quote(this.getLoc().getType()
                     .toString().toLowerCase() + "_unhappy")));
-            this.getContext().getEventPublisher().getResponse(new InteractEvent(this.getLoc().getMerchant()));
+            this.getContext().getSession().fireEvent(new InteractEvent(this.getLoc().getMerchant()));
         } else {
             Merchandise merchandiseToPurchase = this.getLoc().getMerchandise().get(choice);
             Response responseTrade = this.getContext().
-                    getEventPublisher().getResponse(new PurchaseEvent(merchandiseToPurchase));
+                    getSession().fireEvent(new PurchaseEvent(merchandiseToPurchase));
             if (responseTrade.isSuccess()) {
                 System.out.println(
                         this.get(TextUtil.quote(this.getLoc().getType().toString().toLowerCase() + "_happy")));
