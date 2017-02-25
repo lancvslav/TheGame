@@ -324,3 +324,4 @@ food;food
 melee;melee
 wand;wand
 ranged;ranged
+textUi.textEvents.to_attack;to attack

@@ -162,7 +162,7 @@ textUi.ArenaUi.tournament1;Lovec se stává kořistí
 textUi.ArenaUi.tournament2;Připrav se zmoknout
 textUi.ArenaUi.welcome;Vítej v aréně
 textUi.AttacksUi.close;Zavřít
-textUi.AttacksUi.choose;Vybrat tah
+textUi.AttacksUi.choose;Vybrat útok
 textUi.AttacksUi.select;Vybrat
 textUi.consumed;pozřeno
 textUi.cost;hodnota
@@ -324,3 +324,4 @@ food;jídlo
 melee;zbraň válečníků
 wand;zbraň mágů
 ranged;zbraň lovců
+textUi.textEvents.to_attack;jako útok

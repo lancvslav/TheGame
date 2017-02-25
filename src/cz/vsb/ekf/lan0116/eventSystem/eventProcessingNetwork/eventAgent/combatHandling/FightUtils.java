@@ -20,7 +20,7 @@ public class FightUtils {
             battleLog.add(new StaminaConsumption(attacker, staminaCost));
             float damageDealt = calculateDamage(powerOf(attacker, attack), defender.getDefense(), attack.getPenetration());
             defender.decreaseCurrentLifeEssence(damageDealt);
-            battleLog.add(new DamageInfliction(attacker, defender, damageDealt));
+            battleLog.add(new DamageInfliction(attacker, attack ,defender, damageDealt));
             if (attack.getProperty() != AttackProperty.NONE) {
                 switch (attack.getProperty()) {
                     case LIFESTEAL:

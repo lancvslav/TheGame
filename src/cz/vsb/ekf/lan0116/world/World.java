@@ -83,7 +83,7 @@ public class World {
         Location.link(startLocation, grocery);
         Location.link(startLocation, swiftDrink);
         Location.link(startLocation, tavern);
-        Location.link(startLocation, arena);
+        Location.link(startLocation, battleQuarter);
 
         //TAVERN -> BATTLE QUARTER
         Location.link(tavern, tavernBackyard);
