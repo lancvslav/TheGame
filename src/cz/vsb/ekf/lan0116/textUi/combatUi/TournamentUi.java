@@ -1,11 +1,11 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
+import cz.vsb.ekf.lan0116.eventSystem.events.combat.ProceedEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.RespawnEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
-import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
 
 public class TournamentUi extends AbstractLocationUi {
 
@@ -26,15 +26,19 @@ public class TournamentUi extends AbstractLocationUi {
         }
         System.out.println("\n" + this.get("textUi.TournamentUi.next") + " " + this.get(currentEnemy.getName()));
         switch (this.choice(
-                this.get("texUi.TournamentUi.pussyout"),
+                this.get("texUi.TournamentUi.pussy_out"),
                 this.get("texUi.TournamentUi.proceed"))) {
             case 0:
                 System.out.println("\n" + this.get("texUi.TournamentUi.coward"));
+                System.out.println(this.get("textUi.StreetUi.paths") + ":");
+                for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
+                    System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
+                }
                 this.travel();
                 return;
             case 1:
                 System.out.println();
-                this.getContext().getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+                this.getContext().getSession().fireEvent(new ProceedEvent());
                 return;
         }
         if (!hero.isAlive()) {

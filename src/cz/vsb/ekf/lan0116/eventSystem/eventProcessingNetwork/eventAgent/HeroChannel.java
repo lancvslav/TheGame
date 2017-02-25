@@ -78,6 +78,9 @@ public class HeroChannel extends EventHandler {
                     return new Response(TravelFailure.NO_GATEWAY);
                 }
                 this.getHero().getHeroInteraction().setPosition(travelEvent.getGateway().getTarget());
+                LinkedList<Creature> emptyQueue = new LinkedList<>();
+                this.getHero().getHeroInteraction().setEnemyQueue(emptyQueue);
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case PURCHASE:
                 PurchaseEvent purchaseEvent = (PurchaseEvent) event;

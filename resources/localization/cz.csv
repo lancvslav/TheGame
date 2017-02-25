@@ -170,7 +170,7 @@ textUi.current_location0;Stojíš v
 textUi.current_location1;Nacházíš se v
 textUi.current_location2;Jsi v
 textUi.FightUi.attacks;Útoky
-textUi.FightUi.facing;Čelíš
+textUi.FightUi.facing;Proti tobě stojí
 textUi.FightUi.inventory;Inventář
 textUi.FightUi.try_flee;Pokusit se uprchnout
 textUi.HeroCreatinUi.new_game.another;... nebo pouhá další loutka, kterou sem osud zavál.
@@ -182,7 +182,7 @@ textUi.HeroCreatinUi.new_game.prove;Nyní jdi, dokaž, že nejsi pouhá loutka, 
 textUi.HeroCreationUi.kind_of_man;Na co se cítíš?
 textUi.HeroCreationUi.name0;Jaké je tvé ctěné jméno?
 textUi.HeroCreationUi.name1;Prosím, sděl mi jak tě mám nazývat
-textUi.HeroCreationUi.wields;tříme
+textUi.HeroCreationUi.wields;třímeš
 textUi.HeroCreationUi.new_game.expecting;Očekával jsem tě.
 textUi.HeroCreationUi.pleasure;Vítečně! Rád tě poznávám, Poseroutko!
 textUi.HeroCreationUi.poop0;Řkul jsi 'Poseroutka', rozuměl jsem správně?
@@ -206,7 +206,7 @@ textUi.InventoryUi.really1;? Už to nezískáš zpět
 textUi.InventoryUi.replenish;obnovující hodnota
 textUi.InventoryUi.type;typ
 textUi.InventoryUi.value;hodnota
-textUi.InventoryUi.which_one;Který?
+textUi.InventoryUi.which_one;Zvol
 textUi.InventoryUi.wielding;tříme
 textUi.loation_decision0;Hm?
 textUi.loation_decision1;Ano, vládče?
@@ -280,7 +280,7 @@ textUi.TavernUi.food;Nabídka jídel
 textUi.TavernUi.offer_drink;Čím bys chtěl ukončit své trápení žízní?
 textUi.TavernUi.offer_food;Čím bys chtěl ukončit své trápení hladem?
 textUi.TavernUi.rumor;Pomluvy
-textUi.textEvents.damage_to;poškození
+textUi.textEvents.damage_to;poškození do:
 textUi.textEvents.dealt;udělil
 textUi.textEvents.died;mrtev
 textUi.textEvents.failed;Nepodř?ilo se načíst hru
@@ -294,7 +294,7 @@ textUi.textEvents.YOU_DIED;ZHYNULS
 textUi.TournamentUi.next;Následující nepřítel:
 texUi.TournamentUi.coward;Zbabělče!
 texUi.TournamentUi.proceed;Pokračovat
-texUi.TournamentUi.pussyout;Vycouvat
+texUi.TournamentUi.pussy_out;Vycouvat
 texUi.TournamentUi.won;Vyhráls!
 world.arena.arena;aréna
 world.building.shop.consumable_shop.grocery;potraviny

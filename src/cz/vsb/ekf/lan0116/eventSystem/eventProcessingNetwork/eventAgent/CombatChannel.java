@@ -62,7 +62,7 @@ public class CombatChannel extends EventHandler {
                 queue.add(engageEvent.getEnemy());
                 hero.getHeroInteraction().setEnemyQueue(queue);
                 hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
-                return null;
+                return Response.SUCCESS;
             case FLEE:
                 if (hero.getCurrentStamina() < 3) {
                     return new Response(CombatFailure.FLEE_WEAK);
@@ -71,6 +71,14 @@ public class CombatChannel extends EventHandler {
                     return new Response(CombatFailure.FLEE_DISABLED);
                 }
                 hero.getHeroInteraction().setEnemyQueue(null);
+                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                return Response.SUCCESS;
+            case PROCEED:
+                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+                return Response.SUCCESS;
+            case PUSSY_OUT:
+                LinkedList<Creature> emptyQueue = new LinkedList<>();
+                hero.getHeroInteraction().setEnemyQueue(emptyQueue);
                 hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             default:

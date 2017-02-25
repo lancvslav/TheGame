@@ -36,10 +36,4 @@ public class Weapon extends Merchandise {
     public WeaponType getType() {
         return (WeaponType) super.getItemType();
     }
-
-    @Override
-    public String toString() {
-        return "testing weapon to string";
-    }
-
 }

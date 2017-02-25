@@ -294,7 +294,7 @@ textUi.textEvents.YOU_DIED;YOU DIED
 textUi.TournamentUi.next;Next enemy:
 texUi.TournamentUi.coward;You coward!
 texUi.TournamentUi.proceed;Proceed
-texUi.TournamentUi.pussyout;Pussy out
+texUi.TournamentUi.pussy_out;Pussy out
 texUi.TournamentUi.won;You won.
 world.arena.arena;arena
 world.building.shop.consumable_shop.grocery;grocery

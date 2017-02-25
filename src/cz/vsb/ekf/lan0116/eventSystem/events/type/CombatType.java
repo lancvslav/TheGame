@@ -8,8 +8,8 @@ public enum CombatType implements EventType {
     ATTACK_MOVE,
     ENGAGE,
     FLEE,
-    HEAL,
-    STAMINA_REPLENISHMENT,
+    PROCEED,
+    PUSSY_OUT,
     /**/;
 
     @Override

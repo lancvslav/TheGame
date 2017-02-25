@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.combatUi;
 
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.GetReadyEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.SignInEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
@@ -33,6 +34,7 @@ public class ArenaUi extends AbstractLocationUi {
                 for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
                     System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
                 }
+                this.getContext().getSession().fireEvent(new GetReadyEvent());
                 this.travel();
                 break;
             case 1:
