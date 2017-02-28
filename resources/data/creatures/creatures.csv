@@ -1,6 +1,6 @@
 enemies.bandit;4;9;2;5;;item.merchandise.weapon.melee.club;WARRIOR;humanoid
 enemies.basilisk;8;4;8;0;attack.blind,;;WARRIOR;beast
-enemies.bastard;3;0;3;4;;;WARRIOR;humanoid
+enemies.bastard;3;0;3;4;;item.merchandise.weapon.melee.bastard_sword;WARRIOR;humanoid
 enemies.bear;15;20;6;0;attack.bleed,attack.crushing_blow;;WARRIOR;animal
 enemies.blind_wanderer;4;4;4;1;attack.poison_mist;item.merchandise.weapon.wand.staff_of_darkness;SORCERER;humanoid
 enemies.cat;2;2;3;0;attack.blind,;;WARRIOR;animal

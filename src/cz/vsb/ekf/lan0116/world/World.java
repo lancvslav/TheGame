@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.world;
 
+import cz.vsb.ekf.lan0116.combat.Tournament;
 import cz.vsb.ekf.lan0116.util.ResourceCache;
 import cz.vsb.ekf.lan0116.util.ResourceType;
 import cz.vsb.ekf.lan0116.util.ResourceUtil;
@@ -8,7 +9,6 @@ import cz.vsb.ekf.lan0116.util.cloner.creature.HumanoidCloning;
 import cz.vsb.ekf.lan0116.util.cloner.item.ConsumableCloning;
 import cz.vsb.ekf.lan0116.util.cloner.item.WeaponCloning;
 import cz.vsb.ekf.lan0116.world.creature.Animal;
-import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 import cz.vsb.ekf.lan0116.world.location.Location;
@@ -194,23 +194,26 @@ public class World {
         for (String id : humanoidString) {
             humanoids.add(humanoidCloning.clone(id));
         }
+        Tournament tournament0 = new Tournament("humanoids", humanoids);
 
         List<Animal> animals1 = new ArrayList<>();
         for (String id : anim1String) {
             animals1.add(animalCloning.clone(id));
         }
+        Tournament tournament1 = new Tournament("animals", animals1);
 
         List<Animal> animals2 = new ArrayList<>();
         for (String id : anim2String) {
             animals2.add(animalCloning.clone(id));
         }
+        Tournament tournament2 = new Tournament("fishes", animals2);
 
-        List<List<? extends Creature>> creatures = new ArrayList<>();
-        creatures.add(humanoids);
-        creatures.add(animals1);
-        creatures.add(animals2);
+        List<Tournament> tournaments = new ArrayList<>();
+        tournaments.add(tournament0);
+        tournaments.add(tournament1);
+        tournaments.add(tournament2);
 
-        arena = new Arena("world.arena.arena", creatures);
+        arena = new Arena("world.arena.arena", tournaments);
 
 
         //STREET START

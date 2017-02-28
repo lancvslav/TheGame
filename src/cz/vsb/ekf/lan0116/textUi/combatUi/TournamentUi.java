@@ -34,7 +34,6 @@ public class TournamentUi extends AbstractLocationUi {
                 for (int i = 0; i < this.getLoc().getGateways().size(); i++) {
                     System.out.println(this.get(this.getLoc().getGateways().get(i).getTarget().getName()));
                 }
-                this.travel();
                 return;
             case 1:
                 System.out.println();

@@ -66,7 +66,6 @@ public class HeroChannel extends EventHandler {
                 SignInEvent signInEvent = (SignInEvent) event;
                 LinkedList<Creature> queue = new LinkedList<>(signInEvent.getTournament().getEnemyList());
                 this.getHero().getHeroInteraction().setEnemyQueue(queue);
-                this.getHero().getHeroInteraction().setPosition(signInEvent.getTournament());
                 return Response.SUCCESS;
             case TRADE:
                 this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.SHOPPING);

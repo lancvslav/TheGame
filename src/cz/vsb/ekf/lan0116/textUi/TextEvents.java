@@ -7,6 +7,7 @@ import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.*;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
 import cz.vsb.ekf.lan0116.textUi.combatUi.FightUi;
+import cz.vsb.ekf.lan0116.textUi.combatUi.TournamentUi;
 import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.InteractUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
@@ -55,6 +56,9 @@ public class TextEvents {
                     break;
                 case INTERACTING:
                     new InteractUi(context).show();
+                    break;
+                case IN_TOURNAMENT:
+                    new TournamentUi(context).show();
                     break;
                 case READY:
                     locUi.show();

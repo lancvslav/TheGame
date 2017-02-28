@@ -1,23 +1,26 @@
 package cz.vsb.ekf.lan0116.combat;
 
 import cz.vsb.ekf.lan0116.world.creature.Creature;
-import cz.vsb.ekf.lan0116.world.location.Location;
-import cz.vsb.ekf.lan0116.world.location.type.ArenaType;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tournament extends Location {
+public class Tournament {
 
-    private List<? extends Creature> enemyList;
+    private final List<? extends Creature> enemyList;
+
+    private final String name;
 
     /**
      * Tournament loads from .txt enemies based of type given in parameter
      */
-    public Tournament(List<? extends Creature> enemyList) {
-        super("arena", ArenaType.TOURNAMENT);
-        this.enemyList = new ArrayList<>();
-        this.enemyList = enemyList;
+    public Tournament(String name, List<? extends Creature> enemyList) {
+        this.name = name;
+        this.enemyList = new ArrayList<>(enemyList);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<? extends Creature> getEnemyList() {

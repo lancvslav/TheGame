@@ -50,6 +50,7 @@ public class HeroInteraction {
     public enum HeroStatus {
         IN_COMBAT,
         INTERACTING,
+        IN_TOURNAMENT,
         READY,
         RESTING,
         SHOPPING,
