@@ -40,7 +40,9 @@ public class Humanoid extends Creature {
     @Override
     public List<Attack> getAttacks() {
         List<Attack> list = new ArrayList<>();
-        list.addAll(weapon.getMoveSet());
+        if (weapon != null) {
+            list.addAll(weapon.getMoveSet());
+        }
         list.addAll(super.getAttacks());
         return list;
     }

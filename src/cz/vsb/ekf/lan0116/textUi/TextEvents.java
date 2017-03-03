@@ -81,13 +81,13 @@ public class TextEvents {
                 DamageInfliction damageInfliction = (DamageInfliction) response;
                 Attack attack = damageInfliction.getAttack();
                 String attackString = "";
-                if (!(attack == null)) {
+                if (attack != null) {
                     attackString = this.get(attack.getName());
                 }
                 String attacker = this.get(damageInfliction.getAttacker().getName());
                 String defender = this.get(damageInfliction.getDefender().getName());
                 float damage = damageInfliction.getDamageDealt();
-                if (!(attack == null)) {
+                if (attack != null) {
                     System.out.println(attacker + " " + this.get("textUi.textEvents.used") + " " + attackString + " "
                             + this.get("textUi.textEvents.to_attack"));
                 }
