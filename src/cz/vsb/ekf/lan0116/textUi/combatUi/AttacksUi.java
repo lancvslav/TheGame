@@ -43,18 +43,5 @@ public class AttacksUi extends AbstractHeroUi {
                 }
             }
         }
-//        if (this.getHero().getHeroInteraction().getStatus().equals(HeroInteraction.HeroStatus.IN_COMBAT)) {
-//            switch (this.choice(this.get("textUi.AttacksUi.select"),
-//                    this.get("textUi.AttacksUi.close"))) {
-//                case 0:
-//
-//                    String tempString = this.getContext().getScanner().nextLine();
-//                    int tempChoiceNumber = Integer.parseInt(tempString);
-//
-//                    break;
-//                case 1:
-//                    new FightUi(this.getContext()).decisions();
-//            }
-//        }
     }
 }
