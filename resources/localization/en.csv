@@ -1,4 +1,4 @@
-attac.emit_force;emit force
+attack.emit_force;emit force
 attack.backstab;backstab
 attack.bite;bite
 attack.bleed;bleed
@@ -173,12 +173,12 @@ textUi.FightUi.attacks;Attacks
 textUi.FightUi.facing;You are facing
 textUi.FightUi.inventory;Inventory
 textUi.FightUi.try_flee;Try to flee
-textUi.HeroCreatinUi.new_game.another;... or just another mere pawn, whom his desperate fate brought here.
-textUi.HeroCreatinUi.new_game.devour;Be careful out there. Lest this edge of the world devour thee. As it devoured many others.
-textUi.HeroCreatinUi.new_game.first;But first...
-textUi.HeroCreatinUi.new_game.fragile;I see. Now thou are frail and fragile. 
-textUi.HeroCreatinUi.new_game.perhaps;Perhaps... Art thou The chosen one?
-textUi.HeroCreatinUi.new_game.prove;Now go, prove thou art not just pawn, but The one who art we long awaiting.
+textUi.HeroCreationUi.new_game.another;... or just another mere pawn, whom his desperate fate brought here.
+textUi.HeroCreationUi.new_game.devour;Be careful out there. Lest this edge of the world devour thee. As it devoured many others.
+textUi.HeroCreationUi.new_game.first;But first...
+textUi.HeroCreationUi.new_game.fragile;I see. Now thou are frail and fragile.
+textUi.HeroCreationUi.new_game.perhaps;Perhaps... Art thou The chosen one?
+textUi.HeroCreationUi.new_game.prove;Now go, prove thou art not just pawn, but The one who art we long awaiting.
 textUi.HeroCreationUi.kind_of_man;What kind of man thou art?
 textUi.HeroCreationUi.name0;What is thy noble name, sir?
 textUi.HeroCreationUi.name1;Please, tell me how to call thee.
@@ -208,10 +208,10 @@ textUi.InventoryUi.type;type
 textUi.InventoryUi.value;value
 textUi.InventoryUi.which_one;Which one?
 textUi.InventoryUi.wielding;You are wielding
-textUi.loation_decision0;Would you rather
-textUi.loation_decision1;Do you want to
-textUi.loation_decision2;Well? What is the plan?
-textUi.loation_decision3;What are you going to do?
+textUi.location_decision0;Would you rather
+textUi.location_decision1;Do you want to
+textUi.location_decision2;Well? What is the plan?
+textUi.location_decision3;What are you going to do?
 textUi.location.just;It is just a
 textUi.menu.no;No
 textUi.menu.rest;Rest
@@ -240,7 +240,7 @@ textUi.resources.flee_disabled2;Can not escape once you have entered the arena
 textUi.resources.flee_weak0;You are too much of a baby even for an escape.
 textUi.resources.flee_weak1;Not enough stamina.
 textUi.resources.flee_weak2;Don't forget you need stamina to run.
-textUi.resources.flee0;You managed to flee. Cough cough... pushover, eh cough cough...
+textUi.resources.flee0;You managed to flee. Ahem ahem... pushover, eh ahem...
 textUi.resources.flee1;Unsuccessful coward successfully fled.
 textUi.resources.food_shop_happy0;Do not forget it in your pocket. It would mildew.
 textUi.resources.food_shop_happy1;The best is fresh. But you can keep it, for time of trouble.

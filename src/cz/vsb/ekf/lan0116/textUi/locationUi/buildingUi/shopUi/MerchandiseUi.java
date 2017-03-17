@@ -18,6 +18,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
 
     public MerchandiseUi(Context context) {
         super(context);
+        merchandiseList = this.getLoc().getMerchandise();
     }
 
     @Override
@@ -30,7 +31,6 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
      */
     @Override
     public void show() {
-        merchandiseList = this.getLoc().getMerchandise();
         this.printArray(merchandiseToArray(merchandiseList));
         //QUOTE SPECIFIED FOR CURRENT SHOP type
         System.out.println("\n" + this.get(TextUtil.quote(

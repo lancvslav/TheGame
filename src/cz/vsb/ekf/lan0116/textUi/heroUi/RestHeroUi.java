@@ -30,7 +30,8 @@ public class RestHeroUi extends AbstractHeroUi {
                 this.decisions();
                 break;
             case 2:
-                System.out.println(this.getHero().getCurrentLifeEssence());
+                System.out.println(this.getHero().getCurrentLifeEssence() + " " + this.get("") + " " +
+                        this.getHero().getCurrentStamina() + " " + this.get("textUi.textEvents.stamina"));
                 break;
             case 3:
                 this.getContext().getSession().fireEvent(new GetReadyEvent());

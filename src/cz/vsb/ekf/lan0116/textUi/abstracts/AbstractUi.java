@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.abstracts;
 
+import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.GiveUpEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.world.item.Item;
@@ -58,6 +59,24 @@ public abstract class AbstractUi implements Ui {
         }
     }
 
+    protected String[] attacksToArray(List<Attack> attacks) {
+        String[] choicesArray = new String[attacks.size()];
+        for (int i = 0; i < attacks.size(); i++) {
+            choicesArray[i] = this.get(attacks.get(i).getName()) + ", " +
+                    this.get("textUi.textEvents.stamina") + " " + attacks.get(i).getStaminaConsumption();
+        }
+        return choicesArray;
+    }
+
+    protected String[] consumablesToArray(List<Merchandise> consumables) {
+        String[] choicesArray = new String[consumables.size()];
+        for (int i = 0; i < consumables.size(); i++) {
+            choicesArray[i] = this.get(consumables.get(i).getName()) +
+                    ", " + this.get("textUi.InventoryUi.value") + ": "
+                    + consumables.get(i).getCost();
+        }
+        return choicesArray;
+    }
 
     /**
      * Convert list of item to Array of Strings
@@ -82,15 +101,6 @@ public abstract class AbstractUi implements Ui {
         return choicesArray;
     }
 
-    protected String[] consumablesToArray(List<Merchandise> consumables) {
-        String[] choicesArray = new String[consumables.size()];
-        for (int i = 0; i < consumables.size(); i++) {
-            choicesArray[i] = this.get(consumables.get(i).getName()) +
-                    ", " + this.get("textUi.InventoryUi.value") + ": "
-                    + consumables.get(i).getCost();
-        }
-        return choicesArray;
-    }
 
     protected String get(String keyFormat) {
         return this.getContext().getLocalization().get(keyFormat);

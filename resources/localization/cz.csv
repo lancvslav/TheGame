@@ -1,4 +1,4 @@
-attac.emit_force;vyslaní síly
+attack.emit_force;vyslaní síly
 attack.backstab;úder do zad
 attack.bite;kousnutí
 attack.bleed;krvácení
@@ -173,12 +173,12 @@ textUi.FightUi.attacks;Útoky
 textUi.FightUi.facing;Proti tobě stojí
 textUi.FightUi.inventory;Inventář
 textUi.FightUi.try_flee;Pokusit se uprchnout
-textUi.HeroCreatinUi.new_game.another;... nebo pouhá další loutka, kterou sem osud zavál.
-textUi.HeroCreatinUi.new_game.devour;Buď obezřetný. Aby tě tento svět nepohltil... Tak jak již pohltil mnoho jiných
-textUi.HeroCreatinUi.new_game.first;Ale nejdřív
-textUi.HeroCreatinUi.new_game.fragile;Nyní jsi křehký s slabý
-textUi.HeroCreatinUi.new_game.perhaps;Možna... Jsi ten vyvoelný
-textUi.HeroCreatinUi.new_game.prove;Nyní jdi, dokaž, že nejsi pouhá loutka, ale Ten, koho již dlouho očekáváme
+textUi.HeroCreationUi.new_game.another;... nebo pouhá další loutka, kterou sem osud zavál.
+textUi.HeroCreationUi.new_game.devour;Buď obezřetný. Aby tě tento svět nepohltil... Tak jak již pohltil mnoho jiných
+textUi.HeroCreationUi.new_game.first;Ale nejdřív
+textUi.HeroCreationUi.new_game.fragile;Nyní jsi křehký s slabý
+textUi.HeroCreationUi.new_game.perhaps;Možna... Jsi ten vyvoelný
+textUi.HeroCreationUi.new_game.prove;Nyní jdi, dokaž, že nejsi pouhá loutka, ale Ten, koho již dlouho očekáváme
 textUi.HeroCreationUi.kind_of_man;Na co se cítíš?
 textUi.HeroCreationUi.name0;Jaké je tvé ctěné jméno?
 textUi.HeroCreationUi.name1;Prosím, sděl mi jak tě mám nazývat
@@ -208,10 +208,10 @@ textUi.InventoryUi.type;typ
 textUi.InventoryUi.value;hodnota
 textUi.InventoryUi.which_one;Zvol
 textUi.InventoryUi.wielding;tříme
-textUi.loation_decision0;Hm?
-textUi.loation_decision1;Ano, vládče?
-textUi.loation_decision2;Jaký je plán?
-textUi.loation_decision3;Kam bys chtěl jít?
+textUi.location_decision0;Hm?
+textUi.location_decision1;Ano, vládče?
+textUi.location_decision2;Jaký je plán?
+textUi.location_decision3;Kam bys chtěl jít?
 textUi.location.just;Je to jen
 textUi.menu.no;Ne
 textUi.menu.rest;Spočnout
