@@ -6,6 +6,7 @@ import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextEvents;
+import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.textUi.heroUi.HeroCreationUi;
 import cz.vsb.ekf.lan0116.util.*;
 import cz.vsb.ekf.lan0116.world.World;
@@ -43,6 +44,7 @@ public class Launcher {
                 break;
         }
         Localization localization = l;
+        TextUtil.newGame(localization);
 
         Map<String, Attack> attackMap = ResourceToMapUtil.createAttackMap(ResourceUtil
                 .getResource(ResourceType.ATTACK_ALL, "attacks"));

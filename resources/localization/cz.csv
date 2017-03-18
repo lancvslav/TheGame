@@ -173,11 +173,11 @@ textUi.FightUi.attacks;Útoky
 textUi.FightUi.facing;Proti tobě stojí
 textUi.FightUi.inventory;Inventář
 textUi.FightUi.try_flee;Pokusit se uprchnout
-textUi.HeroCreationUi.new_game.another;... nebo pouhá další loutka, kterou sem osud zavál.
-textUi.HeroCreationUi.new_game.devour;Buď obezřetný. Aby tě tento svět nepohltil... Tak jak již pohltil mnoho jiných
+textUi.HeroCreationUi.new_game.another;... nebo pouhá další loutka ovládaná rukou osudu.
+textUi.HeroCreationUi.new_game.devour;Buď obezřetný. Aby tě tento svět nepohltil... Tak, jak již pohltil mnoho jiných
 textUi.HeroCreationUi.new_game.first;Ale nejdřív
 textUi.HeroCreationUi.new_game.fragile;Nyní jsi křehký s slabý
-textUi.HeroCreationUi.new_game.perhaps;Možna... Jsi ten vyvoelný
+textUi.HeroCreationUi.new_game.perhaps;Možná... Jsi ten vyvolený
 textUi.HeroCreationUi.new_game.prove;Nyní jdi, dokaž, že nejsi pouhá loutka, ale Ten, koho již dlouho očekáváme
 textUi.HeroCreationUi.kind_of_man;Na co se cítíš?
 textUi.HeroCreationUi.name0;Jaké je tvé ctěné jméno?
