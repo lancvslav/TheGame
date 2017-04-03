@@ -31,6 +31,10 @@ public abstract class AbstractUi implements Ui {
         this.printArray(choices);
         System.out.println();
         String choice = this.getContext().getScanner().nextLine();
+        while(choice.equals("")||choice.equals(" ")){
+            System.out.println("textUi.abstractUi.what");
+            choice = this.getContext().getScanner().nextLine();
+        }
         if (this.getContext().getLocalization().get("textUi.AbstractUi.flee").equals(choice)) {
             context.getSession().fireEvent(new GiveUpEvent());
             throw new RuntimeException(this.get("textUi.AbstractUi.fled") + "\n");

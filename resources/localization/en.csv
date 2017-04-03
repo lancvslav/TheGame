@@ -186,7 +186,7 @@ textUi.HeroCreationUi.wields;wields
 textUi.HeroCreationUi.new_game.expecting;I have been expecting thee...
 textUi.HeroCreationUi.pleasure;Wonderful. Pleasure to meet thee, Little Poop
 textUi.HeroCreationUi.poop0;Thou said 'Little Poop', is that right?
-textUi.HeroCreationUi.poop1;0 Yes 1 No
+textUi.HeroCreationUi.poop1;(Y) Yes/(N) No
 textUi.HeroCreationUi.ranger;1. Swift ranger. Very agile, moderate damageRatio done, average vitality.
 textUi.HeroCreationUi.sorcerer;2. Wise caster. Posses great powers, but easily smashed.
 textUi.HeroCreationUi.warrior;0. Brave warrior. High survivability, mediocre damageRatio. Able to wield shield.
@@ -325,3 +325,4 @@ melee;melee
 wand;wand
 ranged;ranged
 textUi.textEvents.to_attack;to attack
+textUi.abstractUi.what;What did you say?

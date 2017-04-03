@@ -186,7 +186,7 @@ textUi.HeroCreationUi.wields;třímeš
 textUi.HeroCreationUi.new_game.expecting;Očekával jsem tě.
 textUi.HeroCreationUi.pleasure;Vítečně! Rád tě poznávám, Poseroutko!
 textUi.HeroCreationUi.poop0;Řkul jsi 'Poseroutka', rozuměl jsem správně?
-textUi.HeroCreationUi.poop1;0 Ano 1 Ne
+textUi.HeroCreationUi.poop1;(A) Ano/(N) Ne
 textUi.HeroCreationUi.ranger;1. Rychlý lovec. Ohebný, průměrné poškození, průměrná odolnost
 textUi.HeroCreationUi.sorcerer;2. Moudrý kouzelník. Vlastníkem nezměrné síly mysli, ale složí ho i slabý vánek
 textUi.HeroCreationUi.warrior;0. Statný válečník. Vysoká odolnost, podprůměrné poškození
@@ -325,3 +325,4 @@ melee;zbraň válečníků
 wand;zbraň mágů
 ranged;zbraň lovců
 textUi.textEvents.to_attack;jako útok
+textUi.abstractUi.what;Cos říkal?

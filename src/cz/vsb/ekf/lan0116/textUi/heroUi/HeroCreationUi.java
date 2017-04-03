@@ -18,7 +18,7 @@ public class HeroCreationUi {
      * @return Returns Hero created from users input
      */
     public static Hero creationOfHero(Scanner scanner, Localization localization) {
-
+//
 //        TextUtil.newGame(localization);
         String nameOfHero;
         System.out.println(localization.get("textUi.HeroCreationUi.name0"));
