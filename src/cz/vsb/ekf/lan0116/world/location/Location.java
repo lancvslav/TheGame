@@ -40,7 +40,7 @@ public class Location {
     }
 
     /**
-     * Binds two locations together via Gateway
+     * Binds two locations together via Gateway, this is done in world initialization
      *
      * @param loc1
      * @param loc2
