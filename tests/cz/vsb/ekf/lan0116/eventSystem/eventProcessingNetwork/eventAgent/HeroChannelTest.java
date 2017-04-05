@@ -45,8 +45,8 @@ class HeroChannelTest {
         heroChannel.handleEvent(equipEvent);
 
         String expectName = "Mock bow";
-        String assertName = hero.getWeapon().getName();
-        assertEquals(expectName, assertName);
+        String actualName = hero.getWeapon().getName();
+        assertEquals(expectName, actualName);
     }
 
 
@@ -58,8 +58,8 @@ class HeroChannelTest {
         heroChannel.handleEvent(getReadyEvent);
 
         HeroInteraction.HeroStatus expectStatus = HeroInteraction.HeroStatus.READY;
-        HeroInteraction.HeroStatus assertStatus = HeroInteraction.HeroStatus.READY;
-        assertEquals(expectStatus, assertStatus);
+        HeroInteraction.HeroStatus actualStatus = hero.getHeroInteraction().getStatus();
+        assertEquals(expectStatus, actualStatus);
     }
 
     @Test
@@ -73,8 +73,8 @@ class HeroChannelTest {
         heroChannel.handleEvent(signInEvent);
 
         String expectCreature = "Mockster";
-        String assertCreature = hero.getHeroInteraction().getEnemyQueue().peek().getName();
-        assertEquals(expectCreature, assertCreature);
+        String actualCreature = hero.getHeroInteraction().getEnemyQueue().peek().getName();
+        assertEquals(expectCreature, actualCreature);
     }
 
     @Test
@@ -89,7 +89,7 @@ class HeroChannelTest {
         heroChannel.handleEvent(travelEvent);
 
         String expectLocation = "destination_fucked";
-        String assertLocation = hero.getHeroInteraction().getPosition().getName();
-        assertEquals(expectLocation, assertLocation);
+        String actualLocation = hero.getHeroInteraction().getPosition().getName();
+        assertEquals(expectLocation, actualLocation);
     }
 }
