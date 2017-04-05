@@ -1,8 +1,6 @@
 package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent;
 
 import cz.vsb.ekf.lan0116.combat.Tournament;
-import cz.vsb.ekf.lan0116.eventSystem.Session;
-import cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.EventPublisher;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.GetReadyEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.SignInEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.TravelEvent;
@@ -30,78 +28,68 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HeroChannelTest {
 
     private Hero hero;
-    HeroChannel heroChannel;
-    private EventPublisher publisher;
-    private Session session;
-
-    EquipEvent equipEvent;
-    GetReadyEvent getReadyEvent;
-    SignInEvent signInEvent;
-    TravelEvent travelEvent;
+    private HeroChannel heroChannel;
 
     @BeforeEach
     void setUp() {
-        //preparation
         hero = new Ranger("Tester");
-        publisher = new EventPublisher(hero, null, null);
-        session = new Session(publisher, null);
         heroChannel = new HeroChannel(hero, null, null);
+    }
 
-        //Equip start
+    @Test
+    void testEquipEvent_IsEquipped() {
         Weapon weapon = new Weapon("Mock bow", WeaponType.RANGED, 1, 1, null);
         hero.getInventory().addItem(weapon);
-        equipEvent = new EquipEvent(weapon);
-        //equip end
+        EquipEvent equipEvent = new EquipEvent(weapon);
 
-        //Get ready start
-        getReadyEvent = new GetReadyEvent();
-        //get ready end
+        heroChannel.handleEvent(equipEvent);
 
-        //Sign in start
+        String expectName = "Mock bow";
+        String assertName = hero.getWeapon().getName();
+        assertEquals(expectName, assertName);
+    }
+
+
+    @Test
+    void testGetReadyEvent_IsReady() {
+        GetReadyEvent getReadyEvent = new GetReadyEvent();
+        hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+
+        heroChannel.handleEvent(getReadyEvent);
+
+        HeroInteraction.HeroStatus expectStatus = HeroInteraction.HeroStatus.READY;
+        HeroInteraction.HeroStatus assertStatus = HeroInteraction.HeroStatus.READY;
+        assertEquals(expectStatus, assertStatus);
+    }
+
+    @Test
+    void testSignInEvent_HasEnemy() {
         Creature enemy = new Creature("Mockster", CreatureClass.WARRIOR, 10, 10, 10, 10);
         List<Creature> enemyList = new ArrayList<>();
         enemyList.add(enemy);
         Tournament tournament = new Tournament("Testament", enemyList);
-        signInEvent = new SignInEvent(tournament);
-        //sign in end
+        SignInEvent signInEvent = new SignInEvent(tournament);
 
-        //Travel start
+        heroChannel.handleEvent(signInEvent);
+
+        String expectCreature = "Mockster";
+        String assertCreature = hero.getHeroInteraction().getEnemyQueue().peek().getName();
+        assertEquals(expectCreature, assertCreature);
+    }
+
+    @Test
+    void testTravelEvent_reachedDestination() {
         Location start = new Street("start", StreetType.SQUARE);
         Location destination = new Street("destination_fucked", StreetType.SQUARE);
         Location.link(start, destination);
         Gateway gateway = start.getGateways().get(0);
         hero.getHeroInteraction().setPosition(start);
-        travelEvent = new TravelEvent(gateway);
-        //travel end
-    }
+        TravelEvent travelEvent = new TravelEvent(gateway);
 
-    @Test
-    void handleEvent() {
-        //Equip test
-        heroChannel.handleEvent(equipEvent);
-        String expectName = "Mock bow";
-        String assertName = hero.getWeapon().getName();
-        assertEquals(expectName, assertName);
-
-        //Get ready test
-        hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
-        heroChannel.handleEvent(getReadyEvent);
-        HeroInteraction.HeroStatus expectStatus = HeroInteraction.HeroStatus.READY;
-        HeroInteraction.HeroStatus assertStatus = HeroInteraction.HeroStatus.READY;
-        assertEquals(expectStatus, assertStatus);
-
-        //Sign in test
-        heroChannel.handleEvent(signInEvent);
-        String expectCreature = "Mockster";
-        String assertCreature = hero.getHeroInteraction().getEnemyQueue().peek().getName();
-        assertEquals(expectCreature, assertCreature);
-
-        //Test travel
         heroChannel.handleEvent(travelEvent);
+
         String expectLocation = "destination_fucked";
         String assertLocation = hero.getHeroInteraction().getPosition().getName();
         assertEquals(expectLocation, assertLocation);
-
     }
-
 }
