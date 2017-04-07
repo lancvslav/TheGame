@@ -21,27 +21,27 @@ public class Launcher {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in, "UTF-8");
-        System.out.println("Language/Jazyk");
-        String pref;
-        do {
-            System.out.println("en/cz");
-            pref = scanner.nextLine();
-        } while (!(pref.equals("en") || pref.equals("cz")));
+//        System.out.println("Language/Jazyk");
+//        String pref;
+//        do {
+//            System.out.println("en/cz");
+//            pref = scanner.nextLine();
+//        } while (!(pref.equals("en") || pref.equals("cz")));
         Localization l;
-        switch (pref) {
-            case "en":
+//        switch (pref) {
+//            case "en":
                 l = new Localization
                         (ResourceUtil.getResource(ResourceType.LOCALIZATION, "en"));
-                break;
-            case "cz":
-                l = new Localization
-                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "cz"));
-                break;
-            default:
-                l = new Localization
-                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "en"));
-                break;
-        }
+//                break;
+//            case "cz":
+//                l = new Localization
+//                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "cz"));
+//                break;
+//            default:
+//                l = new Localization
+//                        (ResourceUtil.getResource(ResourceType.LOCALIZATION, "en"));
+//                break;
+//        }
         Localization localization = l;
 
         Map<String, Attack> attackMap = ResourceToMapUtil.createAttackMap(ResourceUtil
