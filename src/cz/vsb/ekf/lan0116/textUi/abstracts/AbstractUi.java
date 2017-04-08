@@ -3,6 +3,7 @@ package cz.vsb.ekf.lan0116.textUi.abstracts;
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.GiveUpEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
+import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.world.item.Item;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
@@ -31,7 +32,7 @@ public abstract class AbstractUi implements Ui {
         this.printArray(choices);
         System.out.println();
         String choice = this.getContext().getScanner().nextLine();
-        while(choice.equals("")||choice.equals(" ")){
+        while (choice.equals("") || choice.equals(" ")) {
             System.out.println("textUi.abstractUi.what");
             choice = this.getContext().getScanner().nextLine();
         }
@@ -48,6 +49,17 @@ public abstract class AbstractUi implements Ui {
             choice = this.getContext().getScanner().nextLine();
         }
         return Integer.parseInt(choice);
+    }
+
+    public void talk(String... dialogue) {
+        for (int i = 0, folder = 0; i < dialogue.length - 1; i++, folder++) {
+            System.out.println(dialogue[i]);
+            TextUtil.sleep(100);
+            if (folder == 26) {
+                System.out.println();
+                folder = 0;
+            }
+        }
     }
 
     /**

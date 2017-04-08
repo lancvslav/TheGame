@@ -52,9 +52,9 @@ enemies.vampire_fish;4;10;6;0;attack.bite,;;WARRIOR;animal
 enemies.white_shark;12;20;15;0;attack.bite,;;WARRIOR;animal
 enemies.wolf;5;4;6;0;attack.bite,;;WARRIOR;animal
 enemies.zombie;1;4;1;0;;;WARRIOR;beast
-merchant.weapons.blacksmith;10;5;5;5;;item.weapon.blacksmith_hammer;WARRIOR;humanoid
-merchant.weapons.hunter;8;4;7;3;;item.merchandise.weapon.ranged.hunters_bow;RANGER;humanoid
-merchant.weapons.wizard;7;6;10;1;;item.merchandise.weapon.wand.staff;SORCERER;humanoid
-merchant.consumables.drink_shop.joe;4;8;2;1;;item.weapon.broken_bottle;WARRIOR;humanoid
-merchant.consumables.food_shop.gordon;4;8;2;1;;item.weapon.dry_bread;WARRIOR;humanoid
-innkeeper.tavern.gwen;5;9;3;2;;item.merchandise.weapon.melee.dagger;WARRIOR;humanoid
+npc.merchant.weapons.blacksmith;10;5;5;5;;item.weapon.blacksmith_hammer;WARRIOR;humanoid
+npc.merchant.weapons.hunter.Scariel;8;4;7;3;;item.merchandise.weapon.ranged.hunters_bow;RANGER;humanoid
+npc.merchant.weapons.wizard;7;6;10;1;;item.merchandise.weapon.wand.staff;SORCERER;humanoid
+npc.merchant.consumables.drink_shop.joe;4;8;2;1;;item.weapon.broken_bottle;WARRIOR;humanoid
+npc.merchant.consumables.food_shop.gordon;4;8;2;1;;item.weapon.dry_bread;WARRIOR;humanoid
+npc.innkeeper.tavern.gwen;5;9;3;2;;item.merchandise.weapon.melee.dagger;WARRIOR;humanoid

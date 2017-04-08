@@ -11,6 +11,7 @@ import java.util.List;
 public class Humanoid extends Creature {
 
     private Weapon weapon;
+    private Dialogue dialogue;
 
     public Humanoid(String name, CreatureClass clazz,
                     float maxLifeEssence, float maxStamina, float attackPower, float defense) {

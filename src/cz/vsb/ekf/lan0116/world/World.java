@@ -124,7 +124,7 @@ public class World {
             archeryMerch.add(weaponCloning.clone(id));
         }
         archery = new Archery("world.building.shop.weapon_shop.archery",
-                humanoidCloning.clone("merchant.weapons.hunter"), archeryMerch);
+                humanoidCloning.clone("npc.merchant.weapons.hunter.Scariel"), archeryMerch);
 
         //blacksmith init
         List<String> blacksmithString = ResourceUtil.getResource(ResourceType.WEAPON_SHOP,
@@ -134,7 +134,7 @@ public class World {
             blaskmithMerch.add(weaponCloning.clone(id));
         }
         blacksmith = new Blacksmith("world.building.shop.weapon_shop.blacksmith",
-                humanoidCloning.clone("merchant.weapons.blacksmith"), blaskmithMerch);
+                humanoidCloning.clone("npc.merchant.weapons.blacksmith"), blaskmithMerch);
 
         //wand shop init
         List<String> wandShopString = ResourceUtil.getResource(ResourceType.WEAPON_SHOP,
@@ -144,7 +144,7 @@ public class World {
             wandShopMerch.add(weaponCloning.clone(id));
         }
         wandShop = new WandShop("world.building.shop.weapon_shop.wand_shop",
-                humanoidCloning.clone("merchant.weapons.wizard"), wandShopMerch);
+                humanoidCloning.clone("npc.merchant.weapons.wizard"), wandShopMerch);
         //WEAPON SHOP END
 
         //CONSUMABLE SHOP START
@@ -156,7 +156,7 @@ public class World {
             groceryMerch.add(consumableCloning.clone(id));
         }
         grocery = new FoodShop("world.building.shop.consumable_shop.grocery",
-                humanoidCloning.clone("merchant.consumables.food_shop.gordon"), groceryMerch);
+                humanoidCloning.clone("npc.merchant.consumables.food_shop.gordon"), groceryMerch);
 
         //swift drink init
         List<String> swiftString = ResourceUtil.getResource(ResourceType.CONSUMABLE_SHOP,
@@ -166,7 +166,7 @@ public class World {
             swiftMerch.add(consumableCloning.clone(id));
         }
         swiftDrink = new DrinkShop("world.building.shop.consumable_shop.swift_drink",
-                humanoidCloning.clone("merchant.consumables.drink_shop.joe"), swiftMerch);
+                humanoidCloning.clone("npc.merchant.consumables.drink_shop.joe"), swiftMerch);
 
         //tavern init
         List<String> drinkString = ResourceUtil.getResource(ResourceType.CONSUMABLE_SHOP,
@@ -181,7 +181,7 @@ public class World {
         for (String id : foodString) {
             foodMerch.add(consumableCloning.clone(id));
         }
-        tavern = new Tavern(humanoidCloning.clone("innkeeper.tavern.gwen"), drinkMerch, foodMerch);
+        tavern = new Tavern(humanoidCloning.clone("npc.innkeeper.tavern.gwen"), drinkMerch, foodMerch);
         //CONSUMABLE SHOP END
         //SHOP END
 
