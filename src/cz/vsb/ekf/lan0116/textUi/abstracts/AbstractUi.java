@@ -14,6 +14,9 @@ public abstract class AbstractUi implements Ui {
 
     private final Context context;
 
+    /**
+     * Abstract template for Ui
+     */
     protected AbstractUi(Context context) {
         this.context = context;
     }
@@ -26,7 +29,7 @@ public abstract class AbstractUi implements Ui {
      * Prints numbered choices to make
      *
      * @param choices, varargs
-     * @return Integer, number representing users choice
+     * @return Integer, number representing player choice
      */
     protected int choice(String... choices) {
         this.printArray(choices);
@@ -51,6 +54,9 @@ public abstract class AbstractUi implements Ui {
         return Integer.parseInt(choice);
     }
 
+    /**
+     * Prints dialogue with delays between letters, so it appears that someone is actually talking
+     */
     public void talk(String... dialogue) {
         for (int i = 0, folder = 0; i < dialogue.length - 1; i++, folder++) {
             System.out.println(dialogue[i]);
@@ -75,6 +81,9 @@ public abstract class AbstractUi implements Ui {
         }
     }
 
+    /**
+     * Prints indexed attacks
+     */
     protected String[] attacksToArray(List<Attack> attacks) {
         String[] choicesArray = new String[attacks.size()];
         for (int i = 0; i < attacks.size(); i++) {
@@ -84,6 +93,9 @@ public abstract class AbstractUi implements Ui {
         return choicesArray;
     }
 
+    /**
+     * Prints indexed consumables
+     */
     protected String[] consumablesToArray(List<Merchandise> consumables) {
         String[] choicesArray = new String[consumables.size()];
         for (int i = 0; i < consumables.size(); i++) {
@@ -108,6 +120,9 @@ public abstract class AbstractUi implements Ui {
         return choicesArray;
     }
 
+    /**
+     * Prints indexed merchandise with cost
+     */
     protected String[] merchandiseToArray(List<Merchandise> merchandise) {
         String[] choicesArray = new String[merchandise.size()];
         for (int i = 0; i < merchandise.size(); i++) {
@@ -118,6 +133,9 @@ public abstract class AbstractUi implements Ui {
     }
 
 
+    /**
+     * 'Translates' id to localized string
+     */
     protected String get(String keyFormat) {
         return this.getContext().getLocalization().get(keyFormat);
     }

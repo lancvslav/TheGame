@@ -89,7 +89,7 @@ public class ResourceToMapUtil {
                     String weaponString = split[6];
                     Weapon weapon = weaponMap.get(weaponString);
                     creature = new Humanoid(name, creatureClass, maxHp, maxStamina, attackPower, defense, weapon);
-                    //assigning dialogue
+                    //assigning dialogue if exists reference to one
                     if (split.length >= 10) {
                         if (split[9] != null && (!split[9].equals(""))) {
                             List<String> dialogueList = ResourceUtil.getResource(ResourceType.DIALOGUE, split[9]);

@@ -1,10 +1,14 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi;
 
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.GetReadyEvent;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.TradeEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.TalkEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.TradeEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractMerchantUi;
 
+/**
+ * Shown when InteractEvent is triggered
+ */
 public class InteractUi extends AbstractMerchantUi {
     public InteractUi(Context context) {
         super(context);
@@ -15,13 +19,16 @@ public class InteractUi extends AbstractMerchantUi {
         this.decisions();
     }
 
+    /**
+     * Prints decisions: talk, trade, leave
+     */
     @Override
     protected void decisions() {
         switch (this.choice(this.get("textUi.InteractUi.talk"),
                 this.get("textUi.InteractUi.trade"),
                 this.get("textUi.InteractUi.leave"))) {
             case 0:
-                //talk Ui?
+                this.getContext().getSession().fireEvent(new TalkEvent(this.getMerchant()));
                 break;
             case 1:
                 this.getContext().getSession().fireEvent(new TradeEvent(this.getMerchant()));

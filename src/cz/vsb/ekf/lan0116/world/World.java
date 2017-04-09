@@ -63,7 +63,10 @@ public class World {
     private static Road roadOfConflict;
     private static Road roadOfMalice;
 
-    public World(Location startLocation, ResourceCache cache) {
+    /**
+     * You are not God, therefore World has a private constructor, thus you can't create it.
+     */
+    private World(Location startLocation, ResourceCache cache) {
         this.animalCloning = new AnimalCloning(cache);
         this.consumableCloning = new ConsumableCloning(cache);
         this.humanoidCloning = new HumanoidCloning(cache);
@@ -73,9 +76,9 @@ public class World {
     }
 
     /**
-     * Static method giving layout how world could look like and connecting locations via Gateways
+     * Static method giving layout how world could look like and connecting locations via Gateways. This method could be perceived as a kind of map
      *
-     * @return
+     * @return whole world per se
      */
     public static World layout(ResourceCache cache) {
         Location startLocation = new Square("world.square.main_square");
@@ -112,8 +115,14 @@ public class World {
         return startLocation;
     }
 
-    public void init(ResourceCache cache) {
-
+    /**
+     * Really lengthy method, but it is required, because at this part whole world is initialized. Every "worldy" object
+     * is created here. Merchants are cloned from @param @{@link ResourceCache}. Then they are put to their shops, so
+     * they can be instantiated. In here, there are also tournaments initialized, along with world locations.
+     *
+     * @param cache provided cache with objects (@{@link ResourceCache})
+     */
+    private void init(ResourceCache cache) {
         //SHOP START
         //WEAPON SHOP START
         //archery init

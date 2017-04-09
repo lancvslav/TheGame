@@ -1,6 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi;
 
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.InteractEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.InteractEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.RestEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;

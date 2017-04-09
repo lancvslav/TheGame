@@ -6,7 +6,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.ConsumeEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.DropEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.EquipEvent;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.PurchaseEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.PurchaseEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.*;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
@@ -30,6 +30,12 @@ public class HeroChannel extends EventHandler {
         super(hero, world, responseChannel);
     }
 
+    /**
+     * Handles event of HeroType and provides Response
+     *
+     * @param event triggered by the player
+     * @return Response on triggered event
+     */
     @Override
     public Response handleEvent(Event event) {
         HeroType eventType = (HeroType) event.getType();
@@ -67,6 +73,9 @@ public class HeroChannel extends EventHandler {
                 LinkedList<Creature> queue = new LinkedList<>(signInEvent.getTournament().getEnemyList());
                 this.getHero().getHeroInteraction().setEnemyQueue(queue);
                 return Response.SUCCESS;
+            case TALK:
+                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.TALKING);
+                return Response.SUCCESS;
             case TRADE:
                 this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.SHOPPING);
                 return Response.SUCCESS;
@@ -95,6 +104,9 @@ public class HeroChannel extends EventHandler {
         }
     }
 
+    /**
+     * Due to a little bit more complex logic processing of equipEvent was moved here
+     */
     private Response handleEquipEvent(EquipEvent equipEvent) {
         Item itemToEquip = equipEvent.getItemToEquip();
         if (!this.getHero().getInventory().getInventoryList().contains(itemToEquip)) {

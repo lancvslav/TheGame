@@ -11,11 +11,11 @@ import java.util.Scanner;
 public class HeroCreationUi {
 
     /**
-     * Method basically creates a Hero, but has a form of a dialogue with user.
+     * Method basically creates a Hero, but has a form of a dialogue with player.
      * Therefore it has text content printed on terminal
      *
      * @param scanner Scanner created in main, then loaded
-     * @return Returns Hero created from users input
+     * @return Returns Hero created from player's input
      */
     public static Hero creationOfHero(Scanner scanner, Localization localization) {
 //
@@ -58,8 +58,7 @@ public class HeroCreationUi {
     /**
      * Prints text variety of heroHandling's classes to select
      */
-
-    public static void printClasses(Localization localization) {
+    private static void printClasses(Localization localization) {
         System.out.println(localization.get("textUi.HeroCreationUi.kind_of_man") + "\n");
         System.out.println(localization.get("textUi.HeroCreationUi.warrior"));
         System.out.println(localization.get("textUi.HeroCreationUi.ranger"));

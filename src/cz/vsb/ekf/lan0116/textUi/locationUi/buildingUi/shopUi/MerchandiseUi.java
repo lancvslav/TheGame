@@ -1,8 +1,8 @@
 package cz.vsb.ekf.lan0116.textUi.locationUi.buildingUi.shopUi;
 
 import cz.vsb.ekf.lan0116.eventSystem.Response;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.InteractEvent;
-import cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping.PurchaseEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.InteractEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.PurchaseEvent;
 import cz.vsb.ekf.lan0116.eventSystem.failures.PurchaseFailure;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.TextUtil;
@@ -27,7 +27,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
     }
 
     /**
-     * Prints merchandise and asks if user wants to buy something or leave
+     * Prints merchandise and asks if player wants to buy something or leave
      */
     @Override
     public void show() {
@@ -39,6 +39,9 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
         this.decisions();
     }
 
+    /**
+     * Prints merchandise of shop with indexes. It also gives choice to decline offer
+     */
     @Override
     public void decisions() {
         int choice = Integer.parseInt(this.getContext().getScanner().nextLine());

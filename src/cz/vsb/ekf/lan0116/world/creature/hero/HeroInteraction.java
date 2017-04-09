@@ -8,7 +8,7 @@ import java.util.Queue;
 public class HeroInteraction {
 
     private Location position;
-    private Creature currentEnemy;
+//    private Creature currentEnemy;
     private Queue<Creature> enemyQueue;
     private HeroStatus status;
 
@@ -54,6 +54,7 @@ public class HeroInteraction {
         READY,
         RESTING,
         SHOPPING,
+        TALKING,
         /**/;
     }
 }

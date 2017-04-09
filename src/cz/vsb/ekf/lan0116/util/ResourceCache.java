@@ -8,6 +8,9 @@ import cz.vsb.ekf.lan0116.world.item.Weapon;
 
 import java.util.Map;
 
+/**
+ * Holds game's object in memory. They are accessed by cloning them as new objects.
+ */
 public class ResourceCache {
 
     private final Map<String, Attack> attackMap;

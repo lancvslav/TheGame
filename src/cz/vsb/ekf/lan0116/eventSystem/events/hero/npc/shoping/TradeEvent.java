@@ -1,4 +1,4 @@
-package cz.vsb.ekf.lan0116.eventSystem.events.hero.shoping;
+package cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping;
 
 import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;

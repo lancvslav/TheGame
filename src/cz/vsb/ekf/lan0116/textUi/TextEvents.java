@@ -23,7 +23,13 @@ public class TextEvents {
         this.context = context;
     }
 
-
+    /**
+     * This method's job is printing the whole game. (Poor method). First of all, it starts the game by firing an event,
+     * after that, it prints first milestone - LocationUi, which prints screen offering to player choices to take.
+     * Then it checks, whether some serverEvent occurred,
+     * if so, it prints the outcome by invoking @printResponse, then it invokes Ui which prints screen related to
+     * current player's actions.
+     */
     public void playGame() {
         Response responseNewGame = context.getSession().fireEvent(new NewGameEvent());
         if (!responseNewGame.isSuccess()) {
@@ -75,6 +81,10 @@ public class TextEvents {
         }
     }
 
+
+    /**
+     * prints an outcome of server events
+     */
     private void printResponse(FightResponse response) {
         switch (response.getType()) {
             case DAMAGE_INFLICTION:
