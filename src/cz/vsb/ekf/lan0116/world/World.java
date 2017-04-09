@@ -134,7 +134,7 @@ public class World {
             blaskmithMerch.add(weaponCloning.clone(id));
         }
         blacksmith = new Blacksmith("world.building.shop.weapon_shop.blacksmith",
-                humanoidCloning.clone("npc.merchant.weapons.blacksmith"), blaskmithMerch);
+                humanoidCloning.clone("npc.merchant.weapons.blacksmith.Greg"), blaskmithMerch);
 
         //wand shop init
         List<String> wandShopString = ResourceUtil.getResource(ResourceType.WEAPON_SHOP,
@@ -144,7 +144,7 @@ public class World {
             wandShopMerch.add(weaponCloning.clone(id));
         }
         wandShop = new WandShop("world.building.shop.weapon_shop.wand_shop",
-                humanoidCloning.clone("npc.merchant.weapons.wizard"), wandShopMerch);
+                humanoidCloning.clone("npc.merchant.weapons.wizard.Priscilus"), wandShopMerch);
         //WEAPON SHOP END
 
         //CONSUMABLE SHOP START

@@ -12,6 +12,10 @@ public class HumanoidCloning extends Clone {
     @Override
     public Humanoid clone(String objectId) {
         Humanoid cachedHum = (Humanoid) this.getCache().getCreatureMap().get(objectId);
+        if (cachedHum.getDialogue() != null) {
+            return new Humanoid(cachedHum.getName(), cachedHum.getClazz(), cachedHum.getMaxLifeEssence(),
+                    cachedHum.getMaxStamina(), cachedHum.getAttackPower(), cachedHum.getDefense(), cachedHum.getWeapon(), cachedHum.getDialogue());
+        }
         return new Humanoid(cachedHum.getName(), cachedHum.getClazz(), cachedHum.getMaxLifeEssence(),
                 cachedHum.getMaxStamina(), cachedHum.getAttackPower(), cachedHum.getDefense(), cachedHum.getWeapon());
     }

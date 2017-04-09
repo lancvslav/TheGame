@@ -14,8 +14,8 @@ public class ResourceUtil {
 
     public static List<String> getResource(ResourceType resourceType, String fileName) {
         String path = resourceType.getPath() + fileName + resourceType.getExt();
-        InputStream enemiesStream = ResourceUtil.class.getResourceAsStream(path);
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(enemiesStream))) {
+        InputStream resourceAsStream = ResourceUtil.class.getResourceAsStream(path);
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(resourceAsStream))) {
             return reader.lines().collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException("Game failed to load a resource.", e);

@@ -24,12 +24,32 @@ public class Humanoid extends Creature {
         this.weapon = weapon;
     }
 
+    public Humanoid(String name, CreatureClass clazz,
+                    float maxLifeEssence, float maxStamina, float attackPower, float defense, Dialogue dialogue) {
+        this(name, clazz, maxLifeEssence, maxStamina, attackPower, defense);
+        this.dialogue = dialogue;
+    }
+
+    public Humanoid(String name, CreatureClass clazz,
+                    float maxLifeEssence, float maxStamina, float attackPower, float defense, Weapon weapon, Dialogue dialogue) {
+        this(name, clazz, maxLifeEssence, maxStamina, attackPower, defense, weapon);
+        this.dialogue = dialogue;
+    }
+
     public Weapon getWeapon() {
         return weapon;
     }
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+    public Dialogue getDialogue() {
+        return dialogue;
+    }
+
+    public void setDialogue(Dialogue dialogue) {
+        this.dialogue = dialogue;
     }
 
     @Override

@@ -1,4 +1,10 @@
-Mmmm. Thou seemeth quite sharp. Maybe, we could discuss some magic, would this be of assistance to thee?
-Good. Is it thine wish to be mine pupil?
-Oh yes, splendid. My heartfelt happiness. Thou shalt see, a man hast to be wise to use sorceries. No dim individual can use such powerful knowledge.
-If thine wish is to understand such knowledge, talk to me, and I shalt provide mine best secrets to thee.
+<friendly>
+<friendly-line>Mmmm. Thou seemeth quite sharp. Maybe, we could discuss some magic, would this be of assistance to thee?</friendly-line>
+<friendly-line>Good. Is it thine wish to be mine pupil?</friendly-line>
+<friendly-line>Oh yes, splendid. My heartfelt happiness. Thou shalt see, a man hast to be wise to use sorceries. No dim individual can use such powerful knowledge.</friendly-line>
+<friendly-line>If thine wish is to understand such knowledge, talk to me, and I shalt provide mine best secrets to thee.</friendly-line>
+</friendly>
+
+<neutral>
+<neutral-line>Mmm. I am afraid I can't help to someone so dull as thee. Thou art not worthy. Be gone.</neutral-line>
+</neutral>

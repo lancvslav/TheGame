@@ -6,6 +6,7 @@ import cz.vsb.ekf.lan0116.world.creature.Animal;
 import cz.vsb.ekf.lan0116.world.creature.Beast;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
+import cz.vsb.ekf.lan0116.world.creature.humanoid.Dialogue;
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
@@ -88,6 +89,14 @@ public class ResourceToMapUtil {
                     String weaponString = split[6];
                     Weapon weapon = weaponMap.get(weaponString);
                     creature = new Humanoid(name, creatureClass, maxHp, maxStamina, attackPower, defense, weapon);
+                    //assigning dialogue
+                    if (split.length >= 10) {
+                        if (split[9] != null && (!split[9].equals(""))) {
+                            List<String> dialogueList = ResourceUtil.getResource(ResourceType.DIALOGUE, split[9]);
+                            Dialogue dialogue = DialogueLoader.loadDialogue(dialogueList);
+                            creature = new Humanoid(name, creatureClass, maxHp, maxStamina, attackPower, defense, weapon, dialogue);
+                        }
+                    }
                     break;
                 default:
                     for (String attackId : attacks) {
