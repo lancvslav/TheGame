@@ -9,7 +9,7 @@ import cz.vsb.ekf.lan0116.world.item.Weapon;
 public abstract class AbstractHeroUi extends AbstractCreatureUi {
 
     protected AbstractHeroUi(Context context) {
-        super(context);
+        super(context.getHero(), context);
     }
 
     public Hero getHero() {
@@ -22,8 +22,8 @@ public abstract class AbstractHeroUi extends AbstractCreatureUi {
     protected void printConsumable(Item itemToPrint) {
         Consumable item = (Consumable) itemToPrint;
         System.out.println(this.get(item.getName()) + ", "
-                + this.get("textUi.InventoryUi.replenish") + ": " + item.getReplenishValue()+", "
-                + this.get("textUi.InventoryUi.value") + ": " + item.getCost()+", "
+                + this.get("textUi.InventoryUi.replenish") + ": " + item.getReplenishValue() + ", "
+                + this.get("textUi.InventoryUi.value") + ": " + item.getCost() + ", "
                 + this.get("textUi.InventoryUi.type") + ": " + this.get(item.getItemType().toString().toLowerCase()));
     }
 
@@ -33,8 +33,8 @@ public abstract class AbstractHeroUi extends AbstractCreatureUi {
     protected void printWeapon(Item itemToPrint) {
         Weapon item = (Weapon) itemToPrint;
         System.out.println(this.get(item.getName()) + ", "
-                + this.get("textUi.InventoryUi.damage_ratio") + " " + item.getDamageRatio()+", "
-                + this.get("textUi.InventoryUi.value") + " " + item.getCost()+", "
+                + this.get("textUi.InventoryUi.damage_ratio") + " " + item.getDamageRatio() + ", "
+                + this.get("textUi.InventoryUi.value") + " " + item.getCost() + ", "
                 + this.get("textUi.InventoryUi.type") + " " + this.get(item.getItemType().toString().toLowerCase()));
     }
 }

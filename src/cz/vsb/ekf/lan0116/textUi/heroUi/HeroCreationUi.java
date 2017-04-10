@@ -31,7 +31,7 @@ public class HeroCreationUi {
         Hero hero = null;
         while (hero == null) {
             printClasses(localization);
-            String tempString = "";
+            String tempString;
             tempString = scanner.nextLine();
             while (!(tempString.equals("0") || tempString.equals("1") || tempString.equals("2"))) {
                 System.out.println(localization.get("textUi.one_job"));

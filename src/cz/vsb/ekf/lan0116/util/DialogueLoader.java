@@ -19,10 +19,10 @@ public class DialogueLoader {
         int fEnd = dialogues.indexOf("</friendly>");
 
         //whole line looks like this <friendly-line>line of dialogue</friendly-line>
-        for (int i = fStart + 1; i < fEnd - 1; i++) {
+        for (int i = fStart + 1; i < fEnd; i++) {
             String wholeLine = dialogues.get(i);
             int lineStart = wholeLine.indexOf(">") + 1;
-            int lineEnd = wholeLine.lastIndexOf("<") - 1;
+            int lineEnd = wholeLine.lastIndexOf("<");
             String line = wholeLine.substring(lineStart, lineEnd);
             friendly.add(line);
         }
@@ -31,10 +31,10 @@ public class DialogueLoader {
         int nStart = dialogues.indexOf("<neutral>");
         int nEnd = dialogues.indexOf("</neutral>");
 
-        for (int i = nStart + 1; i < nEnd - 1; i++) {
+        for (int i = nStart + 1; i < nEnd; i++) {
             String wholeLine = dialogues.get(i);
             int lineStart = wholeLine.indexOf(">") + 1;
-            int lineEnd = wholeLine.lastIndexOf("<") - 1;
+            int lineEnd = wholeLine.lastIndexOf("<");
             String line = wholeLine.substring(lineStart, lineEnd);
             neutral.add(line);
         }

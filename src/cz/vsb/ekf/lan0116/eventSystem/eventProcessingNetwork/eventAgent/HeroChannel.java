@@ -6,6 +6,8 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.ConsumeEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.DropEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.EquipEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.InteractEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.TalkEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.PurchaseEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.*;
@@ -60,24 +62,28 @@ public class HeroChannel extends EventHandler {
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
             case GET_READY:
-                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case INTERACT:
-                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
+                InteractEvent interactEvent = (InteractEvent) event;
+                this.getInteraction().setSubjectOfInteraction(interactEvent.getNpc());
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
                 return Response.SUCCESS;
             case REST:
-                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.RESTING);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.RESTING);
                 return Response.SUCCESS;
             case SIGN_IN:
                 SignInEvent signInEvent = (SignInEvent) event;
                 LinkedList<Creature> queue = new LinkedList<>(signInEvent.getTournament().getEnemyList());
-                this.getHero().getHeroInteraction().setEnemyQueue(queue);
+                this.getInteraction().setEnemyQueue(queue);
                 return Response.SUCCESS;
             case TALK:
-                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.TALKING);
+                TalkEvent talkEvent = (TalkEvent) event;
+                this.getInteraction().setSubjectOfInteraction(talkEvent.getNpc());
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.TALKING);
                 return Response.SUCCESS;
             case TRADE:
-                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.SHOPPING);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.SHOPPING);
                 return Response.SUCCESS;
             case TRAVEL:
                 TravelEvent travelEvent = (TravelEvent) event;
@@ -85,10 +91,10 @@ public class HeroChannel extends EventHandler {
                         .getPosition().getGateways().contains(travelEvent.getGateway()))) {
                     return new Response(TravelFailure.NO_GATEWAY);
                 }
-                this.getHero().getHeroInteraction().setPosition(travelEvent.getGateway().getTarget());
+                this.getInteraction().setPosition(travelEvent.getGateway().getTarget());
                 LinkedList<Creature> emptyQueue = new LinkedList<>();
-                this.getHero().getHeroInteraction().setEnemyQueue(emptyQueue);
-                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                this.getInteraction().setEnemyQueue(emptyQueue);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case PURCHASE:
                 PurchaseEvent purchaseEvent = (PurchaseEvent) event;
@@ -97,7 +103,7 @@ public class HeroChannel extends EventHandler {
                 }
                 this.getHero().setCoins(this.getHero().getCoins() - purchaseEvent.getMerchandise().getCost());
                 this.getHero().getInventory().addItem(purchaseEvent.getMerchandise());
-                this.getHero().getHeroInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
                 return Response.SUCCESS;
             default:
                 throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");
@@ -124,6 +130,10 @@ public class HeroChannel extends EventHandler {
             default:
                 return new Response(EquipFailure.NOT_A_WEAPON);
         }
+    }
+
+    private HeroInteraction getInteraction(){
+        return this.getHero().getHeroInteraction();
     }
 
 }

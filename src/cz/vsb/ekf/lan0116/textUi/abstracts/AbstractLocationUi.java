@@ -22,7 +22,7 @@ public abstract class AbstractLocationUi<L extends Location> extends AbstractUi 
     }
 
     /**
-     * Called, when player decides to travel to another location
+     * Called, when player decides to travel to another location, prints adjoining locations
      */
     protected void travel() {
         Location loc = getContext().getHero().getHeroInteraction().getPosition();

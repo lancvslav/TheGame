@@ -56,6 +56,5 @@ public class LocationUi extends AbstractLocationUi<Location> {
 
     @Override
     public void decisions() {
-
     }
 }

@@ -28,7 +28,7 @@ public class TextEvents {
      * after that, it prints first milestone - LocationUi, which prints screen offering to player choices to take.
      * Then it checks, whether some serverEvent occurred,
      * if so, it prints the outcome by invoking @printResponse, then it invokes Ui which prints screen related to
-     * current player's actions.
+     * current HeroStatus.
      */
     public void playGame() {
         Response responseNewGame = context.getSession().fireEvent(new NewGameEvent());
@@ -61,7 +61,7 @@ public class TextEvents {
                     new FightUi(context).show();
                     break;
                 case INTERACTING:
-                    new InteractUi(context).show();
+                    new InteractUi(context.getHero().getHeroInteraction().getSubjectOfInteraction(),context).show();
                     break;
                 case IN_TOURNAMENT:
                     new TournamentUi(context).show();
@@ -75,6 +75,8 @@ public class TextEvents {
                 case SHOPPING:
                     new MerchandiseUi(context).show();
                     break;
+                case TALKING:
+//                    new DialogueUi(context).show();
                 default:
                     // fail? do nothing?
             }
