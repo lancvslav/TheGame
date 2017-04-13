@@ -41,23 +41,24 @@ public class HeroChannel extends EventHandler {
     @Override
     public Response handleEvent(Event event) {
         HeroType eventType = (HeroType) event.getType();
+        Hero hero = this.getHero();
         switch (eventType) {
             case CONSUME:
                 Consumable subjectOfConsumption = ((ConsumeEvent) event).getSubjectOfConsumption();
                 //PREPARED TO DISTINCT SECONDARY STAT (ENERGY, MANA, RAGE)
                 //ConsumableType consumableType = (ConsumableType) subjectOfConsumption.getItemType();
-                this.getHero().setCurrentLifeEssence(
-                        this.getHero().getCurrentLifeEssence() + subjectOfConsumption.getReplenishValue());
-                if (this.getHero().getCurrentLifeEssence() > this.getHero().getMaxLifeEssence()) {
-                    this.getHero().setCurrentLifeEssence(this.getHero().getMaxLifeEssence());
+                hero.setCurrentLifeEssence(
+                        hero.getCurrentLifeEssence() + subjectOfConsumption.getReplenishValue());
+                if (hero.getCurrentLifeEssence() > hero.getMaxLifeEssence()) {
+                    hero.setCurrentLifeEssence(hero.getMaxLifeEssence());
                 }
                 return Response.SUCCESS;
             case DROP:
                 DropEvent dropEvent = (DropEvent) event;
-                if (!this.getHero().getInventory().getInventoryList().contains(dropEvent.getItemToDrop())) {
+                if (!hero.getInventory().getInventoryList().contains(dropEvent.getItemToDrop())) {
                     return new Response(InventoryFailure.NOT_IN_INVENTORY);
                 }
-                this.getHero().getInventory().dropItem(dropEvent.getItemToDrop());
+                hero.getInventory().dropItem(dropEvent.getItemToDrop());
                 return Response.SUCCESS;
             case EQUIP:
                 return this.handleEquipEvent((EquipEvent) event);
@@ -87,8 +88,7 @@ public class HeroChannel extends EventHandler {
                 return Response.SUCCESS;
             case TRAVEL:
                 TravelEvent travelEvent = (TravelEvent) event;
-                if (!(this.getHero().getHeroInteraction()
-                        .getPosition().getGateways().contains(travelEvent.getGateway()))) {
+                if (!(hero.getHeroInteraction().getPosition().getGateways().contains(travelEvent.getGateway()))) {
                     return new Response(TravelFailure.NO_GATEWAY);
                 }
                 this.getInteraction().setPosition(travelEvent.getGateway().getTarget());
@@ -98,11 +98,11 @@ public class HeroChannel extends EventHandler {
                 return Response.SUCCESS;
             case PURCHASE:
                 PurchaseEvent purchaseEvent = (PurchaseEvent) event;
-                if (this.getHero().getCoins() < purchaseEvent.getMerchandise().getCost()) {
+                if (hero.getCoins() < purchaseEvent.getMerchandise().getCost()) {
                     return new Response(PurchaseFailure.NOT_ENOUGH_GOLD);
                 }
-                this.getHero().setCoins(this.getHero().getCoins() - purchaseEvent.getMerchandise().getCost());
-                this.getHero().getInventory().addItem(purchaseEvent.getMerchandise());
+                hero.setCoins(this.getHero().getCoins() - purchaseEvent.getMerchandise().getCost());
+                hero.getInventory().addItem(purchaseEvent.getMerchandise());
                 this.getInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
                 return Response.SUCCESS;
             default:
@@ -131,9 +131,4 @@ public class HeroChannel extends EventHandler {
                 return new Response(EquipFailure.NOT_A_WEAPON);
         }
     }
-
-    private HeroInteraction getInteraction(){
-        return this.getHero().getHeroInteraction();
-    }
-
 }

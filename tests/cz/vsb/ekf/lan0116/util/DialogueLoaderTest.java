@@ -44,7 +44,7 @@ class DialogueLoaderTest {
         String expectNeutral = "neutral line";
         String actualNeutral = dialogue.getNeutral().get(0);
 
-        assertEquals(expectNeutral,actualNeutral);
+        assertEquals(expectNeutral, actualNeutral);
     }
 
 }

@@ -45,12 +45,12 @@ public class CombatChannel extends EventHandler {
                 if (enemy.isAlive()) {
                     battleLog.addAll(attack(enemy, selectAttack(enemy), hero));
                 } else {
-                    if (hero.getHeroInteraction().getEnemyQueue().isEmpty()) {
-                        hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                    if (this.getInteraction().getEnemyQueue().isEmpty()) {
+                        this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                     }
-                    hero.getHeroInteraction().getEnemyQueue().remove();
-                    if (hero.getHeroInteraction().getEnemyQueue().isEmpty()) {
-                        hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                    this.getInteraction().getEnemyQueue().remove();
+                    if (this.getInteraction().getEnemyQueue().isEmpty()) {
+                        this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                     }
                 }
                 this.getResponseChannel().respond(new BattleLogServerEvent(battleLog));
@@ -62,26 +62,26 @@ public class CombatChannel extends EventHandler {
                 EngageEvent engageEvent = (EngageEvent) rawEvent;
                 LinkedList<Creature> queue = new LinkedList<>();
                 queue.add(engageEvent.getEnemy());
-                hero.getHeroInteraction().setEnemyQueue(queue);
-                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+                this.getInteraction().setEnemyQueue(queue);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
                 return Response.SUCCESS;
             case FLEE:
                 if (hero.getCurrentStamina() < 3) {
                     return new Response(CombatFailure.FLEE_WEAK);
                 }
-                if (hero.getHeroInteraction().getPosition().getSuperType().equals(LocationSuperType.ARENA)) {
+                if (this.getInteraction().getPosition().getSuperType().equals(LocationSuperType.ARENA)) {
                     return new Response(CombatFailure.FLEE_DISABLED);
                 }
-                hero.getHeroInteraction().setEnemyQueue(null);
-                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                this.getInteraction().setEnemyQueue(null);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case PROCEED:
-                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.IN_COMBAT);
                 return Response.SUCCESS;
             case PUSSY_OUT:
                 LinkedList<Creature> emptyQueue = new LinkedList<>();
-                hero.getHeroInteraction().setEnemyQueue(emptyQueue);
-                hero.getHeroInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                this.getInteraction().setEnemyQueue(emptyQueue);
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             default:
                 throw new UnsupportedOperationException("Event type " + rawEvent.getType() + " is not supported.");

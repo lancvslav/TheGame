@@ -11,11 +11,22 @@ public class DialogueUi extends AbstractCreatureUi {
 
     @Override
     public void show() {
+        System.out.println(this.get(this.getCreature().getName()));
 
+        this.decisions();
     }
 
+    /**
+     * prints choices: talk more, stop talking
+     */
     @Override
     protected void decisions() {
-
+        switch (this.choice(this.get("talk more"),
+                this.get("stop talking"))) {
+            case 0:
+                break;
+            case 1:
+                break;
+        }
     }
 }

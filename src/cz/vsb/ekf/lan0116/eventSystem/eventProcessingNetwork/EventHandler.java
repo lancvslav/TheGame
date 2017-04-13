@@ -3,6 +3,7 @@ package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
+import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
 
 public abstract class EventHandler implements EventSubscriber {
 
@@ -24,7 +25,11 @@ public abstract class EventHandler implements EventSubscriber {
         return world;
     }
 
-    public ResponseChannel getResponseChannel() {
+    protected ResponseChannel getResponseChannel() {
         return responseChannel;
+    }
+
+    protected HeroInteraction getInteraction() {
+        return this.getHero().getHeroInteraction();
     }
 }

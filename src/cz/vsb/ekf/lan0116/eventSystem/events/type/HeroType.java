@@ -14,6 +14,8 @@ public enum HeroType implements EventType {
     INTERACT,
     REST,
     SIGN_IN,
+    STOP_INTERACTING,
+    STOP_TALKING,
     TALK,
     TRADE,
     TRAVEL,
