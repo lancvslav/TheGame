@@ -17,8 +17,8 @@ public class GameChannel extends EventHandler {
     }
 
     @Override
-    public Response handleEvent(Event event) {
-        GameType eventType = (GameType) event.getType();
+    public Response handleEvent(Event rawEvent) {
+        GameType eventType = (GameType) rawEvent.getType();
         switch (eventType) {
             case NEW_GAME:
                 this.getHero().getHeroInteraction().setPosition(this.getWorld().getStartLocation());
@@ -34,7 +34,7 @@ public class GameChannel extends EventHandler {
                 this.getResponseChannel().respond(new GameOverResponse(GameOverResponse.Reason.SURRENDER));
                 return Response.SUCCESS;
             default:
-                throw new UnsupportedOperationException("Event type " + event.getType() + " is not supported.");
+                throw new UnsupportedOperationException("Event type " + rawEvent.getType() + " is not supported.");
         }
     }
 }

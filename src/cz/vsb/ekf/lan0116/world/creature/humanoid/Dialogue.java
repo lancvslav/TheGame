@@ -9,9 +9,17 @@ public class Dialogue {
      */
     private List<String> friendly;
     /**
+     * holds state of previous conversation, so npc doesn't start talk all over again
+     */
+    private int friendlyIndex;
+    /**
      * this dialogue is used when different clazz talks to humanoid
      */
     private List<String> neutral;
+    /**
+     * holds state of previous conversation, so npc doesn't start talk all over again
+     */
+    private int neutralIndex;
 
     public Dialogue(List<String> friendly, List<String> neutral) {
         this.friendly = friendly;

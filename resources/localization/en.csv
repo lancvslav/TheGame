@@ -329,3 +329,5 @@ textUi.abstractUi.what;What did you say?
 npc.merchant.weapons.hunter.Scariel;Scariel
 npc.merchant.weapons.blacksmith.Greg;Greg
 npc.merchant.weapons.wizard.Priscilus;Priscilus
+textUi.DialogueUi.stop_talking;Stop talking
+textUi.DialogueUi.talk_more;Talk more

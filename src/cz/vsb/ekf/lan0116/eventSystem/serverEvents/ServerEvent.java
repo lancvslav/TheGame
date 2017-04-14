@@ -6,6 +6,7 @@ public interface ServerEvent {
     enum ServerEventType {
         BATTLE_LOG,
         GAME_OVER,
+        SPEECH,
         /**/;
     }
 }

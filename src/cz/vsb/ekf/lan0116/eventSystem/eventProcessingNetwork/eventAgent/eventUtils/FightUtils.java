@@ -1,4 +1,4 @@
-package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.combatHandling;
+package cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.eventUtils;
 
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.combat.AttackProperty;

@@ -11,6 +11,7 @@ public enum HeroType implements EventType {
     DROP,
     EQUIP,
     GET_READY,
+    INITIATE_DIALOGUE,
     INTERACT,
     REST,
     SIGN_IN,

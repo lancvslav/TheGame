@@ -9,7 +9,6 @@ public interface FightResponse {
         STAMINA_CONSUMPTION,
         HEALING,
         INFORMATION,
-        SPEECH,
         YOU_DIED,;
     }
 }
