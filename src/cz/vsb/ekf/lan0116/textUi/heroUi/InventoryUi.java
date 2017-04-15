@@ -106,7 +106,7 @@ public class InventoryUi extends AbstractHeroUi {
                 }
                 break;
             case 3:
-                return;
+                // return;
         }
     }
 

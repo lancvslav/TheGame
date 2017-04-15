@@ -31,6 +31,9 @@ class StreetUi extends AbstractLocationUi<Street> {
                 this.get("textUi.menu.somewhere"))) {
             case 0:
                 System.out.printf("\n%s %s%n", this.get("textUi.location.just"), this.get(this.getLoc().getName()));
+                //muehehe
+                System.out.println("but someday you might get your nose broken for sticking it somewhere where it does not belong");
+                //muehehe
                 this.decisions();
                 break;
             case 1:

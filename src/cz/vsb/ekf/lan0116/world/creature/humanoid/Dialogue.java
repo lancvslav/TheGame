@@ -34,11 +34,27 @@ public class Dialogue {
         this.friendly = friendly;
     }
 
+    public int getFriendlyIndex() {
+        return friendlyIndex;
+    }
+
+    public void setFriendlyIndex(int friendlyIndex) {
+        this.friendlyIndex = friendlyIndex;
+    }
+
     public List<String> getNeutral() {
         return neutral;
     }
 
     public void setNeutral(List<String> neutral) {
         this.neutral = neutral;
+    }
+
+    public int getNeutralIndex() {
+        return neutralIndex;
+    }
+
+    public void setNeutralIndex(int neutralIndex) {
+        this.neutralIndex = neutralIndex;
     }
 }

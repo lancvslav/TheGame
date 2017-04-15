@@ -3,13 +3,11 @@ package cz.vsb.ekf.lan0116.textUi.heroUi;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.StopTalkingEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.InitiateDialogueEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractCreatureUi;
-import cz.vsb.ekf.lan0116.world.creature.Creature;
-import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
+import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractHumanoidUi;
 
-public class DialogueUi extends AbstractCreatureUi {
-    protected DialogueUi(Creature creature, Context context) {
-        super(creature, context);
+public class DialogueUi extends AbstractHumanoidUi {
+    public DialogueUi(Context context) {
+        super(context);
     }
 
     /**
@@ -17,16 +15,15 @@ public class DialogueUi extends AbstractCreatureUi {
      */
     @Override
     public void show() {
-        System.out.println(this.get(this.getCreature().getName()));
-
-        this.talking();
+        System.out.println(this.get(this.getHumanoid().getName()));
+        this.decisions();
     }
 
     /**
      * this method prints talking
      */
     private void talking() {
-        this.getContext().getSession().fireEvent(new InitiateDialogueEvent((Humanoid) this.getCreature()));
+
         this.decisions();
     }
 
@@ -38,10 +35,10 @@ public class DialogueUi extends AbstractCreatureUi {
         switch (this.choice(this.get("textUi.DialogueUi.talk_more"),
                 this.get("textUi.DialogueUi.stop_talking"))) {
             case 0:
-                this.talking();
+                this.getContext().getSession().fireEvent(new InitiateDialogueEvent(this.getHumanoid()));
                 break;
             case 1:
-                this.getContext().getSession().fireEvent(new StopTalkingEvent((Humanoid) this.getCreature()));
+                this.getContext().getSession().fireEvent(new StopTalkingEvent(this.getHumanoid()));
                 break;
         }
     }

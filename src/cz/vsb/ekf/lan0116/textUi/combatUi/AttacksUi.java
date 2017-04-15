@@ -23,6 +23,7 @@ public class AttacksUi extends AbstractHeroUi {
     @Override
     public void show() {
         System.out.println(this.get("textUi.AttacksUi.choose") + ":");
+        System.out.print(this.get("textUi.AttacksUi.attack") + ":" + this.get("textUi.AttacksUi.stamina_consumption"));
         this.printArray(attacksToArray(attacks));
         System.out.printf("%d %s%n", attacks.size(), this.get("textUi.AttacksUi.close"));
         this.decisions();

@@ -41,6 +41,7 @@ public class TavernOfferUi extends AbstractLocationUi<Tavern> {
             default:
                 consumables = new ArrayList<>();
         }
+        System.out.print("\n" + this.get("textUi.AbstractUi.merchandise") + ":" + this.get("textUi.cost"));
         this.printArray(merchandiseToArray(consumables));
         switch (offerDemand) {
             case DRINK:

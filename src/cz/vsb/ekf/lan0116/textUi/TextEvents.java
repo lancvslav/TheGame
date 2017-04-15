@@ -6,8 +6,13 @@ import cz.vsb.ekf.lan0116.eventSystem.events.game.NewGameEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ServerEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.combat.*;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.game.GameOverResponse;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.FriendlySpeech;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.NeutralSpeech;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.SpeechLogServerEvent;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.SpeechResponse;
 import cz.vsb.ekf.lan0116.textUi.combatUi.FightUi;
 import cz.vsb.ekf.lan0116.textUi.combatUi.TournamentUi;
+import cz.vsb.ekf.lan0116.textUi.heroUi.DialogueUi;
 import cz.vsb.ekf.lan0116.textUi.heroUi.RestHeroUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.InteractUi;
 import cz.vsb.ekf.lan0116.textUi.locationUi.LocationUi;
@@ -27,7 +32,7 @@ public class TextEvents {
      * This method's job is printing the whole game. (Poor method). First of all, it starts the game by firing an event,
      * after that, it prints first milestone - LocationUi, which prints screen offering to player choices to take.
      * Then it checks, whether some serverEvent occurred,
-     * if so, it prints the outcome by invoking @printResponse, then it invokes Ui which prints screen related to
+     * if so, it prints the outcome by invoking @printFightResponse, then it invokes Ui which prints screen related to
      * current HeroStatus.
      */
     public void playGame() {
@@ -48,11 +53,20 @@ public class TextEvents {
                             + ((GameOverResponse) serverEvent).getReason());
                     return;
                 }
+                //pulling battle log in case that battle happened
                 if (serverEvent.getType() == ServerEvent.ServerEventType.BATTLE_LOG) {
-                    BattleLogServerEvent event = (BattleLogServerEvent) serverEvent;
-                    List<FightResponse> battleLog = event.getBattleLog();
+                    BattleLogServerEvent eventLog = (BattleLogServerEvent) serverEvent;
+                    List<FightResponse> battleLog = eventLog.getBattleLog();
                     for (FightResponse response : battleLog) {
-                        this.printResponse(response);
+                        this.printFightResponse(response);
+                    }
+                }
+                //pulling speech log in case speech happened
+                if (serverEvent.getType() == ServerEvent.ServerEventType.SPEECH) {
+                    SpeechLogServerEvent eventLog = (SpeechLogServerEvent) serverEvent;
+                    List<SpeechResponse> speechLog = eventLog.getSpeechLog();
+                    for (SpeechResponse response : speechLog) {
+                        this.printSpeechResponse(response);
                     }
                 }
             }
@@ -61,7 +75,7 @@ public class TextEvents {
                     new FightUi(context).show();
                     break;
                 case INTERACTING:
-                    new InteractUi(context.getHero().getHeroInteraction().getSubjectOfInteraction(),context).show();
+                    new InteractUi(context).show();
                     break;
                 case IN_TOURNAMENT:
                     new TournamentUi(context).show();
@@ -76,18 +90,20 @@ public class TextEvents {
                     new MerchandiseUi(context).show();
                     break;
                 case TALKING:
-//                    new DialogueUi(context).show();
+                    new DialogueUi(context).show();
+                    break;
                 default:
-                    // fail? do nothing?
+                    throw new UnsupportedOperationException("screen for " + context.getHero().getHeroInteraction().getStatus()
+                            + " not implemented yet");
             }
         }
     }
 
 
     /**
-     * prints an outcome of server events
+     * prints an outcome of server events that implements FightResponse
      */
-    private void printResponse(FightResponse response) {
+    private void printFightResponse(FightResponse response) {
         switch (response.getType()) {
             case DAMAGE_INFLICTION:
                 DamageInfliction damageInfliction = (DamageInfliction) response;
@@ -139,7 +155,38 @@ public class TextEvents {
         }
     }
 
+    /**
+     * prints an outcome of server events that implements SpeechResponse
+     */
+    private void printSpeechResponse(SpeechResponse response) {
+        switch (response.getType()) {
+            case FRIENDLY:
+                FriendlySpeech friendlySpeech = (FriendlySpeech) response;
+                this.talk(friendlySpeech.getSpeech());
+                break;
+            case NEUTRAL:
+                NeutralSpeech neutralSpeech = (NeutralSpeech) response;
+                this.talk(neutralSpeech.getSpeech());
+                break;
+        }
+    }
+
     private String get(String key) {
         return context.getLocalization().get(key);
+    }
+
+    /**
+     * Prints dialogue with delays between letters, so it appears that someone is actually talking
+     */
+    public void talk(String dialogue) {
+        for (int i = 0, folder = 0; i < dialogue.length() - 1; i++, folder++) {
+            System.out.print(dialogue.charAt(i));
+            TextUtil.sleep(80);
+            if (folder == 78) {
+                System.out.print("-\n");
+                folder = 0;
+            }
+        }
+        System.out.println();
     }
 }

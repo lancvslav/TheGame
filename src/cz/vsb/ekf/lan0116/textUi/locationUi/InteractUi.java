@@ -5,14 +5,13 @@ import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.TalkEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.TradeEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractMerchantUi;
-import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 
 /**
  * Shown when InteractEvent is triggered
  */
 public class InteractUi extends AbstractMerchantUi {
-    public InteractUi(Humanoid subject, Context context) {
-        super(subject, context);
+    public InteractUi(Context context) {
+        super(context);
     }
 
     @Override

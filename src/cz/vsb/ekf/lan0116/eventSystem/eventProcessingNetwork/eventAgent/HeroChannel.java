@@ -9,6 +9,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.ConsumeEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.DropEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.EquipEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.InteractEvent;
+import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.StopTalkingEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.TalkEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.InitiateDialogueEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.PurchaseEvent;
@@ -18,6 +19,9 @@ import cz.vsb.ekf.lan0116.eventSystem.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.PurchaseFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.TravelFailure;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.FriendlySpeech;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.NeutralSpeech;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.SpeechLogServerEvent;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.SpeechResponse;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
@@ -72,16 +76,32 @@ public class HeroChannel extends EventHandler {
                 this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case INITIATE_DIALOGUE:
-                /**
-                 *
-                 */
-                InitiateDialogueEvent initiateDialogueEvent = (InitiateDialogueEvent) rawEvent;
+                                InitiateDialogueEvent initiateDialogueEvent = (InitiateDialogueEvent) rawEvent;
+                List<SpeechResponse> speechLog = new ArrayList<>();
                 Humanoid npc = initiateDialogueEvent.getNpc();
+                int index;
+                String line;
                 //if player is same clazz as npc is, friendly dialogue should pop up
-                if(npc.getClazz().equals(hero.getClazz())){
-                    List<SpeechResponse> speechLog = new ArrayList<>();
+                if (npc.getClazz().equals(hero.getClazz())) {
+                    index = npc.getDialogue().getFriendlyIndex();
+                    line = npc.getDialogue().getFriendly().get(index);
+                    speechLog.add(new FriendlySpeech(line));
+                    npc.getDialogue().setFriendlyIndex(index + 1);
+                    if (npc.getDialogue().getFriendlyIndex() >= npc.getDialogue().getFriendly().size()) {
+                        npc.getDialogue().setFriendlyIndex(0);
+                    }
+                    //if player is different clazz
+                } else {
+                    index = npc.getDialogue().getNeutralIndex();
+                    line = npc.getDialogue().getNeutral().get(index);
+                    speechLog.add(new NeutralSpeech(line));
+                    npc.getDialogue().setNeutralIndex(index + 1);
+                    if (npc.getDialogue().getNeutralIndex() >= npc.getDialogue().getNeutral().size()) {
+                        npc.getDialogue().setNeutralIndex(0);
+                    }
                 }
-                throw new UnsupportedOperationException();
+                this.getResponseChannel().respond(new SpeechLogServerEvent(speechLog));
+                return Response.SUCCESS;
             case INTERACT:
                 InteractEvent interactEvent = (InteractEvent) rawEvent;
                 this.getInteraction().setSubjectOfInteraction(interactEvent.getNpc());
@@ -96,15 +116,13 @@ public class HeroChannel extends EventHandler {
                 this.getInteraction().setEnemyQueue(queue);
                 return Response.SUCCESS;
             case STOP_INTERACTING:
-                /**
-                 *
-                 */
-                throw new UnsupportedOperationException();
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
+                return Response.SUCCESS;
             case STOP_TALKING:
-                /**
-                 *
-                 */
-                throw new UnsupportedOperationException();
+                StopTalkingEvent stopTalkingEvent = (StopTalkingEvent) rawEvent;
+                this.getInteraction().setSubjectOfInteraction(stopTalkingEvent.getNpc());
+                this.getInteraction().setStatus(HeroInteraction.HeroStatus.INTERACTING);
+                return Response.SUCCESS;
             case TALK:
                 TalkEvent talkEvent = (TalkEvent) rawEvent;
                 this.getInteraction().setSubjectOfInteraction(talkEvent.getNpc());

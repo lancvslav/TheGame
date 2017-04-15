@@ -31,6 +31,7 @@ public class MerchandiseUi extends AbstractLocationUi<Shop> {
      */
     @Override
     public void show() {
+        System.out.print("\n" + this.get("textUi.AbstractUi.merchandise") + ":" + this.get("textUi.cost"));
         this.printArray(merchandiseToArray(merchandiseList));
         //QUOTE SPECIFIED FOR CURRENT SHOP type
         System.out.println("\n" + this.get(TextUtil.quote(

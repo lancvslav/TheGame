@@ -27,6 +27,9 @@ public class ShopUi extends AbstractLocationUi<Shop> {
         this.decisions();
     }
 
+    /**
+     * prints choices for rest, approach owner, leave
+     */
     @Override
     public void decisions() {
         switch (this.choice(

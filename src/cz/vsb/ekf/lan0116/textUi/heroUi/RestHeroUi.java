@@ -19,8 +19,7 @@ public class RestHeroUi extends AbstractHeroUi {
         switch (this.choice(
                 this.get("textUi.RestHeroUi.inventory"),
                 this.get("textUi.RestHeroUi.consume"),
-                "status",
-                //localize, or maybe don't, just testing for now
+                this.get("textUi.RestHeroUi.status"),
                 this.get("textUi.RestHeroUi.getUp"))) {
             case 0:
                 new InventoryUi(getContext()).show();
@@ -30,8 +29,9 @@ public class RestHeroUi extends AbstractHeroUi {
                 this.decisions();
                 break;
             case 2:
-                System.out.println(this.getHero().getCurrentLifeEssence() + " " + this.get("") + " " +
-                        this.getHero().getCurrentStamina() + " " + this.get("textUi.textEvents.stamina"));
+                System.out.println(this.getHero().getCurrentLifeEssence() + " "
+                        + this.get("textUi.RestUi.life_essence") + " " + this.getHero().getCurrentStamina() + " "
+                        + this.get("textUi.textEvents.stamina"));
                 break;
             case 3:
                 this.getContext().getSession().fireEvent(new GetReadyEvent());

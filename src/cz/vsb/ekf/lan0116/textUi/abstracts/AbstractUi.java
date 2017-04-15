@@ -3,7 +3,6 @@ package cz.vsb.ekf.lan0116.textUi.abstracts;
 import cz.vsb.ekf.lan0116.combat.Attack;
 import cz.vsb.ekf.lan0116.eventSystem.events.game.GiveUpEvent;
 import cz.vsb.ekf.lan0116.textUi.Context;
-import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.world.item.Item;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
@@ -55,20 +54,6 @@ public abstract class AbstractUi implements Ui {
     }
 
     /**
-     * Prints dialogue with delays between letters, so it appears that someone is actually talking
-     */
-    public void talk(String... dialogue) {
-        for (int i = 0, folder = 0; i < dialogue.length - 1; i++, folder++) {
-            System.out.println(dialogue[i]);
-            TextUtil.sleep(100);
-            if (folder == 26) {
-                System.out.println();
-                folder = 0;
-            }
-        }
-    }
-
-    /**
      * Prints array on line with line folding
      *
      * @param values Array of choices to print
@@ -99,9 +84,7 @@ public abstract class AbstractUi implements Ui {
     protected String[] consumablesToArray(List<Merchandise> consumables) {
         String[] choicesArray = new String[consumables.size()];
         for (int i = 0; i < consumables.size(); i++) {
-            choicesArray[i] = this.get(consumables.get(i).getName()) +
-                    ", " + this.get("textUi.InventoryUi.value") + ": "
-                    + consumables.get(i).getCost();
+            choicesArray[i] = this.get(consumables.get(i).getName()) + ":" + consumables.get(i).getCost();
         }
         return choicesArray;
     }
@@ -126,8 +109,7 @@ public abstract class AbstractUi implements Ui {
     protected String[] merchandiseToArray(List<Merchandise> merchandise) {
         String[] choicesArray = new String[merchandise.size()];
         for (int i = 0; i < merchandise.size(); i++) {
-            choicesArray[i] = this.get(merchandise.get(i).getName()) + ", " + this.get("textUi.cost") + ": "
-                    + merchandise.get(i).getCost();
+            choicesArray[i] = this.get(merchandise.get(i).getName()) + ":" + merchandise.get(i).getCost();
         }
         return choicesArray;
     }
