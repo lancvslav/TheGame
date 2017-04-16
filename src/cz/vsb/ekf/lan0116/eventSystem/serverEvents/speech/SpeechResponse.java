@@ -5,7 +5,9 @@ public interface SpeechResponse {
 
     enum SpeechResponseType {
         FRIENDLY,
+        FRIENDLY_BYE,
         NEUTRAL,
+        NEUTRAL_BYE,
         /**/;
     }
 }

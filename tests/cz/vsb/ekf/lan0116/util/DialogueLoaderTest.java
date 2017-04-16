@@ -22,6 +22,7 @@ class DialogueLoaderTest {
         dialogueList.add("<friendly>");
         dialogueList.add("<friendly-line>friendly line</friendly-line>");
         dialogueList.add("</friendly>");
+        dialogueList.add("<friendly-bye>friendly-bye line</friendly-bye>");
         dialogueList.add("<neutral>");
         dialogueList.add("<neutral-line>neutral line</neutral-line>");
         dialogueList.add("</neutral>");
@@ -35,6 +36,16 @@ class DialogueLoaderTest {
         String actualFriendly = dialogue.getFriendly().get(0);
 
         assertEquals(expectFriendly, actualFriendly);
+    }
+
+    @Test
+    void testLoadFriendlyBye() {
+        Dialogue dialogue = DialogueLoader.loadDialogue(dialogueList);
+
+        String expectFriendlyBye = "friendly-bye line";
+        String actualFriendlyBye = dialogue.getFriendlyBye();
+
+        assertEquals(expectFriendlyBye, actualFriendlyBye);
     }
 
     @Test

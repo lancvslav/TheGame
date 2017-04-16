@@ -12,6 +12,7 @@ public class Dialogue {
      * holds state of previous conversation, so npc doesn't start talk all over again
      */
     private int friendlyIndex;
+    private String friendlyBye;
     /**
      * this dialogue is used when different clazz talks to humanoid
      */
@@ -20,6 +21,7 @@ public class Dialogue {
      * holds state of previous conversation, so npc doesn't start talk all over again
      */
     private int neutralIndex;
+    private String neutralBye;
 
     public Dialogue(List<String> friendly, List<String> neutral) {
         this.friendly = friendly;
@@ -42,6 +44,14 @@ public class Dialogue {
         this.friendlyIndex = friendlyIndex;
     }
 
+    public String getFriendlyBye() {
+        return friendlyBye;
+    }
+
+    public void setFriendlyBye(String friendlyBye) {
+        this.friendlyBye = friendlyBye;
+    }
+
     public List<String> getNeutral() {
         return neutral;
     }
@@ -56,5 +66,13 @@ public class Dialogue {
 
     public void setNeutralIndex(int neutralIndex) {
         this.neutralIndex = neutralIndex;
+    }
+
+    public String getNeutralBye() {
+        return neutralBye;
+    }
+
+    public void setNeutralBye(String neutralBye) {
+        this.neutralBye = neutralBye;
     }
 }

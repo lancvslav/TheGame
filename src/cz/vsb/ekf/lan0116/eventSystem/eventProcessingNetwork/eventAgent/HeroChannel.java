@@ -19,10 +19,7 @@ import cz.vsb.ekf.lan0116.eventSystem.failures.InventoryFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.PurchaseFailure;
 import cz.vsb.ekf.lan0116.eventSystem.failures.TravelFailure;
 import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
-import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.FriendlySpeech;
-import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.NeutralSpeech;
-import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.SpeechLogServerEvent;
-import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.SpeechResponse;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.speech.*;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
@@ -52,6 +49,8 @@ public class HeroChannel extends EventHandler {
     public Response handleEvent(Event rawEvent) {
         HeroType eventType = (HeroType) rawEvent.getType();
         Hero hero = this.getHero();
+        Humanoid npc;
+        List<SpeechResponse> speechLog;
         switch (eventType) {
             case CONSUME:
                 Consumable subjectOfConsumption = ((ConsumeEvent) rawEvent).getSubjectOfConsumption();
@@ -76,9 +75,9 @@ public class HeroChannel extends EventHandler {
                 this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case INITIATE_DIALOGUE:
-                                InitiateDialogueEvent initiateDialogueEvent = (InitiateDialogueEvent) rawEvent;
-                List<SpeechResponse> speechLog = new ArrayList<>();
-                Humanoid npc = initiateDialogueEvent.getNpc();
+                InitiateDialogueEvent initiateDialogueEvent = (InitiateDialogueEvent) rawEvent;
+                speechLog = new ArrayList<>();
+                npc = initiateDialogueEvent.getNpc();
                 int index;
                 String line;
                 //if player is same clazz as npc is, friendly dialogue should pop up
@@ -116,6 +115,14 @@ public class HeroChannel extends EventHandler {
                 this.getInteraction().setEnemyQueue(queue);
                 return Response.SUCCESS;
             case STOP_INTERACTING:
+                npc = this.getInteraction().getSubjectOfInteraction();
+                speechLog = new ArrayList<>();
+                if (npc.getClazz().equals(hero.getClazz())) {
+                    speechLog.add(new FriendlyBye(npc.getDialogue().getFriendlyBye()));
+                } else {
+                    speechLog.add(new NeutralBye(npc.getDialogue().getNeutralBye()));
+                }
+                this.getInteraction().setSubjectOfInteraction(null);
                 this.getInteraction().setStatus(HeroInteraction.HeroStatus.READY);
                 return Response.SUCCESS;
             case STOP_TALKING:

@@ -4,6 +4,10 @@
 <friendly-line>Grr... You still here?!</friendly-line>
 </friendly>
 
+<friendly-bye>Don't get your self killed.</friendly-bye>
+
 <neutral>
 <neutral-line>Bah. I can tell yer are weak. Be gone with yer.</neutral-line>
 </neutral>
+
+<neutral-bye>Don't waste my time.</neutral-bye>

@@ -5,6 +5,10 @@
 <friendly-line>If thine wish is to understand such knowledge, talk to me, and I shalt provide mine best secrets to thee.</friendly-line>
 </friendly>
 
+<friendly-bye>I have a feeling we will meet again soon.</friendly-bye>
+
 <neutral>
 <neutral-line>Mmm. I am afraid I can't help to someone so dull as thee. Thou art not worthy. Be gone.</neutral-line>
 </neutral>
+
+<neutral-bye>Be gone, thou art not needed.</neutral-bye>
