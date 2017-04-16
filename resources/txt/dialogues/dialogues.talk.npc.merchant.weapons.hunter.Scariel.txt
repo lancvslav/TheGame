@@ -4,10 +4,14 @@
 <friendly-line>I am the best shooter in the neighborhood. I can shot an hundred feet distant ant with my eyes closed.</friendly-line>
 </friendly>
 
-<friendly-bye>Gone so soon?</friendly-bye>
+<friendly-bye>
+Gone so soon?
+</friendly-bye>
 
 <neutral>
 <neutral-line>You probably stepped into wrong doors. I talk only with rangers and hunters. I have no business with you.</neutral-line>
 </neutral>
 
-<neutral-bye>Go along.</neutral-bye>
+<neutral-bye>
+Go along.
+</neutral-bye>

@@ -71,24 +71,34 @@ class HeroChannelTest {
     @Test
     void testInitiateDialogue_friendly_indexChange() {
         List<String> friendly = new ArrayList<>();
+        List<String> neutral = new ArrayList<>();
         friendly.add("friendly0");
         friendly.add("friendly1");
         friendly.add("friendly2");
-        Dialogue mockDialogue = new Dialogue(friendly, null);
+        neutral.add("neutral");
+
+        Dialogue mockDialogue = new Dialogue(friendly, neutral);
         sameClazz.setDialogue(mockDialogue);
 
         heroChannel.handleEvent(new InitiateDialogueEvent(sameClazz));
 
+
         int actualIndex = sameClazz.getDialogue().getFriendlyIndex();
         assertEquals(1, actualIndex);
+
     }
 
     @Test
     void testInitiateDialogue_neutral_indexReset() {
+        List<String> friendly = new ArrayList<>();
         List<String> neutral = new ArrayList<>();
+        friendly.add("friendly0");
+        friendly.add("friendly1");
+        friendly.add("friendly2");
         neutral.add("neutral");
-        Dialogue mockDialogue = new Dialogue(null, neutral);
+        Dialogue mockDialogue = new Dialogue(friendly, neutral);
         Humanoid mockNeutral = new Humanoid("neutral", CreatureClass.WARRIOR, 1, 1, 1, 1, mockDialogue);
+
 
         heroChannel.handleEvent(new InitiateDialogueEvent(mockNeutral));
 

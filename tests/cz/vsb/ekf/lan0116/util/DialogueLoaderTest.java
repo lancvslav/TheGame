@@ -22,7 +22,9 @@ class DialogueLoaderTest {
         dialogueList.add("<friendly>");
         dialogueList.add("<friendly-line>friendly line</friendly-line>");
         dialogueList.add("</friendly>");
-        dialogueList.add("<friendly-bye>friendly-bye line</friendly-bye>");
+        dialogueList.add("<friendly-bye>");
+        dialogueList.add("friendly-bye line");
+        dialogueList.add("</friendly-bye>");
         dialogueList.add("<neutral>");
         dialogueList.add("<neutral-line>neutral line</neutral-line>");
         dialogueList.add("</neutral>");

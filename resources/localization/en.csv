@@ -315,7 +315,7 @@ world.road.fist_avenue;first avenue
 world.road.road_of_conflict;road of conflict
 world.road.road_of_malice;road of malice
 world.road.tavern_backyard;tavern backyard
-textUi.InteractUi.talk;Talk
+textUi.InteractUi.talk;Try to talk
 textUi.InteractUi.trade;Trade
 textUi.InteractUi.leave;Leave
 world.square.battle_quarter;battle quarter
@@ -333,7 +333,7 @@ npc.merchant.weapons.hunter.Scariel;Scariel
 npc.merchant.weapons.blacksmith.Greg;Greg
 npc.merchant.weapons.wizard.Priscilus;Priscilus
 textUi.DialogueUi.stop_talking;Stop talking
-textUi.DialogueUi.talk_more;Talk more
+textUi.DialogueUi.talk_more;Talk
 textUi.AttacksUi.attack;attack
 textUi.AttacksUi.stamina_consumption;stamina consumption
 textUi.RestUi.life_essence;life_essence

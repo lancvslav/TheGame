@@ -32,10 +32,7 @@ public class DialogueLoader {
 
         //load friendly bye
         startIndex = dialogues.indexOf("<friendly-bye>");
-        String byeWholeLine = dialogues.get(startIndex);
-        lineStart = byeWholeLine.indexOf(">") + 1;
-        lineEnd = byeWholeLine.lastIndexOf("<");
-        String friendlyBye = byeWholeLine.substring(lineStart, lineEnd);
+        String friendlyBye = dialogues.get(startIndex + 1);
 
         //load neutral from file, looks similarly like friendly
         startIndex = dialogues.indexOf("<neutral>");
@@ -52,10 +49,8 @@ public class DialogueLoader {
 
         //load neutral bye
         startIndex = dialogues.indexOf("<neutral-bye>");
-        byeWholeLine = dialogues.get(startIndex);
-        lineStart = byeWholeLine.indexOf(">") + 1;
-        lineEnd = byeWholeLine.lastIndexOf("<");
-        String neutralBye = byeWholeLine.substring(lineStart, lineEnd);
+        String neutralBye = dialogues.get(startIndex + 1);
+
 
         Dialogue dialogue = new Dialogue(friendly, neutral);
         dialogue.setFriendlyBye(friendlyBye);

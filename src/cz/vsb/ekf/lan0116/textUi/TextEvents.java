@@ -179,7 +179,7 @@ public class TextEvents {
      * Prints dialogue with delays between letters, so it appears that someone is actually talking
      */
     public void talk(String dialogue) {
-        for (int i = 0, folder = 0; i < dialogue.length() - 1; i++, folder++) {
+        for (int i = 0, folder = 0; i < dialogue.length(); i++, folder++) {
             System.out.print(dialogue.charAt(i));
             TextUtil.sleep(80);
             if (folder == 78) {
