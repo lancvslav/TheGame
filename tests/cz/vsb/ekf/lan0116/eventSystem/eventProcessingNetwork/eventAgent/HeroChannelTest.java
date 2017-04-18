@@ -7,6 +7,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.hero.TravelEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.items.EquipEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.TalkEvent;
 import cz.vsb.ekf.lan0116.eventSystem.events.hero.npc.shoping.InitiateDialogueEvent;
+import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.CreatureClass;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
@@ -39,7 +40,8 @@ class HeroChannelTest {
     void setUp() {
         hero = new Ranger("Tester");
         sameClazz = new Humanoid("sameClazz", CreatureClass.RANGER, 1, 1, 1, 1);
-        heroChannel = new HeroChannel(hero, null, null);
+        ResponseChannel responseChannel = new ResponseChannel();
+        heroChannel = new HeroChannel(hero, null, responseChannel);
     }
 
     @Test
@@ -85,7 +87,6 @@ class HeroChannelTest {
 
         int actualIndex = sameClazz.getDialogue().getFriendlyIndex();
         assertEquals(1, actualIndex);
-
     }
 
     @Test
