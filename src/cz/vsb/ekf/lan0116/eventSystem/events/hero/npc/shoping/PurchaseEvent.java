@@ -5,6 +5,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 import cz.vsb.ekf.lan0116.world.item.Merchandise;
 
+/**
+ * Triggered when player buys a Merchandise
+ */
 public class PurchaseEvent implements Event {
 
     private final Merchandise merchandise;

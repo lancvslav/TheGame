@@ -5,6 +5,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.Event;
 import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 
+/**
+ * Triggered when player signs in to the tournament
+ */
 public class SignInEvent implements Event {
 
     private final Tournament tournament;

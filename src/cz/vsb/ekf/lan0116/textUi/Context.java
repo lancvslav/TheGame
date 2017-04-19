@@ -8,6 +8,9 @@ import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 
 import java.util.Scanner;
 
+/**
+ * simulate function similar to application server
+ */
 public class Context {
     private final Hero hero;
     private final World world;

@@ -9,6 +9,9 @@ import cz.vsb.ekf.lan0116.eventSystem.serverEvents.ResponseChannel;
 import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 
+/**
+ * Publisher channels event to subscribers based on their type
+ */
 public class EventPublisher {
 
     private final CombatChannel combatChannel;

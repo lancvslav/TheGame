@@ -7,6 +7,9 @@ import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractLocationUi;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 
+/**
+ * Guides player through the whole tournament
+ */
 public class TournamentUi extends AbstractLocationUi {
 
     private Hero hero;

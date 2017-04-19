@@ -2,6 +2,9 @@ package cz.vsb.ekf.lan0116.eventSystem;
 
 import cz.vsb.ekf.lan0116.eventSystem.failures.FailureCause;
 
+/**
+ * Stands for outcome of Event triggered by player
+ */
 public class Response {
 
     public static final Response SUCCESS = new Response();

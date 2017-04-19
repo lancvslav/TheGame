@@ -19,6 +19,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Creates object and store them to Maps
+ */
 public class ResourceToMapUtil {
 
     private ResourceToMapUtil() {

@@ -24,6 +24,10 @@ public class InventoryUi extends AbstractHeroUi {
         this.decisions();
     }
 
+    /**
+     * prints choices inspect, equip, drop, close, then guide through players desired actions
+     */
+    @Override
     protected void decisions() {
         switch (this.choice(
                 this.get("textUi.InventoryUi.choice0.inspect"),

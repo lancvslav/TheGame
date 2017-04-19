@@ -1,5 +1,6 @@
 package cz.vsb.ekf.lan0116.textUi.heroUi;
 
+import cz.vsb.ekf.lan0116.textUi.TextUtil;
 import cz.vsb.ekf.lan0116.util.Localization;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.creature.hero.Ranger;
@@ -18,8 +19,8 @@ public class HeroCreationUi {
      * @return Returns Hero created from player's input
      */
     public static Hero creationOfHero(Scanner scanner, Localization localization) {
-//
-//        TextUtil.newGame(localization);
+
+        TextUtil.newGame(localization);
         String nameOfHero;
         System.out.println(localization.get("textUi.HeroCreationUi.name0"));
         scanner.nextLine();

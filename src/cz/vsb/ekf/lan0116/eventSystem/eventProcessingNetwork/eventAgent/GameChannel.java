@@ -10,6 +10,9 @@ import cz.vsb.ekf.lan0116.world.World;
 import cz.vsb.ekf.lan0116.world.creature.hero.Hero;
 import cz.vsb.ekf.lan0116.world.creature.hero.HeroInteraction;
 
+/**
+ * Handles events of GAME type
+ */
 public class GameChannel extends EventHandler {
 
     public GameChannel(Hero hero, World world, ResponseChannel responseChannel) {

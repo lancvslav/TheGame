@@ -4,6 +4,9 @@ import cz.vsb.ekf.lan0116.textUi.Context;
 import cz.vsb.ekf.lan0116.textUi.abstracts.AbstractHeroUi;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
+/**
+ * not implemented yet
+ */
 public class HumanoidStatusUi extends AbstractHeroUi {
 
     private Creature creature;

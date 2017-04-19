@@ -20,14 +20,6 @@ public class DialogueUi extends AbstractHumanoidUi {
     }
 
     /**
-     * this method prints talking
-     */
-    private void talking() {
-
-        this.decisions();
-    }
-
-    /**
      * prints choices: talk more, stop talking
      */
     @Override

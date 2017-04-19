@@ -5,6 +5,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 import cz.vsb.ekf.lan0116.world.location.Gateway;
 
+/**
+ * Triggered when player chose a location to travel to
+ */
 public class TravelEvent implements Event {
 
     private final Gateway gateway;

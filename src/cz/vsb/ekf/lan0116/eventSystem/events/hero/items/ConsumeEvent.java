@@ -5,6 +5,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 import cz.vsb.ekf.lan0116.world.item.Consumable;
 
+/**
+ * Triggered when player decides to consume consumable
+ */
 public class ConsumeEvent implements Event {
 
     private final Consumable subjectOfConsumption;

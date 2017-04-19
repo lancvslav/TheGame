@@ -24,6 +24,9 @@ import java.util.List;
 import static cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.eventUtils.FightUtils.attack;
 import static cz.vsb.ekf.lan0116.eventSystem.eventProcessingNetwork.eventAgent.eventUtils.FightUtils.selectAttack;
 
+/**
+ * Handles event of COMBAT type
+ */
 public class CombatChannel extends EventHandler {
 
     public CombatChannel(Hero hero, World world, ResponseChannel responseChannel) {

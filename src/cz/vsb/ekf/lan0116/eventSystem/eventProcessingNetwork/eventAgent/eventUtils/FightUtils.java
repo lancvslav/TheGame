@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Handles whole attack -> player select attack to use against enemy, it is processed, then enemy counterattacks
+ */
 public class FightUtils {
     private static final Random random = new Random();
 

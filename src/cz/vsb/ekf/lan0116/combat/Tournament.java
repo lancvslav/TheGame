@@ -5,6 +5,9 @@ import cz.vsb.ekf.lan0116.world.creature.Creature;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Tournament which player can attend, each tournament has List of Creatures player has to defeat
+ */
 public class Tournament {
 
     private final List<? extends Creature> enemyList;

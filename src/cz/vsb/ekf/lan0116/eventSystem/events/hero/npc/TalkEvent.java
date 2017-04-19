@@ -6,7 +6,7 @@ import cz.vsb.ekf.lan0116.eventSystem.events.type.HeroType;
 import cz.vsb.ekf.lan0116.world.creature.humanoid.Humanoid;
 
 /**
- * Event, fired when chosen to talk with npc (npc does the talking)
+ * Triggered when chosen to talk with npc (npc does the talking)
  */
 public class TalkEvent implements Event {
 

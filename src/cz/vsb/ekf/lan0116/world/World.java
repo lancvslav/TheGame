@@ -190,7 +190,8 @@ public class World {
         for (String id : foodString) {
             foodMerch.add(consumableCloning.clone(id));
         }
-        tavern = new Tavern(humanoidCloning.clone("npc.innkeeper.tavern.gwen"), drinkMerch, foodMerch);
+        tavern = new Tavern(humanoidCloning.clone("npc.innkeeper.tavern.gwen"), "world.building.shop.tavern",
+                drinkMerch, foodMerch);
         //CONSUMABLE SHOP END
         //SHOP END
 

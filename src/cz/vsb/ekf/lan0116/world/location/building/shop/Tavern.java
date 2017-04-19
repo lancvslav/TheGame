@@ -13,8 +13,8 @@ public class Tavern extends Building {
     private List<Merchandise> drinkList;
     private List<Merchandise> foodList;
 
-    public Tavern(Humanoid innkeeper, List<Merchandise> drinkList, List<Merchandise> foodList) {
-        super("world.building.shop.tavern", TavernType.TAVERN);
+    public Tavern(Humanoid innkeeper, String shopName, List<Merchandise> drinkList, List<Merchandise> foodList) {
+        super(shopName, TavernType.TAVERN);
         this.innkeeper = innkeeper;
         this.drinkList = drinkList;
         this.foodList = foodList;

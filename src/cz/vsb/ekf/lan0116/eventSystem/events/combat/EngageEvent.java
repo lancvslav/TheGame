@@ -5,6 +5,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
+/**
+ * Triggered when player decides to take a fight with an enemy
+ */
 public class EngageEvent implements Event {
 
     private final Creature enemy;

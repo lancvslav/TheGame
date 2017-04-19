@@ -3,6 +3,7 @@ package cz.vsb.ekf.lan0116.world.creature;
 import cz.vsb.ekf.lan0116.combat.Attack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Creature {
@@ -139,14 +140,10 @@ public class Creature {
     }
 
     public void learnAttack(Attack... attacks) {
-        for (Attack attack : attacks) {
-            this.attacks.add(attack);
-        }
+        this.attacks.addAll(Arrays.asList(attacks));
     }
 
     public void learnAttack(List<Attack> attacks) {
-        for (Attack attack : attacks) {
-            this.attacks.add(attack);
-        }
+        this.attacks.addAll(attacks);
     }
 }

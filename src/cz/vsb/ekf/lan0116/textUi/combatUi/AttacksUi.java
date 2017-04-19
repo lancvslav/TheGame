@@ -19,7 +19,9 @@ public class AttacksUi extends AbstractHeroUi {
         attacks = this.getHero().getAttacks();
     }
 
-
+    /**
+     * prints available attacks
+     */
     @Override
     public void show() {
         System.out.println(this.get("textUi.AttacksUi.choose") + ":");

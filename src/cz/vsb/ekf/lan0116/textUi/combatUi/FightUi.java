@@ -14,6 +14,9 @@ public class FightUi extends AbstractLocationUi {
         super(context);
     }
 
+    /**
+     * Prints current enemy
+     */
     @Override
     public void show() {
         System.out.println(this.get("textUi.FightUi.facing") + " "
@@ -21,6 +24,9 @@ public class FightUi extends AbstractLocationUi {
         this.decisions();
     }
 
+    /**
+     * Prints choices attacks, inventory, try to flee
+     */
     @Override
     public void decisions() {
         switch (this.choice(this.get("textUi.FightUi.attacks"),

@@ -35,6 +35,9 @@ import java.util.List;
 
 public class HeroChannel extends EventHandler {
 
+    /**
+     * Handles events of HERO type
+     */
     public HeroChannel(Hero hero, World world, ResponseChannel responseChannel) {
         super(hero, world, responseChannel);
     }

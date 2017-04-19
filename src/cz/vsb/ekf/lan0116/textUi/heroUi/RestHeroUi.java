@@ -15,6 +15,10 @@ public class RestHeroUi extends AbstractHeroUi {
         this.decisions();
     }
 
+    /**
+     * Prints decisions inventory, consume, status, get up
+     */
+    @Override
     protected void decisions() {
         switch (this.choice(
                 this.get("textUi.RestHeroUi.inventory"),

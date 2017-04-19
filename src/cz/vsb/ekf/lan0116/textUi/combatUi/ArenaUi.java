@@ -24,6 +24,9 @@ public class ArenaUi extends AbstractLocationUi {
         this.decisions();
     }
 
+    /**
+     * Prints choices back off, sign up
+     */
     @Override
     public void decisions() {
         switch (this.choice(

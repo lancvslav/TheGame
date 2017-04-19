@@ -5,6 +5,9 @@ import cz.vsb.ekf.lan0116.eventSystem.events.EventType;
 import cz.vsb.ekf.lan0116.eventSystem.events.type.CombatType;
 import cz.vsb.ekf.lan0116.world.creature.Creature;
 
+/**
+ * Random ambush in location, not implemented yet
+ */
 public class AmbushEvent implements Event {
 
     private final Creature aggressor;
